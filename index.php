@@ -25,7 +25,7 @@
 
     <!--navigation-->
     <section class="smart-scroll">
-        <div class="container-fluid">
+        <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <a class="navbar-brand heading-black" href="index.php">
                     <i class="fas fa-chess-knight"></i> Knight
@@ -226,7 +226,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-6">
+        <div class="row mt-6" style="margin: 0 20px; text-align: center;">
             <div class="col-md-4 mr-auto">
                 <h3>Everything is covered.</h3>
                 <p class="lead">
@@ -320,7 +320,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <a href="#">
-                            <img class="card-img-top img-raised" src="img/blog-1.jpg" alt="Blog 1">
+                            <img class="card-img-top img-raised" src="assets/img/blog-1.jpg" alt="Blog 1">
                         </a>
                         <div class="card-body">
                             <a href="#" class="card-title mb-2">
@@ -335,7 +335,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <a href="#">
-                            <img class="card-img-top img-raised" src="img/blog-2.jpg" alt="Blog 2">
+                            <img class="card-img-top img-raised" src="assets/img/blog-2.jpg" alt="Blog 2">
                         </a>
                         <div class="card-body">
                             <a href="#" class="card-title mb-2">
@@ -350,7 +350,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <a href="#">
-                            <img class="card-img-top img-raised" src="img/blog-3.jpg" alt="Blog 3">
+                            <img class="card-img-top img-raised" src="assets/img/blog-3.jpg" alt="Blog 3">
                         </a>
                         <div class="card-body">
                             <a href="#" class="card-title mb-2">
@@ -436,7 +436,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

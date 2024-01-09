@@ -105,9 +105,9 @@
         <form action="register.php" method="post">
           <div class="container2" style="display: flex; flex-wrap: nowrap;">
             <i class="ri-user-3-line" style="padding-right:10px; color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" placeholder="First Name" style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="fname" name="fname" placeholder="First Name" style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
             <i class="ri-user-3-line" style="padding-right:10px; margin-left: 10px;color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" placeholder="Second Name" style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="sname" name="sname" placeholder="Second Name" style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
           </div>
           <p>
             <i class="ri-mail-line"></i>
