@@ -71,10 +71,6 @@ input::placeholder {
   align-items: center;
 }
 
-.container2 input {
-  margin-left: 10px;
-}
-
 .container {
   width: 100%;
 }
@@ -429,7 +425,7 @@ form .socials button:hover {
   .signin-show .play {
     animation: signinplay 1s both;
   }
-  
+
   @keyframes signinplay {
     0% {
       transform: translateX(100%) skewY(20deg);
