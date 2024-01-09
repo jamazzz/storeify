@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="login/login.php">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="access/access.php">
                                 <i class="fas fa-user" style="margin-right: 5px;"></i> Log in
                             </a>
                         </li>
