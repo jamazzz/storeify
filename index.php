@@ -139,22 +139,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-6">
-                <div class="col-md-6 mr-auto">
-                    <h2>Knight is more than just a page builder.</h2>
-                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis pulvinar vestibulum. Donec eleifend, sem sed dictum mattis, turpis purus placerat eros.</p>
-                    <a href="#" class="btn btn-light">
-                        Try the live demo
-                    </a>
-                </div>
-                <div class="col-md-5">
-                    <div class="slick-about">
-                        <img src="assets/img/blog-1.jpg" class="img-fluid rounded d-block mx-auto" alt="Work 1" />
-                        <img src="assets/img/blog-2.jpg" class="img-fluid rounded d-block mx-auto" alt="Work 2" />
-                        <img src="assets/img/blog-3.jpg" class="img-fluid rounded d-block mx-auto" alt="Work 3" />
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -226,15 +210,13 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-6" style="margin: 0 20px; text-align: center;">
-            <div class="col-md-4 mr-auto">
-                <h3>Everything is covered.</h3>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in nisi commodo, tempus odio a,
-                    vestibulum nibh.
-                </p>
-            </div>
-            <div class="col-md-7 offset-md-1">
+        <div class="col-md-6 mx-auto text-center">
+            <br><br><br>
+            <h4 class="card-title pt-3">Features</h4>
+            <br>
+        </div>
+        <div class="row mt-5" style="margin: 0 30px;">
+            <div class="col-md-7 offset md-1">
                 <ul class="features-list">
                     <li>Weekly new templates</li>
                     <li>Access to new features</li>
@@ -243,9 +225,28 @@
                     <li>100 refund guarantee</li>
                     <li>Advance SEO tools</li>
                     <li>Free unlimited support</li>
+                    <li>Stripe integration</li>
+                    <li>100 refund guarantee</li>
+                    <li>Advance SEO tools</li>
+                </ul>
+            </div>
+
+            <div class="col-md-5">
+                <ul class="features-list">
+                    <li>Weekly new templates</li>
+                    <li>Access to new features</li>
+                    <li>MailChimp integration</li>
+                    <li>Stripe integration</li>
+                    <li>100 refund guarantee</li>
+                    <li>Advance SEO tools</li>
+                    <li>Free unlimited support</li>
+                    <li>Stripe integration</li>
+                    <li>100 refund guarantee</li>
+                    <li>Advance SEO tools</li>
                 </ul>
             </div>
         </div>
+
         <div class="row mt-5">
             <div class="col-md-8 col-12 divider top-divider mx-auto pt-5 text-center">
                 <h3>Try Knight free for 7 days</h3>
@@ -303,76 +304,14 @@
                     <h5 class="mb-4">Have questions?</h5>
                     <a href="#" class="btn btn-primary">Contact us</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!--news section-->
-    <section class="py-7 bg-dark section-angle top-left bottom-left" id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2 class="heading-black">News from Knight.</h2>
-                    <p class="text-muted lead">What's new at Knight.</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="assets/img/blog-1.jpg" alt="Blog 1">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>We launch new iOS & Android mobile apps</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">Sep 27, 2018</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="assets/img/blog-2.jpg" alt="Blog 2">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>New update is available for the editor</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">August 16, 2018</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="assets/img/blog-3.jpg" alt="Blog 3">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>The story of building #1 page builder</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">December 2nd, 2017</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-6">
-                <div class="col-md-6 mx-auto text-center">
-                    <a href="#" class="btn btn-primary">View all posts</a>
-                </div>
+                <br>
+                <br>
             </div>
         </div>
     </section>
 
     <!--footer-->
-    <footer class="py-6">
+    <footer class="py-6 divider top-divider mx-auto pt-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 mr-auto">
