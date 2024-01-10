@@ -51,11 +51,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#tos">
-                                <i class="fas fa-file-alt" style="margin-right: 5px;"></i> TOS
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="access/access.php">
                                 <i class="fas fa-user" style="margin-right: 5px;"></i> Log in
                             </a>
@@ -84,169 +79,162 @@
     </section>
 
     <!-- features section -->
-    <section class="pt-6 pb-7" id="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2 class="heading-black">Knight offers everything you need.</h2>
-                    <p class="text-muted lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in nisi
-                        commodo, tempus odio a, vestibulum nibh.</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-10 mx-auto">
-                    <div class="row feature-boxes">
-                        <div class="col-md-6 box">
-                            <div class="icon-box box-primary">
-                                <div class="icon-box-inner">
-                                    <span data-feather="edit-3" width="35" height="35"></span>
-                                </div>
-                            </div>
-                            <h5>Create once. Share everywhere.</h5>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                                nisi commodo, tempus odio a, vestibulum nibh.</p>
-                        </div>
-                        <div class="col-md-6 box">
-                            <div class="icon-box box-success">
-                                <div class="icon-box-inner">
-                                    <span data-feather="monitor" width="35" height="35"></span>
-                                </div>
-                            </div>
-                            <h5>Unlimited devices</h5>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                                nisi commodo, tempus odio a, vestibulum nibh.</p>
-                        </div>
-                        <div class="col-md-6 box">
-                            <div class="icon-box box-danger">
-                                <div class="icon-box-inner">
-                                    <span data-feather="layout" width="35" height="35"></span>
-                                </div>
-                            </div>
-                            <h5>Beautiful tempates & layouts</h5>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                                nisi commodo, tempus odio a, vestibulum nibh.</p>
-                        </div>
-                        <div class="col-md-6 box">
-                            <div class="icon-box box-info">
-                                <div class="icon-box-inner">
-                                    <span data-feather="globe" width="35" height="35"></span>
-                                </div>
-                            </div>
-                            <h5>Available globally</h5>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                                nisi commodo, tempus odio a, vestibulum nibh.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="py-7 bg-dark section-angle top-right bottom-right" id="pricing">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2 class="text-white heading-black">Choose Your Pricing Plan.</h2>
-                    <p class="text-light lead">Simple Pricing - 7 Days Free Trial</p>
-                </div>
-            </div>
-            <!-- Pricing Tables -->
-            <div class="row pt-5 pricing-table">
-                <div class="col-12 mx-auto">
-                    <div class="card-deck pricing-table">
-                        <!-- Free Package -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Free Package</h3>
-                                <h2 class="card-title text-primary mb-0 pt-4">Free</h2>
-                                <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>One User</li>
-                                    <li>One Website</li>
-                                    <li>Access to Basic Templates</li>
-                                    <li>Basic Support</li>
-                                </ul>
-                                <a href="#" class="btn btn-primary">
-                                    Start Free Trial
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Premium Package -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Premium Package</h3>
-                                <h2 class="card-title text-info mb-0 pt-4">$9.99</h2>
-                                <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>1-10 Users</li>
-                                    <li>50 Websites</li>
-                                    <li>Access to Premium Templates</li>
-                                    <li>Priority Support</li>
-                                </ul>
-                                <a href="#" class="btn btn-info">
-                                    Start Free Trial
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Enterprise Package -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Enterprise Package</h3>
-                                <h2 class="card-title text-primary mb-0 pt-4">$99.99</h2>
-                                <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>Unlimited Users</li>
-                                    <li>50 Websites</li>
-                                    <li>Access to Premium Templates</li>
-                                    <li>24/7 Support</li>
-                                </ul>
-                                <a href="#" class="btn btn-primary">
-                                    Start Free Trial
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row">
         <div class="col-md-6 mx-auto text-center">
-            <br><br><br>
-            <h4 class="card-title pt-3">Features</h4>
+            <h1 class="text-white heading-black">Why us?</h1>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto">
+            <div class="row feature-boxes">
+                <div class="col-md-6 box">
+                    <div class="icon-box box-primary">
+                        <div class="icon-box-inner">
+                            <span data-feather="edit-3" width="35" height="35"></span>
+                        </div>
+                    </div>
+                    <h5>Create once. Share everywhere.</h5>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
+                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                </div>
+                <div class="col-md-6 box">
+                    <div class="icon-box box-success">
+                        <div class="icon-box-inner">
+                            <span data-feather="monitor" width="35" height="35"></span>
+                        </div>
+                    </div>
+                    <h5>Unlimited devices</h5>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
+                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                </div>
+                <div class="col-md-6 box">
+                    <div class="icon-box box-danger">
+                        <div class="icon-box-inner">
+                            <span data-feather="layout" width="35" height="35"></span>
+                        </div>
+                    </div>
+                    <h5>Beautiful tempates & layouts</h5>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
+                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                </div>
+                <div class="col-md-6 box">
+                    <div class="icon-box box-info">
+                        <div class="icon-box-inner">
+                            <span data-feather="globe" width="35" height="35"></span>
+                        </div>
+                    </div>
+                    <h5>Available globally</h5>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
+                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+    <div class="col-md-6 mx-auto text-center">
+        <br>
+        <section id="features">
             <br>
+            <br>
+            <h2 class="card-title pt-3">Features</h2>
+            <br>
+    </div>
+    <ul class="features-list" style="margin-left: 35px;">
+        <li>Weekly new templates</li>
+        <li>Access to new features</li>
+        <li>MailChimp integration</li>
+        <li>Stripe integration</li>
+        <li>100 refund guarantee</li>
+        <li>Advance SEO tools</li>
+        <li>Free unlimited support</li>
+        <li>Stripe integration</li>
+        <li>100 refund guarantee</li>
+        <li>Advance SEO tools</li>
+        <li>Weekly new templates</li>
+        <li>Access to new features</li>
+        <li>MailChimp integration</li>
+        <li>Stripe integration</li>
+        <li>100 refund guarantee</li>
+        <li>Advance SEO tools</li>
+        <li>Free unlimited support</li>
+        <li>Stripe integration</li>
+        <li>100 refund guarantee</li>
+        <li>Advance SEO tools</li>
+    </ul>
+    </section>
+    </div>
+    </section>
+    </section>
+    <!-- Pricing Section -->
+    <section class="py-7 bg-dark section-angle top-right bottom-right">
+        <div class="container">
+            <section id="pricing">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2 class="text-white heading-black">Choose Your Pricing Plan.</h2>
+                        <p class="text-light lead">Simple Pricing - 7 Days Free Trial</p>
+                    </div>
+                </div>
+                <!-- Pricing Tables -->
+                <div class="row pt-5 pricing-table">
+                    <div class="col-12 mx-auto">
+                        <div class="card-deck pricing-table">
+                            <!-- Free Package -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title pt-3">Free Package</h3>
+                                    <h2 class="card-title text-primary mb-0 pt-4">Free</h2>
+                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
+                                    <ul class="list-unstyled pricing-list">
+                                        <li>One User</li>
+                                        <li>One Website</li>
+                                        <li>Access to Basic Templates</li>
+                                        <li>Basic Support</li>
+                                    </ul>
+                                    <a href="#" class="btn btn-primary">
+                                        Start Free Trial
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Premium Package -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title pt-3">Premium Package</h3>
+                                    <h2 class="card-title text-info mb-0 pt-4">9.99 €</h2>
+                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
+                                    <ul class="list-unstyled pricing-list">
+                                        <li>1-10 Users</li>
+                                        <li>50 Websites</li>
+                                        <li>Access to Premium Templates</li>
+                                        <li>Priority Support</li>
+                                    </ul>
+                                    <a href="#" class="btn btn-info">
+                                        Start Free Trial
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Enterprise Package -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title pt-3">Enterprise Package</h3>
+                                    <h2 class="card-title text-primary mb-0 pt-4">99.99 €</h2>
+                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
+                                    <ul class="list-unstyled pricing-list">
+                                        <li>Unlimited Users</li>
+                                        <li>50 Websites</li>
+                                        <li>Access to Premium Templates</li>
+                                        <li>24/7 Support</li>
+                                    </ul>
+                                    <a href="#" class="btn btn-primary">
+                                        Start Free Trial
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
-        <div class="row mt-5" style="margin: 0 30px;">
-            <div class="col-md-7 offset md-1">
-                <ul class="features-list">
-                    <li>Weekly new templates</li>
-                    <li>Access to new features</li>
-                    <li>MailChimp integration</li>
-                    <li>Stripe integration</li>
-                    <li>100 refund guarantee</li>
-                    <li>Advance SEO tools</li>
-                    <li>Free unlimited support</li>
-                    <li>Stripe integration</li>
-                    <li>100 refund guarantee</li>
-                    <li>Advance SEO tools</li>
-                </ul>
-            </div>
-
-            <div class="col-md-5">
-                <ul class="features-list">
-                    <li>Weekly new templates</li>
-                    <li>Access to new features</li>
-                    <li>MailChimp integration</li>
-                    <li>Stripe integration</li>
-                    <li>100 refund guarantee</li>
-                    <li>Advance SEO tools</li>
-                    <li>Free unlimited support</li>
-                    <li>Stripe integration</li>
-                    <li>100 refund guarantee</li>
-                    <li>Advance SEO tools</li>
-                </ul>
-            </div>
-        </div>
-
         <div class="row mt-5">
             <div class="col-md-8 col-12 divider top-divider mx-auto pt-5 text-center">
                 <h3>Try Knight free for 7 days</h3>
@@ -257,56 +245,54 @@
                 </button>
             </div>
         </div>
-        </div>
-    </section>
-
-    <!--faq section-->
-    <section class="py-7" id="faq">
+        <!--faq section-->
+        <br>
+        <br>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2>Frequently asked questions</h2>
-                    <p class="text-muted lead">Answers to most common questions.</p>
+            <section id="faq">
+                <div class="row">
+                    <div class="col-md-6 mx-auto divider top-divider mx-auto pt-5 text-center">
+                        <h2>Frequently asked questions</h2>
+                        <p class="text-muted lead">Answers to most common questions.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-10 mx-auto">
-                    <div class="row">
-                        <div class="col-md-6 mb-5">
-                            <h6>Can I try it for free?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
-                        </div>
-                        <div class="col-md-6 mb-5">
-                            <h6>Do you have hidden fees?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
-                        </div>
-                        <div class="col-md-6 mb-5">
-                            <h6>What are the payment methods you accept?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
-                        </div>
-                        <div class="col-md-6 mb-5">
-                            <h6>How often do you release updates?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
-                        </div>
-                        <div class="col-md-6 mb-5">
-                            <h6>What is your refund policy?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
-                        </div>
-                        <div class="col-md-6 mb-5">
-                            <h6>How can I contact you?</h6>
-                            <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                <div class="row mt-5">
+                    <div class="col-md-10 mx-auto">
+                        <div class="row">
+                            <div class="col-md-6 mb-5">
+                                <h6>Can I try it for free?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <h6>Do you have hidden fees?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <h6>What are the payment methods you accept?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <h6>How often do you release updates?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <h6>What is your refund policy?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <h6>How can I contact you?</h6>
+                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-6 mx-auto text-center">
-                    <h5 class="mb-4">Have questions?</h5>
-                    <a href="#" class="btn btn-primary">Contact us</a>
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <br>
+                        <h5 class="mb-4">Have questions?</h5>
+                        <a href="#" class="btn btn-primary">Contact us</a>
+                    </div>
                 </div>
-                <br>
-                <br>
-            </div>
         </div>
     </section>
 
