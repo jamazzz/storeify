@@ -1,43 +1,45 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/turno_1_v1/acesso_bd_t1.php");
 
-// $consulta = "SELECT * FROM users WHERE user = '".$_POST["username"]."'";
-
-// $resultado = mysqli_query($conexao, $consulta);
-
-// $numero_de_linhas = mysqli_num_rows($resultado);
-echo ($_POST['fname']);
-echo ("<br>");
-echo ($_POST['sname']);
-echo ("<br>");
-echo ($_POST['email']);
-echo ("<br>");
-echo ($_POST['password2']);
-echo ("<br>");
-echo ($_POST['password3']);
-
-function genUser($email)
+function genUser($str1, $str2, $email)
 {
-	$allowedChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    if (ctype_alpha($str1) && ctype_alpha($str2)) {
+        $combinedString = $str1 . $str2;
+    } else {
+        $atSymbolPosition = strpos($email, '@');
+        $emailPrefix = ($atSymbolPosition !== false) ? substr($email, 0, $atSymbolPosition) : '';
+        $emailPrefix = preg_replace('/[^a-zA-Z]/', '', $emailPrefix);
+        $combinedString = $emailPrefix;
+    }
 
-	$atSymbolPosition = strpos($email, '@');
-	$emailPrefix = ($atSymbolPosition !== false) ? substr($email, 0, $atSymbolPosition) : '';
-
-	$emailPrefix = preg_replace('/[^' . preg_quote($allowedChars, '/') . ']/', '', $emailPrefix);
-
-	if (empty($emailPrefix)) {
-		echo "Invalid email address";
-		return false;
-	}
-
-	$randomChars = substr(str_shuffle(str_repeat('0123456789', 3)), 0, 5);
-	$user = $emailPrefix . $randomChars;
-
-	return $user;
+    $lowercaseString = strtolower($combinedString);
+    $randomChars = substr(str_shuffle(str_repeat('0123456789', 3)), 0, 5);
+    $user = $lowercaseString . $randomChars;
+    return $user;
 }
 
-$user = genUser($_POST['email']);
-echo ("<br>");
-echo $user;
+// Email Validation
+$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+if ($email === false) {
+    echo "Email Inválido";
+}
 
-$new = "INSERT INTO `users`(`username`, `pass`, `email`, `nivel_perm`, `data_criacao`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]',NOW())";
+// Name Validation
+if (empty($_POST['fname']) || $_POST['fname'] == "" || empty($_POST['sname']) || $_POST['sname'] == "") {
+    echo "Nome Inválido";
+}
+$namePattern = '/^[A-Z][a-zA-Z]*$/';
+if (
+    preg_match($namePattern, $_POST['fname']) && !preg_match('/\d/', $_POST['fname']) && !preg_match('/\s/', $_POST['fname']) &&
+    preg_match($namePattern, $_POST['sname']) && !preg_match('/\d/', $_POST['sname']) && !preg_match('/\s/', $_POST['sname'])
+) {
+    echo "Valid name: " . $_POST['fname'] . " " . $_POST['sname'];
+} else {
+    echo "Nome Inválido";
+}
+
+$username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
+echo ("<br>");
+echo $username;
+
+// $insert = "INSERT INTO users (username, password, email, permission_level, creation_date, elimination_date, attempts, deleted) VALUES ('{$_POST['fname']}', '{$_POST['password']}', '{$_POST['email']}', '{$_POST['permission_level']}', '{$_POST['creation_date']}', '{$_POST['elimination_date']}', '{$_POST['attempts']}', '{$_POST['deleted']}')";
