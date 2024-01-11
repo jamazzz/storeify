@@ -42,12 +42,12 @@
           <form action="login.php" method="post">
             <p>
               <i class="ri-mail-line"></i>
-              <input type="text" id="email" name="email" placeholder="Email Adress" required/>
+              <input type="text" id="email" name="email" placeholder="Email Adress" required autocomplete="off"/>
             </p>
             <p>
               <i class="ri-lock-line"></i>
               <i id="toggleIcon2" class="ri-eye-off-line icon" onclick="toggleIcon2()"></i>
-              <input id="password" name="password" type="password" placeholder="Password" required/>
+              <input id="password" name="password" type="password" placeholder="Password" required autocomplete="off"/>
             </p>
             <script>
               function toggleIcon2() {
@@ -103,18 +103,18 @@
         <form action="register.php" method="post">
           <div class="container2" style="display: flex; flex-wrap: nowrap;">
             <i class="ri-user-3-line" style="padding-right:10px; color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" id="fname" name="fname" placeholder="First Name"required style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="fname" name="fname" placeholder="First Name"required autocomplete="off" style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
             <i class="ri-user-3-line" style="padding-right:10px; margin-left: 10px;color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" id="sname" name="sname" placeholder="Second Name"required style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="sname" name="sname" placeholder="Second Name"required autocomplete="off" style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
           </div>
           <p>
             <i class="ri-mail-line"></i>
-            <input type="text" name="email" placeholder="Email Adress" required/>
+            <input type="text" name="email" placeholder="Email Adress" required autocomplete="off"/>
           </p>
           <p>
             <i class="ri-lock-line"></i>
             <i id="toggleIcon" class="ri-eye-off-line icon" onclick="toggleIcon()"></i>
-            <input id="password2" name="password2" type="password" placeholder="Password" required/>
+            <input id="password2" name="password2" type="password" placeholder="Password" required autocomplete="off"/>
           </p>
           <script>
             function toggleIcon() {
@@ -133,7 +133,7 @@
           </script>
           <p>
             <i class="ri-lock-line"></i>
-            <input id="password3" type="password" name="password3" placeholder="Password" required/>
+            <input id="password3" type="password" name="password3" placeholder="Password" required autocomplete="off"/>
           </p>
           <div class="actions">
             <label>
