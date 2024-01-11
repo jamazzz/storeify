@@ -1,6 +1,6 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-
+session_start();
 function genUser($str1, $str2, $email)
 {
     if (ctype_alpha($str1) && ctype_alpha($str2)) {
@@ -22,6 +22,15 @@ function genUser($str1, $str2, $email)
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 if ($email === false) {
     echo "Email Inválido";
+}
+
+$emailocupado = "SELECT COUNT(*) FROM users WHERE email = '" . $_POST['email'] . "'";
+$ocupado = mysqli_query($connect, $emailocupado);
+if ($ocupado == 1) {
+    $_SESSION["email_ocupied"] = $_POST["email"];
+    mysqli_close($connect);
+    header('Location:/storeify/access/access.php');
+    exit();
 }
 
 // Name Validation
@@ -51,10 +60,25 @@ if ($_POST['password2'] !== $_POST['password3']) {
     $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
 }
 
-// gen user
-$username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
-echo ("<br>");
-echo $username;
+// username validation
+
+$uniqueUsernameFound = false;
+while (!$uniqueUsernameFound) {
+    $username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
+    $userocupado = "SELECT COUNT(*) FROM users WHERE username = '$username'";
+    $ocupado2 = mysqli_query($connect, $userocupado);
+
+    if ($ocupado2) {
+        $row = mysqli_fetch_array($ocupado2);
+        $count = $row[0];
+
+        if ($count == 0) {
+            $uniqueUsernameFound = true;
+        }
+    } else {
+        die(mysqli_error($connect));
+    }
+}
 
 $new = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
 
