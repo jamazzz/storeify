@@ -25,9 +25,6 @@ if ($email === false) {
 }
 
 // Name Validation
-if (empty($_POST['fname']) || $_POST['fname'] == "" || empty($_POST['sname']) || $_POST['sname'] == "") {
-    echo "Nome Inválido";
-}
 $namePattern = '/^[A-Z][a-zA-Z]*$/';
 if (
     preg_match($namePattern, $_POST['fname']) && !preg_match('/\d/', $_POST['fname']) && !preg_match('/\s/', $_POST['fname']) &&
@@ -39,11 +36,8 @@ if (
 }
 
 // Password Validation
-if (empty($_POST['password2'])) {
-    echo "Password 2 is empty";
-} elseif (empty($_POST['password3'])) {
-    echo "Password 3 is empty";
-} elseif ($_POST['password2'] !== $_POST['password3']) {
+
+if ($_POST['password2'] !== $_POST['password3']) {
     echo "Passwords do not match";
 } elseif (strlen($_POST['password2']) < 6) {
     echo "Password should be at least 6 characters long";
