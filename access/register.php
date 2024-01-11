@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/turno_1_v1/acesso_bd_t1.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 
 function genUser($str1, $str2, $email)
 {
@@ -33,13 +33,42 @@ if (
     preg_match($namePattern, $_POST['fname']) && !preg_match('/\d/', $_POST['fname']) && !preg_match('/\s/', $_POST['fname']) &&
     preg_match($namePattern, $_POST['sname']) && !preg_match('/\d/', $_POST['sname']) && !preg_match('/\s/', $_POST['sname'])
 ) {
-    echo "Valid name: " . $_POST['fname'] . " " . $_POST['sname'];
+    // valid
 } else {
     echo "Nome Inválido";
 }
 
+// Password Validation
+if (empty($_POST['password2'])) {
+    echo "Password 2 is empty";
+} elseif (empty($_POST['password3'])) {
+    echo "Password 3 is empty";
+} elseif ($_POST['password2'] !== $_POST['password3']) {
+    echo "Passwords do not match";
+} elseif (strlen($_POST['password2']) < 6) {
+    echo "Password should be at least 6 characters long";
+} elseif (!preg_match('/[a-z]/', $_POST['password2'])) {
+    echo "Password should contain at least one lowercase letter";
+} elseif (!preg_match('/[A-Z]/', $_POST['password2'])) {
+    echo "Password should contain at least one uppercase letter";
+} elseif (!preg_match('/[0-9]/', $_POST['password2'])) {
+    echo "Password should contain at least one number";
+} else {
+    $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
+}
+
+// gen user
 $username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
 echo ("<br>");
 echo $username;
 
-// $insert = "INSERT INTO users (username, password, email, permission_level, creation_date, elimination_date, attempts, deleted) VALUES ('{$_POST['fname']}', '{$_POST['password']}', '{$_POST['email']}', '{$_POST['permission_level']}', '{$_POST['creation_date']}', '{$_POST['elimination_date']}', '{$_POST['attempts']}', '{$_POST['deleted']}')";
+$new = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
+
+$resultado = mysqli_query($connect, $new);
+
+if ($resultado) {
+    header("Location: access.php");
+    exit();
+} else {
+    echo "Error: " . mysqli_error($conexao);
+}
