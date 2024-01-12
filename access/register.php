@@ -48,7 +48,6 @@ if (
 }
 
 // Password Validation
-
 if ($_POST['password2'] !== $_POST['password3']) {
     echo "Passwords do not match";
 } elseif (strlen($_POST['password2']) < 6) {
@@ -63,8 +62,7 @@ if ($_POST['password2'] !== $_POST['password3']) {
     $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
 }
 
-// username validation
-
+// Username Validation
 $uniqueUsernameFound = false;
 
 while (!$uniqueUsernameFound) {
@@ -84,6 +82,7 @@ while (!$uniqueUsernameFound) {
     }
 }
 
+// Insert User Data
 $nameuser = $_POST['fname'] . " " . $_POST['lname'];
 $userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
 $userinfo = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
@@ -95,5 +94,6 @@ if ($resultado && $resultado2) {
     header("Location: access.php");
     exit();
 } else {
-    echo "Error: " . mysqli_error($conexao);
+    echo "Error: " . mysqli_error($connect);
 }
+?>
