@@ -1,6 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
+
 function genUser($str1, $str2, $email)
 {
     if (ctype_alpha($str1) && ctype_alpha($str2)) {
@@ -39,7 +40,7 @@ if ($count != 0) {
 $namePattern = '/^[A-Z][a-zA-Z]*$/';
 if (
     preg_match($namePattern, $_POST['fname']) && !preg_match('/\d/', $_POST['fname']) && !preg_match('/\s/', $_POST['fname']) &&
-    preg_match($namePattern, $_POST['sname']) && !preg_match('/\d/', $_POST['sname']) && !preg_match('/\s/', $_POST['sname'])
+    preg_match($namePattern, $_POST['lname']) && !preg_match('/\d/', $_POST['lname']) && !preg_match('/\s/', $_POST['lname'])
 ) {
     // valid
 } else {
@@ -65,31 +66,32 @@ if ($_POST['password2'] !== $_POST['password3']) {
 // username validation
 
 $uniqueUsernameFound = false;
+
 while (!$uniqueUsernameFound) {
-    $username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
+    $username = genUser($_POST['fname'], $_POST['lname'], $_POST['email']);
     $userocupado = "SELECT COUNT(*) AS count FROM users WHERE username = '$username'";
     $ocupado2 = mysqli_query($connect, $userocupado);
+
+    if (!$ocupado2) {
+        die("Error in SQL query: " . mysqli_error($connect));
+    }
+
     $rowuser = mysqli_fetch_assoc($ocupado2);
     $count2 = $rowuser['count'];
 
-
-    if ($$count2) {
-        $row = mysqli_fetch_array($ocupado2);
-        $count = $row[0];
-
-        if ($count == 0) {
-            $uniqueUsernameFound = true;
-        }
-    } else {
-        die(mysqli_error($connect));
+    if ($count2 == 0) {
+        $uniqueUsernameFound = true;
     }
 }
 
-$new = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
+$nameuser = $_POST['fname'] . " " . $_POST['lname'];
+$userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
+$userinfo = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
 
-$resultado = mysqli_query($connect, $new);
+$resultado = mysqli_query($connect, $userid);
+$resultado2 = mysqli_query($connect, $userinfo);
 
-if ($resultado) {
+if ($resultado && $resultado2) {
     header("Location: access.php");
     exit();
 } else {

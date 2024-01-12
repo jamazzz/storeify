@@ -1,8 +1,9 @@
 <?php
+$_POST['fname'] = "Duarte";
+$_POST['lname'] = "Neves";
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-$_POST['email'] = "duarte.acn@gmail.com";
+$nameuser = $_POST['fname'] . " " . $_POST['lname'];
+$userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
+$resultado = mysqli_query($connect, $userid);
 
-$emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $_POST['email'] . "'";
-$result = mysqli_query($connect, $emailocupado);
-$row = mysqli_fetch_assoc($result);
-$count = $row['count'];
+echo($resultado);
