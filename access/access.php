@@ -151,9 +151,9 @@
         </p>
       </div>
       <?php
-      if (isset($_SESSION["email_ocupied"])) {
-        echo ("<br><span  id='email_ocupied' style='color: red'>O email já registado!</span>");
-        unset($_SESSION["email_ocupied"]);
+      if (isset($_SESSION["errormsg"])) {
+        echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
+        unset($_SESSION["errormsg"]);
       ?>
         <script>
           countdown();

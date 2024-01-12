@@ -1,4 +1,5 @@
 <?php
+session_start();
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 // Username
 
@@ -40,26 +41,34 @@ function genUser($connection, $fname, $lname, $email)
 
 // Name Validation
 
-function isValidName($name, $name2)
+function isValidName($name, $name2, $connection)
 {
     $namePattern = '/^[A-Z][a-zA-Z]*$/';
-
     if (!(preg_match($namePattern, $name) && !preg_match('/\d/', $name) && !preg_match('/\s/', $name))) {
-        return "Name is not valid";
+        $_SESSION["errormsg"] = $name." é um nome inválido.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     if (!(preg_match($namePattern, $name2) && !preg_match('/\d/', $name2) && !preg_match('/\s/', $name2))) {
-        return "Name2 is not valid";
+        $_SESSION["errormsg"] = $name2." é um nome inválido.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     return true;
 }
 
-function validateEmail($email)
+function validateEmail($email, $connection)
 {
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
-        return "Email Inválido";
+        $_SESSION["errormsg"] = $email." é um email inválido.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     } else {
         return true;
     }
@@ -67,61 +76,93 @@ function validateEmail($email)
 
 function isEmailOccupied($email, $connection)
 {
-    $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $_POST['email'] . "'";
+    $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $email . "'";
     $result = mysqli_query($connection, $emailocupado);
     $row = mysqli_fetch_assoc($result);
     $count = $row['count'];
-
-    return $count != 0;
+    if ($count != 0) {
+        $_SESSION["errormsg"] = $email." já está registado.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
+    }
+    return true;
 }
 
-function validatePassword($password2, $password3)
+function validatePassword($password2, $password3, $connection)
 {
     if ($password2 !== $password3) {
-        return "Passwords do not match";
+        $_SESSION["errormsg"] = "A senha não corresponde.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     if (strlen($password2) < 6) {
-        return "Password should be at least 6 characters long";
+        $_SESSION["errormsg"] = "A senha precisa de pelo menos 6 caracteres.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
-        return "Password should contain at least one lowercase letter";
+        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
-        return "Password should contain at least one uppercase letter";
+        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
-        return "Password should contain at least one number";
+        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 dígito.";
+        mysqli_close($connection);
+        header('Location:/storeify/access/access.php');
+        exit();
     }
 
-    return password_hash($password2, PASSWORD_BCRYPT);
+    return true;
 }
-
 $_POST['fname'] = "Duarte";
 $_POST['lname'] = "Neves";
 $_POST['email'] = "duarte.acn@gmail.com";
-$_POST['password2'] = "Teste123";
-$_POST['password3'] = "Teste123";
+$_POST['password2'] = "TesteA1";
+$_POST['password3'] = "TesteA1";
 
-// genUser($connect,$_POST['fname'], $_POST['lname'], $_POST['email']);
-// isValidName($_POST['fname'], $_POST['lname']);
-// validateEmail($_POST['email']);
-// isEmailOccupied($_POST['email'],$connect);
-// validatePassword($_POST['password2'],$_POST['password3']);
-echo("genUser - ");
-echo(genUser($connect,$_POST['fname'], $_POST['lname'], $_POST['email']));
-echo("<br>");
-echo("isValidName - ");
-echo(isValidName($_POST['fname'], $_POST['lname']));
-echo("<br>");
-echo("validateEmail - ");
-echo(validateEmail($_POST['email']));
-echo("<br>");
-echo("isEmailOccupied - ");
-echo(isEmailOccupied($_POST['email'],$connect));
-echo("<br>");
-echo("validatePassword - ");
-echo(validatePassword($_POST['password2'],$_POST['password3']));
+// echo("<br>".isValidName($_POST['fname'], $_POST['lname'], $connect));
+// echo("<br>".validateEmail($_POST['email'], $connect));
+// echo("<br>".isEmailOccupied($_POST['email'], $connect));
+// echo("<br>".validatePassword($_POST['password2'], $_POST['password3'], $connect));
+// echo("<br> erro1");
+if (
+    isValidName($_POST['fname'], $_POST['lname'], $connect) == 1
+    &&
+    validateEmail($_POST['email'], $connect) == 1
+    &&
+    isEmailOccupied($_POST['email'], $connect) == 1
+    &&
+    validatePassword($_POST['password2'], $_POST['password3'], $connect) == 1
+) {
+    $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
+    $username = genUser($connect, $_POST['fname'], $_POST['lname'], $_POST['email']);
+
+    $nameuser = $_POST['fname'] . " " . $_POST['lname'];
+    $userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
+    $userinfo = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_POST['email']}', 0, NOW(), 5)";
+
+    $resultado = mysqli_query($connect, $userid);
+    $resultado2 = mysqli_query($connect, $userinfo);
+
+    if ($resultado && $resultado2) {
+        header("Location: access.php");
+        exit();
+    } else {
+        echo("erro2");
+        echo "Error: " . mysqli_error($conexao);
+    }
+}

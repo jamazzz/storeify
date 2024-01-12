@@ -74,8 +74,8 @@ function countdown() {
   timer1 = setTimeout(clean, 2000);
 }
 function clean() {
-  var element = document.getElementById("email_ocupied");
+  var element = document.getElementById("errormsg");
   if (element !== null) {
-    document.getElementById("email_ocupied").innerHTML = null;
+    document.getElementById("errormsg").innerHTML = null;
   }
 }
