@@ -13,7 +13,7 @@ function genUser($str1, $str2, $email)
     }
 
     $lowercaseString = strtolower($combinedString);
-    $randomChars = substr(str_shuffle(str_repeat('0123456789', 3)), 0, 5);
+    $randomChars = substr(str_shuffle(str_repeat('0123456789', 3)), 0, 9);
     $user = $lowercaseString . $randomChars;
     return $user;
 }
@@ -24,9 +24,11 @@ if ($email === false) {
     echo "Email Inválido";
 }
 
-$emailocupado = "SELECT COUNT(*) FROM users WHERE email = '" . $_POST['email'] . "'";
+$emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $_POST['email'] . "'";
 $ocupado = mysqli_query($connect, $emailocupado);
-if ($ocupado == 1) {
+$rowemail = mysqli_fetch_assoc($ocupado);
+$count = $rowemail['count'];
+if ($count != 0) {
     $_SESSION["email_ocupied"] = $_POST["email"];
     mysqli_close($connect);
     header('Location:/storeify/access/access.php');
@@ -65,10 +67,13 @@ if ($_POST['password2'] !== $_POST['password3']) {
 $uniqueUsernameFound = false;
 while (!$uniqueUsernameFound) {
     $username = genUser($_POST['fname'], $_POST['sname'], $_POST['email']);
-    $userocupado = "SELECT COUNT(*) FROM users WHERE username = '$username'";
+    $userocupado = "SELECT COUNT(*) AS count FROM users WHERE username = '$username'";
     $ocupado2 = mysqli_query($connect, $userocupado);
+    $rowuser = mysqli_fetch_assoc($ocupado2);
+    $count2 = $rowuser['count'];
 
-    if ($ocupado2) {
+
+    if ($$count2) {
         $row = mysqli_fetch_array($ocupado2);
         $count = $row[0];
 
