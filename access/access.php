@@ -45,7 +45,7 @@
           <form action="login.php" method="post">
             <p>
               <i class="ri-mail-line"></i>
-              <input type="text" id="email" name="email" placeholder="Email Adress" required autocomplete="off" />
+              <input type="text" id="emailoruser" name="emailoruser" placeholder="Email Adress or Username" required autocomplete="off" />
             </p>
             <p>
               <i class="ri-lock-line"></i>

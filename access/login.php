@@ -2,28 +2,24 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
 
-// Email Validation
-$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-if ($email === false) {
-    echo "Email Inválido";
-}
-$pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
+$emailoruser = $_POST['emailoruser'];
+$password = $_POST['password'];
 
+$userpassQuery = "SELECT password FROM users WHERE username = '$emailoruser' OR email = '$emailoruser'";
 
-if (strpos($_POST['details'], '@') !== false) {
-    echo "This is an email";
+$resultadopass = mysqli_query($connect, $userpassQuery);
+
+if ($resultadopass) {
+    $row = mysqli_fetch_assoc($resultadopass);
+    if ($row && password_verify($password, $row['password'])) {
+        header("Location: ../dashboard/index.html");
+        exit();
+    } else {
+        $_SESSION["errormsg"] = "Dados de acesso incorretos";
+        mysqli_close($connect);
+        header('Location: /storeify/access/access.php');
+        exit();
+    }
 } else {
-    echo "This is not a valid email";
-}
-
-$nameuser = $_POST['fname'] . " " . $_POST['lname'];
-$userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
-
-$resultado = mysqli_query($connect, $userid);
-
-if ($resultado) {
-    header("Location: access.php");
-    exit();
-} else {
-    echo "Error: " . mysqli_error($conexao);
+    echo "Error: " . mysqli_error($connect);
 }
