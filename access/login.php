@@ -12,7 +12,7 @@ $resultadopass = mysqli_query($connect, $userpassQuery);
 if ($resultadopass) {
     $row = mysqli_fetch_assoc($resultadopass);
     if ($row && password_verify($password, $row['password'])) {
-        header("Location: ../dashboard/index.html");
+        header("Location: ../dashboard/select.php");
         exit();
     } else {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";

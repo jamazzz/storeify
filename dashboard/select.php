@@ -26,7 +26,7 @@
             <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
                 <div class="card-header">
                     <div class="float-left">
-                        <i class="fa-solid fa-cart-shopping"></i> ‎ Shop Name
+                        <i class="fa-solid fa-cart-shopping" style="padding-top: 17px;"></i> ‎ Shop Name
                     </div>
                     <div class="float-right">
                         <a href="pages/samples/error-404.html" class="btn btn-danger"><i class="fa fa-times"></i></a>
