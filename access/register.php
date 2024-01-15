@@ -43,7 +43,7 @@ function genUser($connection, $fname, $lname, $email)
 
 function isValidName($name, $name2, $connection)
 {
-    $namePattern = '/^[A-Z][a-zA-Z]*$/';
+    $namePattern = '/^[A-ZÀ-ÖØ-öø-ÿ][a-zA-ZÀ-ÖØ-öø-ÿ]*$/u';
     if (!(preg_match($namePattern, $name) && !preg_match('/\d/', $name) && !preg_match('/\s/', $name))) {
         $_SESSION["errormsg"] = $name . " é um nome inválido.";
         mysqli_close($connection);
@@ -149,6 +149,7 @@ if (
     $resultado2 = mysqli_query($connect, $userinfo);
 
     if ($resultado && $resultado2) {
+        $_SESSION['register'] = true;
         header("Location: access.php");
         exit();
     } else {

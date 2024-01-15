@@ -169,6 +169,16 @@
     </ul>
   </nav>
   </div>
+
+  <?php
+  if (isset($_SESSION['register'])) {
+    unset($_SESSION['register']);
+    echo '<script>';
+    echo 'sessionStorage.setItem("signupOrSignin", "signup");';
+    echo '</script>';
+  }
+  ?>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const signup = document.querySelector(".t-signup"),
