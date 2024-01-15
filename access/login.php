@@ -6,8 +6,19 @@ $emailoruser = $_POST['emailoruser'];
 $password = $_POST['password'];
 
 $userpassQuery = "SELECT password FROM users WHERE username = '$emailoruser' OR email = '$emailoruser'";
+$idquery = "SELECT id FROM users WHERE username = '$emailoruser' OR email = '$emailoruser'";
 
 $resultadopass = mysqli_query($connect, $userpassQuery);
+
+$resultadoid = mysqli_query($connect, $idquery);
+
+if ($resultadoid) {
+    $row = mysqli_fetch_assoc($resultadoid);
+    $_SESSION['userid'] = $row['id'];
+} else {
+    $_SESSION['userid'] = null;
+}
+
 
 if ($resultadopass) {
     $row = mysqli_fetch_assoc($resultadopass);
