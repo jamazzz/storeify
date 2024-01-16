@@ -34,7 +34,7 @@ $projects = "SELECT websiteid FROM members WHERE memberid = '" . $_SESSION['user
 $total = 0;
 if ($total == 0) {
     mysqli_close($connect);
-    header('Location: /storeify/dashboard/choose.php');
+    header('Location: /storeify/dashboard/new.php');
     exit();
 }
 if ($total == 1) {

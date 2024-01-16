@@ -57,10 +57,10 @@
                   </div>
                 </a>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0" style="">
+              <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <a id="segment-5" class="segment text-info text-center align-center row-mb d-block h-100" href="pages/samples/error-404.html" data-toggle="tooltip" data-placement="bottom" title="" data-container="#segment-5" data-original-title="Idk">
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
-                    <div class="w-100 text-center" style="">
+                    <div class="w-100 text-center">
                       <div class="select-icon">
                         <img src="assets/images/choose/example.png" width="80" height="80">
                         <br>
@@ -71,10 +71,10 @@
                   </div>
                 </a>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0" style="">
+              <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <a id="segment-2" class="segment text-info text-center align-center row-mb d-block h-100" href="pages/samples/error-404.html" data-toggle="tooltip" data-placement="bottom" title="" data-container="#segment-2" data-original-title="Idk">
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
-                    <div class="w-100 text-center" style="">
+                    <div class="w-100 text-center">
                       <div class="select-icon">
                         <img src="assets/images/choose/example.png" width="80" height="80">
                         <br>
