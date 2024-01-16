@@ -27,25 +27,14 @@
 
     <div class="row">
       <div class="col-12">
-        <form method="post" id="create-form" action="pages/samples/error-404.html" class="submit-disable">
+        <form action="newwebsite.php" method="post">
           <div class="card">
-            <input type="hidden" name="_token" value="n93Z6isUXoT1yIfIkY1yWRzDxFTba2vPzi45LoER">
             <div class="card-body p-5">
-              <input hidden="hidden" name="minecraft_server" value="">
-              <input type="hidden" value="15" name="game_type_id">
               <div class="row">
                 <div class="col-lg-6 col-12">
                   <div class="form-group mb-0">
                     <label for="project_name">What would you like to name your project?</label>
                     <input id="project_name" type="text" class="form-control input-lg" name="name" placeholder="Enter the name of your new project" value="" maxlength="50">
-                  </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                  <div class="form-group mb-0 mt-4 mt-lg-0">
-                    <label for="website_url" class="d-flex justify-content-between align-items-center">
-                      Enter the url of the existing website if you have one <i data-toggle="tooltip" title="" class="fa fa-question-circle" data-original-title="Leave this field blank if you do not have one."></i>
-                    </label>
-                    <input id="website_url" type="text" class="form-control input-lg" name="website_url" placeholder="Enter the url of your website associated to this project" value="">
                   </div>
                 </div>
               </div>
