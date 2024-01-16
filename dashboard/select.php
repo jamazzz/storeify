@@ -29,9 +29,9 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
 $projects = "SELECT websiteid FROM members WHERE memberid = '" . $_SESSION['userid'] . "'";
-// $result = mysqli_query($connect, $projects);
-// $total = mysqli_num_rows($result);
-$total = 0;
+$result = mysqli_query($connect, $projects);
+$total = mysqli_num_rows($result);
+// $total = 0;
 if ($total == 0) {
     mysqli_close($connect);
     header('Location: /storeify/dashboard/new.php');

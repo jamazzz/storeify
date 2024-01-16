@@ -1,15 +1,28 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
-
 $newweb = "INSERT INTO websites (name, owner) VALUES ('" . $_POST['project_name'] . "', '" . $_SESSION['userid'] . "')";
 $resultadoweb = mysqli_query($connect, $newweb);
-$websiteId = mysqli_insert_id($conn);
-$addmember = "INSERT INTO members(memberid, websiteid, added_date) VALUES ('" . $_SESSION['userid'] . "','" . $websiteId . "', NOW())";
-$resultadomember = mysqli_query($connect, $addmember);
+$websiteId = mysqli_insert_id($connect);
 
-if ($resultadomember && $websiteId) {
+$websiteExists = "SELECT COUNT(*) as count FROM websites WHERE name = '" . $_POST['project_name'] . "'";
+$result = mysqli_query($connection, $websiteExists);
+$row = mysqli_fetch_assoc($result);
+$count = $row['count'];
+
+if ($count == 0) {
+  if ($websiteId) {
+    $addmember = "INSERT INTO members(memberid, websiteid, added_date) VALUES ('" . $_SESSION['userid'] . "','" . $websiteId . "', NOW())";
+    $resultadomember = mysqli_query($connect, $addmember);
+  }
+  if ($resultadomember) {
+    mysqli_close($connect);
+    header('Location: /storeify/dashboard/dashboard.php');
+    exit();
+  }
+}
+else {
   mysqli_close($connect);
-  header('Location: /storeify/access/access.php');
+  header('Location: /storeify/dashboard/pages/samples/error-404.html');
   exit();
 }
