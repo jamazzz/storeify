@@ -6,11 +6,11 @@ $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
 
 $websiteExists = "SELECT COUNT(*) as count FROM websites WHERE name = '" . $_POST['project_name'] . "'";
-$result = mysqli_query($connection, $websiteExists);
+$result = mysqli_query($connect, $websiteExists);
 $row = mysqli_fetch_assoc($result);
 $count = $row['count'];
 
-if ($count == 0) {
+if ($count != 0) {
   if ($websiteId) {
     $addmember = "INSERT INTO members(memberid, websiteid, added_date) VALUES ('" . $_SESSION['userid'] . "','" . $websiteId . "', NOW())";
     $resultadomember = mysqli_query($connect, $addmember);
