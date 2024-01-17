@@ -15,10 +15,7 @@ $resultadoid = mysqli_query($connect, $idquery);
 if ($resultadoid) {
     $row = mysqli_fetch_assoc($resultadoid);
     $_SESSION['userid'] = $row['id'];
-} else {
-    $_SESSION['userid'] = null;
 }
-
 
 if ($resultadopass) {
     $row = mysqli_fetch_assoc($resultadopass);

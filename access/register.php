@@ -1,6 +1,6 @@
 <?php
-session_start();
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+session_start();
 // Username
 
 function genUser($connection, $fname, $lname, $email)

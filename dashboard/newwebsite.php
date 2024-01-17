@@ -1,6 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-session_start();
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+
 $newweb = "INSERT INTO websites (name, owner) VALUES ('" . $_POST['project_name'] . "', '" . $_SESSION['userid'] . "')";
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
