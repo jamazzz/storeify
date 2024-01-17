@@ -658,10 +658,8 @@ pre code {
 }
 
 .row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   margin-right: -15px;
   margin-left: -15px;
 }
