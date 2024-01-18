@@ -15,9 +15,6 @@
             <div class="col-12 col-md-6 my-2">
                 <h1>Your Projects</h1>
             </div>
-            <!-- <div class="col-12 col-md-6 text-md-right my-2">
-                <a href="pages/samples/error-404.html" class="btn btn-primary" style="margin: 10px;">Create Project</a>
-            </div> -->
         </div>
     </header>
 
@@ -27,19 +24,19 @@
 
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-// include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
-$projects = "SELECT websiteid FROM members WHERE memberid = '" . 1 . "'";
-// $projects = "SELECT websiteid FROM members WHERE memberid = '" . $_SESSION['userid'] . "'";
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+$projects = "SELECT websiteid FROM members WHERE memberid = '" . $_SESSION['userid'] . "'";
 $result = mysqli_query($connect, $projects);
 $total = mysqli_num_rows($result);
-$total = 10;
+
+$projeto = "SELECT ";
 
 if ($total == 0) {
     mysqli_close($connect);
     header('Location: /storeify/dashboard/new.php');
     exit();
 }
-echo '<div class="row" style="margin-left: 35px;">';
+echo '<div class="row2" style="margin-left: 35px;">';
 for ($i = 0; $i < $total; $i++) {
     echo '
     <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
@@ -62,7 +59,7 @@ for ($i = 0; $i < $total; $i++) {
     </div>';
 }
 echo ' <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
-        <a class="passive-link" href="pages/samples/error-404.html">
+        <a class="passive-link" href="new.php">
             <div class="card h-100" style="border: 1.5px dashed #d9d9d9 ;">
             <p class="mb-2">‎</p>
             <p class="mb-2">‎</p>
