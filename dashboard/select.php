@@ -38,25 +38,35 @@ if ($total == 0) {
 }
 echo '<div class="row2" style="margin-left: 35px;">';
 for ($i = 0; $i < $total; $i++) {
-    echo '
+    $row = mysqli_fetch_assoc($result);
+    $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "'";
+    $result2 = mysqli_query($connect, $projectsinfo);
+    while ($row2 = mysqli_fetch_assoc($result2)) {
+        echo '
     <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
         <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
             <div class="card-header">
                 <div class="float-left">
-                    <i class="fa-solid fa-cart-shopping" style="padding-top: 17px;"></i> ‎ Shop Name
+                    <i class="fa-solid fa-cart-shopping" style="padding-top: 17px;"></i> ‎ ' . $row2['name'] . '
                 </div>
                 <div class="float-right">
                     <a href="pages/samples/error-404.html" class="btn btn-danger"><i class="fa fa-times"></i></a>
                 </div>
             </div>
             <div class="card-body">
-                <p class="mb-2">Project Package</p>
+                <p class="mb-2">' . $row2['package_id'] . '</p>
                 <p class="mb-0"><a href="pages/samples/error-404.html" target="_blank">View webstore</a></p>
                 <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Logged in</a>
-                <a href="pages/samples/error-404.html" class="btn text-secondary mt-4">Transfer</a>
+                ';
+        if ($row2['owner'] == $_SESSION['userid']) {
+            echo '
+                <a href="pages/samples/error-404.html" class="btn text-secondary mt-4">Transfer</a>';
+        }
+        echo '
             </div>
         </div>
     </div>';
+    }
 }
 echo ' <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
         <a class="passive-link" href="new.php">

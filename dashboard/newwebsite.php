@@ -21,8 +21,7 @@ if ($count != 0) {
     header('Location: /storeify/dashboard/dashboard.php');
     exit();
   }
-}
-else {
+} else {
   mysqli_close($connect);
   header('Location: /storeify/dashboard/pages/samples/error-404.html');
   exit();

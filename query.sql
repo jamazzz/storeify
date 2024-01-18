@@ -92,6 +92,7 @@ CREATE TABLE
         id INT PRIMARY KEY AUTO_INCREMENT,
         memberid INT NOT NULL,
         websiteid INT NOT NULL,
+        login BOOLEAN NOT NULL, --wip
         added_date DATETIME NOT NULL,
         deleted BOOLEAN DEFAULT FALSE,
         deleted_date DATETIME
