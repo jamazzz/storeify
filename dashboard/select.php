@@ -18,6 +18,51 @@
         </div>
     </header>
 
+    <style>
+        #myDiv {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            padding: 20px;
+        }
+    </style>
+
+    <div id="myDiv" class="col-6 col-md-6 col-lg-6 col-xl-6 mb-6" style="display: none;">
+        <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
+            <div class="card-header">
+                <div class="float-left">
+                    <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Delete Project
+                </div>
+                <div class="float-right">
+                    <a onclick="toggleVisibility()" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="mb-0">Are you sure you want to delete?</p>
+                <div style="margin-top: 2rem; position: relative; left: 550px;">
+                    <form action="delete.php" method="post">
+                        <button type="button" class="btn text">No</button>
+                        <button type="submit" class="btn btn-danger text-primary">Yes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleVisibility() {
+            var myDiv = document.getElementById("myDiv");
+            if (myDiv.style.display === "none") {
+                myDiv.style.display = "block";
+            } else {
+                myDiv.style.display = "none";
+            }
+        }
+    </script>
+
+
     </body>
 
 </html>
@@ -50,7 +95,7 @@ for ($i = 0; $i < $total; $i++) {
                     <i class="fa-solid fa-cart-shopping" style="padding-top: 17px;"></i> ‎ ' . $row2['name'] . '
                 </div>
                 <div class="float-right">
-                    <a href="pages/samples/error-404.html" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                    <a onclick="toggleVisibility()" value="' . $row['websiteid'] . '"  class="btn btn-danger"><i class="fa fa-times"></i></a>
                 </div>
             </div>
             <div class="card-body">

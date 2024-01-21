@@ -112,7 +112,7 @@
           </div>
           <p>
             <i class="ri-mail-line"></i>
-            <input type="text" name="email" placeholder="Email Adress" required autocomplete="off" />
+            <input type="email" name="email" placeholder="Email Adress" required autocomplete="off" />
           </p>
           <p>
             <i class="ri-lock-line"></i>
