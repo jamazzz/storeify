@@ -36,15 +36,13 @@
                 <div class="float-left">
                     <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Delete Project
                 </div>
-                <div class="float-right">
-                    <a onclick="toggleVisibility()" class="btn btn-danger"><i class="fa fa-times"></i></a>
-                </div>
             </div>
             <div class="card-body">
                 <p class="mb-0">Are you sure you want to delete?</p>
                 <div style="margin-top: 2rem; position: relative; left: 550px;">
                     <form action="delete.php" method="post">
-                        <button type="button" class="btn text">No</button>
+                        <input type="text" name="id" value="" style="display: none;">
+                        <button onclick="toggleVisibility(this)" type="button" class="btn text">No</button>
                         <button type="submit" class="btn btn-danger text-primary">Yes</button>
                     </form>
                 </div>
@@ -52,7 +50,10 @@
         </div>
     </div>
     <script>
-        function toggleVisibility() {
+        function toggleVisibility(clickedElement) {
+            var websiteId = clickedElement.getAttribute('value');
+            document.getElementsByName('id')[0].value = websiteId;
+
             var myDiv = document.getElementById("myDiv");
             if (myDiv.style.display === "none") {
                 myDiv.style.display = "block";
@@ -61,6 +62,7 @@
             }
         }
     </script>
+
 
 
     </body>
@@ -84,7 +86,7 @@ if ($total == 0) {
 echo '<div class="row2" style="margin-left: 35px;">';
 for ($i = 0; $i < $total; $i++) {
     $row = mysqli_fetch_assoc($result);
-    $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "'";
+    $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "' AND deleted = 0";
     $result2 = mysqli_query($connect, $projectsinfo);
     while ($row2 = mysqli_fetch_assoc($result2)) {
         echo '
@@ -95,7 +97,7 @@ for ($i = 0; $i < $total; $i++) {
                     <i class="fa-solid fa-cart-shopping" style="padding-top: 17px;"></i> ‎ ' . $row2['name'] . '
                 </div>
                 <div class="float-right">
-                    <a onclick="toggleVisibility()" value="' . $row['websiteid'] . '"  class="btn btn-danger"><i class="fa fa-times"></i></a>
+                    <a onclick="toggleVisibility(this)" id="webid" value="' . $row['websiteid'] . '"  class="btn btn-danger"><i class="fa fa-times"></i></a>
                 </div>
             </div>
             <div class="card-body">
