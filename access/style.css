@@ -141,13 +141,6 @@ form.actions p {
   font-size: 14px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-top: 30px;
-}
-
 form > p {
   position: relative;
   height: 46px;

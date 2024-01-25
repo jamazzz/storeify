@@ -19,6 +19,14 @@
       window.location.href = "access.php";
     }
   </script>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+  </style>
   <div id="page" class="site">
     <div class="container">
       <div class="theform">
@@ -67,6 +75,17 @@
                 }
               }
             </script>
+            <nav>
+              <ul>
+                <a href="forgot.php" class="t-signin" style="color: var(--primary); text-decoration: hidden; font-size: 14px;">Forgot Password ?</a>
+              </ul>
+            </nav>
+
+            <style>
+              .t-signin:hover {
+                text-decoration: underline;
+              }
+            </style>
             <p class="invisible">
               <i class="ri-user-3-line"></i>
               <input type="text" placeholder="EG" />
