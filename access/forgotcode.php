@@ -19,7 +19,7 @@ $valid = mysqli_query($connect, $emailValid);
 $row = mysqli_fetch_assoc($valid);
 $count = $row['count'];
 if ($count != 1 && !$_SESSION['email']) {
-  $_SESSION["errormsg"] = "Email invalido";
+  $_SESSION["errormsg"] = $_SESSION['recoveremail']." não está no sistema.";
   mysqli_close($connect);
   header('Location: /storeify/access/forgot.php');
   exit();

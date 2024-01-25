@@ -138,6 +138,15 @@
                   <i class="ri-arrow-right-line"></i>
                 </label>
               </div>
+            </form>
+            <form action="forgotcode.php" method="post">
+              <div class="actions">
+                <label>
+                  <input type="text" id="recoveremail2" name="recoveremail2" style="display: none;">
+                  <input type="submit" value="Resend">
+                  <i class="ri-arrow-right-line"></i>
+                </label>
+              </div>
               <?php
               if (isset($_SESSION["errormsg"])) {
                 echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
@@ -149,15 +158,6 @@
               <?php
               }
               ?>
-            </form>
-            <form action="forgotcode.php" method="post">
-              <div class="actions">
-                <label>
-                  <input type="text" id="recoveremail2" name="recoveremail2" style="display: none;">
-                  <input type="submit" value="Resend">
-                  <i class="ri-arrow-right-line"></i>
-                </label>
-              </div>
             </form>
           <?php
         } else if (isset($_SESSION['email']) && isset($_SESSION['verify'])) { ?>

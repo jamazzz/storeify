@@ -3,6 +3,13 @@ include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
 // Username
 
+function redirect($connection)
+{
+    mysqli_close($connection);
+    header('Location:/storeify/access/access.php');
+    exit();
+}
+
 function genUser($connection, $fname, $lname, $email)
 {
     $uniqueUsernameFound = false;
@@ -39,91 +46,86 @@ function genUser($connection, $fname, $lname, $email)
     return $username;
 }
 
-// Name Validation
-
 function isValidName($name, $name2, $connection)
 {
+    if (!isset($name) && !empty($name)) {
+        $_SESSION["errormsg"] = "Introduza um Nome próprio.";
+        redirect($connection);
+    }
+
+    if (!isset($name2) && !empty($name2)) {
+        $_SESSION["errormsg"] = "Introduza um Apelido.";
+        redirect($connection);
+    }
+
     $namePattern = '/^[A-ZÀ-ÖØ-öø-ÿ][a-zA-ZÀ-ÖØ-öø-ÿ]*$/u';
     if (!(preg_match($namePattern, $name) && !preg_match('/\d/', $name) && !preg_match('/\s/', $name))) {
         $_SESSION["errormsg"] = $name . " é um nome inválido.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     if (!(preg_match($namePattern, $name2) && !preg_match('/\d/', $name2) && !preg_match('/\s/', $name2))) {
         $_SESSION["errormsg"] = $name2 . " é um nome inválido.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     return true;
 }
 
-function validateEmail($email, $connection)
+function isEmailOccupied($email, $connection)
 {
+    if (!isset($email) && !empty($email)) {
+        $_SESSION["errormsg"] = "Introduza um email.";
+        redirect($connection);
+    }
+
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
         $_SESSION["errormsg"] = $email . " é um email inválido.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
-    } else {
-        return true;
+        redirect($connection);
     }
-}
 
-function isEmailOccupied($email, $connection)
-{
     $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $email . "'";
     $result = mysqli_query($connection, $emailocupado);
     $row = mysqli_fetch_assoc($result);
     $count = $row['count'];
     if ($count != 0) {
         $_SESSION["errormsg"] = $email . " já está registado.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
     return true;
 }
 
 function validatePassword($password2, $password3, $connection)
 {
+    if (!isset($password2) && !empty($password2) && !isset($password3) && !empty($password3)) {
+        $_SESSION["errormsg"] = "Introduza uma palavra-passe.";
+        redirect($connection);
+    }
+
     if ($password2 !== $password3) {
         $_SESSION["errormsg"] = "A senha não corresponde.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     if (strlen($password2) < 6) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 6 caracteres.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 dígito.";
-        mysqli_close($connection);
-        header('Location:/storeify/access/access.php');
-        exit();
+        redirect($connection);
     }
 
     return true;
@@ -131,8 +133,6 @@ function validatePassword($password2, $password3, $connection)
 
 if (
     isValidName($_POST['fname'], $_POST['lname'], $connect) == 1
-    &&
-    validateEmail($_POST['email'], $connect) == 1
     &&
     isEmailOccupied($_POST['email'], $connect) == 1
     &&

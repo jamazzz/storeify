@@ -2,6 +2,13 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
 
+function redirect($connection)
+{
+    mysqli_close($connection);
+    header('Location:/storeify/access/access.php');
+    exit();
+}
+
 $emailoruser = $_POST['emailoruser'];
 $password = $_POST['password'];
 
@@ -11,6 +18,16 @@ $idquery = "SELECT id FROM users WHERE username = '$emailoruser' OR email = '$em
 $resultadopass = mysqli_query($connect, $userpassQuery);
 
 $resultadoid = mysqli_query($connect, $idquery);
+
+if (!isset($emailoruser) && !empty($emailoruser)) {
+    $_SESSION["errormsg"] = "Introduza o email.";
+    redirect($connect);
+}
+
+if (!isset($password) && !empty($password)) {
+    $_SESSION["errormsg"] = "Introduza a palavra-passe.";
+    redirect($connect);
+}
 
 if ($resultadoid) {
     $row = mysqli_fetch_assoc($resultadoid);
@@ -24,9 +41,7 @@ if ($resultadopass) {
         exit();
     } else {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";
-        mysqli_close($connect);
-        header('Location: /storeify/access/access.php');
-        exit();
+        redirect($connect);
     }
 } else {
     echo "Error: " . mysqli_error($connect);
