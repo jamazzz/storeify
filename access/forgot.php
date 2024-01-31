@@ -44,6 +44,18 @@
       gap: 30px;
       margin-top: 30px;
     }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
   </style>
 </head>
 
@@ -114,22 +126,25 @@
             <form class="form1" action="verify.php" method="post">
               <p>
               <div class="square" id="square1">
-                <input type="text" name="input1" maxlength="1" oninput="connectInputs('square1', 'square2')" onkeydown="handleBackspace('square1', 'square2', event)" />
+                <input type="number" name="input1" oninput="connectInputs('square1', 'square2')" onkeydown="handleBackspace('square1', 'square2', event)" />
               </div>
               <div class="square" id="square2">
-                <input type="text" name="input2" maxlength="1" oninput="connectInputs('square2', 'square3')" onkeydown="handleBackspace('square2', 'square1', event)" />
+                <input type="number" name="input2" oninput="connectInputs('square2', 'square3')" onkeydown="handleBackspace('square2', 'square1', event)" />
               </div>
               <div class="square" id="square3">
-                <input type="text" name="input3" maxlength="1" oninput="connectInputs('square3', 'square4')" onkeydown="handleBackspace('square3', 'square2', event)" />
+                <input type="number" name="input3" oninput="connectInputs('square3', 'square4')" onkeydown="handleBackspace('square3', 'square2', event)" />
               </div>
               <div class="square" id="square4">
-                <input type="text" name="input4" maxlength="1" oninput="connectInputs('square4', 'square5')" onkeydown="handleBackspace('square4', 'square3', event)" />
+                <input type="number" name="input4" oninput="connectInputs('square4', 'square5')" onkeydown="handleBackspace('square4', 'square3', event)" />
               </div>
               <div class="square" id="square5">
-                <input type="text" name="input5" maxlength="1" oninput="connectInputs('square5', 'square6')" onkeydown="handleBackspace('square5', 'square4', event)" />
+                <input type="number" name="input5" oninput="connectInputs('square5', 'square6')" onkeydown="handleBackspace('square5', 'square4', event)" />
               </div>
               <div class="square" id="square6">
-                <input type="text" name="input6" maxlength="1" onkeydown="handleBackspace('square6', 'square5', event)" />
+                <input type="number" name="input6" oninput="connectInputs('square6', 'square7')" onkeydown="handleBackspace('square6', 'square5', event)" />
+              </div>
+              <div class="square2" id="square7">
+                <input type="number" name="input7" onkeydown="handleBackspace('square7', 'square6', event)" style="color: transparent"/>
               </div>
               </p>
               <div class="actions">
@@ -319,6 +334,32 @@
       handleArrowKeys(currentSquareId, event);
     }
   });
+
+  document.addEventListener("paste", function(event) {
+    const focusedElement = document.activeElement;
+
+    if (
+      focusedElement.tagName === "INPUT" &&
+      focusedElement.parentElement.classList.contains("square")
+    ) {
+      const currentSquareId = focusedElement.parentElement.id;
+      const pasteData = (event.clipboardData || window.clipboardData).getData("text");
+
+      for (let i = 0; i < pasteData.length; i++) {
+        const nextSquareId = "square" + (parseInt(currentSquareId.substring(6)) + i);
+        const nextInput = document
+          .getElementById(nextSquareId)
+          .querySelector("input");
+
+        if (nextInput) {
+          nextInput.value = pasteData[i];
+        }
+      }
+
+      event.preventDefault();
+    }
+  });
 </script>
+
 
 </html>
