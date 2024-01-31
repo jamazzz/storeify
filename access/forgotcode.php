@@ -27,7 +27,7 @@ if ($count != 1 && !$_SESSION['email']) {
   $_SESSION['email'] = true;
 }
 if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoveremail']]) >= 60) {
-  $code = rand(0, 999999);
+  $code = rand(100000, 999999);
   $_SESSION['code'] = $code;
   try {
     $mail->isSMTP();
