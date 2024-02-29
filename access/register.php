@@ -1,15 +1,18 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
-// Username
 
-function redirect($connection)
+function redirect($connection, $fname, $lname)
 {
+    $_SESSION['oldfname'] = $fname;
+    $_SESSION['oldlname'] = $lname;
+    $_SESSION['oldemail'] = $_POST['email'];
     mysqli_close($connection);
     header('Location:/storeify/access/access.php');
     exit();
 }
 
+// Username
 function genUser($connection, $fname, $lname, $email)
 {
     $uniqueUsernameFound = false;
@@ -50,39 +53,39 @@ function isValidName($name, $name2, $connection)
 {
     if (!isset($name) && !empty($name)) {
         $_SESSION["errormsg"] = "Introduza um Nome próprio.";
-        redirect($connection);
+        redirect($connection, $name, $name2);
     }
 
     if (!isset($name2) && !empty($name2)) {
         $_SESSION["errormsg"] = "Introduza um Apelido.";
-        redirect($connection);
+        redirect($connection, $name, $name2);
     }
 
     $namePattern = '/^[A-ZÀ-ÖØ-öø-ÿ][a-zA-ZÀ-ÖØ-öø-ÿ]*$/u';
     if (!(preg_match($namePattern, $name) && !preg_match('/\d/', $name) && !preg_match('/\s/', $name))) {
         $_SESSION["errormsg"] = $name . " é um nome inválido.";
-        redirect($connection);
+        redirect($connection, $name, $name2);
     }
 
     if (!(preg_match($namePattern, $name2) && !preg_match('/\d/', $name2) && !preg_match('/\s/', $name2))) {
         $_SESSION["errormsg"] = $name2 . " é um nome inválido.";
-        redirect($connection);
+        redirect($connection, $name, $name2);
     }
 
     return true;
 }
 
-function isEmailOccupied($email, $connection)
+function isEmailOccupied($email, $connection, $fname, $lname)
 {
     if (!isset($email) && !empty($email)) {
         $_SESSION["errormsg"] = "Introduza um email.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
         $_SESSION["errormsg"] = $email . " é um email inválido.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $email . "'";
@@ -91,41 +94,41 @@ function isEmailOccupied($email, $connection)
     $count = $row['count'];
     if ($count != 0) {
         $_SESSION["errormsg"] = $email . " já está registado.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
     return true;
 }
 
-function validatePassword($password2, $password3, $connection)
+function validatePassword($password2, $password3, $connection, $fname, $lname)
 {
     if (!isset($password2) && !empty($password2) && !isset($password3) && !empty($password3)) {
         $_SESSION["errormsg"] = "Introduza uma palavra-passe.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     if ($password2 !== $password3) {
         $_SESSION["errormsg"] = "A senha não corresponde.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     if (strlen($password2) < 6) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 6 caracteres.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
         $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 dígito.";
-        redirect($connection);
+        redirect($connection, $fname, $lname);
     }
 
     return true;
@@ -134,9 +137,9 @@ function validatePassword($password2, $password3, $connection)
 if (
     isValidName($_POST['fname'], $_POST['lname'], $connect) == 1
     &&
-    isEmailOccupied($_POST['email'], $connect) == 1
+    isEmailOccupied($_POST['email'], $connect, $_POST['fname'], $_POST['lname']) == 1
     &&
-    validatePassword($_POST['password2'], $_POST['password3'], $connect) == 1
+    validatePassword($_POST['password2'], $_POST['password3'], $connect, $_POST['fname'], $_POST['lname']) == 1
 ) {
     $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
     $username = genUser($connect, $_POST['fname'], $_POST['lname'], $_POST['email']);

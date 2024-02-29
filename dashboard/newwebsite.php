@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
 
-$newweb = "INSERT INTO websites (name, owner) VALUES ('" . $_POST['project_name'] . "', '" . $_SESSION['userid'] . "')";
+$newweb = "INSERT INTO websites (name, owner,package_id) VALUES ('" . $_POST['project_name'] . "', '" . $_SESSION['userid'] . "', 1)";
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
 

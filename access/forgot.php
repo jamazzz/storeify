@@ -55,6 +55,7 @@
     /* Firefox */
     input[type=number] {
       -moz-appearance: textfield;
+      appearance: textfield;
     }
   </style>
 </head>
@@ -144,7 +145,7 @@
                 <input type="number" name="input6" oninput="connectInputs('square6', 'square7')" onkeydown="handleBackspace('square6', 'square5', event)" />
               </div>
               <div class="square2" id="square7">
-                <input type="number" name="input7" onkeydown="handleBackspace('square7', 'square6', event)" style="color: transparent"/>
+                <input type="number" name="input7" onkeydown="handleBackspace('square7', 'square6', event)" style="color: transparent" />
               </div>
               </p>
               <div class="actions">

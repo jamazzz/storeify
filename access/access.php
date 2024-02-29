@@ -131,7 +131,7 @@
           </div>
           <p>
             <i class="ri-mail-line"></i>
-            <input type="email" name="email" placeholder="Email Adress" required autocomplete="off" />
+            <input type="email" id="email" placeholder="Email Adress" required autocomplete="off" />
           </p>
           <p>
             <i class="ri-lock-line"></i>
@@ -195,6 +195,16 @@
     echo '<script>';
     echo 'sessionStorage.setItem("signupOrSignin", "signup");';
     echo '</script>';
+  }
+  if (isset($_SESSION['oldfname']) || isset($_SESSION['oldlname']) || isset($_SESSION['oldemail'])) {
+    echo '<script>';
+    echo 'document.addEventListener("DOMContentLoaded", function() {';
+    echo 'document.getElementById("fname").value = "' . $_SESSION['oldfname'] . '";';
+    echo 'document.getElementById("lname").value = "' . $_SESSION['oldlname'] . '";';
+    echo 'document.getElementById("email").value = "' . $_SESSION['oldemail'] . '";';
+    echo '});';
+    echo '</script>';
+    echo ($_SESSION['oldemail']);
   }
   ?>
 

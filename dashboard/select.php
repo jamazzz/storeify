@@ -45,6 +45,10 @@
                         <button onclick="toggleVisibility(this)" type="button" class="btn text">No</button>
                         <button type="submit" class="btn btn-danger text-primary">Yes</button>
                     </form>
+                    <form id="send" action="sendinfo.php" method="post">
+                        <input type="text" name="id2" value="" style="display: none;">
+                        <button type="submit" style="display: none;"></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -60,6 +64,17 @@
             } else {
                 myDiv.style.display = "none";
             }
+        }
+
+        function submitForm(clickedElement) {
+            var websiteId = clickedElement.getAttribute('value');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'id';
+            hiddenInput.value = websiteId;
+            var form = document.getElementById('send');
+            form.appendChild(hiddenInput);
+            form.submit();
         }
     </script>
 
@@ -89,6 +104,9 @@ for ($i = 0; $i < $total; $i++) {
     $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "' AND deleted = 0";
     $result2 = mysqli_query($connect, $projectsinfo);
     while ($row2 = mysqli_fetch_assoc($result2)) {
+        $projectspack = "SELECT * FROM packages WHERE id = '" . $row2['package_id'] . "' AND deleted = 0";
+        $result3 = mysqli_query($connect, $projectspack);
+        $row3 = mysqli_fetch_assoc($result3);
         echo '
     <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
         <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
@@ -101,8 +119,8 @@ for ($i = 0; $i < $total; $i++) {
                 </div>
             </div>
             <div class="card-body">
-                <p class="mb-2">' . $row2['package_id'] . '</p>
-                <p class="mb-0"><a href="pages/samples/error-404.html" target="_blank">View webstore</a></p>
+                <p class="mb-2">' . $row3['name'] . '</p>
+                <p class="mb-0"><a value="' . $row['websiteid'] . '" onclick="submitForm(this)" target="_blank">View webstore</a></p>
                 <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Logged in</a>
                 ';
         if ($row2['owner'] == $_SESSION['userid']) {

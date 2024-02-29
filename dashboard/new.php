@@ -34,7 +34,7 @@
                 <div class="col-lg-6 col-12">
                   <div class="form-group mb-0">
                     <label for="project_name">What would you like to name your project?</label>
-                    <input id="project_name" type="text" class="form-control input-lg" name="project_name" placeholder="Enter the name of your new project" value="" maxlength="50">
+                    <input id="project_name" type="text" class="form-control input-lg" name="project_name" autocomplete="off" placeholder="Enter the name of your new project" value="" maxlength="50">
                   </div>
                 </div>
               </div>
