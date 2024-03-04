@@ -140,8 +140,8 @@
             $(this).empty();
             return;
           }
-          var html = '<b>' + $('<div>').text(value.city).html() + '</b>, ' + $('<div>').text(value.street).html() + ' st., bld. ' + $('<div>').text(value.building).html();
-          $(this).html(html);
+          var html = '<b>' + $('<div>').text(value.city).php() + '</b>, ' + $('<div>').text(value.street).php() + ' st., bld. ' + $('<div>').text(value.building).php();
+          $(this).php(html);
         }
       });
 

@@ -42,7 +42,7 @@
         <div class="signup">
           <nav>
             <ul>
-              <li><a href="/storeify/index.php"><i class="ri-arrow-left-line"></i></a></li>
+              <li><a href="/storeify/dashlanding.php"><i class="ri-arrow-left-line"></i></a></li>
               <li>Don´t have an account ? <a class="t-signin">Sign Up</a></li>
             </ul>
           </nav>
@@ -114,7 +114,7 @@
       <div class="signin">
         <nav>
           <ul>
-            <li><a href="/storeify/index.php"><i class="ri-arrow-left-line"></i></a></li>
+            <li><a href="/storeify/dashlanding.php"><i class="ri-arrow-left-line"></i></a></li>
             <li>Alredy member ? <a class="t-signup">Sign In</a></li>
           </ul>
         </nav>
@@ -232,7 +232,7 @@
       });
     });
   </script>
-  <script src="../assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

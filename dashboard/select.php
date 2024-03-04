@@ -125,7 +125,7 @@ for ($i = 0; $i < $total; $i++) {
                 ';
         if ($row2['owner'] == $_SESSION['userid']) {
             echo '
-                <a href="pages/samples/error-404.html" class="btn text-secondary mt-4">Transfer</a>';
+                <a href="pages/samples/error-404.php" class="btn text-secondary mt-4">Transfer</a>';
         }
         echo '
             </div>

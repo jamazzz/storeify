@@ -11,6 +11,6 @@ if ($resultdelete) {
   exit();
 } else {
   mysqli_close($connect);
-  header('Location: /storeify/dashboard/pages/samples/error-404.html');
+  header('Location: /storeify/dashboard/pages/samples/error-404.php');
   exit();
 }

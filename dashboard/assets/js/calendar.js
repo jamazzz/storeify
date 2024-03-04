@@ -1,3 +1,4 @@
+
 (function($) {
   'use strict';
   $(function() {
@@ -6,7 +7,11 @@
         header: {
           left: 'prev,next today',
           center: 'title',
-          right: 'month,basicWeek,basicDay'
+          right: 'month,basicWeek,basicDay',
+        },
+        buttonText: {
+          prev : '<',
+          next : '>'
         },
         defaultDate: '2017-07-12',
         navLinks: true, // can click day/week names to navigate views

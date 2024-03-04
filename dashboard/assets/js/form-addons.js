@@ -77,7 +77,7 @@
 
       $('.stars-example-fontawesome-o .current-rating')
         .find('span')
-        .html(currentRating);
+        .php(currentRating);
 
       $('.stars-example-fontawesome-o .clear-rating').on('click', function(event) {
         event.preventDefault();
@@ -101,7 +101,7 @@
             $('.stars-example-fontawesome-o .your-rating')
               .removeClass('hidden')
               .find('span')
-              .html(value);
+              .php(value);
           }
         },
         onClear: function(value, text) {

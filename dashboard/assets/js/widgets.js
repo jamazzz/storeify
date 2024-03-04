@@ -4,6 +4,12 @@
     return this.addBack.apply(this, arguments);
   }
   $(function() {
+
+    //check all boxes in order status 
+    $("#check-all").click(function () {
+      $(".form-check-input").prop('checked', $(this).prop('checked'));
+    });
+
     var isrtl = $("body").hasClass("rtl");
     if ($('.owl-carousel').length) {
       $('.owl-carousel').owlCarousel({

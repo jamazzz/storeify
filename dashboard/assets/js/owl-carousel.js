@@ -131,4 +131,8 @@
     });
   }
 
+  $(document).on('click', '.navbar-toggler', function(){
+    window.dispatchEvent(new Event('resize'));
+  });
+
 })(jQuery);
