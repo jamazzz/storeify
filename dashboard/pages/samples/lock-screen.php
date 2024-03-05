@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/modern-vertical/style.css">
+    <link rel="stylesheet" href="../../../assets/css/modern-vertical/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -25,7 +25,7 @@
           <div class="row w-100">
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-transparent text-start p-5 text-center">
-                <img src="../../assets/images/faces/face13.jpg" class="lock-profile-img" alt="img">
+                <img src="../../../assets/images/faces/face13.jpg" class="lock-profile-img" alt="img">
                 <form class="pt-5">
                   <div class="form-group">
                     <label for="examplePassword1">Password to unlock</label>
@@ -48,16 +48,16 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../../assets/js/off-canvas.js"></script>
+    <script src="../../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../../assets/js/misc.js"></script>
+    <script src="../../../assets/js/settings.js"></script>
+    <script src="../../../assets/js/todolist.js"></script>
     <!-- endinject -->
   </body>
 </html>

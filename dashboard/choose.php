@@ -34,7 +34,7 @@
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
                     <div class="w-100 text-center">
                       <div class="select-icon">
-                        <img src="assets/images/choose/example.png" width="80" height="80">
+                        <img src="../assets/images/choose/example.png" width="80" height="80">
                         <br>
                       </div>
                       <span>I would like to</span>
@@ -48,7 +48,7 @@
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
                     <div class="w-100 text-center">
                       <div class="select-icon">
-                        <img src="assets/images/choose/example.png" width="80" height="80">
+                        <img src="../assets/images/choose/example.png" width="80" height="80">
                         <br>
                       </div>
                       <span>I would like to</span>
@@ -62,7 +62,7 @@
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
                     <div class="w-100 text-center">
                       <div class="select-icon">
-                        <img src="assets/images/choose/example.png" width="80" height="80">
+                        <img src="../assets/images/choose/example.png" width="80" height="80">
                         <br>
                       </div>
                       <span>I would like to</span>
@@ -76,7 +76,7 @@
                   <div class="selectGame select-game-submit bg-gray-200 d-flex align-items-center flex-wrap border p-3 h-100" style="margin-top:30px">
                     <div class="w-100 text-center">
                       <div class="select-icon">
-                        <img src="assets/images/choose/example.png" width="80" height="80">
+                        <img src="../assets/images/choose/example.png" width="80" height="80">
                         <br>
                       </div>
                       <span>I would like to</span>

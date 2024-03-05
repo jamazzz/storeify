@@ -6,33 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="../../assets/vendors/dragula/dragula.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/dragula/dragula.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/modern-vertical/style.css">
+    <link rel="stylesheet" href="../../../assets/css/modern-vertical/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.php -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="../../dashlanding.php"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="../../dashlanding.php"><img src="../../../assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../../assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle " src="../../../assets/images/faces/face15.jpg" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -415,7 +415,7 @@
         <!-- partial:../../partials/_navbar.php -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../../assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -485,7 +485,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
@@ -495,7 +495,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
@@ -505,7 +505,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
@@ -566,7 +566,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.jpg" alt="">
+                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face15.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
@@ -630,7 +630,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face1.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face1.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Rebecca young</h6>
                                   <p class="mb-0 text-muted"> Software engineer </p>
@@ -641,7 +641,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face2.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face2.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Jacob march</h6>
                                   <p class="mb-0 text-muted"> Designer </p>
@@ -652,7 +652,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face3.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face3.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Catherine</h6>
                                   <p class="mb-0 text-muted"> Tester </p>
@@ -663,7 +663,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face4.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face4.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Thomas Cook</h6>
                                   <p class="mb-0 text-muted"> Developer </p>
@@ -679,7 +679,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face5.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face5.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Keto Philip</h6>
                                   <p class="mb-0 text-muted"> Business Analyst </p>
@@ -690,7 +690,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face6.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face6.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Jacob Stephen</h6>
                                   <p class="mb-0 text-muted"> Tester </p>
@@ -701,7 +701,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face7.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face7.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">March Creg</h6>
                                   <p class="mb-0 text-muted"> Developer </p>
@@ -712,7 +712,7 @@
                           <div class="card rounded mb-2">
                             <div class="card-body p-3 border rounded">
                               <div class="media">
-                                <img src="../../assets/images/faces/face8.jpg" alt="image" class="img-sm me-3 rounded-circle">
+                                <img src="../../../assets/images/faces/face8.jpg" alt="image" class="img-sm me-3 rounded-circle">
                                 <div class="media-body">
                                   <h6 class="mb-1">Peter Beckham</h6>
                                   <p class="mb-0 text-muted"> Designer </p>
@@ -960,20 +960,20 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="../../assets/vendors/dragula/dragula.min.js"></script>
+    <script src="../../../assets/vendors/dragula/dragula.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../../assets/js/off-canvas.js"></script>
+    <script src="../../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../../assets/js/misc.js"></script>
+    <script src="../../../assets/js/settings.js"></script>
+    <script src="../../../assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="../../assets/js/dragula.js"></script>
+    <script src="../../../assets/js/dragula.js"></script>
     <!-- End custom js for this page -->
   </body>
 </html>

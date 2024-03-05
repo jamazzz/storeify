@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/modern-vertical/style.css">
+    <link rel="stylesheet" href="../../../assets/css/modern-vertical/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.php -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="../../dashlanding.php"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="../../dashlanding.php"><img src="../../../assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../../assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle " src="../../../assets/images/faces/face15.jpg" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -414,7 +414,7 @@
         <!-- partial:../../partials/_navbar.php -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="../../dashlanding.php"><img src="../../../assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -484,7 +484,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
@@ -494,7 +494,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
@@ -504,7 +504,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <img src="../../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+                      <img src="../../../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
@@ -565,7 +565,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.jpg" alt="">
+                    <img class="img-xs rounded-circle" src="../../../assets/images/faces/face15.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
@@ -636,7 +636,7 @@
                     <div class="tab-content">
                       <div class="tab-pane fade show active" id="home-1" role="tabpanel" aria-labelledby="home-tab">
                         <div class="media d-block d-sm-flex">
-                          <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/13.jpg" alt="sample image">
+                          <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/13.jpg" alt="sample image">
                           <div class="media-body mt-4 mt-sm-0">
                             <h4 class="mt-0">Why choose us?</h4>
                             <p> Far curiosity incommode now led smallness allowance. Favour bed assure son things yet. She consisted consulted elsewhere happiness disposing household any old the. Widow downs you new shade drift hopes small. So otherwise commanded sweetness we improving. Instantly by daughters resembled unwilling principle so middleton. </p>
@@ -645,7 +645,7 @@
                       </div>
                       <div class="tab-pane fade" id="profile-1" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="media d-block d-sm-flex">
-                          <img class="me-3 w-25 rounded" src="../../assets/images/faces/face12.jpg" alt="sample image">
+                          <img class="me-3 w-25 rounded" src="../../../assets/images/faces/face12.jpg" alt="sample image">
                           <div class="media-body mt-4 mt-sm-0">
                             <h4 class="mt-0">John Doe</h4>
                             <p> Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two unpleasing any add. Ashamed my company thought wishing colonel it prevent he in. Pretended residence are something far engrossed old off. </p>
@@ -693,13 +693,13 @@
                         <div class="tab-content tab-content-vertical">
                           <div class="tab-pane fade show active" id="home-2" role="tabpanel" aria-labelledby="home-tab">
                             <div class="text-center">
-                              <img class="me-3 w-25 mb-4" src="../../assets/images/samples/300X300/12.jpg" alt="sample image">
+                              <img class="me-3 w-25 mb-4" src="../../../assets/images/samples/300X300/12.jpg" alt="sample image">
                             </div>
                             <p> Inhabiting discretion the her dispatched decisively boisterous joy. So form were wish open is able of mile of. Waiting express if prevent it we an musical. Especially reasonable travelling </p>
                           </div>
                           <div class="tab-pane fade" id="profile-2" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="text-center">
-                              <img class="mb-3 w-25 rounded" src="../../assets/images/faces/face1.jpg" alt="sample image">
+                              <img class="mb-3 w-25 rounded" src="../../../assets/images/faces/face1.jpg" alt="sample image">
                               <h5 class="mt-0">Adam John</h5>
                               <p class="mb-0">UX specialist</p>
                               <p class="mb-0">Florida</p>
@@ -746,14 +746,14 @@
                             <h6 class="font-weight-normal">Profiles Of The Powerful Advertising Exec Steve Grasse</h6>
                             <h3 class="font-weight-normal">How To Write Better Advertising Copy</h3>
                             <div class="d-flex mt-4">
-                              <img src="../../assets/images/samples/300x300/3.jpg" class="w-25 h-100 rounded">
-                              <img src="../../assets/images/samples/300x300/4.jpg" class="w-25 h-100 ms-2 rounded">
+                              <img src="../../../assets/images/samples/300x300/3.jpg" class="w-25 h-100 rounded">
+                              <img src="../../../assets/images/samples/300x300/4.jpg" class="w-25 h-100 ms-2 rounded">
                             </div>
                             <p class="mt-4"> The key to victory is discipline, and that means a well made bed. You will practice until you can make your bed in your sleep. You don't know how to do any of those. Then throw her in the laundry room, which will hereafter be referred to as "the brig". </p>
                           </div>
                           <div class="tab-pane fade" id="profile-3" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="media">
-                              <img class="align-self-center me-3 w-25 rounded" src="../../assets/images/samples/300x300/15.jpg" alt="sample image">
+                              <img class="align-self-center me-3 w-25 rounded" src="../../../assets/images/samples/300x300/15.jpg" alt="sample image">
                               <div class="media-body">
                                 <p> And until then, I can never die? I'm a thing. Fry, you can't just sit here in the dark listening to classical music. Is today's hectic lifestyle making you tense and impatient? Is today's hectic lifestyle making you tense and impatient? </p>
                                 <p> Robot 1-X, save my friends! And Zoidberg! Aww, it's true. I've been hiding it for so long. Fry, we have a crate to deliver. Yes! In your face, Gandhi! Interesting. No, wait, the other thing: tedious. </p>
@@ -766,7 +766,7 @@
                               <div class="media-body">
                                 <h5 class="mt-0 mb-1">You've swallowed a planet!</h5> Did I mention we have comfy chairs? You hate me; you want to kill me! Well, go on! Kill me! KILL ME! I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself.
                               </div>
-                              <img class="ms-3 w-25" src="../../assets/images/samples/300x300/5.jpg" alt="sample image">
+                              <img class="ms-3 w-25" src="../../../assets/images/samples/300x300/5.jpg" alt="sample image">
                             </div>
                           </div>
                         </div>
@@ -794,7 +794,7 @@
                     <div class="tab-content" id="pills-tabContent">
                       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <div class="media d-block d-sm-flex">
-                          <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/12.jpg" alt="sample image">
+                          <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/12.jpg" alt="sample image">
                           <div class="media-body mt-4 mt-sm-0">
                             <h5 class="mt-0">I'm doing mental jumping jacks.</h5>
                             <p>Only you could make those words cute. Oh I beg to differ, I think we have a lot to discuss. After all, you are a client. I am not a killer. I feel like a jigsaw puzzle missing a piece. And I'm not even sure what the picture should be.</p>
@@ -803,7 +803,7 @@
                       </div>
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="media d-block d-sm-flex">
-                          <img class="me-3 w-25 rounded" src="../../assets/images/samples/300X300/10.jpg" alt="sample image">
+                          <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300X300/10.jpg" alt="sample image">
                           <div class="media-body mt-4 mt-sm-0">
                             <p>I'm thinking two circus clowns dancing. You? Finding a needle in a haystack isn't hard when every straw is computerized. Tell him time is of the essence. Somehow, I doubt that. You have a good heart, Dexter.</p>
                           </div>
@@ -811,7 +811,7 @@
                       </div>
                       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="media d-block d-sm-flex">
-                          <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/14.jpg" alt="sample image">
+                          <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/14.jpg" alt="sample image">
                           <div class="media-body mt-4 mt-sm-0">
                             <p> I'm really more an apartment person. This man is a knight in shining armor. Oh I beg to differ, I think we have a lot to discuss. After all, you are a client. You all right, Dexter? </p>
                             <p> I'm generally confused most of the time. Cops, another community I'm not part of. You're a killer. I catch killers. Hello, Dexter Morgan. </p>
@@ -849,7 +849,7 @@
                         <div class="tab-content tab-content-vertical" id="v-pills-tabContent">
                           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <div class="media d-block d-sm-flex">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/11.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/11.jpg" alt="sample image">
                               <div class="media-body mt-4 mt-sm-0">
                                 <h5 class="mt-0">I'm doing mental jumping jacks.</h5>
                                 <p> Only you could make those words cute. Oh I beg to differ, I think we have a lot to discuss. After all, you are a client. I am not a killer. </p>
@@ -858,7 +858,7 @@
                           </div>
                           <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <div class="media d-block d-sm-flex">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300X300/10.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300X300/10.jpg" alt="sample image">
                               <div class="media-body mt-4 mt-sm-0">
                                 <p>I'm thinking two circus clowns dancing. You? Finding a needle in a haystack isn't hard when every straw is computerized. Tell him time is of the essence. Somehow, I doubt that. You have a good heart, Dexter.</p>
                               </div>
@@ -866,7 +866,7 @@
                           </div>
                           <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                             <div class="media d-block d-sm-flex">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/14.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/14.jpg" alt="sample image">
                               <div class="media-body mt-4 mt-sm-0">
                                 <p> I'm really more an apartment person. This man is a knight in shining armor. Oh I beg to differ, I think we have a lot to discuss. After all, you are a client. You all right, Dexter? </p>
                                 <p> I'm generally confused most of the time. Cops, another community I'm not part of. You're a killer. I catch killers. Hello, Dexter Morgan. </p>
@@ -906,16 +906,16 @@
                         <div class="tab-content tab-content-custom-pill" id="pills-tabContent">
                           <div class="tab-pane fade show active" id="pills-health" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="d-flex mb-4">
-                              <img src="../../assets/images/samples/300x300/12.jpg" class="w-25 h-100 rounded" alt="sample image">
-                              <img src="../../assets/images/samples/300x300/1.jpg" class="w-25 h-100 ms-4 rounded" alt="sample image">
-                              <img src="../../assets/images/samples/300x300/2.jpg" class="w-25 h-100 ms-4 rounded" alt="sample image">
+                              <img src="../../../assets/images/samples/300x300/12.jpg" class="w-25 h-100 rounded" alt="sample image">
+                              <img src="../../../assets/images/samples/300x300/1.jpg" class="w-25 h-100 ms-4 rounded" alt="sample image">
+                              <img src="../../../assets/images/samples/300x300/2.jpg" class="w-25 h-100 ms-4 rounded" alt="sample image">
                             </div>
                             <p> I'm not the monster he wants me to be. So I'm neither man nor beast. I'm something new entirely. With my own set of rules. I'm Dexter. Boo. Only you could make those words cute. I'm thinking two circus clowns dancing. You? </p>
                             <p> Under normal circumstances, I'd take that as a compliment. Tell him time is of the essence. I'm really more an apartment person. Finding a needle in a haystack isn't hard when every straw is computerized. </p>
                           </div>
                           <div class="tab-pane fade" id="pills-career" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <div class="media">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300X300/10.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300X300/10.jpg" alt="sample image">
                               <div class="media-body">
                                 <p>I'm thinking two circus clowns dancing. You? Finding a needle in a haystack isn't hard when every straw is computerized. Tell him time is of the essence. Somehow, I doubt that. You have a good heart, Dexter.</p>
                               </div>
@@ -923,7 +923,7 @@
                           </div>
                           <div class="tab-pane fade" id="pills-music" role="tabpanel" aria-labelledby="pills-contact-tab">
                             <div class="media">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/14.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/14.jpg" alt="sample image">
                               <div class="media-body">
                                 <p> I'm really more an apartment person. This man is a knight in shining armor. Oh I beg to differ, I think we have a lot to discuss. After all, you are a client. You all right, Dexter? </p>
                                 <p> I'm generally confused most of the time. Cops, another community I'm not part of. You're a killer. I catch killers. Hello, Dexter Morgan. </p>
@@ -932,7 +932,7 @@
                           </div>
                           <div class="tab-pane fade" id="pills-vibes" role="tabpanel" aria-labelledby="pills-contact-tab">
                             <div class="media">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/15.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/15.jpg" alt="sample image">
                               <div class="media-body">
                                 <p> This man is a knight in shining armor. I feel like a jigsaw puzzle missing a piece. And I'm not even sure what the picture should be. Somehow, I doubt that. You have a good heart, Dexter. Keep your mind limber. </p>
                               </div>
@@ -940,7 +940,7 @@
                           </div>
                           <div class="tab-pane fade" id="pills-energy" role="tabpanel" aria-labelledby="pills-contact-tab">
                             <div class="media">
-                              <img class="me-3 w-25 rounded" src="../../assets/images/samples/300x300/11.jpg" alt="sample image">
+                              <img class="me-3 w-25 rounded" src="../../../assets/images/samples/300x300/11.jpg" alt="sample image">
                               <div class="media-body">
                                 <p> Finding a needle in a haystack isn't hard when every straw is computerized. You're a killer. I catch killers. I will not kill my sister. I will not kill my sister. I will not kill my sister. Rorschach would say you have a hard time relating to others. </p>
                               </div>
@@ -970,19 +970,19 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../../assets/js/off-canvas.js"></script>
+    <script src="../../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../../assets/js/misc.js"></script>
+    <script src="../../../assets/js/settings.js"></script>
+    <script src="../../../assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="../../assets/js/tabs.js"></script>
+    <script src="../../../assets/js/tabs.js"></script>
     <!-- End custom js for this page -->
   </body>
 </html>
