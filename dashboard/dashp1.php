@@ -26,6 +26,18 @@
 
 <body>
   <div class="container-scroller">
+    <?php
+    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+
+    $pinfoquery = "SELECT * FROM users  WHERE id = '" . $_SESSION['userid'] . "'";
+    $resultadou = mysqli_query($connect, $pinfoquery);
+    $pinfo = mysqli_fetch_assoc($resultadou);
+
+    $winfoquery = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
+    $resultadow = mysqli_query($connect, $winfoquery);
+    $winfo = mysqli_fetch_assoc($resultadow);
+    ?>
     <!-- partial:partials/_sidebar.php -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
@@ -308,8 +320,7 @@
               <li class="nav-item"> <a class="nav-link" href="./pages/samples/portfolio.php"> Portfolio </a></li>
               <li class="nav-item"> <a class="nav-link" href="./pages/samples/faq.php"> FAQ </a></li>
               <li class="nav-item"> <a class="nav-link" href="./pages/samples/faq-2.php"> FAQ 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/search-results.php"> Search Results </a>
-              </li>
+              <li class="nav-item"> <a class="nav-link" href="./pages/samples/search-results.php"> Search Results </a> </li>
               <li class="nav-item"> <a class="nav-link" href="./pages/samples/news-grid.php"> News grid </a></li>
               <li class="nav-item"> <a class="nav-link" href="./pages/samples/timeline.php"> Timeline </a></li>
             </ul>
@@ -494,14 +505,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                 <div class="navbar-profile">
-                  <img class="img-xs rounded-circle" src="../assets/images/faces/face15.jpg" alt="">
-                  <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                  <!-- <img class="img-xs rounded-circle" src="../assets/images/faces/face15.jpg" alt=""> -->
+                  <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $pinfo['username']; ?></p>
+                  <!-- <p class="mb-0 d-none d-sm-block navbar-profile-name" style="text-align:end;"><?php echo $pinfo['username'] . "<br>" . $winfo['name']; ?></p> -->
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                <h6 class="p-3 mb-0">Profile</h6>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
@@ -520,11 +530,16 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Log out</p>
+                    <form action="../index.php" id="logoutform">
+                      <p class="preview-subject mb-1" onclick="submitForm()">Log out</p>
+                      <script>
+                        function submitForm() {
+                          document.getElementById("logoutform").submit();
+                        }
+                      </script>
+                    </form>
                   </div>
                 </a>
-                <div class="dropdown-divider"></div>
-                <p class="p-3 mb-0 text-center">Advanced settings</p>
               </div>
             </li>
           </ul>

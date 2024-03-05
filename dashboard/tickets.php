@@ -41,9 +41,9 @@
           <h4 class="card-title">Orders</h4>
           <div class="row grid-margin">
             <div class="col-12">
-              <div class="alert alert-warning" role="alert">
+              <!-- <div class="alert alert-warning" role="alert">
                 <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="row">
