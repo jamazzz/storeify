@@ -8,7 +8,7 @@
   <title>Project Type</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="/css/app.css?id=a9978fd18e4bebcdba4d">
-  <link rel="stylesheet" href="assets/css/select.css">
+  <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/45266fece3.js" crossorigin="anonymous"></script>
 </head>

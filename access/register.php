@@ -1,3 +1,4 @@
+use function filter_var;
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
@@ -86,7 +87,7 @@ function isEmailOccupied($email, $connection, $fname, $lname)
     if ($filteredEmail === false) {
         $_SESSION["errormsg"] = $email . " é um email inválido.";
         redirect($connection, $fname, $lname);
-    }
+    }    
 
     $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $email . "'";
     $result = mysqli_query($connection, $emailocupado);

@@ -38,6 +38,7 @@
 <script src="../assets/js/proBanner.js"></script>
 <script src="../assets/js/dashboard.js"></script>
 <script src="../assets/js/data-table.js"></script>
+<script src="../assets/js/chart.js"></script>
 <!-- End custom js for this page -->
 </body>
 

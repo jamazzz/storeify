@@ -31,7 +31,7 @@
     <section class="smart-scroll">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark">
-                <a class="navbar-brand heading-black" href="dashlanding.php">
+                <a class="navbar-brand heading-black" href="index.php">
                     <i class="fas fa-chess-knight"></i> Knight
                 </a>
                 <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

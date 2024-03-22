@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icons.min.css">
   <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.carousel.min.css">
@@ -85,21 +86,6 @@
             </span>
             <span class="menu-title">Widgets</span>
           </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
-            <span class="menu-icon">
-              <i class="mdi mdi-view-list"></i>
-            </span>
-            <span class="menu-title">Page Layouts</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="page-layouts">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/boxed-layout.php">Boxed</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/rtl-layout.php">RTL</a></li>
-            </ul>
-          </div>
         </li>
         <li class="nav-item menu-items">
           <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
@@ -249,6 +235,7 @@
             </ul>
           </div>
         </li>
+        <li class="nav-item menu-items">
         <li class="nav-item menu-items">
           <a class="nav-link" href="./pages/ui-features/notifications.php">
             <span class="menu-icon">
@@ -412,48 +399,7 @@
           </button>
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
-              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="new.php">+ Create New Project</a>
-            </li>
-            <li class="nav-item dropdown border-left">
-              <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-email"></i>
-                <span class="count bg-success"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-                    <p class="text-muted mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-                    <p class="text-muted mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-                    <p class="text-muted mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <p class="p-3 mb-0 text-center">4 new messages</p>
-              </div>
+              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="/storeify/website.php">View Website</a>
             </li>
             <li class="nav-item dropdown border-left">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
@@ -512,7 +458,7 @@
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                <a class="dropdown-item preview-item">
+                <a class="dropdown-item preview-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-shape-plus text-success"></i>
@@ -520,6 +466,17 @@
                   </div>
                   <div class="preview-item-content">
                     <p class="preview-subject mb-1">Settings</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item" href="select.php">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-folder-account text-warning"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Projects</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -548,6 +505,37 @@
           </button>
         </div>
       </nav>
+      <!-- Modal starts -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="settings.php" method="post">
+              <div class="modal-body">
+                <label>Username</label>
+                <input type="text" id="username" name="username" class="form-control" value="<?php echo $pinfo['username']; ?>">
+                <br>
+                <label>Email</label>
+                <input type="email" id="email" name="email" class="form-control" value="<?php echo $pinfo['email']; ?>">
+                <br>
+                <label>Password</label>
+                <input type="password" id="password" name="password" class="form-control" value="PASSWORDEXAMPLE">
+              </div>
+              <div class="modal-footer">
+                <input type="text" id="currentpage" name="currentpage" class="invisible" value="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Ends -->
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">

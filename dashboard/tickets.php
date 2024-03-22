@@ -25,20 +25,36 @@
   <?php
   include 'dashp1.php';
   ?>
-  <div class="page-header">
-    <h3 class="page-title"> Orders </h3>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Sample pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Orders</li>
-      </ol>
-    </nav>
-  </div>
+  <style>
+    .content-wrapper {
+      background-color: #191c24;
+      box-shadow: none;
+      padding: 1.875rem 1.75rem;
+      width: 100%;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+    }
+
+    .navbar .navbar-menu-wrapper {
+      transition: width 0.25s ease;
+      -webkit-transition: width 0.25s ease;
+      -moz-transition: width 0.25s ease;
+      -ms-transition: width 0.25s ease;
+      box-shadow: 20px 19px 34px -15px rgba(0, 0, 0, 0.0);
+      -webkit-box-shadow: 20px 19px 34px -15px rgba(0, 0, 0, 0.0);
+      -moz-box-shadow: 20px 19px 34px -15px rgba(0, 0, 0, 0.0);
+      color: #ffffff;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+      height: 70px;
+    }
+  </style>
   <div class="row">
     <div class="col-12">
-      <div class="card">
+      <div class="card2">
         <div class="card-body">
-          <h4 class="card-title">Orders</h4>
+          <h4 class="card-title">Tickets</h4>
           <div class="row grid-margin">
             <div class="col-12">
               <!-- <div class="alert alert-warning" role="alert">

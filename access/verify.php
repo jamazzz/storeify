@@ -53,6 +53,10 @@ if (!isset($_SESSION['verify'])) {
     redirect($connect);
   }
 } else {
+  if (isset($_SESSION['admin'])) {
+    header("Location: dashlanding.php");
+    exit();
+  }
   if (validatePassword($_POST['password'], $_POST['password2'], $connect)) {
     $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
     $userinfo = "UPDATE users SET password = '$pass' WHERE email = '" . $_SESSION['recoveremail'] . "'";

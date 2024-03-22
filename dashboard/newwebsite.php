@@ -18,6 +18,7 @@ if ($count != 0) {
   }
   if ($resultadomember) {
     mysqli_close($connect);
+    $_SESSION['websiteid'] = $websiteId;
     header('Location: /storeify/dashboard/dashlanding.php');
     exit();
   }
