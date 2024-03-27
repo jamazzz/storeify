@@ -53,8 +53,9 @@ if (!isset($_SESSION['verify'])) {
     redirect($connect);
   }
 } else {
-  if (isset($_SESSION['admin'])) {
-    header("Location: dashlanding.php");
+  if (isset($_SESSION["phase"])) {
+    unset($_SESSION["phase"]);
+    header("Location: ../dashboard/dashlanding.php");
     exit();
   }
   if (validatePassword($_POST['password'], $_POST['password2'], $connect)) {

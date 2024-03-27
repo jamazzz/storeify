@@ -26,6 +26,17 @@
 </head>
 
 <body>
+  <form id="dataForm" action="save_data.php" method="post">
+    <input type="hidden" name="data" id="dataField">
+  </form>
+  <script>
+    window.addEventListener('beforeunload', function(e) {
+      var form = document.getElementById('dataForm');
+      var dataField = document.getElementById('dataField');
+      dataField.value = 1;
+      form.submit();
+    });
+  </script>
   <div class="container-scroller">
     <?php
     include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");

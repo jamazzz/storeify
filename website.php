@@ -665,6 +665,7 @@
 
         <footer>
           <div class="flex gap-md mb-md flex-wrap">
+            <!-- Discord Social area -->
             <button class="btn-primary rounded p-sm pr-btn-lg flex text-left justify-start gap-md items-center group lg:flex-grow-0 flex-grow">
               <div class="btn-icon bg-primary-accent bg-opacity-btn rounded-btn-sm shadow-none border-none"><i class="fa-brands fa-discord"></i></div>
               <div class="translate-y-1">
@@ -674,6 +675,8 @@
                 <small class="type-subtitle text-opacity-50 hidden group-hover:block">Click to join</small>
               </div>
             </button>
+            <!--  -->
+            <!-- Socials -->
             <div class="bg-background-accent rounded flex gap-md flex-grow justify-end items-center p-sm">
               <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
 
@@ -684,6 +687,8 @@
               <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
             </div>
           </div>
+          <!--  -->
+          <!-- Copyrigth -->
           <div class="flex gap-md flex-wrap justify-between items-center">
             <div>
               <h3 class="type-header font-bold text-sm">Copyright © mScripts <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
@@ -699,6 +704,7 @@
               </ul>
             </div>
           </div>
+          <!--  -->
         </footer>
       </div>
     </div>

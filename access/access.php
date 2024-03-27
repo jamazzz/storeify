@@ -13,6 +13,7 @@
 <body>
   <?php
   session_start();
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/access/goggle.php";
   ?>
   <script>
     if (performance.navigation.type === 1) {
@@ -102,8 +103,8 @@
               <p>Or</p>
           </form>
           <p class="socials">
-            <button type="button"><i class="ri-facebook-line"></i></button>
-            <button type="button"><i class="ri-google-line"></i></button>
+            <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->
+            <button id="buttonDiv" type="button" style="margin-top: 10px;"></button>
           </p>
         </div>
       </div>
@@ -165,8 +166,8 @@
             <p>Or</p>
         </form>
         <p class="socials">
-          <button type="button"><i class="ri-facebook-line"></i></button>
-          <button type="button"><i class="ri-google-line"></i></button>
+          <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->
+          <button id="buttonDiv2" name="buttonDiv2" type="button" style="margin-top: 20px;"></button>
         </p>
       </div>
       <?php

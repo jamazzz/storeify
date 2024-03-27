@@ -62,12 +62,14 @@
               </div> -->
             </div>
           </div>
+          
           <div class="row">
             <div class="col-12">
               <div class="table-responsive">
-                <table id="order-listing" class="table" cellspacing="0" width="100%">
+                <div class="table-responsive text-end">
+                  <table id="order-listing" class="table" cellspacing="0" width="100%">
                   <thead>
-                    <tr class="bg-primary text-white">
+                    <tr class="text-white">
                       <th>Order #</th>
                       <th>Customer</th>
                       <th>Ship to</th>

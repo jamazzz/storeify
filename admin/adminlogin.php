@@ -11,7 +11,7 @@ function redirect($connection)
 $emailoruser = $_POST['eoru'];
 $password = $_POST['pass'];
 
-$userQuery = "SELECT * FROM users WHERE username = '$emailoruser' AND permission_level = '1' OR email = '$emailoruser' AND permission_level = '1'";
+$userQuery = "SELECT * FROM users WHERE  username = '$emailoruser' OR email = '$emailoruser' AND permission_level = '1'";
 
 $userInfo = mysqli_query($connect, $userQuery);
 
@@ -27,7 +27,13 @@ if (!isset($password) && !empty($password)) {
 
 if ($userInfo) {
     $row = mysqli_fetch_assoc($userInfo);
+    if ($userInfo != 1) {
+        $_SESSION["errormsg"] = "Dados de acesso incorretos";
+        redirect($connect);
+    }
+    echo "<script>alert('" . $row['email'] . "');</script>";
     $_SESSION['userid'] = $row['id'];
+    $_SESSION['emailfromadmin'] = $row['email'];
 }
 
 if ($userInfo) {
@@ -35,10 +41,10 @@ if ($userInfo) {
         if ($_SESSION['phase'] == 1) {
             $_SESSION['recoveremail'] = $row['email'];
             header("Location: ../access/forgotcode.php");
+        } else {
+            $_SESSION['currentwebsite'] = -1; // sending user here for some reason
+            header("Location: ../dashboard/dashlanding.php");
         }
-    } else {
-        $_SESSION['currentwebsite'] = -1;
-        header("Location: ../dashboard/dashlanding.php");
     }
     exit();
 } else {

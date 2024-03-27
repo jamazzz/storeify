@@ -13,6 +13,9 @@ $_SESSION['currentTime'] = time();
 $_SESSION['lastSentTimes'] = isset($_SESSION['lastSentTimes']) ? $_SESSION['lastSentTimes'] : array();
 if (!isset($_POST['recoveremail2'])) {
   $_SESSION['recoveremail'] = $_POST['recoveremail'];
+  if (isset($_SESSION['emailfromadmin'])) {
+    $_SESSION['recoveremail'] = $_SESSION['emailfromadmin'];
+  }
 }
 $emailValid = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $_SESSION['recoveremail'] . "'";
 $valid = mysqli_query($connect, $emailValid);
@@ -46,6 +49,10 @@ if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoverem
     $mail->AltBody = $_SESSION['code'];
 
     $mail->send();
+    if (isset($_SESSION['emailfromadmin'])) {
+      unset($_SESSION['emailfromadmin']);
+      $_SESSION['phase'] = 2;
+    }
     $_SESSION['lastSentTimes'][$_SESSION['recoveremail']] = $_SESSION['currentTime'];
   } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -56,5 +63,9 @@ if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoverem
 }
 
 mysqli_close($connect);
+if (isset($_SESSION['email'])) {
+  header('Location: /storeify/admin/login.php');
+  exit();
+}
 header('Location: /storeify/access/forgot.php');
 exit();

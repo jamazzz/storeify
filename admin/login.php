@@ -176,13 +176,15 @@
     <input type="text" autocomplete="off" placeholder="Username" id="eoru" name="eoru" class="newinput">
     <br>
     <input type="password" autocomplete="off" placeholder="Password" id="pass" name="pass" class="newinput">
-    <br>
-    <button type="submit">Log In</button>
-  </form>
-    ');
+    <br>    ');
+    if (isset($_SESSION['errormsg'])) {
+      echo ('<h5 style="color: red; text-align: left;">' . $_SESSION['errormsg'] . '</h5>');
+    }
+    echo ('<button type="submit">Log In</button>
+  </form>');
   } elseif ($_SESSION['phase'] == 2) {
     echo ('
-    <form class="form1" action="verify.php" method="post">
+    <form class="form1" action="../access/verify.php" method="post">
     <p>
     <h3>Enter the OTP sent to your email</h3>
     <br><br>
