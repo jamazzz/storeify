@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <body>
@@ -10,28 +11,39 @@
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
       }).join(''));
 
-      return JSON.parse(jsonPayload);
+      return jsonPayload;
     };
 
-    function handleCredentialResponse(response) {
+    function handleCredentialResponse(response, buttonId) {
       var form = document.createElement("form");
       form.setAttribute("method", "post");
       form.setAttribute("action", "google2.php");
       form.style.display = "hidden";
       var token = response.credential;
       var jwt = parseJwt(token);
-      var input = document.createElement("input");
-      input.setAttribute("name", "credential");
-      input.setAttribute("value", token);
-      form.appendChild(input);
+
+      var input1 = document.createElement("input");
+      input1.setAttribute("name", "credential");
+      input1.setAttribute("value", jwt);
+
+      var input2 = document.createElement("input");
+      input2.setAttribute("name", "buttonId");
+      input2.setAttribute("value", buttonId);
+
+      form.appendChild(input1);
+      form.appendChild(input2);
       document.body.appendChild(form);
       form.submit();
     }
+
     window.onload = function() {
       google.accounts.id.initialize({
         client_id: "987869037939-tb55ut12vsf3arupcsg55catf7mk6499",
-        callback: handleCredentialResponse
+        callback: function(response) {
+          handleCredentialResponse(response, "buttonDiv");
+        }
       });
+
       google.accounts.id.renderButton(
         document.getElementById("buttonDiv"), {
           theme: "outline",
@@ -41,6 +53,14 @@
 
         }
       );
+
+      google.accounts.id.initialize({
+        client_id: "987869037939-tb55ut12vsf3arupcsg55catf7mk6499",
+        callback: function(response) {
+          handleCredentialResponse(response, "buttonDiv2");
+        }
+      });
+
       google.accounts.id.renderButton(
         document.getElementById("buttonDiv2"), {
           theme: "outline",
@@ -55,9 +75,3 @@
 </body>
 
 </html>
-
-<?php
-if (isset($_POST['credential'])) {
-  header('location: /storeify/access/goggle2.php');
-  exit();
-}

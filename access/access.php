@@ -13,7 +13,7 @@
 <body>
   <?php
   session_start();
-  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/access/goggle.php";
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/access/google.php";
   ?>
   <script>
     if (performance.navigation.type === 1) {

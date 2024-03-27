@@ -1,4 +1,3 @@
-use function filter_var;
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 session_start();
@@ -11,6 +10,26 @@ function redirect($connection, $fname, $lname)
     mysqli_close($connection);
     header('Location:/storeify/access/access.php');
     exit();
+}
+
+if ($_SESSION["glogin"]) {
+    $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
+    $username = genUser($connect, $_SESSION["gname"], $_SESSION["gfamily"], $_SESSION["gemail"]);
+
+    $nameuser = $_SESSION["gname"] . " " . $_SESSION["gfamily"];
+    $userid = "INSERT INTO users_ids (name) VALUES ('{$nameuser}')";
+    $userinfo = "INSERT INTO users (username, password, email, permission_level, creation_date, attempts) VALUES ('{$username}', '{$pass}', '{$_SESSION["gemail"]}', 0, NOW(), 5)";
+
+    $resultado = mysqli_query($connect, $userid);
+    $resultado2 = mysqli_query($connect, $userinfo);
+
+    if ($resultado && $resultado2) {
+        $_SESSION['register'] = true;
+        header("Location: access.php");
+        exit();
+    } else {
+        echo "Error: " . mysqli_error($conexao);
+    }
 }
 
 // Username
@@ -87,7 +106,7 @@ function isEmailOccupied($email, $connection, $fname, $lname)
     if ($filteredEmail === false) {
         $_SESSION["errormsg"] = $email . " é um email inválido.";
         redirect($connection, $fname, $lname);
-    }    
+    }
 
     $emailocupado = "SELECT COUNT(*) AS count FROM users WHERE email = '" . $email . "'";
     $result = mysqli_query($connection, $emailocupado);

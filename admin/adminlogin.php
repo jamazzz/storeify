@@ -31,20 +31,14 @@ if ($userInfo) {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";
         redirect($connect);
     }
-    echo "<script>alert('" . $row['email'] . "');</script>";
     $_SESSION['userid'] = $row['id'];
     $_SESSION['emailfromadmin'] = $row['email'];
 }
 
 if ($userInfo) {
     if ($row && password_verify($password, $row['password'])) {
-        if ($_SESSION['phase'] == 1) {
-            $_SESSION['recoveremail'] = $row['email'];
-            header("Location: ../access/forgotcode.php");
-        } else {
-            $_SESSION['currentwebsite'] = -1; // sending user here for some reason
-            header("Location: ../dashboard/dashlanding.php");
-        }
+        $_SESSION['recoveremail'] = $row['email'];
+        header("Location: ../access/forgotcode.php");
     }
     exit();
 } else {

@@ -12,6 +12,22 @@ function redirect($connection)
 $emailoruser = $_POST['emailoruser'];
 $password = $_POST['password'];
 
+if ($_SESSION["glogin"]) {
+    $loginquery = "SELECT * FROM users WHERE username = '".$_SESSION["gemail"]."' OR email = '".$_SESSION["gemail"]."' LIMIT 1";
+    $result = mysqli_query($connect, $loginquery);
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row) {
+        $_SESSION['userid'] = $row['id'];
+        header("Location: ../dashboard/select.php");
+        exit();
+    } else {
+        $_SESSION["errormsg"] = "User does not exist";
+        header("Location: ../access.php");
+        redirect($connect);
+    }
+}
+
 $userpassQuery = "SELECT password FROM users WHERE username = '$emailoruser' OR email = '$emailoruser'";
 $idquery = "SELECT id FROM users WHERE username = '$emailoruser' OR email = '$emailoruser'";
 

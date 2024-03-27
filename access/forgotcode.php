@@ -49,10 +49,6 @@ if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoverem
     $mail->AltBody = $_SESSION['code'];
 
     $mail->send();
-    if (isset($_SESSION['emailfromadmin'])) {
-      unset($_SESSION['emailfromadmin']);
-      $_SESSION['phase'] = 2;
-    }
     $_SESSION['lastSentTimes'][$_SESSION['recoveremail']] = $_SESSION['currentTime'];
   } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -62,10 +58,12 @@ if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoverem
   $_SESSION["errormsg"] = "Please wait for " . $_SESSION['remaining_time'] . " seconds before trying again.";
 }
 
-mysqli_close($connect);
-if (isset($_SESSION['email'])) {
+if (isset($_SESSION['emailfromadmin'])) {
+  $_SESSION['phase'] = 2;
   header('Location: /storeify/admin/login.php');
   exit();
 }
+
+mysqli_close($connect);
 header('Location: /storeify/access/forgot.php');
 exit();

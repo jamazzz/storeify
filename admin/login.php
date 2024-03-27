@@ -217,7 +217,7 @@
         <i class="ri-arrow-right-line"></i>
       </label>
       <br>
-      <h5 style="color: white; text-align: center;">Didn\'t receive the code? <a href="forgotcode.php">Resend</a></h5>
+      <h5 style="color: white; text-align: center;">Didn\'t receive the code? <a href="/storeify/access/forgotcode.php">Resend</a></h5>
     </div> 
   </form>
     ');

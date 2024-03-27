@@ -46,18 +46,23 @@ function validatePassword($password2, $password3, $connection)
 if (!isset($_SESSION['verify'])) {
   $codigo = $_POST['input1'] . $_POST['input2'] . $_POST['input3'] . $_POST['input4'] . $_POST['input5'] . $_POST['input6'];
   if ($codigo == $_SESSION['code']) {
+    if (isset($_SESSION["emailfromadmin"])) {
+      $_SESSION['currentwebsite'] = -1;
+      header("Location: ../dashboard/dashlanding.php");
+      exit();
+    }
     $_SESSION['verify'] = true;
     redirect($connect);
   } else {
+    if (isset($_SESSION["emailfromadmin"])) {
+      $_SESSION["errormsg"] = "Código de confirmação incorreto.";
+      header("Location: ../admin/login.php");
+      exit();
+    }
     $_SESSION["errormsg"] = "Código de confirmação incorreto.";
     redirect($connect);
   }
 } else {
-  if (isset($_SESSION["phase"])) {
-    unset($_SESSION["phase"]);
-    header("Location: ../dashboard/dashlanding.php");
-    exit();
-  }
   if (validatePassword($_POST['password'], $_POST['password2'], $connect)) {
     $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
     $userinfo = "UPDATE users SET password = '$pass' WHERE email = '" . $_SESSION['recoveremail'] . "'";
