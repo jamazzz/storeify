@@ -12,7 +12,7 @@
   include 'dashp1.php';
   ?>
   <!-- Modal starts -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Modal Ends -->
   <?php
   $midquery = "SELECT memberid FROM members  WHERE websiteid = '" . $_SESSION['currentwebsite'] . "'";
@@ -39,16 +39,19 @@
   $numero = 1;
 
   $membersString = '';
+  $membersArray = array();
   while ($row = mysqli_fetch_assoc($midqueryresult)) {
+    $membersArray[] = $row;
     $membersString = implode(',', $row) . ',';
   }
   $membersString = rtrim($membersString, ',');
-  
+
   $mquery = "SELECT * FROM users  WHERE id = '" . $membersString . "'";
   $mqueryresult = mysqli_query($connect, $mquery);
   $minfo = mysqli_fetch_assoc($mqueryresult);
 
-  while ($row = mysqli_fetch_assoc($midqueryresult) && $numero = $numero + 1) {
+  foreach ($membersArray as $row) { // Iterate over the array
+    $numero = $numero + 5; // Increment the counter
     if ($numero % 3 == 0) {
       echo '<div class="row">';
     }
@@ -83,7 +86,6 @@
     echo '</div>';
   }
   ?>
-  </div>
   <?php
   include 'dashp2.php';
   ?>
