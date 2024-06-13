@@ -1,4 +1,4 @@
-<html lang="en" class=" rddrtydri idc0_350">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -2778,7 +2778,7 @@
 
 
         <header class="grid gap-md ">
-          <div class="flex flex-wrap justify-evenly items-center gap-md" style="">
+          <div class="flex flex-wrap justify-evenly items-center gap-md" >
             <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
               <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="mScripts Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
             </a>

@@ -34,7 +34,7 @@
             <div data-v-a416eab6="" class="card h-100">
               <div data-v-a416eab6="" class="card-body">
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"><img data-v-a416eab6="" src="/img/illustrations/Hourglass.svg" alt="Hourglass"></div>
+                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
                     <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
                   </div>
@@ -46,7 +46,7 @@
             <div data-v-a416eab6="" class="card h-100">
               <div data-v-a416eab6="" class="card-body">
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"><img data-v-a416eab6="" src="/img/illustrations/Crystals.svg" alt="Hourglass"></div>
+                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
                     <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">June's Sales</span>
                   </div>
@@ -58,7 +58,7 @@
             <div data-v-a416eab6="" class="card h-100">
               <div data-v-a416eab6="" class="card-body">
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-xl-4 col-12 text-center d-lg-none d-xl-block"><img data-v-a416eab6="" src="/img/illustrations/Diamond.svg" alt="Hourglass"></div>
+                  <div data-v-a416eab6="" class="col-xl-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
                     <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">June's Avg Payment</span>
                   </div>
@@ -71,7 +71,7 @@
         <div data-v-a416eab6="" class="row">
           <div data-v-a416eab6="" class="col-12 col-xxl-8">
             <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-header">
+              <div data-v-a416eab6="" class="card-header" style="height: 51px;">
                 <div data-v-a416eab6="" class="row">
                   <div data-v-a416eab6="" class="col-6 d-flex align-items-center">Sales Overview</div>
                 </div>
@@ -121,6 +121,27 @@
                       </td>
                       <td data-v-a416eab6="" width="30%" class="align-middle">€0.00</td>
                       <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/74018944" class="btn btn-link">View</a></td>
+                    </tr>
+                    <tr data-v-a416eab6="" class="text-muted">
+                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
+                        Roie_Guy
+                      </td>
+                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
+                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
+                    </tr>
+                    <tr data-v-a416eab6="" class="text-muted">
+                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
+                        Roie_Guy
+                      </td>
+                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
+                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
+                    </tr>
+                    <tr data-v-a416eab6="" class="text-muted">
+                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
+                        Roie_Guy
+                      </td>
+                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
+                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
                     </tr>
                     <tr data-v-a416eab6="" class="text-muted">
                       <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">

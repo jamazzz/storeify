@@ -11,22 +11,22 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" style="">
-            <h1 class="my-0" style="">Bans</h1>
+          <div class="col-12 col-md-6" >
+            <h1 class="my-0" >Bans</h1>
           </div>
-          <div class="col-12 col-md-6 text-left text-md-right" style="">
+          <div class="col-12 col-md-6 text-left text-md-right" >
           </div>
         </div>
       </header>
 
-      <div class="card" style="">
-        <div class="card-body" style="">
-          <div class="row" style="">
+      <div class="card" >
+        <div class="card-body" >
+          <div class="row" >
             <div class="col-12 col-xl-2 text-center text-xl-left align-self-center">
               <div class="card m-0 mt-2" id="filter-card" style="display: none;">
                 <form method="get" action="https://creator.tebex.io/bans">
@@ -77,7 +77,7 @@
                 </form>
               </div>
             </div>
-            <div class="col-12 col-xl-10 align-self-center text-center text-xl-right my-3 my-xl-0" style="">
+            <div class="col-12 col-xl-10 align-self-center text-center text-xl-right my-3 my-xl-0" >
               <span class="result-count"><strong>1</strong> results</span>
             </div>
           </div>

@@ -11,13 +11,13 @@
   <?php
   include 'dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" style="">
-            <h1 class="my-0" style="">Packages</h1>
+          <div class="col-12 col-md-6" >
+            <h1 class="my-0" >Packages</h1>
           </div>
           <div class="col-12 col-md-6 text-left text-md-right">
             <a href="https://creator.tebex.io/packages/massedit" class="btn btn-secondary">Mass Edit</a>
@@ -33,13 +33,13 @@
       </header>
 
       <div class="card package-page">
-        <div class="card-body pb-0" style="">
-          <div class="row d-flex align-items-center" style="">
+        <div class="card-body pb-0" >
+          <div class="row d-flex align-items-center" >
             <div class="col-md-8 d-none d-md-inline">
               <button class="btn btn-light" type="button" name="hide-disabled" id="hide-disabled" data-hidden="0">Hide disabled</button>
             </div>
-            <div class="col-md-4" style="">
-              <input type="text" class="form-control text-right" name="quick-filter" placeholder="Quick filter packages" style="">
+            <div class="col-md-4" >
+              <input type="text" class="form-control text-right" name="quick-filter" placeholder="Quick filter packages" >
             </div>
           </div>
         </div>

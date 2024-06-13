@@ -11,10 +11,10 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main id="main" role="main" style=""><!---->
+  <main id="main" role="main" ><!---->
     <div class="container">
       <header class="page-title"><!---->
-        <div class="row no-gutters align-items-center" style="">
+        <div class="row no-gutters align-items-center" >
           <div class="col-12 col-md-6">
             <h1 class="my-0">Summary</h1><span>Euro</span>
           </div>

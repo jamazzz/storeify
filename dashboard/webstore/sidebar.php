@@ -11,14 +11,14 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
 
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" style="">
-            <h1 class="my-0" style="">Sidebar</h1>
+          <div class="col-12 col-md-6" >
+            <h1 class="my-0" >Sidebar</h1>
           </div>
         </div>
       </header>
@@ -26,7 +26,7 @@
 
 
       <div class="card">
-        <div class="card-header" style="">
+        <div class="card-header" >
           Modules
         </div>
         <div class="card-body">

@@ -11,21 +11,21 @@
   <?php
   include 'dashp1.php';
   ?>
-  <main role="main" id="main" style="">
+  <main role="main" id="main" >
     <div class="container-fluid">
 
-      <div style="">
+      <div >
         <header class="page-title">
-          <div class="row no-gutters" style="">
+          <div class="row no-gutters" >
             <div class="col-12 col-md-6">
-              <div class="d-flex align-items-center" style="">
+              <div class="d-flex align-items-center" >
                 <h2 class="my-0">
                   Overview
                 </h2>
                 <h5 data-toggle="tooltip" class="text-muted my-auto ml-2" title="" data-original-title="This page is displaying figures exclusive of VAT"><i class="fas fa-info-circle"></i></h5>
               </div> <small class="text-muted text-uppercase font-weight-bold">Statistics</small>
             </div>
-            <div class="col-12 col-md-6 text-md-right mt-3 mt-lg-0 d-flex align-self-center" style="">
+            <div class="col-12 col-md-6 text-md-right mt-3 mt-lg-0 d-flex align-self-center" >
               <div data-toggle="tooltip" data-placement="left" title="" class="dropdown ml-md-auto" data-original-title="Select from the list of categories to track all areas of your stores performance">
                 <div aria-labelledby="dropdownMenuButton" class="dropdown-menu dropdown-menu-right w-100"><a href="#" class="dropdown-item">Overview</a><a href="#" class="dropdown-item">Monthly Report</a><a href="#" class="dropdown-item">Payments</a><a href="#" class="dropdown-item">Packages</a><a href="#" class="dropdown-item">Sales</a><a href="#" class="dropdown-item">Coupons</a><a href="#" class="dropdown-item">Creator Codes</a><a href="#" class="dropdown-item">Categories</a><a href="#" class="dropdown-item">Servers</a><a href="#" class="dropdown-item">Referrals</a><a href="#" class="dropdown-item">Gift Cards</a><a href="#" class="dropdown-item">Abandoned Baskets</a><a href="#" class="dropdown-item">Purchase Follow-Ups</a><a href="#" class="dropdown-item">Upselling</a><a href="#" class="dropdown-item">Offers</a><a href="#" class="dropdown-item">Recurring Payments</a></div>
               </div>
@@ -45,13 +45,13 @@
               </div>
             </div>
             <div class="card">
-              <div class="card-body" style=""><span>MONTH TO DATE</span>
+              <div class="card-body" ><span>MONTH TO DATE</span>
                 <h2 class="mt-2">€ 0.00</h2>
               </div>
             </div>
             <div class="card">
-              <div class="card-body" style=""><span style="">TODAY</span>
-                <h2 class="mt-2">€ 0.00</h2>
+              <div class="card-body" ><span >TODAY</span>
+                <h2 class="mt-2">€ 0.00</h2>s
               </div>
             </div>
           </div>

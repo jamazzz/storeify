@@ -44,7 +44,9 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="dashlanding.php"><img src="/storeify/assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="dashlanding.php"><img src="/storeify/assets/images/logo-mini.svg" alt="logo" /></a>
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
       </div>
       <ul class="nav">
         <li class="nav-item nav-category">
@@ -130,7 +132,7 @@
         </li>
         <!-- Members -->
         <li class="nav-item menu-items">
-          <a class="nav-link" href="members.php">
+          <a class="nav-link" href="/storeify/dashboard/members.php">
             <span class="menu-icon">
               <i class="mdi mdi-speedometer"></i>
             </span>
@@ -139,13 +141,14 @@
         </li>
         <!-- Tickets -->
         <li class="nav-item menu-items">
-          <a class="nav-link" href="tickets.php">
+          <a class="nav-link" href="/storeify/dashboard/tickets.php">
             <span class="menu-icon">
               <i class="mdi mdi-speedometer"></i>
             </span>
             <span class="menu-title">Tickets</span>
           </a>
         </li>
+        <!--
         <li class="nav-item nav-category">
           <span class="nav-link">Debug</span>
         </li>
@@ -454,6 +457,7 @@
             <span class="menu-title">Documentation</span>
           </a>
         </li>
+        -->
       </ul>
     </nav>
     <!-- partial -->
@@ -464,9 +468,6 @@
           <a class="navbar-brand brand-logo-mini" href="dashlanding.php"><img src="/storeify/assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button>
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
               <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="/storeify/website.php">View Website</a>

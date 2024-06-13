@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Corona Admin</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
   include 'dashp1.php';
   ?>
   <!-- Modal starts -->
-  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -30,13 +30,13 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <!-- Modal Ends -->
   <?php
   $midquery = "SELECT memberid FROM members  WHERE websiteid = '" . $_SESSION['currentwebsite'] . "'";
   $midqueryresult = mysqli_query($connect, $midquery);
   $midinfo = mysqli_fetch_assoc($midqueryresult);
-  $numero = 1;
+  $numero = 4;
 
   $membersString = '';
   $membersArray = array();
@@ -49,13 +49,7 @@
   $mquery = "SELECT * FROM users  WHERE id = '" . $membersString . "'";
   $mqueryresult = mysqli_query($connect, $mquery);
   $minfo = mysqli_fetch_assoc($mqueryresult);
-
-  foreach ($membersArray as $row) { // Iterate over the array
-    $numero = $numero + 5; // Increment the counter
-    if ($numero % 3 == 0) {
-      echo '<div class="row">';
-    }
-    echo '
+  echo '
       <div class="col-md-4 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
@@ -81,10 +75,6 @@
       </div>
     </div>
     ';
-  }
-  if ($numero % 3 == 0) {
-    echo '</div>';
-  }
   ?>
   <?php
   include 'dashp2.php';

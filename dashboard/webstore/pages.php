@@ -11,11 +11,11 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
       <header class="page-title">
-        <div class="row no-gutters" style="">
+        <div class="row no-gutters" >
           <div class="col-12 col-md-6">
             <h1 class="my-0">Pages</h1>
           </div>
@@ -23,7 +23,7 @@
       </header>
 
       <div class="card row-mt">
-        <div class="card-body row d-flex w-100 align-self-center" style="">
+        <div class="card-body row d-flex w-100 align-self-center" >
           <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
             <div class="row align-self-center h-100">
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">

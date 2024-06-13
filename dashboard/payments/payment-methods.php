@@ -11,18 +11,18 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
-            <h1 class="my-0" style="">Payment Methods</h1>
+            <h1 class="my-0" >Payment Methods</h1>
           </div>
         </div>
       </header>
       <div class="card row-mt">
-        <div class="card-body" style="">
+        <div class="card-body" >
           <div class="table-responsive">
             <table class="table w-100">
               <thead class="thead-light">
@@ -31,8 +31,8 @@
                   <th>Method</th>
                   <th>Countries</th>
                   <th>Currencies</th>
-                  <th style="">Gateway Fee</th>
-                  <th style="">Settlement Time</th>
+                  <th >Gateway Fee</th>
+                  <th >Settlement Time</th>
                   <th></th>
                   <th></th>
                 </tr>

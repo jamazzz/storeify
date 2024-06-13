@@ -1,5 +1,4 @@
-<html lang="en" class=" zczlcyd idc0_350">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,18 +38,18 @@
 
 
         <header class="grid gap-md ">
-          <div class="flex flex-wrap justify-evenly items-center gap-md" style="">
+          <div class="flex flex-wrap justify-evenly items-center gap-md" >
             <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
               <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="mScripts Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
             </a>
             <a href="https://discord.gg/marcinhu" target="_blank" rel="noopener noreferrer" class="flex text-left justify-start gap-md items-center group order-2 flex-grow lg:order-3 lg:flex-grow-0">
               <div class="btn-icon-primary rounded-btn-sm group-hover:bg-primary-accent group-hover:bg-opacity-btn-hover"><i class="fa-brands fa-discord"></i></div>
               <div>
-                <h3 class="type-header text-lg leading-none" style="">Join Discord</h3>
-                <small class="type-subtitle text-foreground-accent text-opacity-50 block group-hover:hidden" style="">
+                <h3 class="type-header text-lg leading-none" >Join Discord</h3>
+                <small class="type-subtitle text-foreground-accent text-opacity-50 block group-hover:hidden" >
                   <span class="fetch" data-discord-id="833847171127836683" data-discord-code="marcinhu">8,376</span> Members
                 </small>
-                <small class="type-subtitle text-foreground-accent text-opacity-50 hidden group-hover:block" style="">Click to join</small>
+                <small class="type-subtitle text-foreground-accent text-opacity-50 hidden group-hover:block" >Click to join</small>
               </div>
             </a>
           </div>

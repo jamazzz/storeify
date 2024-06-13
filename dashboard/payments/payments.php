@@ -11,8 +11,8 @@
   <?php
   include '../dashp1.php';
   ?>
-  <main role="main" id="main" style="">
-    <div class="container-fluid" style="">
+  <main role="main" id="main" >
+    <div class="container-fluid" >
 
       <header class="page-title">
         <div class="row no-gutters">
@@ -24,9 +24,9 @@
 
       <div class="row row-mt">
         <div class="col-12">
-          <div class="card" style="">
-            <div class="card-body" style="">
-              <div class="row row-mb" style="">
+          <div class="card" >
+            <div class="card-body" >
+              <div class="row row-mb" >
                 <div class="col-12 col-md-4 text-center text-md-left align-self-center">
                 </div>
               </div>
@@ -36,7 +36,7 @@
                     <th>Customer</th>
                     <th>Amount</th>
                     <th>Received</th>
-                    <th style=""></th>
+                    <th ></th>
                     <th>&nbsp;</th>
                   </tr>
                 </thead>
@@ -46,8 +46,8 @@
                       <img src="https://avatars.discourse-cdn.com/v4/letter/t/8edcca/256.png" style="max-width:30px;" class="mr-2 rounded"> Toshiki0620
                     </td>
                     <td>€35.00</td>
-                    <td style="">May 29, 2024 17:45</td>
-                    <td class="text-center" style="">
+                    <td >May 29, 2024 17:45</td>
+                    <td class="text-center" >
                       <span class="badge badge-success" data-toggle="tooltip" title="" data-original-title="This payment has been completed successfully">Complete</span>
                     </td>
                     <td class="text-right">
@@ -59,7 +59,7 @@
                       <img src="https://forum.cfx.re/user_avatar/forum.cfx.re/gwapnasty/256/3818844_2.png" style="max-width:30px;" class="mr-2 rounded"> GwapNasty
                     </td>
                     <td>€20.00</td>
-                    <td style="">May 17, 2024 22:06</td>
+                    <td >May 17, 2024 22:06</td>
                     <td class="text-center">
                       <span class="badge badge-success" data-toggle="tooltip" title="" data-original-title="This payment has been completed successfully">Complete</span>
                     </td>
