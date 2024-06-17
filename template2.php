@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <title>mScripts | GENERAL</title>
-  <meta name="title" content="mScripts | GENERAL">
+  <title>storeify | GENERAL</title>
+  <meta name="title" content="storeify | GENERAL">
   <meta name="description" content="">
   <meta name="theme-color" content="">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="mScripts | GENERAL">
+  <meta property="og:title" content="storeify | GENERAL">
   <meta property="og:description" content="">
   <meta property="og:image" content="//cdn.tebex.io/webstore/971269/images/971269-95cfec3e3b37c6c3045b2135e496a9d5517ccc55.png">
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="mScripts | GENERAL">
+  <meta property="twitter:title" content="storeify | GENERAL">
   <meta property="twitter:description" content="">
   <meta property="twitter:image" content="//cdn.tebex.io/webstore/971269/images/971269-95cfec3e3b37c6c3045b2135e496a9d5517ccc55.png">
 
@@ -2778,9 +2778,9 @@
 
 
         <header class="grid gap-md ">
-          <div class="flex flex-wrap justify-evenly items-center gap-md" >
+          <div class="flex flex-wrap justify-evenly items-center gap-md">
             <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-              <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="mScripts Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+              <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
             </a>
             <a href="https://discord.gg/marcinhu" target="_blank" rel="noopener noreferrer" class="flex text-left justify-start gap-md items-center group order-2 flex-grow lg:order-3 lg:flex-grow-0">
               <div class="btn-icon-primary rounded-btn-sm group-hover:bg-primary-accent group-hover:bg-opacity-btn-hover"><i class="fa-brands fa-discord"></i></div>
@@ -4190,7 +4190,7 @@
           </div>
           <div class="flex gap-md flex-wrap justify-between items-center">
             <div>
-              <h3 class="type-header font-bold text-sm">Copyright © mScripts <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
+              <h3 class="type-header font-bold text-sm">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
               <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands. Theme made with <a href="http://fragmentor.io/">Fragmentor</a>.</p>
             </div>
             <div class="relative group">

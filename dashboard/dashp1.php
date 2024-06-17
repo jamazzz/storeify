@@ -139,15 +139,6 @@
             <span class="menu-title">Members</span>
           </a>
         </li>
-        <!-- Tickets -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/tickets.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-speedometer"></i>
-            </span>
-            <span class="menu-title">Tickets</span>
-          </a>
-        </li>
         <!--
         <li class="nav-item nav-category">
           <span class="nav-link">Debug</span>

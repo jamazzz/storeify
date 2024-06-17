@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <title>mScripts | Welcome</title>
-  <meta name="title" content="mScripts | Welcome">
+  <title>storeify | Welcome</title>
+  <meta name="title" content="storeify | Welcome">
   <meta name="description" content="">
   <meta name="theme-color" content="">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="mScripts | Welcome">
+  <meta property="og:title" content="storeify | Welcome">
   <meta property="og:description" content="">
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="mScripts | Welcome">
+  <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
   <link rel="shortcut icon" href="https://dunb17ur4ymx4.cloudfront.net/webstore/favicons/a5aeff14499d9db8d77d6316c660146fbbe98cba.png">
@@ -40,7 +40,7 @@
         <header class="grid gap-md ">
           <div class="flex flex-wrap justify-evenly items-center gap-md" >
             <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-              <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="mScripts Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+              <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
             </a>
             <a href="https://discord.gg/marcinhu" target="_blank" rel="noopener noreferrer" class="flex text-left justify-start gap-md items-center group order-2 flex-grow lg:order-3 lg:flex-grow-0">
               <div class="btn-icon-primary rounded-btn-sm group-hover:bg-primary-accent group-hover:bg-opacity-btn-hover"><i class="fa-brands fa-discord"></i></div>
@@ -445,7 +445,7 @@
               <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                 <div>
                   <h2 class="type-subtitle text-sm text-primary">Welcome to</h2>
-                  <h1 class="type-header">mScripts</h1>
+                  <h1 class="type-header">storeify</h1>
                   <small class="type-subtitle text-sm text-foreground-accent text-opacity-50">
                     <i class="fa-solid fa-house mr-xs"></i>Home
 
@@ -467,7 +467,7 @@
                 <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Useful Links</span></strong></span><span style="color:rgb(44,130,201);"><span style="font-size:14px;"><br></span></span></span></p>
                 <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://discord.gg/marcinhu">Discord</a></span></span></p>
                 <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://youtube.com/c/marcinhu">Youtube</a></span></span></p>
-                <p style="text-align:center;"><a href="https://mscripts.gitbook.io/docs/" target="_blank" rel="noreferrer noopener"><span style="font-family:Verdana, Geneva, sans-serif;font-size:14px;">Documentation</span></a></p>
+                <p style="text-align:center;"><a href="https://storeify.gitbook.io/docs/" target="_blank" rel="noreferrer noopener"><span style="font-family:Verdana, Geneva, sans-serif;font-size:14px;">Documentation</span></a></p>
               </div>
             </div>
 
@@ -928,7 +928,7 @@
           </div>
           <div class="flex gap-md flex-wrap justify-between items-center">
             <div>
-              <h3 class="type-header font-bold text-sm">Copyright © mScripts <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
+              <h3 class="type-header font-bold text-sm">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
               <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands. Theme made with <a href="http://fragmentor.io/">Fragmentor</a>.</p>
             </div>
             <div class="relative group">

@@ -18,6 +18,7 @@
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
             <h1 class="my-0">Payments</h1>
+            <br>
           </div>
         </div>
       </header>
