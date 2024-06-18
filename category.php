@@ -67,10 +67,7 @@
             exit();
           }
 
-
-
-          
-          if ($row["id"] == $number || $_SERVER['HTTP_HOST'] == "localhost") {
+          if ($_SERVER['HTTP_HOST'] == "localhost") {
             header('Location: /storeify/404.php');
             exit();
           }
@@ -78,6 +75,18 @@
           $select2 = "SELECT categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.url = '" . $subdomain . "'";
           $result2 = mysqli_query($connect, $select2);
           if (!mysqli_num_rows($result2) > 0) {
+            header('Location: /storeify/404.php');
+            exit();
+          }
+
+          $found = false;
+          while ($row2 = mysqli_fetch_assoc($result2)) {
+            if ($row2['id'] == $number) {
+              $found = true;
+              break;
+            }
+          }
+          if (!$found) {
             header('Location: /storeify/404.php');
             exit();
           }

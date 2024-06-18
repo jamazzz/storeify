@@ -270,19 +270,6 @@
         <section class="bg-background-accent rounded p-lg mt-grid">
           <h1 class="type-header block mb-lg text-center">Testimonials</h1>
           <div class="mb-lg flex items-center gap-md justify-center">
-            <div class="flex items-center">
-              <!-- Photos -->
-              <div class="rounded-full border h-12 w-12 -mr-2 border-background-accent overflow-hidden">
-                <img src="https://media.discordapp.net/attachments/1049749773185470537/1135266178688876595/avatar.png" alt="Avatar of hzrdd." class="rounded-full h-12">
-              </div>
-              <div class="rounded-full border h-12 w-12 -mr-2 border-background-accent overflow-hidden">
-                <img src="https://media.discordapp.net/attachments/1049749773185470537/1135266178688876595/avatar.png" alt="Avatar of furrycarrot" class="rounded-full h-12">
-              </div>
-              <div class="rounded-full border h-12 w-12 -mr-2 border-background-accent overflow-hidden">
-                <img src="https://media.discordapp.net/attachments/1049749773185470537/1135266178688876595/avatar.png" alt="Avatar of gideon11" class="rounded-full h-12">
-              </div>
-              <!-- Photos -->
-            </div>
             <div>
               <!-- Stars -->
               <div>
@@ -298,14 +285,10 @@
           </div>
           <div class="flex flex-wrap gap-grid">
             <!--  -->
-            <div class="bg-background rounded p-lg grid gap-md flex-[1_1_300px] grid-rows-[auto_1fr]">
-              <div class="flex gap-md items-center">
-                <img src="https://media.discordapp.net/attachments/1049749773185470537/1135266178688876595/avatar.png" alt="Avatar of hzrdd." class="rounded-sm h-12">
-                <div class="flex-grow">
-                  <h3 class="type-header block leading-none">hzrdd.</h3>
-                  <small class="type-subtitle text-foreground-accent opacity-50 block">@hzrdd.</small>
-                </div>
-                <small class="type-subtitle text-foreground-accent opacity-50 block">Discord</small>
+            <div class="bg-background rounded p-lg grid flex-[1_1_300px] grid-rows-[auto_1fr]">
+              <div class="flex items-center">
+                <h3 class="type-header block leading-none">hzrdd.</h3>
+                <br>
               </div>
               <div>
                 <div class="mb-md">
@@ -365,12 +348,12 @@
   </div>
   <!-- End Widget Area-->
   <div class="container mx-auto p-sm">
-  <footer>
+    <footer>
       <div class="flex gap-md mb-md flex-wrap">
         <!-- Socials -->
         <div class="bg-background-accent rounded flex gap-md flex-grow justify-start items-center p-sm">
-        <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-        <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands.</p>
+          <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
+          <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands.</p>
           <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
 
           <a href="https://github.com/marcinhuu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
@@ -380,19 +363,6 @@
           <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
         </div>
       </div>
-      <!--  -->
-      <!-- Copyrigth -->
-      <div class="flex gap-md flex-wrap justify-between items-center">
-        <div class="relative group">
-          <ul class="dropdown-selector w-[250px] translate-y-[calc(-100%_-_.5rem)] top-0" style="display: none;" name="quantity[]">
-            <li><a href="?locale=en_GB" class="py-xs px-sm">English (UK)</a></li>
-            <li><a href="?locale=en_US" class="py-xs px-sm">English (US)</a></li>
-            <li><a href="?locale=pt_BR" class="py-xs px-sm">Portuguese</a></li>
-            <li><a href="?locale=pt_PT" class="py-xs px-sm">Portuguese (Portugal)</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--  -->
     </footer>
   </div>
   </div>
@@ -419,7 +389,6 @@
   <script src="/templates/209/js/site.js"></script>
   <script src="/templates/209/js/site.js"></script>
   <script src="https://fragmentor.io/api/files/lsdjkb3e.js" crossorigin=""></script>
-  <script type="text/javascript" src="/assets/js/discord.js"></script>
   <div id="waiting-overlay" style="display: none;">
     <i class="fa fa-cog fa-spin fa-3x"></i>
   </div>
