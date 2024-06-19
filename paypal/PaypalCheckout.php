@@ -12,7 +12,7 @@
 
 // Include the configuration file 
 include_once 'paypal/config.php';
-
+session_start();
 class PaypalCheckout
 {
   public $paypalAuthAPI   = PAYPAL_SANDBOX ? 'https://api-m.sandbox.paypal.com/v1/oauth2/token' : 'https://api-m.paypal.com/v1/oauth2/token';

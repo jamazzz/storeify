@@ -172,15 +172,15 @@
                   $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
                   $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
                   $result = mysqli_query($connect, $select);
-                  $total = 0;
+                  $_SESSION['total'] = 0;
 
                   if ($result) {
                     $rows = [];
                     while ($row = mysqli_fetch_assoc($result)) {
-                      $total++;
+                      $_SESSION['total']++;
                       $rows[] = $row;
                     }
-                    if ($total > 0) {
+                    if ($_SESSION['total'] > 0) {
                       $product_id = $rows[0]['product_id'];
                     } else {
                       echo 'Checkout entry not found.';
@@ -188,7 +188,7 @@
                   } else {
                     echo 'Error executing checkout query: ' . mysqli_error($connect);
                   }
-                  echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $total . ' item </small>');
+                  echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $_SESSION['total'] . ' item </small>');
                   ?>
                 </div>
                 <div class=" bg-background-accent rounded-b p-lg">
@@ -197,10 +197,11 @@
                       <!--  -->
                       <?php
                       foreach ($rows as $row) {
-                        $subtotal = 0;
-                        $subtotal = $subtotal + $row['price'];
-                        $taxes = round($subtotal * 0.23, 2);
-                        $total = round($subtotal + $taxes, 2);
+                        $_SESSION['subtotal'] = 0;
+                        $_SESSION['subtotal'] = $_SESSION['subtotal'] + $row['price'];
+                        $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
+                        $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
+                        $_SESSION['pid'] = bin2hex(random_bytes(16));
                         echo ('
                         <div class="bg-background rounded">
                             <div class="flex flex-wrap justify-between lg:grid grid-cols-[2fr_1fr_1fr] gap-md items-center p-sm pr-lg">
@@ -265,19 +266,19 @@
                   <div>
                     <div class="flex flex-wrap justify-between">
                       <h4 class="type-paragraph text-foreground">Subtotal</h4>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $subtotal . '</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['subtotal'] . '</p>'); ?>
                     </div>
                     <div class="flex flex-wrap justify-between">
                       <h4 class="type-paragraph text-foreground">Sales Tax</h4>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $taxes . '</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $_SESSION['taxes'] . '</p>'); ?>
                     </div>
                     <div class="flex flex-wrap justify-between mt-md mb-lg">
                       <h3 class="text-paragraph font-bold text-foreground">Total</h3>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $total . ' EUR</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['total'] . ' EUR</p>'); ?>
                     </div>
                     <br>
                     <?php require_once 'paypal/config.php';  ?>
-                    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX ? PAYPAL_SANDBOX_CLIENT_ID : PAYPAL_PROD_CLIENT_ID; ?>&currency=<?php echo $currency; ?>"></script>
+                    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX ? PAYPAL_SANDBOX_CLIENT_ID : PAYPAL_PROD_CLIENT_ID; ?>&currency=EUR"></script>
                     <div class="panel-body">
                       <div id="paymentResponse" class="hidden"></div>
                       <div id="paypal-button-container"></div>
@@ -295,28 +296,22 @@
                         createOrder: (data, actions) => {
                           return actions.order.create({
                             "purchase_units": [{
-                              "custom_id": "<?php echo $itemNumber; ?>",
-                              "description": "<?php echo $itemName; ?>",
+                              custom_id: "<?php echo $_SESSION['pid']; ?>",
                               "amount": {
-                                "currency_code": "<?php echo $currency; ?>",
-                                "value": <?php echo $itemPrice; ?>,
-                                "breakdown": {
-                                  "item_total": {
-                                    "currency_code": "<?php echo $currency; ?>",
-                                    "value": <?php echo $itemPrice; ?>
-                                  }
-                                }
+                                currency_code: "EUR",
+                                "value": <?php echo $_SESSION['total']; ?>,
                               },
-                              "items": [{
-                                "name": "<?php echo $itemName; ?>",
-                                "description": "<?php echo $itemName; ?>",
-                                "unit_amount": {
-                                  "currency_code": "<?php echo $currency; ?>",
-                                  "value": <?php echo $itemPrice; ?>
-                                },
-                                "quantity": "1",
-                                "category": "DIGITAL_GOODS"
-                              }, ]
+                              items: [
+                                <?php foreach ($rows as $row) : ?> {
+                                    name: "<?php echo addslashes($row['name']); ?>",
+                                    unit_amount: {
+                                      currency_code: "EUR",
+                                      value: "<?php echo number_format($row['price'] * 1.23, 2, '.', ''); ?>"
+                                    },
+                                    quantity: "1",
+                                  },
+                                <?php endforeach; ?>
+                              ]
                             }]
                           });
                         },

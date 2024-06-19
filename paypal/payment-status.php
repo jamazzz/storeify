@@ -1,7 +1,7 @@
 <?php
 // Include the configuration file  
 require_once 'paypal/config.php';
-
+session_start();
 // Include the database connection file  
 require_once 'db.php';
 
@@ -53,8 +53,8 @@ if (!empty($_GET['checkout_ref_id'])) {
   <p><b>Country:</b> <?php echo $payer_country; ?></p>
 
   <h4>Product Information</h4>
-  <p><b>Name:</b> <?php echo $itemName; ?></p>
-  <p><b>Price:</b> <?php echo $itemPrice . ' ' . $currency; ?></p>
+  <p><b>ID:</b> <?php echo $_SESSION['pid']; ?></p>
+  <p><b>Price:</b> <?php echo $_SESSION['total'] . ' ' . "EUR"; ?></p>
 <?php } else { ?>
   <h1 class="error">Your Payment been failed!</h1>
   <p class="error"><?php echo $statusMsg; ?></p>

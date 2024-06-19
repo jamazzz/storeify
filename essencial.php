@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -91,7 +92,6 @@ window.onload = function() {
 }
 </script>');
 } else {
-	session_start();
 	if (!isset($_SESSION['userid'])) {
 		mysqli_close($connect);
 		header('Location: /storeify/access/login.php');

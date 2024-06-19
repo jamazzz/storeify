@@ -1,7 +1,7 @@
 <?php
 // Include the configuration file 
 require_once 'paypal/config.php';
-
+session_start();
 // Include the database connection file 
 include_once 'paypal/db.php';
 
@@ -85,7 +85,7 @@ if (!empty($_POST['paypal_order_check']) && !empty($_POST['order_id'])) {
         // Insert transaction data into the database 
         $sqlQ = "INSERT INTO transactions (item_number,item_name,item_price,item_price_currency,payer_id,payer_name,payer_email,payer_country,merchant_id,merchant_email,order_id,transaction_id,paid_amount,paid_amount_currency,payment_source,payment_status,created,modified) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())";
         $stmt = $db->prepare($sqlQ);
-        $stmt->bind_param("ssdsssssssssdssss", $item_number, $item_name, $itemPrice, $currency, $payer_id, $payer_full_name, $payer_email_address, $payer_country_code, $merchant_id, $payee_email_address, $order_id, $transaction_id, $amount_value, $currency_code, $payment_source, $payment_status, $order_time);
+        $stmt->bind_param("ssdsssssssssdssss", $item_number, $item_name, $_SESSION['total'], "EUR", $payer_id, $payer_full_name, $payer_email_address, $payer_country_code, $merchant_id, $payee_email_address, $order_id, $transaction_id, $amount_value, $currency_code, $payment_source, $payment_status, $order_time);
         $insert = $stmt->execute();
 
         if ($insert) {
