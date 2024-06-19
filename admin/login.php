@@ -163,7 +163,7 @@
   </div>
   <?php
   session_start();
-  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   if (!isset($_SESSION["phase"])) {
     $_SESSION["phase"] = 1;
   }

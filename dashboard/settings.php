@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 session_start();
 $username = $_POST['username'];
 $email = $_POST['email'];

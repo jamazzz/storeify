@@ -8,85 +8,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/45266fece3.js" crossorigin="anonymous"></script>
 </head>
-<div class="container-fluid">
 
-    <header class="page-title">
-        <div class="row no-gutters">
-            <div class="col-12 col-md-6 my-2">
-                <h1>Your Projects</h1>
-            </div>
-        </div>
-    </header>
+<body>
+    <?php
+    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+    ?>
+    <div class="container-fluid">
 
-    <style>
-        #myDiv {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            padding: 20px;
-        }
-    </style>
-
-    <div id="myDiv" class="col-6 col-md-6 col-lg-6 col-xl-6 mb-6" style="display: none;">
-        <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
-            <div class="card-header">
-                <div class="float-left">
-                    <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Delete Project
+        <header class="page-title">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-6 my-2">
+                    <h1>Your Projects</h1>
                 </div>
             </div>
-            <div class="card-body">
-                <p class="mb-0">Are you sure you want to delete?</p>
-                <div style="margin-top: 2rem; position: relative; left: 550px;">
-                    <form action="delete.php" method="post">
-                        <input type="text" name="id" value="" style="display: none;">
-                        <button onclick="toggleVisibility(this)" type="button" class="btn text">No</button>
-                        <button type="submit" class="btn btn-danger text-primary">Yes</button>
-                    </form>
-                    <form id="send" action="sendinfo.php" method="post">
-                        <input type="text" name="id2" value="" style="display: none;">
-                        <button type="submit" style="display: none;"></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function toggleVisibility(clickedElement) {
-            var websiteId = clickedElement.getAttribute('value');
-            document.getElementsByName('id')[0].value = websiteId;
-
-            var myDiv = document.getElementById("myDiv");
-            if (myDiv.style.display === "none") {
-                myDiv.style.display = "block";
-            } else {
-                myDiv.style.display = "none";
+        </header>
+        <style>
+            #myDiv {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                padding: 20px;
             }
-        }
+        </style>
 
-        function submitForm(clickedElement) {
-            var websiteId = clickedElement.getAttribute('value');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.type = 'hidden';
-            hiddenInput.name = 'id';
-            hiddenInput.value = websiteId;
-            var form = document.getElementById('send');
-            form.appendChild(hiddenInput);
-            form.submit();
-        }
-    </script>
+        <div id="myDiv" class="col-6 col-md-6 col-lg-6 col-xl-6 mb-6" style="display: none;">
+            <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
+                <div class="card-header">
+                    <div class="float-left">
+                        <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Delete Project
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">Are you sure you want to delete?</p>
+                    <div style="margin-top: 2rem; position: relative; left: 550px;">
+                        <form action="delete.php" method="post">
+                            <input type="text" name="id" value="" style="display: none;">
+                            <button onclick="toggleVisibility(this)" type="button" class="btn text">No</button>
+                            <button type="submit" class="btn btn-danger text-primary">Yes</button>
+                        </form>
+                        <form id="send" action="sendinfo.php" method="post">
+                            <input type="text" name="id2" value="" style="display: none;">
+                            <button type="submit" style="display: none;"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function toggleVisibility(clickedElement) {
+                var websiteId = clickedElement.getAttribute('value');
+                document.getElementsByName('id')[0].value = websiteId;
+
+                var myDiv = document.getElementById("myDiv");
+                if (myDiv.style.display === "none") {
+                    myDiv.style.display = "block";
+                } else {
+                    myDiv.style.display = "none";
+                }
+            }
+
+            function submitForm(clickedElement) {
+                var websiteId = clickedElement.getAttribute('value');
+                var hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'id';
+                hiddenInput.value = websiteId;
+                var form = document.getElementById('send');
+                form.appendChild(hiddenInput);
+                form.submit();
+            }
+        </script>
 
 
 
-    </body>
+</body>
 
 </html>
 
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
 $projects = "SELECT websiteid FROM members WHERE memberid = '" . $_SESSION['userid'] . "'";
 $result = mysqli_query($connect, $projects);
 $total = mysqli_num_rows($result);

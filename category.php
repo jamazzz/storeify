@@ -49,7 +49,7 @@
       <div class="grid gap-grid">
         <div>
           <?php
-          include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+          include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
           $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
           if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
             $number = $matches[1];

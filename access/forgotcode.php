@@ -4,7 +4,7 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';

@@ -55,7 +55,7 @@
             <nav class="p-sm bg-background-accent rounded">
               <ul class="grid gap-sm lg:flex lg:justify-center">
                 <?php
-                include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+                include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
                 $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
 
                 $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";

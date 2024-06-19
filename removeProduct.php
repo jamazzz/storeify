@@ -1,11 +1,13 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+// 
+$delete = "UPDATE products SET deleted = '1' WHERE id = '" . $_POST['productId'] . "'";
 
-$_SESSION['currentwebsite'] = $_POST['id'];
+$resultdelete = mysqli_query($connect, $delete);
 
-if (isset($_SESSION['currentwebsite'])) {
+if ($resultdelete) {
   mysqli_close($connect);
-  header('Location: /storeify/dashboard/dashlanding.php');
+  header("Location: " . $_POST['currentUrl']);
   exit();
 } else {
   mysqli_close($connect);

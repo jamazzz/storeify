@@ -29,8 +29,8 @@
   </script>
   <div class="container-scroller">
     <?php
-    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+    
 
     $pinfoquery = "SELECT * FROM users  WHERE id = '" . $_SESSION['userid'] . "'";
     $resultadou = mysqli_query($connect, $pinfoquery);

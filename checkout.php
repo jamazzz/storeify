@@ -55,7 +55,7 @@
             <nav class="p-sm bg-background-accent rounded">
               <ul class="grid gap-sm lg:flex lg:justify-center">
                 <?php
-                include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+                include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
                 $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
 
                 $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
@@ -170,7 +170,7 @@
                   <?php
                   $tempvalue = 1;
                   $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
-                  $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'";
+                  $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
                   $result = mysqli_query($connect, $select);
                   $total = 0;
 
@@ -214,9 +214,9 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-sm">
-                                    <a href="/checkout/packages/remove/' . $row['product_id'] . '" class="btn-neutral bg-background-accent rounded-btn py-xs px-sm group spinner-toggle">
-                                        <i class="fa-solid fa-trash-can opacity-50 transition group-hover:opacity-100"></i>
-                                    </a>
+                                      <a id="' . $row['product_id'] . '" class="btn-neutral bg-background-accent rounded-btn py-xs px-sm group spinner-toggle" onclick="removeItem(event)">
+                                          <i class="fa-solid fa-trash-can opacity-50 transition group-hover"></i>
+                                      </a>
                                 </div>
                                 <h3 class="type-header text-right">' . round($row['price'] * 1.23, 2) . ' EUR</h3>
                             </div>
@@ -224,6 +224,27 @@
                         ');
                       }
                       ?>
+                      <script>
+                        function removeItem(event) {
+                          event.preventDefault();
+                          const itemId = event.currentTarget.id;
+                          const form = document.createElement('form');
+                          form.method = 'post';
+                          form.action = 'removeProduct.php';
+                          const input = document.createElement('input');
+                          input.type = 'hidden';
+                          input.name = 'productId';
+                          input.value = itemId;
+                          form.appendChild(input);
+                          const currentUrlInput = document.createElement('input');
+                          currentUrlInput.type = 'hidden';
+                          currentUrlInput.name = 'currentUrl';
+                          currentUrlInput.value = window.location.href;
+                          form.appendChild(currentUrlInput);
+                          document.body.appendChild(form);
+                          form.submit();
+                        }
+                      </script>
                       <!--  -->
                     </div>
                   </div>
@@ -244,121 +265,114 @@
                   <div>
                     <div class="flex flex-wrap justify-between">
                       <h4 class="type-paragraph text-foreground">Subtotal</h4>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">'.$subtotal.'</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $subtotal . '</p>'); ?>
                     </div>
                     <div class="flex flex-wrap justify-between">
                       <h4 class="type-paragraph text-foreground">Sales Tax</h4>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">+ '.$taxes.'</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $taxes . '</p>'); ?>
                     </div>
                     <div class="flex flex-wrap justify-between mt-md mb-lg">
                       <h3 class="text-paragraph font-bold text-foreground">Total</h3>
-                      <?php echo ('<p class="text-foreground-accent text-opacity-50">'.$total.' EUR</p>'); ?>
+                      <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $total . ' EUR</p>'); ?>
                     </div>
                     <br>
-                    <form method="post" action="/checkout/pay" class="gateway">
-                      <?php require_once 'paypal/config.php';  ?>
-                      <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX ? PAYPAL_SANDBOX_CLIENT_ID : PAYPAL_PROD_CLIENT_ID; ?>&currency=<?php echo $currency; ?>"></script>
-                      <div class="panel-body">
-                        <!-- Display status message -->
-                        <div id="paymentResponse" class="hidden"></div>
-
-                        <!-- Set up a container element for the button -->
-                        <div id="paypal-button-container"></div>
-                      </div>
+                    <?php require_once 'paypal/config.php';  ?>
+                    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX ? PAYPAL_SANDBOX_CLIENT_ID : PAYPAL_PROD_CLIENT_ID; ?>&currency=<?php echo $currency; ?>"></script>
+                    <div class="panel-body">
+                      <div id="paymentResponse" class="hidden"></div>
+                      <div id="paypal-button-container"></div>
+                    </div>
                   </div>
                   <script>
-                    paypal.Buttons({
-                      style: {
-                        layout: 'vertical',
-                        color: 'blue',
-                        shape: 'pill',
-                        label: 'paypal'
-                      },
-                      // Sets up the transaction when a payment button is clicked
-                      createOrder: (data, actions) => {
-                        return actions.order.create({
-                          "purchase_units": [{
-                            "custom_id": "<?php echo $itemNumber; ?>",
-                            "description": "<?php echo $itemName; ?>",
-                            "amount": {
-                              "currency_code": "<?php echo $currency; ?>",
-                              "value": <?php echo $itemPrice; ?>,
-                              "breakdown": {
-                                "item_total": {
+                    window.addEventListener('load', function() {
+                      paypal.Buttons({
+                        style: {
+                          layout: 'vertical',
+                          color: 'blue',
+                          shape: 'pill',
+                          label: 'paypal'
+                        },
+                        createOrder: (data, actions) => {
+                          return actions.order.create({
+                            "purchase_units": [{
+                              "custom_id": "<?php echo $itemNumber; ?>",
+                              "description": "<?php echo $itemName; ?>",
+                              "amount": {
+                                "currency_code": "<?php echo $currency; ?>",
+                                "value": <?php echo $itemPrice; ?>,
+                                "breakdown": {
+                                  "item_total": {
+                                    "currency_code": "<?php echo $currency; ?>",
+                                    "value": <?php echo $itemPrice; ?>
+                                  }
+                                }
+                              },
+                              "items": [{
+                                "name": "<?php echo $itemName; ?>",
+                                "description": "<?php echo $itemName; ?>",
+                                "unit_amount": {
                                   "currency_code": "<?php echo $currency; ?>",
                                   "value": <?php echo $itemPrice; ?>
+                                },
+                                "quantity": "1",
+                                "category": "DIGITAL_GOODS"
+                              }, ]
+                            }]
+                          });
+                        },
+                        onApprove: (data, actions) => {
+                          return actions.order.capture().then(function(orderData) {
+                            setProcessing(true);
+
+                            var postData = {
+                              paypal_order_check: 1,
+                              order_id: orderData.id
+                            };
+                            fetch('paypal_checkout_validate.php', {
+                                method: 'POST',
+                                headers: {
+                                  'Accept': 'application/json'
+                                },
+                                body: encodeFormData(postData)
+                              })
+                              .then((response) => response.json())
+                              .then((result) => {
+                                if (result.status == 1) {
+                                  window.location.href = "payment-status.php?checkout_ref_id=" + result.ref_id;
+                                } else {
+                                  const messageContainer = document.querySelector("#paymentResponse");
+                                  messageContainer.classList.remove("hidden");
+                                  messageContainer.textContent = result.msg;
+
+                                  setTimeout(function() {
+                                    messageContainer.classList.add("hidden");
+                                    messageText.textContent = "";
+                                  }, 5000);
                                 }
-                              }
-                            },
-                            "items": [{
-                              "name": "<?php echo $itemName; ?>",
-                              "description": "<?php echo $itemName; ?>",
-                              "unit_amount": {
-                                "currency_code": "<?php echo $currency; ?>",
-                                "value": <?php echo $itemPrice; ?>
-                              },
-                              "quantity": "1",
-                              "category": "DIGITAL_GOODS"
-                            }, ]
-                          }]
-                        });
-                      },
-                      // Finalize the transaction after payer approval
-                      onApprove: (data, actions) => {
-                        return actions.order.capture().then(function(orderData) {
-                          setProcessing(true);
+                                setProcessing(false);
+                              })
+                              .catch(error => console.log(error));
+                          });
+                        }
+                      }).render('#paypal-button-container');
 
-                          var postData = {
-                            paypal_order_check: 1,
-                            order_id: orderData.id
-                          };
-                          fetch('paypal_checkout_validate.php', {
-                              method: 'POST',
-                              headers: {
-                                'Accept': 'application/json'
-                              },
-                              body: encodeFormData(postData)
-                            })
-                            .then((response) => response.json())
-                            .then((result) => {
-                              if (result.status == 1) {
-                                window.location.href = "payment-status.php?checkout_ref_id=" + result.ref_id;
-                              } else {
-                                const messageContainer = document.querySelector("#paymentResponse");
-                                messageContainer.classList.remove("hidden");
-                                messageContainer.textContent = result.msg;
+                      const encodeFormData = (data) => {
+                        var form_data = new FormData();
 
-                                setTimeout(function() {
-                                  messageContainer.classList.add("hidden");
-                                  messageText.textContent = "";
-                                }, 5000);
-                              }
-                              setProcessing(false);
-                            })
-                            .catch(error => console.log(error));
-                        });
+                        for (var key in data) {
+                          form_data.append(key, data[key]);
+                        }
+                        return form_data;
                       }
-                    }).render('#paypal-button-container');
-
-                    const encodeFormData = (data) => {
-                      var form_data = new FormData();
-
-                      for (var key in data) {
-                        form_data.append(key, data[key]);
+                      const setProcessing = (isProcessing) => {
+                        if (isProcessing) {
+                          document.querySelector(".overlay").classList.remove("hidden");
+                        } else {
+                          document.querySelector(".overlay").classList.add("hidden");
+                        }
                       }
-                      return form_data;
-                    }
-
-                    // Show a loader on payment form processing
-                    const setProcessing = (isProcessing) => {
-                      if (isProcessing) {
-                        document.querySelector(".overlay").classList.remove("hidden");
-                      } else {
-                        document.querySelector(".overlay").classList.add("hidden");
-                      }
-                    }
+                    });
                   </script>
-                  </form>
                   <br>
                   <form method="post" action="/checkout/coupons/add" class="flex gap-md">
                     <input type="text" name="coupon" placeholder="Coupon Code" class="">

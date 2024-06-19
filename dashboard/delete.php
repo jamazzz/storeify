@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+
 
 $delete = "UPDATE websites SET deleted = 1 ,deleted_date= NOW() WHERE id = '" . $_POST['id'] . "'";
 $resultdelete = mysqli_query($connect, $delete);

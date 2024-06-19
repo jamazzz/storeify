@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+
 
 $urlweb = str_replace(' ', '-', $_POST['project_name']);
 $newweb = "INSERT INTO websites (name, url, owner, package_id) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "', 1)";

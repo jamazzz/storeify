@@ -1,6 +1,6 @@
 <?php
 session_start();
-include $_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php";
 $jsonData = $_POST['credential'];
 $type = $_POST['buttonId'];
 $data = json_decode($jsonData);
