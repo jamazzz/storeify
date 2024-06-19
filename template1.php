@@ -929,7 +929,6 @@
           <div class="flex gap-md flex-wrap justify-between items-center">
             <div>
               <h3 class="type-header font-bold text-sm">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-              <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands. Theme made with <a href="http://fragmentor.io/">Fragmentor</a>.</p>
             </div>
             <div class="relative group">
               <button class="btn-neutral bg-background-accent group dropdown-toggle"><i class="fa-solid fa-globe mr-sm opacity-50 transition group-hover:opacity-100"></i>Language</button>

@@ -3,10 +3,10 @@ include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/check.php");
 
 $urlweb = str_replace(' ', '-', $_POST['project_name']);
-echo($urlweb);
 $newweb = "INSERT INTO websites (name, url, owner, package_id) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "', 1)";
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
+mkdir($_SERVER['DOCUMENT_ROOT'] . "/storeify/store/" . $urlweb, 0777, true);
 
 $websiteExists = "SELECT COUNT(*) as count FROM websites WHERE name = '" . $_POST['project_name'] . "'";
 $result = mysqli_query($connect, $websiteExists);

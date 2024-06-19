@@ -96,8 +96,3 @@ ErrorDocument 404 /storeify/404.php
 ErrorDocument 401 /storeify/401.php
 
 ErrorDocument 403 /storeify/403.php
-
-# Better URL's
-<Files magic>
-	ForceType application/x-httpd-php5
-</Files>

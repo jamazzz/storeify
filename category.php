@@ -49,17 +49,13 @@
       <div class="grid gap-grid">
         <div>
           <?php
-          //  bd
           include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
-
-          //  id & subdomain
+          $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
           if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
             $number = $matches[1];
           }
-          $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
 
-          // select verifica se o subdominio existe
-          $select = "SELECT * FROM websites WHERE url = '" . $subdomain . "'";
+          $select = "SELECT * FROM websites WHERE subdomain = '" . $subdomain . "'";
           $result = mysqli_query($connect, $select);
           $row = mysqli_fetch_assoc($result);
           if (!mysqli_num_rows($result) == 1 || $_SERVER['HTTP_HOST'] == "localhost") {
@@ -72,7 +68,7 @@
             exit();
           }
 
-          $select2 = "SELECT categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.url = '" . $subdomain . "'";
+          $select2 = "SELECT categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
           $result2 = mysqli_query($connect, $select2);
           if (!mysqli_num_rows($result2) > 0) {
             header('Location: /storeify/404.php');
@@ -97,25 +93,32 @@
             <nav class="p-sm bg-background-accent rounded">
               <ul class="grid gap-sm lg:flex lg:justify-center">
                 <?php
-                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.url = '" . $subdomain . "'";
+                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
                 $resultcat = mysqli_query($connect, $selectcat);
+                echo ('
+                      <li>
+                        <a href="' . '/storeify/website' . '" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
+                          ' . "Home" . '
+                        </a>
+                      </li>'
+                );
                 while ($rowcat = mysqli_fetch_assoc($resultcat)) {
                   if ($rowcat['id'] != $number) {
                     echo ('  
-                                  <li>
-                                <a href="/" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
-                                  ' . $rowcat['name'] . '
-                                </a>
-                              </li>
-                                  ');
+                          <li>
+                              <a href="/storeify/category/" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
+                                ' . $rowcat['name'] . '
+                              </a>
+                          </li>
+                        ');
                   } else {
                     echo ('  
-                    <li>
-                  <a href="/" class="type-header cursor-pointer group justify-center btn-primary">
-                    ' . $rowcat['name'] . '
-                  </a>
-                </li>
-                    ');
+                          <li>
+                            <a href="/storeify/category/" class="type-header cursor-pointer group justify-center btn-primary">
+                              ' . $rowcat['name'] . '
+                            </a>
+                          </li>
+                        ');
                   }
                 }
                 ?>
@@ -203,8 +206,13 @@
             while ($row = mysqli_fetch_assoc($result)) {
               echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
               <a href="/package/5882374" class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
-                <img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" class="inline-block max-h-52 mx-auto">
-              </a>
+              ');
+              if (!file_exists('/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '.png')) {
+                echo ('<img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" class="inline-block max-h-52 mx-auto">');
+              } else {
+                echo ('<img src="/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '" class="inline-block max-h-52 mx-auto">');
+              }
+              echo ('</a>
               <h2 class="type-header  border-t  border-background-accent  p-sm text-center">' . $row['name'] . ' - ' . $row['price'] . ' EUR</h2>
               <div class="flex justify-between py-sm">
               </div>

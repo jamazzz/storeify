@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/storeify/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/storeify/assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../../assets/css/modern-vertical/style.css">
+    <link rel="stylesheet" href="/storeify/assets/css/modern-vertical/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -30,17 +30,7 @@
                 </div>
                 <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
                   <h2>SORRY!</h2>
-                  <h3 class="font-weight-light">Internal server error!</h3>
-                </div>
-              </div>
-              <div class="row mt-5">
-                <div class="col-12 text-center mt-xl-2">
-                  <a class="text-white font-weight-medium" href="../../dashlanding.php">Back to home</a>
-                </div>
-              </div>
-              <div class="row mt-5">
-                <div class="col-12 mt-xl-2">
-                  <p class="text-white font-weight-medium text-center">Copyright &copy; 2018 All rights reserved.</p>
+                  <h3 class="font-weight-light">Internal server error</h3>
                 </div>
               </div>
             </div>
@@ -52,16 +42,16 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/storeify/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../../assets/js/off-canvas.js"></script>
-    <script src="../../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../../assets/js/misc.js"></script>
-    <script src="../../../assets/js/settings.js"></script>
-    <script src="../../../assets/js/todolist.js"></script>
+    <script src="/storeify/assets/js/off-canvas.js"></script>
+    <script src="/storeify/assets/js/hoverable-collapse.js"></script>
+    <script src="/storeify/assets/js/misc.js"></script>
+    <script src="/storeify/assets/js/settings.js"></script>
+    <script src="/storeify/assets/js/todolist.js"></script>
     <!-- endinject -->
   </body>
 </html>

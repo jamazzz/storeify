@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -54,31 +54,42 @@
           <div class="hidden lg:block">
             <nav class="p-sm bg-background-accent rounded">
               <ul class="grid gap-sm lg:flex lg:justify-center">
-                <!-- Redirect Section -->
-                <li>
-                  <a href="/" class="type-header cursor-pointer group justify-center btn-primary">
-                    Home
-                  </a>
-                </li>
+                <?php
+                include($_SERVER['DOCUMENT_ROOT'] . "/storeify/bd.php");
+                $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
 
-                <!-- Section with dropdown -->
-                <li class="relative ">
-                  <button class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn" data-dropdown="close">
-                    <span class="pr-sm">QBCORE</span>
-                    <i class="fa-solid fa-caret-down fa-fw opacity-50  transition group-hover:opacity-100 group-data-[dropdown=open]:rotate-180"></i>
-                  </button>
-
-                  <ul class="dropdown-menu grid gap-xs relative w-full shadow-none rounded-btn rounded-t-none border-t max-w-full transition border-background-accent lg:w-[350px] lg:max-w-[500px] lg:absolute lg:rounded-btn lg:border-none lg:translate-y-2 lg:shadow-lg lg:shadow-[rgba(0,0,0,.3)]" style="display:none;">
-
-                    <!-- Dropdown part -->
-                    <li class="group">
-                      <a href="/category/free-1" class="type-header py-sm px-sm transition rounded-btn block w-full hover:bg-background-accent">
-                        FREE
-                      </a>
-                    </li>
-
-                  </ul>
-                </li>
+                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
+                $resultcat = mysqli_query($connect, $selectcat);
+                $number = -1;
+                if (isset($number)) {
+                  echo ('                   
+                      <li>
+                        <a href="' . '/storeify/website' . '" class="type-header cursor-pointer group justify-center btn-primary">
+                          ' . "Home" . '
+                        </a>
+                      </li>'
+                  );
+                }
+                while ($rowcat = mysqli_fetch_assoc($resultcat)) {
+                  if ($rowcat['id'] != $number) {
+                    echo ('  
+                          <li>
+                              <a href="/storeify/category/" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
+                                ' . $rowcat['name'] . '
+                              </a>
+                          </li>
+                        ');
+                  } else {
+                    echo ('  
+                          <li>
+                            <a href="/storeify/category/" class="type-header cursor-pointer group justify-center btn-primary">
+                              ' . $rowcat['name'] . '
+                            </a>
+                          </li>
+                        ');
+                  }
+                }
+                ?>
               </ul>
             </nav>
 
@@ -139,98 +150,6 @@
           </div>
         </div>
         <div class="lg:hidden block">
-
-
-          <div class="flex items-center justify-between ">
-            <a href="/login" class="flex items-center gap-md h-12 group pr-lg">
-              <div class="text-left">
-                <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged out</small>
-                <small class="text-success hidden group-hover:block">Sign in</small>
-                <h3 class="leading-none type-header block">Guest</h3>
-              </div>
-
-            </a>
-            <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="basket">
-              <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
-                <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
-                  <div class="flex justify-between p-grid border-b border-background items-center gap-grid">
-                    <a href="/login" class="flex items-center gap-md h-12 group pr-lg">
-                      <div class="text-left">
-                        <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged out</small>
-                        <small class="text-success hidden group-hover:block">Sign in</small>
-                        <h3 class="leading-none type-header block">Guest</h3>
-                      </div>
-
-                    </a>
-                    <div class="flex gap-md">
-                      <div class="relative group">
-                        <button class="btn-neutral bg-background group dropdown-toggle">
-                          EUR<i class="fa-solid fa-caret-down ml-sm opacity-50 transition group-hover:opacity-100"></i>
-                        </button>
-                        <ul class="dropdown-selector w-[150px]" style="display: none;">
-                          <li>
-                            <a href="?currency=AUD" class="spinner-toggle ">AUD</a>
-                          </li>
-                          <li>
-                            <a href="?currency=BRL" class="spinner-toggle ">BRL</a>
-                          </li>
-                          <li>
-                            <a href="?currency=CAD" class="spinner-toggle ">CAD</a>
-                          </li>
-                          <li>
-                            <a href="?currency=DKK" class="spinner-toggle ">DKK</a>
-                          </li>
-                          <li>
-                            <a href="?currency=EUR" class="spinner-toggle text-foreground text-opacity-100 bg-background-accent">EUR</a>
-                          </li>
-                          <li>
-                            <a href="?currency=NOK" class="spinner-toggle ">NOK</a>
-                          </li>
-                          <li>
-                            <a href="?currency=NZD" class="spinner-toggle ">NZD</a>
-                          </li>
-                          <li>
-                            <a href="?currency=PLN" class="spinner-toggle ">PLN</a>
-                          </li>
-                          <li>
-                            <a href="?currency=GBP" class="spinner-toggle ">GBP</a>
-                          </li>
-                          <li>
-                            <a href="?currency=SEK" class="spinner-toggle ">SEK</a>
-                          </li>
-                          <li>
-                            <a href="?currency=USD" class="spinner-toggle ">USD</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <button class="btn-icon-neutral bg-background group sidebar-close"><i class="fa-solid fa-xmark transition opacity-50 group-hover:opacity-100"></i></button>
-                    </div>
-                  </div>
-                  <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
-                    <div class="p-grid pb-0 flex items-center justify-between">
-                      <h1 class="type-header text-foreground">Your cart</h1>
-                      <small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50">
-
-                        Empty
-
-                      </small>
-                    </div>
-                    <div>
-                      <div class="p-grid grid gap-grid">
-                      </div>
-                    </div>
-                    <div class="p-grid border-t border-t-background">
-                      <div class="flex justify-between items-center mb-md">
-                        <h2 class="type-header text-opacity-50 text-foreground-accent">Order total</h2>
-                        <h2 class="type-header">0 EUR</h2>
-                      </div>
-                      <a href="/checkout/basket" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div>
@@ -247,95 +166,99 @@
               </small>
             </div>
           </div>
-          <div class="markdown bg-background-accent rounded-b p-lg">
-            <p style="text-align:center;"><strong><span style="font-size:18px;color:rgb(44,130,201);font-family:Verdana, Geneva, sans-serif;">About Us</span></strong></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">We are a community with more than <strong>8000</strong> members on our discord and our commitment is to bring the best scripts to your servers!</span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You are free to choose any script to improve your server</span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You will find scripts for ESX &amp; QBCore frameworks</span></span></p>
-            <p style="text-align:center;"><br></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">FiveM Escrow System</span></strong></span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts are encrypted and protected by the FiveM Escrow System</span></span></p>
-            <p style="text-align:center;"><br></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Updates</span></strong></span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts receive daily updates</span></span></p>
-            <p style="text-align:center;"><br></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Useful Links</span></strong></span><span style="color:rgb(44,130,201);"><span style="font-size:14px;"><br></span></span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://discord.gg/marcinhu">Discord</a></span></span></p>
-            <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://youtube.com/c/marcinhu">Youtube</a></span></span></p>
-            <p style="text-align:center;"><a href="https://storeify.gitbook.io/docs/" target="_blank" rel="noreferrer noopener"><span style="font-family:Verdana, Geneva, sans-serif;font-size:14px;">Documentation</span></a></p>
-          </div>
-        </div>
+          <?php
+          //   echo('
+          //   <div class="markdown bg-background-accent rounded-b p-lg">
+          //     <p style="text-align:center;"><strong><span style="font-size:18px;color:rgb(44,130,201);font-family:Verdana, Geneva, sans-serif;">About Us</span></strong></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">We are a community with more than <strong>8000</strong> members on our discord and our commitment is to bring the best scripts to your servers!</span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You are free to choose any script to improve your server</span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You will find scripts for ESX &amp; QBCore frameworks</span></span></p>
+          //     <p style="text-align:center;"><br></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">FiveM Escrow System</span></strong></span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts are encrypted and protected by the FiveM Escrow System</span></span></p>
+          //     <p style="text-align:center;"><br></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Updates</span></strong></span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts receive daily updates</span></span></p>
+          //     <p style="text-align:center;"><br></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Useful Links</span></strong></span><span style="color:rgb(44,130,201);"><span style="font-size:14px;"><br></span></span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://discord.gg/marcinhu">Discord</a></span></span></p>
+          //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://youtube.com/c/marcinhu">Youtube</a></span></span></p>
+          //     <p style="text-align:center;"><a href="https://storeify.gitbook.io/docs/" target="_blank" rel="noreferrer noopener"><span style="font-family:Verdana, Geneva, sans-serif;font-size:14px;">Documentation</span></a></p>
+          //   </div>
+          // </div>');
+          ?>
 
 
-        <section class="bg-background-accent rounded p-lg mt-grid">
-          <h1 class="type-header block mb-lg text-center">Testimonials</h1>
-          <div class="mb-lg flex items-center gap-md justify-center">
-            <div>
-              <!-- Stars -->
+          <section class="bg-background-accent rounded p-lg mt-grid">
+            <h1 class="type-header block mb-lg text-center">Testimonials</h1>
+            <div class="mb-lg flex items-center gap-md justify-center">
               <div>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-              </div>
-              <!-- Stars -->
-              <p class="text-foreground-accent">From 6 reviews</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-grid">
-            <!--  -->
-            <div class="bg-background rounded p-lg grid flex-[1_1_300px] grid-rows-[auto_1fr]">
-              <div class="flex items-center">
-                <h3 class="type-header block leading-none">hzrdd.</h3>
-                <br>
-              </div>
-              <div>
-                <div class="mb-md">
+                <!-- Stars -->
+                <div>
                   <i class="fa-solid fa-star fa-fw text-primary"></i>
                   <i class="fa-solid fa-star fa-fw text-primary"></i>
                   <i class="fa-solid fa-star fa-fw text-primary"></i>
                   <i class="fa-solid fa-star fa-fw text-primary"></i>
                   <i class="fa-solid fa-star fa-fw text-primary"></i>
                 </div>
-                <p class="type-paragraph text-foreground-accent">M-Blackmarket &amp; M-Drugs, very high quality scripts and when I had a issue with something the staff team was quick to help me fix the problem and get everything working again. Highly recommend</p>
+                <!-- Stars -->
+                <p class="text-foreground-accent">From 6 reviews</p>
               </div>
             </div>
-            <!--  -->
-          </div>
-        </section>
+            <div class="flex flex-wrap gap-grid">
+              <!--  -->
+              <div class="bg-background rounded p-lg grid flex-[1_1_300px] grid-rows-[auto_1fr]">
+                <div class="flex items-center">
+                  <h3 class="type-header block leading-none">hzrdd.</h3>
+                  <br>
+                </div>
+                <div>
+                  <div class="mb-md">
+                    <i class="fa-solid fa-star fa-fw text-primary"></i>
+                    <i class="fa-solid fa-star fa-fw text-primary"></i>
+                    <i class="fa-solid fa-star fa-fw text-primary"></i>
+                    <i class="fa-solid fa-star fa-fw text-primary"></i>
+                    <i class="fa-solid fa-star fa-fw text-primary"></i>
+                  </div>
+                  <p class="type-paragraph text-foreground-accent">M-Blackmarket &amp; M-Drugs, very high quality scripts and when I had a issue with something the staff team was quick to help me fix the problem and get everything working again. Highly recommend</p>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="grid gap-grid">
-    <div class="hidden lg:block">
+    <div class="grid gap-grid">
+      <div class="hidden lg:block">
 
 
-      <div class="flex items-center justify-between ">
-        <a href="/login" class="flex items-center gap-md h-12 group pr-lg">
+        <div class="flex items-center justify-between ">
+          <a href="/login" class="flex items-center gap-md h-12 group pr-lg">
 
-        </a>
-        <div class="flex gap-md">
-          <div class="relative group">
-            <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="basket">
-              <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
-                <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
-                  <div class="flex justify-between p-grid border-b border-background items-center gap-grid">
-                    <div class="flex gap-md">
-                      <button class="btn-icon-neutral bg-background group sidebar-close"><i class="fa-solid fa-xmark transition opacity-50 group-hover:opacity-100"></i></button>
-                    </div>
-                  </div>
-                  <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
-                    <div>
-                      <div class="p-grid grid gap-grid">
+          </a>
+          <div class="flex gap-md">
+            <div class="relative group">
+              <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="basket">
+                <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
+                  <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
+                    <div class="flex justify-between p-grid border-b border-background items-center gap-grid">
+                      <div class="flex gap-md">
+                        <button class="btn-icon-neutral bg-background group sidebar-close"><i class="fa-solid fa-xmark transition opacity-50 group-hover:opacity-100"></i></button>
                       </div>
                     </div>
-                    <div class="p-grid border-t border-t-background">
-                      <div class="flex justify-between items-center mb-md">
-                        <h2 class="type-header text-opacity-50 text-foreground-accent">Order total</h2>
-                        <h2 class="type-header">0 EUR</h2>
+                    <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
+                      <div>
+                        <div class="p-grid grid gap-grid">
+                        </div>
                       </div>
-                      <a href="/checkout/basket" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
+                      <div class="p-grid border-t border-t-background">
+                        <div class="flex justify-between items-center mb-md">
+                          <h2 class="type-header text-opacity-50 text-foreground-accent">Order total</h2>
+                          <h2 class="type-header">0 EUR</h2>
+                        </div>
+                        <a href="/checkout/basket" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -345,26 +268,24 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Widget Area-->
-  <div class="container mx-auto p-sm">
-    <footer>
-      <div class="flex gap-md mb-md flex-wrap">
-        <!-- Socials -->
-        <div class="bg-background-accent rounded flex gap-md flex-grow justify-start items-center p-sm">
-          <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-          <p class="font-paragraph text-sm opacity-50">We do not have affiliation with any real world brands.</p>
-          <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
+    <!-- End Widget Area-->
+    <div class="container mx-auto p-sm">
+      <footer>
+        <div class="flex gap-md mb-md flex-wrap">
+          <!-- Socials -->
+          <div class="bg-background-accent rounded flex gap-md flex-grow justify-start items-center p-sm">
+            <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
+            <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
 
-          <a href="https://github.com/marcinhuu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
+            <a href="https://github.com/marcinhuu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
 
-          <a href="https://www.instagram.com/marcinhu.scripts/" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-instagram opacity-50 transition group-hover:opacity-100"></i></a>
+            <a href="https://www.instagram.com/marcinhu.scripts/" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-instagram opacity-50 transition group-hover:opacity-100"></i></a>
 
-          <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
+            <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
+          </div>
         </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
   </div>
   </div>
 

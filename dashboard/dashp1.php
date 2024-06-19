@@ -73,7 +73,6 @@
           <div class="collapse" id="payments">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/payments.php">Pagamentos</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/payment-methods.php">Metodos de Pagamento</a></li>
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/wallet.php">Carteira</a></li>
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/exports.php">Registros</a></li>
             </ul>
