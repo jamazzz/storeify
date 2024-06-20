@@ -88,7 +88,10 @@ if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
 </div>
 <script>
 window.onload = function() {
-	document.getElementById("loading").style.display = "none"
+	setTimeout(removeLoader, 700);
+	function removeLoader() {
+		document.getElementById("loading").style.display = "none"
+	}
 }
 </script>');
 } else {

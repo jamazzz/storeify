@@ -193,7 +193,7 @@
             </div>
             <div class="bg-background-accent rounded">
               <div class=" grid grid-rows-[1fr_auto_auto]">
-                    <br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br>
                 <div class="bg-background-accent block rounded-sm text-center items-center overflow-hidden">
                   <img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" class="inline-block max-h-52 mx-auto">
                   <h2 class="type-header border-background  p-sm">[QB] CRAFTING</h2>
@@ -209,7 +209,8 @@
             </div>
           </div>
           <!-- End Widget Area-->
-          <div class="container mx-auto p-sm">
+          <br><br>
+          <div class="container mx-auto">
             <footer>
               <div class="flex gap-md mb-md flex-wrap">
                 <!-- Socials -->

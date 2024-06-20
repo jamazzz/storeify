@@ -1,9 +1,6 @@
 <?php
-// Include the configuration file  
 require_once 'paypal/config.php';
-session_start();
-// Include the database connection file  
-require_once 'db.php';
+require_once 'essencial.php';
 
 $payment_ref_id = $statusMsg = '';
 $status = 'error';

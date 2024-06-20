@@ -172,15 +172,15 @@
                   $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
                   $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
                   $result = mysqli_query($connect, $select);
-                  $_SESSION['total'] = 0;
+                  $totalrow = 0;
 
                   if ($result) {
                     $rows = [];
                     while ($row = mysqli_fetch_assoc($result)) {
-                      $_SESSION['total']++;
+                      $totalrow++;
                       $rows[] = $row;
                     }
-                    if ($_SESSION['total'] > 0) {
+                    if ($totalrow > 0) {
                       $product_id = $rows[0]['product_id'];
                     } else {
                       echo 'Checkout entry not found.';
@@ -188,7 +188,7 @@
                   } else {
                     echo 'Error executing checkout query: ' . mysqli_error($connect);
                   }
-                  echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $_SESSION['total'] . ' item </small>');
+                  echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $totalrow . ' item </small>');
                   ?>
                 </div>
                 <div class=" bg-background-accent rounded-b p-lg">
@@ -286,87 +286,82 @@
                   </div>
                   <script>
                     window.addEventListener('load', function() {
-                      paypal.Buttons({
-                        style: {
-                          layout: 'vertical',
-                          color: 'blue',
-                          shape: 'pill',
-                          label: 'paypal'
-                        },
-                        createOrder: (data, actions) => {
-                          return actions.order.create({
-                            "purchase_units": [{
-                              custom_id: "<?php echo $_SESSION['pid']; ?>",
-                              "amount": {
-                                currency_code: "EUR",
-                                "value": <?php echo $_SESSION['total']; ?>,
+                      setTimeout(function() {
+                        paypal.Buttons({
+                          style: {
+                            layout: 'vertical',
+                            color: 'blue',
+                            shape: 'pill',
+                            label: 'paypal'
+                          },
+                          createOrder: (data, actions) => {
+                            return actions.order.create({
+                              "purchase_units": [{
+                                "custom_id": "<?php echo $_SESSION['pid']; ?>",
+                                "amount": {
+                                  "currency_code": "EUR",
+                                  "value": "<?php echo $_SESSION['total']; ?>",
+                                },
+                              }],
+                              "application_context": {
+                                "shipping_preference": "NO_SHIPPING"
                               },
-                              items: [
-                                <?php foreach ($rows as $row) : ?> {
-                                    name: "<?php echo addslashes($row['name']); ?>",
-                                    unit_amount: {
-                                      currency_code: "EUR",
-                                      value: "<?php echo number_format($row['price'] * 1.23, 2, '.', ''); ?>"
-                                    },
-                                    quantity: "1",
-                                  },
-                                <?php endforeach; ?>
-                              ]
-                            }]
-                          });
-                        },
-                        onApprove: (data, actions) => {
-                          return actions.order.capture().then(function(orderData) {
-                            setProcessing(true);
+                            });
+                          },
+                            onApprove: (data, actions) => {
+                            return actions.order.capture().then(function(orderData) {
+                              setProcessing(true);
 
-                            var postData = {
+                              var postData = {
                               paypal_order_check: 1,
                               order_id: orderData.id
-                            };
-                            fetch('paypal_checkout_validate.php', {
+                              };
+                              fetch('/storeify/paypal/paypal_checkout_validate.php', {
                                 method: 'POST',
                                 headers: {
-                                  'Accept': 'application/json'
+                                'Accept': 'application/json'
                                 },
                                 body: encodeFormData(postData)
                               })
                               .then((response) => response.json())
                               .then((result) => {
+                                console.log(result); // Debug print
                                 if (result.status == 1) {
-                                  window.location.href = "payment-status.php?checkout_ref_id=" + result.ref_id;
+                                window.location.href = "/storeify/paypal/payment-status.php?checkout_ref_id=" + result.ref_id;
                                 } else {
-                                  const messageContainer = document.querySelector("#paymentResponse");
-                                  messageContainer.classList.remove("hidden");
-                                  messageContainer.textContent = result.msg;
+                                const messageContainer = document.querySelector("#paymentResponse");
+                                messageContainer.classList.remove("hidden");
+                                messageContainer.textContent = result.msg;
 
-                                  setTimeout(function() {
-                                    messageContainer.classList.add("hidden");
-                                    messageText.textContent = "";
-                                  }, 5000);
+                                setTimeout(function() {
+                                  messageContainer.classList.add("hidden");
+                                  messageText.textContent = "";
+                                }, 5000);
                                 }
                                 setProcessing(false);
                               })
                               .catch(error => console.log(error));
-                          });
-                        }
-                      }).render('#paypal-button-container');
+                            });
+                            }
+                          }).render('#paypal-button-container');
+                          }, 700);
+                        });
 
-                      const encodeFormData = (data) => {
-                        var form_data = new FormData();
+                    function encodeFormData(data) {
+                      var form_data = new FormData();
+                      for (var key in data) {
+                        form_data.append(key, data[key]);
+                      }
+                      return form_data;
+                    }
 
-                        for (var key in data) {
-                          form_data.append(key, data[key]);
-                        }
-                        return form_data;
+                    function setProcessing(isProcessing) {
+                      if (isProcessing) {
+                        document.querySelector(".overlay").classList.remove("hidden");
+                      } else {
+                        document.querySelector(".overlay").classList.add("hidden");
                       }
-                      const setProcessing = (isProcessing) => {
-                        if (isProcessing) {
-                          document.querySelector(".overlay").classList.remove("hidden");
-                        } else {
-                          document.querySelector(".overlay").classList.add("hidden");
-                        }
-                      }
-                    });
+                    }
                   </script>
                   <br>
                   <form method="post" action="/checkout/coupons/add" class="flex gap-md">
