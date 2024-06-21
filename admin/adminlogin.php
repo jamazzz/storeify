@@ -1,6 +1,5 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-session_start();
 function redirect($connection)
 {
     mysqli_close($connection);
@@ -27,7 +26,7 @@ if (!isset($password) && !empty($password)) {
 
 if ($userInfo) {
     $row = mysqli_fetch_assoc($userInfo);
-    if ($userInfo != 1) {
+    if (mysqli_num_rows($userInfo) != 1) {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";
         redirect($connect);
     }

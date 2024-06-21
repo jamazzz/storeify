@@ -14,9 +14,16 @@ if (!$connect) {
 	die("Connection failed: " . mysqli_connect_error());
 };
 
+
+$blacklist = array(
+	'invoice.php',
+	'login.php'
+);
+
 // Loader
 if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
-	echo ('
+	if (!in_array(basename($_SERVER['PHP_SELF']), $blacklist)) {
+		echo ('
 <style>
 #loading {
 	width: 100%;
@@ -94,6 +101,7 @@ window.onload = function() {
 	}
 }
 </script>');
+	}
 } else {
 	if (!isset($_SESSION['userid'])) {
 		mysqli_close($connect);

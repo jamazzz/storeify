@@ -171,12 +171,11 @@
                   $tempvalue = 1;
                   $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
                   $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
-                  $result = mysqli_query($connect, $select);
+                  $resultproducts = mysqli_query($connect, $select);
                   $totalrow = 0;
-
-                  if ($result) {
+                  if ($resultproducts) {
                     $rows = [];
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($resultproducts)) {
                       $totalrow++;
                       $rows[] = $row;
                     }
@@ -196,12 +195,15 @@
                     <div class="grid gap-md">
                       <!--  -->
                       <?php
+                      $_SESSION['subtotal'] = 0;
+                      $_SESSION['table'] = [];
                       foreach ($rows as $row) {
-                        $_SESSION['subtotal'] = 0;
                         $_SESSION['subtotal'] = $_SESSION['subtotal'] + $row['price'];
-                        $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
-                        $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
-                        $_SESSION['pid'] = bin2hex(random_bytes(16));
+                        $_SESSION['table'][] = [
+                          'name' => $row['name'],
+                          'product_id' => $row['product_id'],
+                          'price' => $row['price']
+                        ];
                         echo ('
                         <div class="bg-background rounded">
                             <div class="flex flex-wrap justify-between lg:grid grid-cols-[2fr_1fr_1fr] gap-md items-center p-sm pr-lg">
@@ -224,6 +226,8 @@
                         </div>
                         ');
                       }
+                      $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
+                      $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
                       ?>
                       <script>
                         function removeItem(event) {
@@ -297,7 +301,6 @@
                           createOrder: (data, actions) => {
                             return actions.order.create({
                               "purchase_units": [{
-                                "custom_id": "<?php echo $_SESSION['pid']; ?>",
                                 "amount": {
                                   "currency_code": "EUR",
                                   "value": "<?php echo $_SESSION['total']; ?>",
@@ -308,44 +311,27 @@
                               },
                             });
                           },
-                            onApprove: (data, actions) => {
-                            return actions.order.capture().then(function(orderData) {
-                              setProcessing(true);
 
-                              var postData = {
-                              paypal_order_check: 1,
-                              order_id: orderData.id
-                              };
-                              fetch('/storeify/paypal/paypal_checkout_validate.php', {
-                                method: 'POST',
-                                headers: {
-                                'Accept': 'application/json'
-                                },
-                                body: encodeFormData(postData)
-                              })
-                              .then((response) => response.json())
-                              .then((result) => {
-                                console.log(result); // Debug print
-                                if (result.status == 1) {
-                                window.location.href = "/storeify/paypal/payment-status.php?checkout_ref_id=" + result.ref_id;
-                                } else {
-                                const messageContainer = document.querySelector("#paymentResponse");
-                                messageContainer.classList.remove("hidden");
-                                messageContainer.textContent = result.msg;
+                          onApprove: (data, actions) => {
+                            return actions.order.capture().then(function(details) {
+                              const form = document.createElement('form');
+                              form.method = 'post';
+                              form.action = 'invoice.php';
 
-                                setTimeout(function() {
-                                  messageContainer.classList.add("hidden");
-                                  messageText.textContent = "";
-                                }, 5000);
-                                }
-                                setProcessing(false);
-                              })
-                              .catch(error => console.log(error));
+                              const jsonInput = document.createElement('input');
+                              jsonInput.type = 'hidden';
+                              jsonInput.name = 'json';
+                              jsonInput.value = JSON.stringify(details);
+                              form.appendChild(jsonInput);
+
+                              document.body.appendChild(form);
+                              form.submit();
                             });
-                            }
-                          }).render('#paypal-button-container');
-                          }, 700);
-                        });
+                          },
+
+                        }).render('#paypal-button-container');
+                      }, 700);
+                    });
 
                     function encodeFormData(data) {
                       var form_data = new FormData();
