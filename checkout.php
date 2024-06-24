@@ -325,13 +325,19 @@
                               return actions.order.capture().then(function(details) {
                                 const form = document.createElement('form');
                                 form.method = 'post';
-                                form.action = 'invoice.php';
+                                form.action = 'success.php';
 
                                 const jsonInput = document.createElement('input');
                                 jsonInput.type = 'hidden';
                                 jsonInput.name = 'json';
                                 jsonInput.value = JSON.stringify(details);
                                 form.appendChild(jsonInput);
+
+                                const currentUrlInput = document.createElement('input');
+                                currentUrlInput.type = 'hidden';
+                                currentUrlInput.name = 'currentUrl';
+                                currentUrlInput.value = window.location.href;
+                                form.appendChild(currentUrlInput);
 
                                 document.body.appendChild(form);
                                 form.submit();

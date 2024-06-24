@@ -43,8 +43,6 @@
       </tr>
     ';
   }
-  $clearCheckout = "DELETE from checkout WHERE subdomain = '".$_SESSION['subdomain']."' AND user_id = ".$_SESSION['tempvalue'];
-  mysqli_query($connect, $clearCheckout);
 
   header('Location: /storeify/pdf.php');
   exit;
