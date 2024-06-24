@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&">
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="../template.css" rel="stylesheet">
 
@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -200,15 +200,21 @@
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
             <?php
-            $getproducts = "SELECT * FROM products WHERE category_id = '" . $number . "'";
+            $tempvalue = 1;
+            $getproducts = "SELECT * FROM products WHERE category_id = '" . $number . "'AND deleted = 0";
             $result = mysqli_query($connect, $getproducts);
             $count = mysqli_num_rows($result);
+            $k = 0;
+
             while ($row = mysqli_fetch_assoc($result)) {
+              $exists = "SELECT * FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $k . "' AND subdomain = '" . $subdomain . "'";
+              $result2 = mysqli_query($connect, $exists);
+              $k++;
               echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
               <a href="/package/5882374" class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
               ');
               if (!file_exists('/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '.png')) {
-                echo ('<img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" class="inline-block max-h-52 mx-auto">');
+                echo ('<img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" class="inline-block max-h-52 mx-auto">');
               } else {
                 echo ('<img src="/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '" class="inline-block max-h-52 mx-auto">');
               }
@@ -216,10 +222,31 @@
               <h2 class="type-header  border-t  border-background-accent  p-sm text-center">' . $row['name'] . ' - ' . $row['price'] . ' EUR</h2>
               <div class="flex justify-between py-sm">
               </div>
-              <a href="/checkout/packages/add/5882374/single" class="btn-primary block w-full text-center group relative spinner-toggle">
-                <i class="fa-solid fa-cart-shopping mr-sm"></i>Comprar
-              </a>
-            </div>');
+              ');
+              $exists = "SELECT * FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $k . "' AND subdomain = '" . $subdomain . "'";
+              $result2 = mysqli_query($connect, $exists);
+              if (mysqli_num_rows($result2) > 0) {
+                echo '
+                <form action="/storeify/addCart.php" method="post" class="w-full">
+                <button type="submit" class="btn-danger block w-full text-center group relative spinner-toggle">
+                  <i class="fa-solid fa-cart-shopping mr-sm"></i> Retirar
+                  <input type="hidden" name="remove" value="' . $k . '">
+                  <input type="hidden" name="url" value="' . $_SERVER['REQUEST_URI'] . '">
+                </button>
+                </form>   
+              ';
+              } else {
+                echo ('       
+                <form action="/storeify/addCart.php" method="post" class="w-full">       
+                   <button type="submit" class="btn-primary block w-full text-center group relative spinner-toggle" name="add">
+                   <i class="fa-solid fa-cart-shopping mr-sm"></i> Comprar
+                   <input type="hidden" name="add" value="' . $k . '">
+                   <input type="hidden" name="url" value="' . $_SERVER['REQUEST_URI'] . '">
+                   </button>
+                </form>
+                 ');
+              }
+              echo ('</div>');
             }
             ?>
           </div>

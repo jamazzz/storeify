@@ -1,7 +1,8 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-// 
-$delete = "UPDATE products SET deleted = '1' WHERE id = '" . $_POST['productId'] . "'";
+$tempvalue = 1;
+$subdomain = strtok($_SERVER['HTTP_HOST'], '.');
+$delete = "DELETE from checkout Where product_id = '" . $_POST['productId'] . "' AND subdomain = '" . $subdomain . "' AND user_id = '" . $tempvalue . "'";
 
 $resultdelete = mysqli_query($connect, $delete);
 

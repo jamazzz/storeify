@@ -18,7 +18,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="https://dunb17ur4ymx4.cloudfront.net/webstore/favicons/a5aeff14499d9db8d77d6316c660146fbbe98cba.png">
+  <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="template.css" rel="stylesheet">
 

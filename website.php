@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="https://dunb17ur4ymx4.cloudfront.net/webstore/favicons/a5aeff14499d9db8d77d6316c660146fbbe98cba.png">
+  <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="template.css" rel="stylesheet">
 
@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/475404516469243935/1235369292724179044/branco.png?ex=66716c8f&is=66701b0f&hm=6b6814d365d821c11667fcc90cf8665e96702ee59e73a610ced07aedeeedaee6&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
