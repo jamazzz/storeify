@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -195,7 +195,7 @@
               <div class=" grid grid-rows-[1fr_auto_auto]">
                 <br><br><br><br><br><br><br>
                 <div class="bg-background-accent block rounded-sm text-center items-center overflow-hidden">
-                  <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" class="inline-block max-h-52 mx-auto">
+                  <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" class="inline-block max-h-52 mx-auto">
                   <h2 class="type-header border-background  p-sm">[QB] CRAFTING</h2>
                   <h3 class="font-subtitle text-foreground-accent">18.45 EUR</h3>
                   <br>

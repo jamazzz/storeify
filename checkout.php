@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -211,7 +211,7 @@
                             <div class="flex flex-wrap justify-between lg:grid grid-cols-[2fr_1fr_1fr] gap-md items-center p-sm pr-lg">
                                 <div class="grid grid-cols-[4rem_1fr] items-center gap-md">
                                     <div class="rounded-sm bg-background-accent h-[4rem] flex justify-center items-center">
-                                        <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667880b5&is=66772f35&hm=3fa2499852c47c9750b71f8fc5f3dcf7656a8e785e7736718bead271f52752be&" class="inline-block max-h-[5rem] mx-auto">
+                                        <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" class="inline-block max-h-[5rem] mx-auto">
                                     </div>
                                     <div>
                                         <h2 class="type-header">' . $row['name'] . '</h2>
@@ -219,9 +219,9 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-sm">
-                                      <a id="' . $row['product_id'] . '" class="btn-neutral bg-background-accent rounded-btn py-xs px-sm group spinner-toggle" onclick="removeItem(event)">
-                                          <i class="fa-solid fa-trash-can opacity-50 transition group-hover"></i>
-                                      </a>
+                                    <a id="' . $row['product_id'] . '" class="btn-neutral bg-background-accent rounded-btn py-xs px-sm group spinner-toggle" onclick="removeItem(event)">
+                                      <i class="fa-solid fa-trash-can opacity-50 transition group-hover:opacity-100"></i>
+                                    </a>  
                                 </div>
                                 <h3 class="type-header text-right">' . round($row['price'] * 1.23, 2) . ' EUR</h3>
                             </div>

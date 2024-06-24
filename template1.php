@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,18 +39,18 @@
 
 
         <header class="grid gap-md ">
-          <div class="flex flex-wrap justify-evenly items-center gap-md" >
+          <div class="flex flex-wrap justify-evenly items-center gap-md">
             <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
               <img src="//dunb17ur4ymx4.cloudfront.net/webstore/logos/5bdee4aefb7ed22067a6b07db0cff8c786407153.png" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
             </a>
             <a href="https://discord.gg/marcinhu" target="_blank" rel="noopener noreferrer" class="flex text-left justify-start gap-md items-center group order-2 flex-grow lg:order-3 lg:flex-grow-0">
               <div class="btn-icon-primary rounded-btn-sm group-hover:bg-primary-accent group-hover:bg-opacity-btn-hover"><i class="fa-brands fa-discord"></i></div>
               <div>
-                <h3 class="type-header text-lg leading-none" >Join Discord</h3>
-                <small class="type-subtitle text-foreground-accent text-opacity-50 block group-hover:hidden" >
+                <h3 class="type-header text-lg leading-none">Join Discord</h3>
+                <small class="type-subtitle text-foreground-accent text-opacity-50 block group-hover:hidden">
                   <span class="fetch" data-discord-id="833847171127836683" data-discord-code="marcinhu">8,376</span> Members
                 </small>
-                <small class="type-subtitle text-foreground-accent text-opacity-50 hidden group-hover:block" >Click to join</small>
+                <small class="type-subtitle text-foreground-accent text-opacity-50 hidden group-hover:block">Click to join</small>
               </div>
             </a>
           </div>
@@ -353,8 +354,30 @@
                 </div>
                 <button class="btn-icon-primary sidebar-toggle" data-toggle="basket">
                   <i class="fa-solid fa-cart-shopping"></i>
-
                 </button>
+                <!--  -->
+                <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
+                  <div class="p-grid pb-0 flex items-center justify-between">
+                    <h1 class="type-header text-foreground">Your cart</h1>
+                    <small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50">
+
+                      Empty
+
+                    </small>
+                  </div>
+                  <div>
+                    <div class="p-grid grid gap-grid">
+                    </div>
+                  </div>
+                  <div class="p-grid border-t border-t-background">
+                    <div class="flex justify-between items-center mb-md">
+                      <h2 class="type-header text-opacity-50 text-foreground-accent">Order total</h2>
+                      <h2 class="type-header">0 EUR</h2>
+                    </div>
+                    <a href="/checkout/basket" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
+                  </div>
+                </div>
+                <!--  -->
                 <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="basket">
                   <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
                     <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
