@@ -93,7 +93,7 @@
             <nav class="p-sm bg-background-accent rounded">
               <ul class="grid gap-sm lg:flex lg:justify-center">
                 <?php
-                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
+                $selectcat = "SELECT categories.name,categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
                 $resultcat = mysqli_query($connect, $selectcat);
                 echo ('
                       <li>
@@ -103,22 +103,23 @@
                       </li>'
                 );
                 while ($rowcat = mysqli_fetch_assoc($resultcat)) {
+                  $url = "http://" . $subdomain . ".localhost/storeify/category/" . $rowcat['id'];
                   if ($rowcat['id'] != $number) {
-                    echo ('  
+                    echo '
                           <li>
-                              <a href="/storeify/category/" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
-                                ' . $rowcat['name'] . '
+                              <a href="' . $url . '" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
+                                  ' . $rowcat['name'] . '
                               </a>
                           </li>
-                        ');
+                      ';
                   } else {
-                    echo ('  
-                          <li>
-                            <a href="/storeify/category/" class="type-header cursor-pointer group justify-center btn-primary">
-                              ' . $rowcat['name'] . '
-                            </a>
+                    echo '
+                          <li> 
+                              <a href="' . $url . '" class="type-header cursor-pointer group justify-center btn-primary">
+                                  ' . $rowcat['name'] . '
+                              </a>
                           </li>
-                        ');
+                      ';
                   }
                 }
                 ?>
