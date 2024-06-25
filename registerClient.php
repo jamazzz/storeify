@@ -58,7 +58,7 @@
           ?>
           <!-- End Section Area-->
           <div>
-            <br><br>
+            <br><br><br>
             <div class="container mx-auto grid xl:max-w-2xl gap-grid">
               <div>
                 <div class=" bg-background-accent rounded-b p-lg" style="border-radius: 12px;">

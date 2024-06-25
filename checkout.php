@@ -290,7 +290,7 @@
                         <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['total'] . ' EUR</p>'); ?>
                       </div>
                       <br>
-                      <?php require_once 'paypal/config.php';  ?>
+                      <?php require_once 'config.php';  ?>
                       <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX ? PAYPAL_SANDBOX_CLIENT_ID : PAYPAL_PROD_CLIENT_ID; ?>&currency=EUR"></script>
                       <div class="panel-body">
                         <div id="paymentResponse" class="hidden"></div>

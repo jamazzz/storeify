@@ -54,6 +54,7 @@
           if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
             $number = $matches[1];
           }
+          $tempvalue = 1;
 
           $select = "SELECT * FROM websites WHERE subdomain = '" . $subdomain . "'";
           $result = mysqli_query($connect, $select);
@@ -182,7 +183,7 @@
                           </small> -->
                           <?php
                           $_SESSION['subtotal'] = 0;
-                          $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $_SESSION['subdomain'] . "' AND c.user_id = '" . $_SESSION['tempvalue'] . "'AND p.deleted = '0'";
+                          $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
                           $result = mysqli_query($connect, $select);
                           $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                           foreach ($rows as $row) {
@@ -264,7 +265,6 @@
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
             <?php
-            $tempvalue = 1;
             $getproducts = "SELECT * FROM products WHERE category_id = '" . $number . "'AND deleted = 0";
             $result = mysqli_query($connect, $getproducts);
             $count = mysqli_num_rows($result);

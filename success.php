@@ -57,7 +57,40 @@
           $tempvalue = 1;
           $clearCheckout = "DELETE from checkout WHERE subdomain = '" . $_SESSION['subdomain'] . "' AND user_id = " . $_SESSION['tempvalue'];
           mysqli_query($connect, $clearCheckout);
-
+          $_SESSION['json'] = $_POST['json'];
+          $data = json_decode($_SESSION['json'], true);
+          $_SESSION['id'] = isset($data['id']) ? $data['id'] : '';
+          $_SESSION['status'] = isset($data['status']) ? $data['status'] : '';
+          $_SESSION['amountValue'] = isset($data['purchase_units'][0]['amount']['value']) ? $data['purchase_units'][0]['amount']['value'] : '';
+          $_SESSION['currencyCode'] = isset($data['purchase_units'][0]['amount']['currency_code']) ? $data['purchase_units'][0]['amount']['currency_code'] : '';
+          $_SESSION['payeeEmailAddress'] = isset($data['purchase_units'][0]['payee']['email_address']) ? $data['purchase_units'][0]['payee']['email_address'] : '';
+          $_SESSION['payeeMerchantId'] = isset($data['purchase_units'][0]['payee']['merchant_id']) ? $data['purchase_units'][0]['payee']['merchant_id'] : '';
+          $_SESSION['payerGivenName'] = isset($data['payer']['name']['given_name']) ? $data['payer']['name']['given_name'] : '';
+          $_SESSION['payerSurname'] = isset($data['payer']['name']['surname']) ? $data['payer']['name']['surname'] : '';
+          $_SESSION['payerId'] = isset($data['payer']['payer_id']) ? $data['payer']['payer_id'] : '';
+          $_SESSION['payerEmailAddress'] = isset($data['payer']['email_address']) ? $data['payer']['email_address'] : '';
+          $_SESSION['payerCountryCode'] = isset($data['payer']['address']['country_code']) ? $data['payer']['address']['country_code'] : '';
+          $_SESSION['create_time'] = isset($data['create_time']) ? date('d-m-Y', strtotime($data['create_time'])) : '';
+          $payerFullName = $_SESSION['payerGivenName'] . ' ' . $_SESSION['payerSurname'];
+          if (!isset($_SESSION['inserted'])) {
+            $transaction = "INSERT INTO transactions (payer_id, payer_name, payer_email, payer_country, merchant_id, merchant_email, transaction_id, paid_amount, currency_type, payment_source, created_date) 
+          VALUES (
+              '$_SESSION[payerId]', 
+              '$payerFullName', 
+              '$_SESSION[payerEmailAddress]', 
+              '$_SESSION[payerCountryCode]', 
+              '$_SESSION[payeeMerchantId]', 
+              '$_SESSION[payeeEmailAddress]', 
+              '$_SESSION[id]', 
+              '$_SESSION[amountValue]', 
+              '$_SESSION[currencyCode]', 
+              '$_SESSION[payerId]', 
+              '$_SESSION[create_time]'
+          );
+          ";
+            $result = mysqli_query($connect, $transaction);
+            $_SESSION['inserted'] = true;
+          }
 
           ?>
           <!-- End Section Area-->
@@ -95,8 +128,6 @@
                     <button type="submit" class="btn-primary block w-full text-center group relative">Abrir Recibo</button>
                   </form>
                   <button class="btn-primary block w-full text-center group relative" onclick="window.location.href = '<?php echo str_replace('checkout', 'category/home', $_POST['currentUrl']); ?>';">Voltar</button>
-
-
                 </div>
               </div>
             </div>

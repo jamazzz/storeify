@@ -9,15 +9,15 @@
 
 <body>
   <?php
-  include 'dashp1.php';
+  include '../dashp1.php';
   ?>
-  <main role="main" id="main" >
-    <div class="container-fluid" >
+  <main role="main" id="main">
+    <div class="container-fluid">
 
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" >
-            <h1 class="my-0" >Packages</h1>
+          <div class="col-12 col-md-6">
+            <h1 class="my-0">Packages</h1>
           </div>
           <div class="col-12 col-md-6 text-left text-md-right">
             <a href="https://creator.tebex.io/packages/massedit" class="btn btn-secondary">Mass Edit</a>
@@ -33,13 +33,13 @@
       </header>
 
       <div class="card package-page">
-        <div class="card-body pb-0" >
-          <div class="row d-flex align-items-center" >
+        <div class="card-body pb-0">
+          <div class="row d-flex align-items-center">
             <div class="col-md-8 d-none d-md-inline">
               <button class="btn btn-light" type="button" name="hide-disabled" id="hide-disabled" data-hidden="0">Hide disabled</button>
             </div>
-            <div class="col-md-4" >
-              <input type="text" class="form-control text-right" name="quick-filter" placeholder="Quick filter packages" >
+            <div class="col-md-4">
+              <input type="text" class="form-control text-right" name="quick-filter" placeholder="Quick filter packages">
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="category parent " data-id="2470501">
               <div class="header">
                 <div class="row d-flex align-items-center">
-                  <a class="col-7 passive-link" href="https://creator.tebex.io/categories/2470501" style="1">
+                  <a class="col-7 passive-link" href="https://creator.tebex.io/categories/2470501">
                     <i class="fal fa-bars move p-2 d-inline-block"></i>
                     <div class="category-name d-inline-block ml-3">
                       <h6 class="mb-0">
@@ -125,7 +125,7 @@
             <div class="category parent " data-id="2557490">
               <div class="header">
                 <div class="row d-flex align-items-center">
-                  <a class="col-7 passive-link" href="https://creator.tebex.io/categories/2557490" style="1">
+                  <a class="col-7 passive-link" href="https://creator.tebex.io/categories/2557490">
                     <i class="fal fa-bars move p-2 d-inline-block"></i>
                     <div class="category-name d-inline-block ml-3">
                       <h6 class="mb-0">
@@ -206,5 +206,5 @@
     </div>
   </main>
   <?php
-  include 'dashp2.php';
+  include '../dashp2.php';
   ?>
