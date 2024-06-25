@@ -59,13 +59,23 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
               <?php
               $selectcat = "SELECT categories.name,categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'";
               $resultcat = mysqli_query($connect, $selectcat);
-              echo ('
+              if (substr_count($_SERVER['REQUEST_URI'], '/storeify/website') != 1) {
+                echo ('
                       <li>
                         <a href="' . '/storeify/website' . '" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
                           ' . "Home" . '
                         </a>
                       </li>'
-              );
+                );
+              } else {
+                echo ('
+                      <li>
+                        <a href="' . '/storeify/website' . '" class="type-header cursor-pointer group justify-center btn-primary">
+                          ' . "Home" . '
+                        </a>
+                      </li>'
+                );
+              }
               while ($rowcat = mysqli_fetch_assoc($resultcat)) {
                 $url = "http://" . $_SESSION['subdomain'] . ".localhost/storeify/category/" . $rowcat['id'];
                 if ($rowcat['id'] != $_SESSION['number']) {
@@ -97,14 +107,30 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
                 }
               }
               ?>
+              <?php
+              if (!isset($_SESSION['clientid'])) {
+                echo ('
               <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
-                <a href="http://localhost/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
+                <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
                     <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
                     <small class="text-success hidden group-hover:block justify-end">Sign in</small>
                     <h3 class="leading-none type-header block justify-end">Guest</h3>
                   </div>
                 </a>
+                ');
+              } else {
+                echo ('
+                <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg  ml-auto">
+                  <div class="text-left">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
+                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
+                  </div>
+                </a>
+                ');
+              }
+              ?>
               </li>
               <?php
               if (substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1) {

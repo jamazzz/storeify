@@ -34,7 +34,7 @@
 
 <body class="text-foreground bg-background" data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true" data-new-gr-c-s-loaded="14.1157.0">
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/google3.php";
+  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
   ?>
   <div class="container mx-auto p-sm" style="width: 450px; height: 900px;">
@@ -48,13 +48,6 @@
     <div>
       <div class="grid gap-grid">
         <div>
-          <!-- Start Section Area-->
-          <?php
-          session_start();
-          include $_SERVER['DOCUMENT_ROOT'] . "/storeify/google3.php";
-          $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
-          ?>
-          <!-- End Section Area-->
           <div>
             <br><br><br>
             <div class="container mx-auto grid xl:max-w-2xl gap-grid">
@@ -63,31 +56,23 @@
                   <a class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0 rounded-b">
                     <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
                   </a>
-                  <form action="/storeify/invoice.php" method="post">
+                  <form action="/storeify/register.php" method="post">
                     <input type="text" name="email" id="email" style="width: 400px;" placeholder="Email">
                     <br>
                     <br>
-                    <input type="password" name="pass" id="pass" style="width: 400px;" placeholder="Password">
+                    <input type="password" name="password2" id="password2" style="width: 400px;" placeholder="Password">
                     <br>
                     <br>
-                    <input type="password" name="pass" id="pass" style="width: 400px;" placeholder="Confirme a Password">
+                    <input type="password" name="password3" id="password3" style="width: 400px;" placeholder="Confirme a Password">
                     <br>
                     <br>
                     <div style="display: flex; align-items: center;">
-                      <button type="submit" class="btn-primary block w-full group relative text-left" style="margin-right: 10px;">
-                        Criar uma conta <button id="buttonDiv2" type="button" style="margin-right:10px"></button>
+                      <button type="submit" class="btn-primary block w-full group relative text-left">
+                        Criar uma conta
                       </button>
                     </div>
                   </form>
-                  <form action="http://localhost/storeify/loginClient" method="post">
-                    <button type="submit" class="btn-primary block w-full group relative text-left">Entrar na conta</button>
-                  </form>
-                  <?php
-                  if (isset($_SESSION["errormsg"])) {
-                    echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
-                    unset($_SESSION["errormsg"]);
-                  }
-                  ?>
+                  <button onclick="window.location.href='/storeify/loginClient.php'" class="btn-primary block w-full group relative text-left">Entrar na conta</button>
                 </div>
                 <!-- End Widget Area-->
 

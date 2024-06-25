@@ -1,21 +1,5 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-session_start();
-
-if ($_SESSION["glogin"]) {
-    $pass = password_hash($_POST['password2'], PASSWORD_BCRYPT);
-    $username = genUser($connect, $_SESSION["gname"], $_SESSION["gfamily"], $_SESSION["gemail"]);
-    $userinfo = "INSERT INTO clients (username,email,password,creation_date,attempts,deleted) VALUES ('{$username}', '{$_SESSION["gemail"]}','{$pass}', NOW()),5,0";
-    $resultado = mysqli_query($connect, $userinfo);
-
-    if ($resultado) {
-        $_SESSION['register'] = true;
-        header("Location: loginClient.php");
-        exit();
-    } else {
-        echo "Error: " . mysqli_error($conexao);
-    }
-}
 
 // Username
 function genUser($connection, $email)

@@ -34,8 +34,7 @@
 
 <body class="text-foreground bg-background" data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true" data-new-gr-c-s-loaded="14.1157.0">
   <?php
-  session_start();
-  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/google3.php";
+  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
   ?>
   <div class="container mx-auto p-sm" style="width: 450px; height: 900px;">
@@ -55,22 +54,20 @@
                   <a class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0 rounded-b">
                     <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
                   </a>
-                  <form action="/storeify/invoice.php" method="post">
-                    <input type="text" name="email" id="email" style="width: 400px;" placeholder="Email">
+                  <form action="/storeify/login.php" method="post">
+                    <input type="text" name="emailoruser" id="emailoruser" style="width: 400px;" placeholder="Email">
                     <br>
                     <br>
-                    <input type="text" name="pass" id="pass" style="width: 400px;" placeholder="Password">
+                    <input type="password" name="password" id="password" style="width: 400px;" placeholder="Password">
                     <br>
                     <br>
                     <div style="display: flex; align-items: center;">
-                      <button type="submit" class="btn-primary block w-full group relative text-left" style="margin-right: 10px;">
-                        Entrar na conta <button id="buttonDiv" type="button" style="margin-right:10px"></button>
+                      <button type="submit" class="btn-primary block w-full group relative text-left">
+                        Entrar na conta
                       </button>
                     </div>
                   </form>
-                  <form action="http://localhost/storeify/registerClient" method="post">
-                    <button type="submit" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
-                  </form>
+                    <button onclick="window.location.href='/storeify/registerClient.php'" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
                 </div>
                 <!-- End Widget Area-->
 
