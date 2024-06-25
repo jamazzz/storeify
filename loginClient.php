@@ -40,8 +40,6 @@
   ?>
   <div class="container mx-auto p-sm" style="width: 450px; height: 900px;">
     <div class="lg:col-span-full">
-
-
       <header class="grid gap-md ">
         <br>
       </header>
@@ -61,9 +59,7 @@
                     <input type="text" name="email" id="email" style="width: 400px;" placeholder="Email">
                     <br>
                     <br>
-                    <br>
                     <input type="text" name="pass" id="pass" style="width: 400px;" placeholder="Password">
-                    <br>
                     <br>
                     <br>
                     <div style="display: flex; align-items: center;">
@@ -72,7 +68,7 @@
                       </button>
                     </div>
                   </form>
-                  <form action="http://localhost/storeify/loginClient" method="post">
+                  <form action="http://localhost/storeify/registerClient" method="post">
                     <button type="submit" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
                   </form>
                 </div>

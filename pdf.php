@@ -685,3 +685,9 @@ $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 
 $dompdf->stream('generated_pdf.pdf', ['Attachment' => false]);
+
+$format = $_SESSION['id'] . "_" . $_SESSION['create_time'] . '.pdf';
+$directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
+$filePath = $directory . $format;
+
+file_put_contents($filePath, $dompdf->output());

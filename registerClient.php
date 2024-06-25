@@ -48,8 +48,6 @@
     <div>
       <div class="grid gap-grid">
         <div>
-
-
           <!-- Start Section Area-->
           <?php
           session_start();
@@ -69,9 +67,10 @@
                     <input type="text" name="email" id="email" style="width: 400px;" placeholder="Email">
                     <br>
                     <br>
+                    <input type="password" name="pass" id="pass" style="width: 400px;" placeholder="Password">
                     <br>
-                    <input type="text" name="pass" id="pass" style="width: 400px;" placeholder="Password">
                     <br>
+                    <input type="password" name="pass" id="pass" style="width: 400px;" placeholder="Confirme a Password">
                     <br>
                     <br>
                     <div style="display: flex; align-items: center;">
