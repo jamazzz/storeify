@@ -26,7 +26,7 @@ class Outline extends BinaryStream {
   protected $size;
 
   // Data
-  public $numberOfContours;
+  public $_SESSION['number']OfContours;
   public $xMin;
   public $yMin;
   public $xMax;

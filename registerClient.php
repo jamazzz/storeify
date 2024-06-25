@@ -75,13 +75,19 @@
                     <br>
                     <div style="display: flex; align-items: center;">
                       <button type="submit" class="btn-primary block w-full group relative text-left" style="margin-right: 10px;">
-                        Criar uma conta <button id="buttonDiv3" type="button" style="margin-right:10px"></button>
+                        Criar uma conta <button id="buttonDiv2" type="button" style="margin-right:10px"></button>
                       </button>
                     </div>
                   </form>
                   <form action="http://localhost/storeify/loginClient" method="post">
                     <button type="submit" class="btn-primary block w-full group relative text-left">Entrar na conta</button>
                   </form>
+                  <?php
+                  if (isset($_SESSION["errormsg"])) {
+                    echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
+                    unset($_SESSION["errormsg"]);
+                  }
+                  ?>
                 </div>
                 <!-- End Widget Area-->
 

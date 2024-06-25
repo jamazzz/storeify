@@ -14,7 +14,7 @@
       return jsonPayload;
     };
 
-    function handleCredentialResponse(response, buttonId) {
+function handleCredentialResponse(response, buttonId) {
       var form = document.createElement("form");
       form.setAttribute("method", "post");
       form.setAttribute("action", "google2.php");
@@ -26,7 +26,12 @@
       input1.setAttribute("name", "credential");
       input1.setAttribute("value", jwt);
 
+      var input2 = document.createElement("input");
+      input2.setAttribute("name", "buttonId");
+      input2.setAttribute("value", buttonId);
+
       form.appendChild(input1);
+      form.appendChild(input2);
       document.body.appendChild(form);
       form.submit();
     }
@@ -35,12 +40,12 @@
       google.accounts.id.initialize({
         client_id: "987869037939-tb55ut12vsf3arupcsg55catf7mk6499",
         callback: function(response) {
-          handleCredentialResponse(response, "buttonDiv3");
+          handleCredentialResponse(response, "buttonDiv2");
         }
       });
 
       google.accounts.id.renderButton(
-        document.getElementById("buttonDiv3"), {
+        document.getElementById("buttonDiv2"), {
           theme: "outline",
           size: "large",
           type: "icon",

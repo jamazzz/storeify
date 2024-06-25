@@ -64,7 +64,7 @@
                     <br>
                     <div style="display: flex; align-items: center;">
                       <button type="submit" class="btn-primary block w-full group relative text-left" style="margin-right: 10px;">
-                        Entrar na conta <button id="buttonDiv3" type="button" style="margin-right:10px"></button>
+                        Entrar na conta <button id="buttonDiv" type="button" style="margin-right:10px"></button>
                       </button>
                     </div>
                   </form>

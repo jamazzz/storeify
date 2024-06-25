@@ -1,5 +1,4 @@
 <?php
-session_start();
 include $_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php";
 $jsonData = $_POST['credential'];
 $type = $_POST['buttonId'];
@@ -28,22 +27,22 @@ $_SESSION["gfamily"] = $family_name;
 if ($email_verified == "1") {
   $_SESSION["glogin"] = true;
   if ($type == "buttonDiv") {
-    header("Location: ../access/login.php");
+    header("Location: /storeify/loginClient.php");
   } else {
     if ($_SESSION["glogin"]) {
-      $registerquery = "SELECT * FROM users WHERE username = '" . $_SESSION["gemail"] . "' OR email = '" . $_SESSION["gemail"] . "' LIMIT 1";
+      $registerquery = "SELECT * FROM clients WHERE username = '" . $_SESSION["gemail"] . "' OR email = '" . $_SESSION["gemail"] . "' LIMIT 1";
       $result = mysqli_query($connect, $registerquery);
       $row = mysqli_fetch_assoc($result);
 
       if ($row != 0) {
         $_SESSION["errormsg"] = "O utilizador já existe";
-        header("Location: access.php");
+        // header("Location: /storeify/registerClient.php");
         exit();
       }
     }
-    header("Location: ../access/gregister.php");
+    // header("Location: ../storeify/registerClient.php");
   }
 } else {
   $_SESSION["errormsg"] = "Email não verificado. Por favor, verifique seu email no Google.<br>Se não conseguir verificar, por favor, use outro email ou faça login de outra forma.";
-  header("Location: access.php");
+  // header("Location: /storeify/registerClient.php");
 }

@@ -1094,8 +1094,8 @@ class Style
             return $cache[$key];
         }
 
-        $number = self::CSS_NUMBER;
-        $pattern = "/^($number)([a-zA-Z%]*)?$/";
+        $_SESSION['number'] = self::CSS_NUMBER;
+        $pattern = "/^($_SESSION['number'])([a-zA-Z%]*)?$/";
 
         if (!preg_match($pattern, $l, $matches)) {
             $ident = self::CSS_IDENTIFIER;
@@ -2558,7 +2558,7 @@ class Style
     {
         $string = self::CSS_STRING;
         $ident = self::CSS_IDENTIFIER;
-        $number = self::CSS_NUMBER;
+        $_SESSION['number'] = self::CSS_NUMBER;
 
         $pattern = "/\n" .
             "\s* (?<string>$string)                                        |\n" . // String
@@ -2566,7 +2566,7 @@ class Style
             "\s* ($ident (\( ((?> \g<string> | [^\"'()]+ ) | (?-2))* \)) ) |\n" . // Function (with balanced parentheses)
             "\s* ($ident)                                                  |\n" . // Keyword
             "\s* (\#[0-9a-fA-F]*)                                          |\n" . // Hex value
-            "\s* ($number [a-zA-Z%]*)                                      |\n" . // Number (+ unit/percentage)
+            "\s* ($_SESSION['number'] [a-zA-Z%]*)                                      |\n" . // Number (+ unit/percentage)
             "\s* ([\/,;])                                                   \n" . // Delimiter
             "/iSx";
 
@@ -2622,8 +2622,8 @@ class Style
      */
     protected function compute_number(string $val): ?float
     {
-        $number = self::CSS_NUMBER;
-        return preg_match("/^$number$/", $val)
+        $_SESSION['number'] = self::CSS_NUMBER;
+        return preg_match("/^$_SESSION['number']$/", $val)
             ? (float) $val
             : null;
     }
@@ -2750,8 +2750,8 @@ class Style
      */
     protected function compute_angle_or_zero(string $val): ?float
     {
-        $number = self::CSS_NUMBER;
-        $pattern = "/^($number)(deg|grad|rad|turn)?$/i";
+        $_SESSION['number'] = self::CSS_NUMBER;
+        $pattern = "/^($_SESSION['number'])(deg|grad|rad|turn)?$/i";
 
         if (!preg_match($pattern, $val, $matches)) {
             return null;
@@ -3223,8 +3223,8 @@ class Style
                 }
 
             default:
-                $number = self::CSS_NUMBER;
-                $weight = preg_match("/^$number$/", $val)
+                $_SESSION['number'] = self::CSS_NUMBER;
+                $weight = preg_match("/^$_SESSION['number']$/", $val)
                     ? (int) $val
                     : null;
                 return $weight !== null && $weight >= 1 && $weight <= 1000
@@ -3254,9 +3254,9 @@ class Style
         $components = $this->parse_property_value($value);
         $props = [];
 
-        $number = self::CSS_NUMBER;
+        $_SESSION['number'] = self::CSS_NUMBER;
         $unit = "pt|px|pc|rem|em|ex|in|cm|mm|%";
-        $sizePattern = "/^(xx-small|x-small|small|medium|large|x-large|xx-large|smaller|larger|$number(?:$unit)|0)$/";
+        $sizePattern = "/^(xx-small|x-small|small|medium|large|x-large|xx-large|smaller|larger|$_SESSION['number'](?:$unit)|0)$/";
         $sizeIndex = null;
 
         // Find index of font-size to split the component list
@@ -3277,7 +3277,7 @@ class Style
         $styleVariantWeight = \array_slice($components, 0, $sizeIndex);
         $stylePattern = "/^(italic|oblique)$/";
         $variantPattern = "/^(small-caps)$/";
-        $weightPattern = "/^(bold|bolder|lighter|$number)$/";
+        $weightPattern = "/^(bold|bolder|lighter|$_SESSION['number'])$/";
 
         if (\count($styleVariantWeight) > 3) {
             return [];
@@ -3304,7 +3304,7 @@ class Style
         $hasLineHeight = $lineFamily !== [] && $lineFamily[0] === "/";
         $lineHeight = $hasLineHeight ? \array_slice($lineFamily, 1, 1) : [];
         $fontFamily = $hasLineHeight ? \array_slice($lineFamily, 2) : $lineFamily;
-        $lineHeightPattern = "/^(normal|$number(?:$unit)?)$/";
+        $lineHeightPattern = "/^(normal|$_SESSION['number'](?:$unit)?)$/";
 
         // Missing `font-family` or `line-height` after slash
         if ($fontFamily === []
@@ -4548,8 +4548,8 @@ class Style
      */
     protected function _compute_opacity(string $val)
     {
-        $number = self::CSS_NUMBER;
-        $pattern = "/^($number)(%?)$/";
+        $_SESSION['number'] = self::CSS_NUMBER;
+        $pattern = "/^($_SESSION['number'])(%?)$/";
 
         if (!preg_match($pattern, $val, $matches)) {
             return null;

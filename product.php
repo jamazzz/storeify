@@ -56,12 +56,12 @@
               <ul class="grid gap-sm lg:flex lg:justify-center">
                 <?php
                 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-                $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
+                $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
 
-                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
+                $selectcat = "SELECT * FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'";
                 $resultcat = mysqli_query($connect, $selectcat);
-                $number = -1;
-                if (isset($number)) {
+                $_SESSION['number'] = -1;
+                if (isset($_SESSION['number'])) {
                   echo ('                   
                       <li>
                         <a href="' . '/storeify/website' . '" class="type-header cursor-pointer group justify-center btn-primary">
@@ -71,7 +71,7 @@
                   );
                 }
                 while ($rowcat = mysqli_fetch_assoc($resultcat)) {
-                  if ($rowcat['id'] != $number) {
+                  if ($rowcat['id'] != $_SESSION['number']) {
                     echo ('  
                           <li>
                               <a href="/storeify/category/" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">

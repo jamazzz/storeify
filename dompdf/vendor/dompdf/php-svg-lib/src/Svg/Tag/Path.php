@@ -61,8 +61,8 @@ class Path extends Shape
 
                 // arcs have special flags that apparently don't require spaces.
                 if ($commandLower === 'a' && preg_match_all(static::ARC_REGEXP, $c[2], $matches, PREG_PATTERN_ORDER)) {
-                    $numberOfMatches = count($matches[0]);
-                    for ($k = 0; $k < $numberOfMatches; ++$k) {
+                    $_SESSION['number']OfMatches = count($matches[0]);
+                    for ($k = 0; $k < $_SESSION['number']OfMatches; ++$k) {
                         $path[] = [
                             $c[1],
                             $matches[1][$k],
