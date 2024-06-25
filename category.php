@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&">
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="../template.css" rel="stylesheet">
 
@@ -33,6 +33,46 @@
 </head>
 
 <body class="text-foreground bg-background" data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true" data-new-gr-c-s-loaded="14.1157.0">
+  <?php
+  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+  $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
+  if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+    $number = $matches[1];
+  }
+  $tempvalue = 1;
+
+  $select = "SELECT * FROM websites WHERE subdomain = '" . $subdomain . "'";
+  $result = mysqli_query($connect, $select);
+  $row = mysqli_fetch_assoc($result);
+  if (!mysqli_num_rows($result) == 1 || $_SERVER['HTTP_HOST'] == "localhost") {
+    header('Location: /storeify/404.php');
+    exit();
+  }
+
+  if ($_SERVER['HTTP_HOST'] == "localhost") {
+    header('Location: /storeify/404.php');
+    exit();
+  }
+
+  $select2 = "SELECT categories.id,logo FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
+  $result2 = mysqli_query($connect, $select2);
+  if (!mysqli_num_rows($result2) > 0) {
+    header('Location: /storeify/404.php');
+    exit();
+  }
+
+  $found = false;
+  while ($row2 = mysqli_fetch_assoc($result2)) {
+    if ($row2['id'] == $number) {
+      $found = true;
+      break;
+    }
+  }
+  if (!$found) {
+    header('Location: /storeify/404.php');
+    exit();
+  }
+  ?>
   <div class="container mx-auto p-sm">
     <div class="lg:col-span-full">
 
@@ -40,7 +80,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="<?php echo $row2['logo']; ?>" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -48,46 +88,6 @@
     <div>
       <div class="grid gap-grid">
         <div>
-          <?php
-          include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-          $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
-          if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
-            $number = $matches[1];
-          }
-          $tempvalue = 1;
-
-          $select = "SELECT * FROM websites WHERE subdomain = '" . $subdomain . "'";
-          $result = mysqli_query($connect, $select);
-          $row = mysqli_fetch_assoc($result);
-          if (!mysqli_num_rows($result) == 1 || $_SERVER['HTTP_HOST'] == "localhost") {
-            header('Location: /storeify/404.php');
-            exit();
-          }
-
-          if ($_SERVER['HTTP_HOST'] == "localhost") {
-            header('Location: /storeify/404.php');
-            exit();
-          }
-
-          $select2 = "SELECT categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $subdomain . "'";
-          $result2 = mysqli_query($connect, $select2);
-          if (!mysqli_num_rows($result2) > 0) {
-            header('Location: /storeify/404.php');
-            exit();
-          }
-
-          $found = false;
-          while ($row2 = mysqli_fetch_assoc($result2)) {
-            if ($row2['id'] == $number) {
-              $found = true;
-              break;
-            }
-          }
-          if (!$found) {
-            header('Location: /storeify/404.php');
-            exit();
-          }
-          ?>
           <!-- Start Section Area-->
           <div class="hidden lg:block">
             <nav class="p-sm bg-background-accent rounded">
@@ -174,21 +174,26 @@
                       </div>
                       <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
                         <div class="p-grid items-center justify-between">
-
-                          <!-- <h1 class="type-header text-foreground">
-                            Your cart
-                          </h1>
-                          <small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50">
-                            Empty
-                          </small> -->
                           <?php
                           $_SESSION['subtotal'] = 0;
                           $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $subdomain . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
                           $result = mysqli_query($connect, $select);
                           $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                          foreach ($rows as $row) {
-                            $_SESSION['subtotal'] = $_SESSION['subtotal'] + $row['price'];
-                            echo (' 
+                          if (empty($rows)) {
+                            echo ('
+                                <div class="p-grid pb-0 flex items-center justify-between">
+                                  <h1 class="type-header text-foreground">Your cart</h1>
+                                  <small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50">
+
+                                    Empty
+
+                                  </small>
+                                </div>
+                            ');
+                          } else {
+                            foreach ($rows as $row) {
+                              $_SESSION['subtotal'] = $_SESSION['subtotal'] + $row['price'];
+                              echo (' 
                           <div class="grid grid-cols-[5rem_1fr] bg-background gap-sm" style="border-radius: 10px;">
                             <div class="rounded bg-background h-[5rem] flex justify-center items-center">
                               <img src="//dunb17ur4ymx4.cloudfront.net/packages/images/c2f74d4741f3da09d0caa8867fd98790541d3e16.png" class="inline-block max-h-[5rem]" style="margin-top:50px; margin-left: 50px;">
@@ -209,9 +214,10 @@
                                 </div></div>
                           </div>
                           <br>');
+                            }
+                            $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
+                            $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
                           }
-                          $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
-                          $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
                           ?>
                         </div>
                         <div>
@@ -260,6 +266,7 @@
             </div>
           </div>
         </div>
+        <!-- End Mobile Section Area-->
         <div class="grid gap-grid">
           <div>
           </div>
@@ -277,11 +284,21 @@
               echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
               <a href="/package/5882374" class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
               ');
-              if (!file_exists('/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '.png')) {
-                echo ('<img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" class="inline-block max-h-52 mx-auto">');
+
+
+              $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/products/' . $row['id'];
+              $logo = '/storeify/store/products/' . $row['id'];
+              if (file_exists($logo_path . '.jpg')) {
+                $logo_src = $logo . '.jpg';
+              } elseif (file_exists($logo_path . '.png')) {
+                $logo_src = $logo . '.png';
+              } elseif (file_exists($logo_path . '.gif')) {
+                $logo_src = $logo . '.gif';
               } else {
-                echo ('<img src="/storeify/store/' . $subdomain . ' /img/' . $row['id'] . '" class="inline-block max-h-52 mx-auto">');
+                $logo_src = 'https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80';
               }
+              echo '<img src="' . $logo_src . '" alt="" class="inline-block max-h-52 mx-auto">';
+
               echo ('</a>
               <h2 class="type-header  border-t  border-background-accent  p-sm text-center">' . $row['name'] . ' - ' . $row['price'] . ' EUR</h2>
               <div class="flex justify-between py-sm">
@@ -343,10 +360,6 @@
   </div>
   </div>
   </div>
-
-
-
-
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="/templates/209/js/bootstrap.min.js"></script>
   <script src="/templates/209/js/skin.min.js"></script>

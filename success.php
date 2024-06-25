@@ -40,7 +40,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-24 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667a7af5&is=66792975&hm=b23cbaf09497dda445a50387958a9c7e9bce8b96168810aae21147257f515aec&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -55,8 +55,7 @@
           include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
           $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
           $tempvalue = 1;
-          $clearCheckout = "DELETE from checkout WHERE subdomain = '" . $_SESSION['subdomain'] . "' AND user_id = " . $_SESSION['tempvalue'];
-          mysqli_query($connect, $clearCheckout);
+
           $_SESSION['json'] = $_POST['json'];
           $data = json_decode($_SESSION['json'], true);
           $_SESSION['id'] = isset($data['id']) ? $data['id'] : '';
@@ -72,8 +71,9 @@
           $_SESSION['payerCountryCode'] = isset($data['payer']['address']['country_code']) ? $data['payer']['address']['country_code'] : '';
           $_SESSION['create_time'] = isset($data['create_time']) ? date('d-m-Y', strtotime($data['create_time'])) : '';
           $payerFullName = $_SESSION['payerGivenName'] . ' ' . $_SESSION['payerSurname'];
-          if (!isset($_SESSION['inserted'])) {
-            $transaction = "INSERT INTO transactions (payer_id, payer_name, payer_email, payer_country, merchant_id, merchant_email, transaction_id, paid_amount, currency_type, payment_source, created_date) 
+          $currentdatetime = date('Y-m-d H:i:s');
+          if (!isset($_SESSION['inserted']) || $_SESSION['id'] !== $_SESSION['inserted']) {
+            $transaction = "INSERT INTO transactions (payer_id, payer_name, payer_email, payer_country, merchant_id, merchant_email, transaction_id, paid_amount, currency_type, payment_source, created_date,store,user) 
           VALUES (
               '$_SESSION[payerId]', 
               '$payerFullName', 
@@ -85,11 +85,26 @@
               '$_SESSION[amountValue]', 
               '$_SESSION[currencyCode]', 
               '$_SESSION[payerId]', 
-              '$_SESSION[create_time]'
-          );
-          ";
+              '$currentdatetime',
+              '$_SESSION[subdomain]',
+              '$tempvalue'
+          )";
+            $selectQuery = "SELECT product_id FROM checkout WHERE user_id = '$tempvalue' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+            $result = mysqli_query($connect, $selectQuery);
+            $values = [];
+            while ($row = mysqli_fetch_assoc($result)) {
+              $product_id = $row['product_id'];
+              $values[] = "('$tempvalue', '$product_id')";
+            }
+
+            $insertQuery = "INSERT INTO owned_products (user_id, product_id) VALUES " . implode(', ', $values);
+            mysqli_query($connect, $insertQuery);
+
+            $clearCheckout = "DELETE from checkout WHERE subdomain = '" . $_SESSION['subdomain'] . "' AND user_id = " . $tempvalue;
+            mysqli_query($connect, $clearCheckout);
+
             $result = mysqli_query($connect, $transaction);
-            $_SESSION['inserted'] = true;
+            $_SESSION['inserted'] = $_SESSION['id'];
           }
 
           ?>

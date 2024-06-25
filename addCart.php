@@ -6,8 +6,14 @@ $tempvalue = 1;
 $subdomain = strtok($_SERVER['HTTP_HOST'], '.');
 
 if ($_POST['remove']) {
+  $selectprice = "SELECT price FROM products WHERE id = '" . $_POST['remove'] . "'";
+  $result = mysqli_query($connect, $selectprice);
+  $row = mysqli_fetch_assoc($result);
+  $price = $row['price'];
+  $_SESSION['total'] -= $price * 1.23;
   $delete = "DELETE FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $_POST['remove'] . "' AND subdomain = '" . $subdomain . "'";
   mysqli_query($connect, $delete);
+
   echo "Product removed from cart";
 } else {
   $insert = "INSERT INTO checkout (user_id, product_id, subdomain) VALUES ('" . $tempvalue . "', '" . $_POST['add'] . "', '" . $subdomain . "')";
