@@ -10,7 +10,7 @@
 
 <body>
   <?php
-  include 'essencial.php';
+  include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 
   if (!isset($_POST['json']) && !isset($_SESSION['json'])) {
     header('Location: /storeify/404.php');

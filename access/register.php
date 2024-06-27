@@ -1,6 +1,5 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-session_start();
 
 function redirect($connection, $fname, $lname)
 {

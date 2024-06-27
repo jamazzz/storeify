@@ -1,5 +1,5 @@
 <?php
-include 'essencial.php';
+include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
 
 if ($_SESSION['clientid'] == -1) {

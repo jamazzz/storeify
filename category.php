@@ -35,7 +35,7 @@
 <body class="text-foreground bg-background" data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="" cz-shortcut-listen="true" data-new-gr-c-s-loaded="14.1157.0">
   <?php
   include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/section.php";
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeSection.php";
   ?>
   <div class="grid gap-grid">
     <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
