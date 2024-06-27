@@ -16,7 +16,6 @@
     <script src="https://kit.fontawesome.com/45266fece3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-
     <!-- Bootstrap CSS / Color Scheme -->
     <link rel="stylesheet" href="assets/css/default.css" id="theme-color">
 </head>
@@ -46,17 +45,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#pricing">
-                                <i class="fas fa-dollar-sign" style="margin-right: 5px;"></i> Pricing
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link page-scroll" href="#faq">
                                 <i class="fas fa-question-circle" style="margin-right: 5px;"></i> FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="access/access.php">
+                            <a class="nav-link page-scroll d-flex flex-row align-items-center" href="access/access.php">
                                 <i class="fas fa-user" style="margin-right: 5px;"></i> Log in
                             </a>
                         </li>
@@ -77,10 +71,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-2 col-12 mx-auto my-auto">
-                    <img src="/storeify/assets/images/logo.png" alt="">
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+                    <dotlottie-player src="https://lottie.host/e189b00e-4923-402e-a0c3-d2455737c869/1wZhX2F2TK.json" background="transparent" speed="1" style="width: 500px; height: 500px;" autoplay></dotlottie-player>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- features section -->
@@ -101,7 +96,7 @@
                             <span data-feather="edit-3" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Create once. Share everywhere.</h5>
+                    <h5>Unlimited devices</h5>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                         nisi commodo, tempus odio a, vestibulum nibh.</p>
                 </div>
@@ -147,86 +142,6 @@
     <!-- Pricing Section -->
     <section class="py-7 bg-dark section-angle top-right bottom-right">
         <div class="container">
-            <section id="pricing">
-                <div class="row">
-                    <div class="col-md-6 mx-auto text-center">
-                        <h2 class="text-white heading-black">Choose Your Pricing Plan.</h2>
-                        <p class="text-light lead">Simple Pricing - 7 Days Free Trial</p>
-                    </div>
-                </div>
-                <!-- Pricing Tables -->
-                <div class="row pt-5 pricing-table">
-                    <div class="col-12 mx-auto">
-                        <div class="card-deck pricing-table">
-                            <!-- Free Package -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title pt-3">Free Package</h3>
-                                    <h2 class="card-title text-primary mb-0 pt-4">Free</h2>
-                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                    <ul class="list-unstyled pricing-list">
-                                        <li>One User</li>
-                                        <li>One Website</li>
-                                        <li>Access to Basic Templates</li>
-                                        <li>Basic Support</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary">
-                                        Start Free Trial
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Premium Package -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title pt-3">Premium Package</h3>
-                                    <h2 class="card-title text-info mb-0 pt-4">9.99 €</h2>
-                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                    <ul class="list-unstyled pricing-list">
-                                        <li>1-10 Users</li>
-                                        <li>50 Websites</li>
-                                        <li>Access to Premium Templates</li>
-                                        <li>Priority Support</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-info">
-                                        Start Free Trial
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Enterprise Package -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title pt-3">Enterprise Package</h3>
-                                    <h2 class="card-title text-primary mb-0 pt-4">99.99 €</h2>
-                                    <div class="text-muted font-weight-medium mt-2">Per Month</div>
-                                    <ul class="list-unstyled pricing-list">
-                                        <li>Unlimited Users</li>
-                                        <li>50 Websites</li>
-                                        <li>Access to Premium Templates</li>
-                                        <li>24/7 Support</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-primary">
-                                        Start Free Trial
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-8 col-12 divider top-divider mx-auto pt-5 text-center">
-                <h3>Try Knight free for 7 days</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in nisi commodo,
-                    tempus odio a, vestibulum nibh.</p>
-                <button class="btn btn-primary">
-                    Create your account
-                </button>
-            </div>
-        </div>
-        <!--faq section-->
-        <br>
-        <br>
-        <div class="container">
             <section id="faq">
                 <div class="row">
                     <div class="col-md-6 mx-auto divider top-divider mx-auto pt-5 text-center">
@@ -239,102 +154,37 @@
                         <div class="row">
                             <div class="col-md-6 mb-5">
                                 <h6>Can I try it for free?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <p class="text-muted">No, we do not offer a free trial at the moment. Unfortunately, we also do not provide refunds for our paid plans. We apologize for any inconvenience this may cause.</p>
                             </div>
                             <div class="col-md-6 mb-5">
                                 <h6>Do you have hidden fees?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <p class="text-muted">No, we do not have any hidden fees. Our pricing is transparent and straightforward. The only fee we charge is a 5% transaction fee on all transactions.</p>
                             </div>
                             <div class="col-md-6 mb-5">
                                 <h6>What are the payment methods you accept?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <p class="text-muted">We accept credit card and PayPal as payment methods.</p>
                             </div>
                             <div class="col-md-6 mb-5">
                                 <h6>How often do you release updates?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <p class="text-muted">We release updates regularly to ensure that our product is up-to-date and meets the needs of our users.</p>
                             </div>
                             <div class="col-md-6 mb-5">
                                 <h6>What is your refund policy?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <p class="text-muted">Our refund policy for subscriptions is that there are no refunds. However, for customer websites, they have the option to request a refund if there is no specific policy in place. If the refund request is valid, we will process it accordingly.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>How can I contact you?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Can I cancel my subscription?</h6>
+                                <p class="text-muted">Yes, you can cancel your subscription at any time. Simply go to your account settings and follow the instructions to cancel.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-6 mx-auto text-center">
-                        <br>
-                        <h5 class="mb-4">Have questions?</h5>
-                        <a href="#" class="btn btn-primary">Contact us</a>
                     </div>
                 </div>
         </div>
     </section>
 
-    <!--footer-->
-    <footer class="py-1 divider top-divider pt-5 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 mr-auto">
-                    <h5>About Knight</h5>
-                    <p class="text-muted">Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.
-                        Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.</p>
-                    <ul class="list-inline social social-sm">
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-dribbble"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Legal</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Refund policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Partner</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Refer a friend</a></li>
-                        <li><a href="#">Affiliates</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Help</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Log in</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!--scroll to top-->
-    <div class="scroll-top">
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </div>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/storeify/indexFooter.php';
+?>
 </body>
 
 </html>

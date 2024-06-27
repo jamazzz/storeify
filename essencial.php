@@ -40,8 +40,9 @@ if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
 	width: 50px;
 	aspect-ratio: 1.154;
 	position: relative;
-	background: conic-gradient(from 120deg at 50% 64%, #0000, #25b09b 1deg 120deg, #0000 121deg);
+	background: conic-gradient(from 120deg at 50% 64%, #0000, #1778B5 1deg 120deg, #0000 121deg);
 	animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+	z-index: 1000;
 }
 
 .loader:before,
@@ -52,6 +53,7 @@ if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
 	background: inherit;
 	transform-origin: 50% 66%;
 	animation: l27-1 1.5s infinite;
+		z-index: 1000;
 }
 
 .loader:after {
