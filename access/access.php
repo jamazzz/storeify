@@ -183,11 +183,6 @@
       ?>
     </div>
   </div>
-  <nav>
-    <ul id="moon-icon" style="list-style: none; margin: 0; padding: 0; position: absolute; bottom: 10px; right: 10px; z-index: 0;">
-      <li><a><i class="ri-moon-line"></i></a></li>
-    </ul>
-  </nav>
   </div>
 
   <?php

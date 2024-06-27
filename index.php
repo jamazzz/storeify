@@ -96,9 +96,8 @@
                             <span data-feather="edit-3" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Unlimited devices</h5>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                    <h5>Easy Customization</h5>
+                    <p class="text-muted">Customize your website easily with our intuitive interface. No coding skills required.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-success">
@@ -106,9 +105,8 @@
                             <span data-feather="monitor" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Unlimited devices</h5>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                    <h5>Responsive Design</h5>
+                    <p class="text-muted">Ensure your website looks great on all devices, from desktop to mobile.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-danger">
@@ -116,9 +114,8 @@
                             <span data-feather="layout" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Beautiful tempates & layouts</h5>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                    <h5>Beautiful Templates</h5>
+                    <p class="text-muted">Choose from a wide range of stunning templates to make your website visually appealing.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-info">
@@ -126,9 +123,8 @@
                             <span data-feather="globe" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Available globally</h5>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
-                        nisi commodo, tempus odio a, vestibulum nibh.</p>
+                    <h5>Global Reach</h5>
+                    <p class="text-muted">Expand your business globally with our built-in internationalization features.</p>
                 </div>
             </div>
         </div>
@@ -182,9 +178,9 @@
         </div>
     </section>
 
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . '/storeify/indexFooter.php';
-?>
+    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/storeify/indexFooter.php';
+    ?>
 </body>
 
 </html>

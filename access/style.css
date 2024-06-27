@@ -29,6 +29,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 a,
 button,
 input {
@@ -52,6 +53,7 @@ h1 {
 h2 {
   font-size: 2em;
 }
+
 body {
   font-family: "Poppins";
   font-size: 16px;
@@ -61,6 +63,7 @@ body {
   background-color: var(--white-color);
   overflow: hidden;
 }
+
 input::placeholder {
   font-family: "Poppins";
   color: var(--grey-color);
@@ -77,6 +80,7 @@ input::placeholder {
 
 .site {
   min-height: 100vh;
+  transform: invert(1);
   min-height: 100svh;
 }
 
@@ -141,7 +145,7 @@ form.actions p {
   font-size: 14px;
 }
 
-form > p {
+form>p {
   position: relative;
   height: 46px;
 }
@@ -336,6 +340,7 @@ form .socials button:hover {
   from {
     transform: translate3d(-20%, 0, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -349,22 +354,27 @@ form .socials button:hover {
   from {
     transform: translate3d(-20%, 0, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
 }
+
 /* anim mobile */
 
 .signin-show .play {
   animation: signinplaymobile 1s both;
 }
+
 @keyframes signinplaymobile {
   0% {
     transform: translateX(18%) rotateX(-180) scale(0.65) rotate(70deg);
   }
+
   50% {
     transform: translateX(0) rotateX(0) scale(5) rotate(138deg);
   }
+
   100% {
     transform: translateX(0) rotateX(0) scale(0.65) rotate(70deg);
   }
@@ -373,13 +383,16 @@ form .socials button:hover {
 .signup-show .play {
   animation: signupplaymobile 1s both;
 }
+
 @keyframes signupplaymobile {
   0% {
     transform: translateX(-50%) skewY(20deg);
   }
+
   50% {
     transform: translateX(0) rotateX(0) scale(5) skewY(138deg) rotateY(40deg);
   }
+
   100% {
     transform: translateX(18%) rotateX(-180deg) scale(0.65) rotate(70deg);
   }
@@ -390,7 +403,8 @@ form .socials button:hover {
     padding: 50px 0;
     flex-direction: row;
   }
-  .theform > div {
+
+  .theform>div {
     flex: 1 0 50%;
   }
 
@@ -423,9 +437,11 @@ form .socials button:hover {
     0% {
       transform: translateX(100%) skewY(20deg);
     }
+
     50% {
       transform: translateX(25%) scale(10) skewY(40deg) rotateY(180deg);
     }
+
     100% {
       transform: translateX(0) rotateY(180deg);
     }
@@ -434,13 +450,16 @@ form .socials button:hover {
   .signup-show .play {
     animation: signupplay 1s both;
   }
+
   @keyframes signupplay {
     0% {
       transform: translateX(-50%) skewY(80deg);
     }
+
     50% {
       transform: translateX(0) scale(10) skewY(80deg);
     }
+
     100% {
       transform: translateX(100%);
     }
