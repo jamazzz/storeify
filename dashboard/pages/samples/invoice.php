@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Storeify</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
@@ -626,7 +626,7 @@
                     </div>
                     <div class="container-fluid d-flex justify-content-between">
                       <div class="col-lg-3 ps-0">
-                        <p class="mt-5 mb-2"><b>Corona Admin</b></p>
+                        <p class="mt-5 mb-2"><b>Storeify</b></p>
                         <p>104,<br>Minare SK,<br>Canada, K1A 0G9.</p>
                       </div>
                       <div class="col-lg-3 pe-0">

@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="/storeify/assets/css/style.css" rel="stylesheet">
 

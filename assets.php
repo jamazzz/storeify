@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="/storeify/assets/css/style.css" rel="stylesheet">
 
@@ -44,7 +44,7 @@
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
           <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-            <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+            <img src="/storeify/assets/images/logo.png" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
       </header>
@@ -115,7 +115,7 @@
                         <div class="flex flex-wrap justify-between  gap-md items-center p-sm pr-lg">
                             <div class="grid grid-cols-[4rem_1fr] items-center gap-md">
                                 <div class="rounded-sm bg-background-accent h-[4rem] flex justify-center items-center">
-                                    <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" class="inline-block max-h-[5rem] mx-auto">
+                                    <img src="/storeify/assets/images/logo.png" class="inline-block max-h-[5rem] mx-auto">
                                 </div>
                                 <div>
                                     <h2 class="type-header">No assets</h2>
@@ -130,7 +130,7 @@
                         <div class="flex flex-wrap justify-between  gap-md items-center p-sm pr-lg">
                             <div class="grid grid-cols-[4rem_1fr] items-center gap-md">
                                 <div class="rounded-sm bg-background-accent h-[4rem] flex justify-center items-center">
-                                    <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" class="inline-block max-h-[5rem] mx-auto">
+                                    <img src="/storeify/assets/images/logo.png" class="inline-block max-h-[5rem] mx-auto">
                                 </div>
                                 <div>
                                     <h2 class="type-header">' . $row['name'] . '</h2>

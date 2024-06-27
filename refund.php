@@ -5,8 +5,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Knight - Free Bootstrap 4 Product Landing Page Template</title>
-  <meta name="description" content="Knight is a beautiful Bootstrap 4 template for product landing pages." />
+  <title>Storeify</title>
+  <meta name="description" content="Storeify" />
 
   <!--Inter UI font-->
   <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <!-- Bootstrap CSS / Color Scheme -->
+  <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
   <link rel="stylesheet" href="assets/css/default.css" id="theme-color">
 </head>
 

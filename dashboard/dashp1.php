@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>Storeify</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="/storeify/assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="/storeify/assets/vendors/css/vendor.bundle.base.css">
@@ -22,7 +22,7 @@
   <!-- Layout styles -->
   <link rel="stylesheet" href="/storeify/assets/css/modern-vertical/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="/storeify/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
 </head>
 
 <body>
