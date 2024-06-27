@@ -32,7 +32,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <a class="navbar-brand heading-black" href="index.php">
-                    <i class="fas fa-chess-knight"></i> Knight
+                    <img src="/storeify/assets/images/logo.png" alt="" style="height: 141px; width: 100px; margin-top: -15px;">
+                    Storeify
                 </a>
                 <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-th"></i>
@@ -69,24 +70,27 @@
     <section class="py-7 py-md-0 bg-hero" id="home">
         <div class="container">
             <div class="row vh-md-100">
-                <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
-                    <h1 class="heading-black text-capitalize">Quickly build landing pages with Knight</h1>
-                    <p class="lead py-3">Knight is a platform that helps freelancers and companies build beautiful landing
-                        pages in minutes. Sign up for free.</p>
-                    <button class="btn btn-primary d-inline-flex flex-row align-items-center">
-                        Get started now
-                        <em class="ml-2" data-feather="arrow-right"></em>
-                    </button>
+                <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto">
+                    <div class="text-left">
+                        <h1 class="heading-black text-capitalize">Crie rapidamente sua loja com Storeify</h1>
+                        <p class="lead py-3">Storeify é uma plataforma para construir lojas de comércio online</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-12 mx-auto my-auto">
+                    <img src="/storeify/assets/images/logo.png" alt="">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- features section -->
-    <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-            <h1 class="text-white heading-black">Why us?</h1>
-        </div>
+    <div class="col-md-6 mx-auto text-center">
+        <br>
+        <section id="features">
+            <br>
+            <br>
+            <h2 class="card-title pt-3">Features</h2>
+            <br>
     </div>
     <div class="row mt-5">
         <div class="col-md-10 mx-auto">
@@ -136,36 +140,6 @@
     </div>
     </div>
     </section>
-    <div class="col-md-6 mx-auto text-center">
-        <br>
-        <section id="features">
-            <br>
-            <br>
-            <h2 class="card-title pt-3">Features</h2>
-            <br>
-    </div>
-    <ul class="features-list" style="margin-left: 35px;">
-        <li>Weekly new templates</li>
-        <li>Access to new features</li>
-        <li>MailChimp integration</li>
-        <li>Stripe integration</li>
-        <li>100 refund guarantee</li>
-        <li>Advance SEO tools</li>
-        <li>Free unlimited support</li>
-        <li>Stripe integration</li>
-        <li>100 refund guarantee</li>
-        <li>Advance SEO tools</li>
-        <li>Weekly new templates</li>
-        <li>Access to new features</li>
-        <li>MailChimp integration</li>
-        <li>Stripe integration</li>
-        <li>100 refund guarantee</li>
-        <li>Advance SEO tools</li>
-        <li>Free unlimited support</li>
-        <li>Stripe integration</li>
-        <li>100 refund guarantee</li>
-        <li>Advance SEO tools</li>
-    </ul>
     </section>
     </div>
     </section>
@@ -301,7 +275,7 @@
     </section>
 
     <!--footer-->
-    <footer class="py-6 divider top-divider mx-auto pt-5 text-center">
+    <footer class="py-1 divider top-divider pt-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 mr-auto">
@@ -344,11 +318,6 @@
                         <li><a href="#">Support</a></li>
                         <li><a href="#">Log in</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 text-muted text-center small-xl">
-                    &copy; 2019 Knight - All Rights Reserved
                 </div>
             </div>
         </div>

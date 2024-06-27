@@ -548,7 +548,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <form action="../index.php" id="logoutform">
+                    <form action="/storeify/index.php" id="logoutform">
                       <p class="preview-subject mb-1" onclick="submitForm()">Log out</p>
                       <script>
                         function submitForm() {

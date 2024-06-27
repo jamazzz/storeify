@@ -27,7 +27,7 @@
 
     <div class="row">
       <div class="col-12">
-        <form action="newhome.php" method="post">
+        <form action="newwebsite.php" method="post">
           <div class="card">
             <div class="card-body p-5">
               <div class="row">
