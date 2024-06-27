@@ -21,7 +21,7 @@
 
   <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-  <link href="../template.css" rel="stylesheet">
+  <link href="/storeify/assets/css/style.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
