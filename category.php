@@ -19,7 +19,7 @@
   <meta property="twitter:title" content="storeify | Welcome">
   <meta property="twitter:description" content="">
 
-  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&">
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link href="../template.css" rel="stylesheet">
 
@@ -37,45 +37,45 @@
   include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   include $_SERVER['DOCUMENT_ROOT'] . "/storeify/section.php";
   ?>
-        <div class="grid gap-grid">
-          <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
-            <?php
-            $getproducts = "SELECT * FROM products WHERE category_id = '" . $_SESSION['number'] . "'AND deleted = 0";
-            $result = mysqli_query($connect, $getproducts);
-            $count = mysqli_num_rows($result);
-            $k = 0;
+  <div class="grid gap-grid">
+    <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
+      <?php
+      $getproducts = "SELECT * FROM products WHERE category_id = '" . $_SESSION['number'] . "'AND deleted = 0";
+      $result = mysqli_query($connect, $getproducts);
+      $count = mysqli_num_rows($result);
+      $k = 0;
 
-            while ($row = mysqli_fetch_assoc($result)) {
-              $exists = "SELECT * FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
-              $result2 = mysqli_query($connect, $exists);
-              $k++;
-              echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
+      while ($row = mysqli_fetch_assoc($result)) {
+        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+        $result2 = mysqli_query($connect, $exists);
+        $k++;
+        echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
               <a href="/package/5882374" class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
               ');
 
 
-              $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/products/' . $row['id'];
-              $logo = '/storeify/store/products/' . $row['id'];
-              if (file_exists($logo_path . '.jpg')) {
-                $logo_src = $logo . '.jpg';
-              } elseif (file_exists($logo_path . '.png')) {
-                $logo_src = $logo . '.png';
-              } elseif (file_exists($logo_path . '.gif')) {
-                $logo_src = $logo . '.gif';
-              } else {
-                $logo_src = 'https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80';
-              }
-              echo '<img src="' . $logo_src . '" alt="" class="inline-block max-h-52 mx-auto">';
+        $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/products/' . $row['id'];
+        $logo = '/storeify/store/products/' . $row['id'];
+        if (file_exists($logo_path . '.jpg')) {
+          $logo_src = $logo . '.jpg';
+        } elseif (file_exists($logo_path . '.png')) {
+          $logo_src = $logo . '.png';
+        } elseif (file_exists($logo_path . '.gif')) {
+          $logo_src = $logo . '.gif';
+        } else {
+          $logo_src = 'https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&';
+        }
+        echo '<img src="' . $logo_src . '" alt="" class="inline-block max-h-52 mx-auto">';
 
-              echo ('</a>
+        echo ('</a>
               <h2 class="type-header  border-t  border-background-accent  p-sm text-center">' . $row['name'] . ' - ' . $row['price'] . ' EUR</h2>
               <div class="flex justify-between py-sm">
               </div>
               ');
-              $exists = "SELECT * FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
-              $result2 = mysqli_query($connect, $exists);
-              if (mysqli_num_rows($result2) > 0) {
-                echo '
+        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+        $result2 = mysqli_query($connect, $exists);
+        if (mysqli_num_rows($result2) > 0) {
+          echo '
                 <form action="/storeify/addCart.php" method="post" class="w-full">
                 <button type="submit" class="btn-danger block w-full text-center group relative spinner-toggle">
                   <i class="fa-solid fa-cart-shopping mr-sm"></i> Retirar
@@ -84,8 +84,8 @@
                 </button>
                 </form>   
               ';
-              } else {
-                echo ('       
+        } else {
+          echo ('       
                 <form action="/storeify/addCart.php" method="post" class="w-full">       
                    <button type="submit" class="btn-primary block w-full text-center group relative spinner-toggle" name="add">
                    <i class="fa-solid fa-cart-shopping mr-sm"></i> Comprar
@@ -94,51 +94,23 @@
                    </button>
                 </form>
                  ');
-              }
-              echo ('</div>');
-            }
-            ?>
-          </div>
-        </div>
-      </div>
+        }
+        echo ('</div>');
+      }
+      ?>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
   </div>
   <div class="grid gap-grid">
     <div class="hidden lg:block">
     </div>
   </div>
-  <!-- End Widget Area-->
-  <div class="container mx-auto p-sm">
-    <footer>
-      <div class="flex gap-md mb-md flex-wrap">
-        <!-- Socials -->
-        <div class="bg-background-accent rounded flex gap-md flex-grow justify-center items-center p-sm">
-          <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-          <a href="https://www.facebook.com/storeify" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://github.com/storeify" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://www.instagram.com/storeify/" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-instagram opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://youtube.com/c/storeify" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
-        </div>
-      </div>
-    </footer>
-  </div>
-  </div>
-  </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/templates/209/js/bootstrap.min.js"></script>
-  <script src="/templates/209/js/skin.min.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="https://fragmentor.io/api/files/lsdjkb3e.js" crossorigin=""></script>
-  <script type="text/javascript" src="/assets/js/discord.js"></script>
-  <div id="waiting-overlay" style="display: none;">
-    <i class="fa fa-cog fa-spin fa-3x"></i>
-  </div>
-  </div>
+  <?php
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";
+  ?>
 </body>
 
 </html>

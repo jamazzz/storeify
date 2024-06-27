@@ -26,7 +26,7 @@ $html = '
             <tr>
               <td class="w-full align-top">
                 <div>
-                  <img src="https://cdn.discordapp.com/attachments/838010841231786005/1253358974221156423/brand-sample-removebg-preview.png?ex=66759101&is=66743f81&hm=6ff7f3fc7ab6e95f7941fda7eac0dae2e22937cc749de7a29ef9e611e2b17a34&" class="h-12" />
+                  <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" class="h-12" />
                 </div>
               </td>
 

@@ -90,12 +90,12 @@ if (array_key_exists('provider', $_POST)) {
     $clientSecret = $_POST['clientSecret'];
     $tenantId = $_POST['tenantId'];
     $_SESSION['provider'] = $providerName;
-    $_SESSION['clientId'] = $clientId;
+    $_SESSION['clientId2'] = $clientId;
     $_SESSION['clientSecret'] = $clientSecret;
     $_SESSION['tenantId'] = $tenantId;
 } elseif (array_key_exists('provider', $_SESSION)) {
     $providerName = $_SESSION['provider'];
-    $clientId = $_SESSION['clientId'];
+    $clientId = $_SESSION['clientId2'];
     $clientSecret = $_SESSION['clientSecret'];
     $tenantId = $_SESSION['tenantId'];
 }

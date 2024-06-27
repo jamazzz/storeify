@@ -4,7 +4,6 @@ $_SESSION['number'] = -1;
 if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
   $_SESSION['number'] = $matches[1];
 }
-$tempvalue = 1;
 
 $select = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
 $result = mysqli_query($connect, $select);
@@ -59,10 +58,10 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
               <?php
               $selectcat = "SELECT categories.name,categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'";
               $resultcat = mysqli_query($connect, $selectcat);
-              if (substr_count($_SERVER['REQUEST_URI'], '/storeify/website') != 1) {
+              if (substr_count($_SERVER['REQUEST_URI'], '/storeify/home') != 1) {
                 echo ('
                       <li>
-                        <a href="' . '/storeify/website' . '" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
+                        <a href="' . '/storeify/home' . '" class="type-header cursor-pointer w-full group dropdown-toggle data-[dropdown=open]:rounded-b-none justify-center btn-neutral shadow-none border-transparent transition hover:bg-background data-[dropdown=open]:bg-background lg:data-[dropdown=open]:rounded-btn">
                           ' . "Home" . '
                         </a>
                       </li>'
@@ -70,7 +69,7 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
               } else {
                 echo ('
                       <li>
-                        <a href="' . '/storeify/website' . '" class="type-header cursor-pointer group justify-center btn-primary">
+                        <a href="' . '/storeify/home' . '" class="type-header cursor-pointer group justify-center btn-primary">
                           ' . "Home" . '
                         </a>
                       </li>'
@@ -109,6 +108,11 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
               ?>
               <?php
               if (!isset($_SESSION['clientid'])) {
+                $_SESSION['clientid'] = -1;
+              }
+
+
+              if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
                 echo ('
               <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
@@ -134,12 +138,12 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
               </li>
               <?php
               if (substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1) {
-                echo (' 
-              <button class="btn-icon-primary sidebar-toggle" onclick="toggleBasket()">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-              </button>
-              ');
+                if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
+                  echo ('   <button class="btn-icon-primary sidebar-toggle" onclick="window.location.href=\'/storeify/loginClient.php\'">');
+                } else {
+                  echo ('   <button class="btn-icon-primary sidebar-toggle" onclick="toggleBasket()">');
+                }
+                echo ('   <i class="fa-solid fa-cart-shopping"></i></button>');
               }
               ?>
               <script>
@@ -183,7 +187,7 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
                       <div class="p-grid items-center justify-between">
                         <?php
                         $_SESSION['subtotal'] = 0;
-                        $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $_SESSION['subdomain'] . "' AND c.user_id = '" . $tempvalue . "'AND p.deleted = '0'";
+                        $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $_SESSION['subdomain'] . "' AND c.user_id = '" . $_SESSION['clientid'] . "'AND p.deleted = '0'";
                         $result = mysqli_query($connect, $select);
                         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         if (empty($rows)) {

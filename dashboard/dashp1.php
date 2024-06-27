@@ -460,7 +460,7 @@
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
-              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="/storeify/website.php">View Website</a>
+              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="/storeify/home.php">View Website</a>
             </li>
             <li class="nav-item dropdown border-left">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">

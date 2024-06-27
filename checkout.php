@@ -49,8 +49,7 @@
           </div>
           <?php
           $emptycart = 0;
-          $_SESSION['tempvalue'] = 1;
-          $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $_SESSION['subdomain'] . "' AND c.user_id = '" . $_SESSION['tempvalue'] . "'AND p.deleted = '0'";
+          $select = "SELECT c.product_id, p.* FROM checkout c JOIN products p ON c.product_id = p.id WHERE c.subdomain = '" . $_SESSION['subdomain'] . "' AND c.user_id = '" . $_SESSION['clientid'] . "'AND p.deleted = '0'";
           $resultproducts = mysqli_query($connect, $select);
           $totalrow = 0;
           if ($resultproducts) {
@@ -91,7 +90,7 @@
                             <div class="flex flex-wrap justify-between lg:grid grid-cols-[2fr_1fr_1fr] gap-md items-center p-sm pr-lg">
                                 <div class="grid grid-cols-[4rem_1fr] items-center gap-md">
                                     <div class="rounded-sm bg-background-accent h-[4rem] flex justify-center items-center">
-                                        <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&" class="inline-block max-h-[5rem] mx-auto">
+                                        <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" class="inline-block max-h-[5rem] mx-auto">
                                     </div>
                                     <div>
                                         <h2 class="type-header">' . $row['name'] . '</h2>
@@ -108,12 +107,18 @@
                         </div>
                         ');
               }
-              if ($emptycart == 1) {
-                echo ('
+              if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
+                echo ('<div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
+                            <h3 class="type-header" href="/storeify/clientLogin.php" >Please login to continue</h3>
+                        </div>');
+              } else {
+                if ($emptycart == 1) {
+                  echo ('
                             <div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
                               <h3 class="type-header">Your cart is empty</h3>
                             </div>
                         ');
+                }
               }
               $_SESSION['taxes'] = round($_SESSION['subtotal'] * 0.23, 2);
               $_SESSION['total'] = round($_SESSION['subtotal'] + $_SESSION['taxes'], 2);
@@ -253,7 +258,21 @@
 
         </div>
       <?php                   } else {
-        echo ('
+        if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
+          echo ('<div>
+                  <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
+                    <div>
+                      <h1 class="type-header">Summary</h1>
+                    </div>
+                  </div>
+                  <div class=" bg-background-accent rounded-b p-lg">
+                            <div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
+                              <h3 class="type-header" href="/storeify/clientLogin.php" >Please login to continue</h3>
+                            </div>
+                </div>
+                  ');
+        } else {
+          echo ('
                   <div>
                   <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                     <div>
@@ -267,56 +286,15 @@
 
                 </div>
                   ');
+        }
       }
       ?>
     </div>
   </div>
   </div>
-  <!-- End Widget Area-->
-  <br><br>
-  <div class="container mx-auto">
-    <footer>
-      <div class="flex gap-md mb-md flex-wrap">
-        <!-- Socials -->
-        <div class="bg-background-accent rounded flex gap-md flex-grow justify-start items-center p-sm">
-          <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-          <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://github.com/marcinhuu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://www.instagram.com/marcinhu.scripts/" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-instagram opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
-        </div>
-      </div>
-    </footer>
-  </div>
-  </div>
-  </div>
-
-  <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden modal modal-backdrop" role="remote">
-    <div class="absolute xl:max-w-[1200px] xl:min-w-[960px] min-w-full max-w-full -translate-x-1/2 lg:top-[10vh] left-1/2 p-sm hidden modal-container">
-    </div>
-  </div>
-
-  <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="remote">
-    <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
-    </div>
-  </div>
-
-  <div class="notification">
-
-  </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/templates/209/js/bootstrap.min.js"></script>
-  <script src="/templates/209/js/skin.min.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="https://fragmentor.io/api/files/lsdjkb3e.js" crossorigin=""></script>
-  <div id="waiting-overlay" style="display: none;">
-    <i class="fa fa-cog fa-spin fa-3x"></i>
-  </div>
-  </div>
+  <?php
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";
+  ?>
 </body>
 
 </html>

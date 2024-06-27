@@ -52,7 +52,7 @@
               <div>
                 <div class=" bg-background-accent rounded-b p-lg" style="border-radius: 12px;">
                   <a class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0 rounded-b">
-                    <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667bcc75&is=667a7af5&hm=8f00ef557f5cee58fb2982833167f590ad6241f512333348219fa03dcb206f80&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+                    <img src="https://cdn.discordapp.com/attachments/1241482240224133212/1241482531321286717/branco.png?ex=667e6f75&is=667d1df5&hm=43677eae0ad2b3a09a2476dee26c6fd80d3e27b92102a80dc24a374dc0e81952&" alt="storeify Logo" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
                   </a>
                   <form action="/storeify/login.php" method="post">
                     <input type="text" name="emailoruser" id="emailoruser" style="width: 400px;" placeholder="Email">

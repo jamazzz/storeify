@@ -1,8 +1,8 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-$tempvalue = 1;
+$_SESSION['clientid'] = 1;
 $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
-$delete = "DELETE from checkout Where product_id = '" . $_POST['productId'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "' AND user_id = '" . $tempvalue . "'";
+$delete = "DELETE from checkout Where product_id = '" . $_POST['productId'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "' AND user_id = '" . $_SESSION['clientid'] . "'";
 
 $resultdelete = mysqli_query($connect, $delete);
 

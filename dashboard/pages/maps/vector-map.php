@@ -347,8 +347,8 @@
             </a>
             <div class="collapse" id="error">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.php"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.php"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/storeify/404.php"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/storeify/500.php"> 500 </a></li>
               </ul>
             </div>
           </li>

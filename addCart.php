@@ -1,9 +1,11 @@
 <?php
 include 'essencial.php';
-
-$tempvalue = 1;
-
 $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
+
+if ($_SESSION['clientid'] == -1) {
+  header('Location: /storeify/loginClient');
+  exit();
+}
 
 if ($_POST['remove']) {
   $selectprice = "SELECT price FROM products WHERE id = '" . $_POST['remove'] . "'";
@@ -11,14 +13,11 @@ if ($_POST['remove']) {
   $row = mysqli_fetch_assoc($result);
   $price = $row['price'];
   $_SESSION['total'] -= $price * 1.23;
-  $delete = "DELETE FROM checkout WHERE user_id = '" . $tempvalue . "' AND product_id = '" . $_POST['remove'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+  $delete = "DELETE FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $_POST['remove'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
   mysqli_query($connect, $delete);
-
-  echo "Product removed from cart";
 } else {
-  $insert = "INSERT INTO checkout (user_id, product_id, subdomain) VALUES ('" . $tempvalue . "', '" . $_POST['add'] . "', '" . $_SESSION['subdomain'] . "')";
+  $insert = "INSERT INTO checkout (user_id, product_id, subdomain) VALUES ('" . $_SESSION['clientid'] . "', '" . $_POST['add'] . "', '" . $_SESSION['subdomain'] . "')";
   mysqli_query($connect, $insert);
-  echo "Product added to cart";
 }
 header("Location: " . $_POST["url"]);
 exit();

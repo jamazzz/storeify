@@ -4,7 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 function redirect($connection)
 {
     mysqli_close($connection);
-    header('Location: /storeify/login.php');
+    header('Location: /storeify/loginClient.php');
     exit();
 }
 
@@ -36,7 +36,7 @@ if ($resultadopass) {
     $row = mysqli_fetch_assoc($resultadopass);
     $_SESSION['clientUsername'] = $row['username'];
     if ($row && password_verify($password, $row['password'])) {
-        header("Location: /storeify/website.php");
+        header("Location: /storeify/home.php");
         exit();
     } else {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";
