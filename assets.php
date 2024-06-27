@@ -59,6 +59,35 @@
                   <h1 class="type-header">Your Assets</h1>
                 </div>
                 <?php
+                if (!isset($_SESSION['clientid'])) {
+                  $_SESSION['clientid'] = -1;
+                }
+
+
+                if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
+                  echo ('
+              <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
+                <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
+                  <div class="text-left justify-end">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
+                    <small class="text-success hidden group-hover:block justify-end">Sign in</small>
+                    <h3 class="leading-none type-header block justify-end">Guest</h3>
+                  </div>
+                </a>
+                ');
+                } else {
+                  echo ('
+                <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg  ml-auto">
+                  <div class="text-left">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
+                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
+                  </div>
+                </a>
+                ');
+                }
+                ?>
+                <?php
                 $select = "SELECT * FROM owned_products 
                            LEFT JOIN products ON owned_products.product_id = products.id
                            WHERE owned_products.user_id = '" . $_SESSION['clientid'] . "' 
@@ -134,55 +163,55 @@
                             <a id="nextbtnfull" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('nextbtnfull')">&gt;&gt;</a>
                           <?php endif; ?>
                         </div>
-                        </div>
-                        <script>
-                          function submitForm(buttonClicked) {
-                            var idvalue = document.getElementById("idvalue").innerText;
-                            var form = document.getElementById("pagination");
-                            form.setAttribute("action", "assetsPag.php");
-                            form.setAttribute("method", "post");
-                            var input = document.createElement("input");
-                            input.setAttribute("type", "hidden");
-                            input.setAttribute("name", "idvalue");
-                            input.setAttribute("value", idvalue);
-                            form.appendChild(input);
-                            var typeInput = document.createElement("input");
-                            typeInput.setAttribute("type", "hidden");
-                            typeInput.setAttribute("name", "type");
-                            typeInput.setAttribute("value", buttonClicked);
-                            form.appendChild(typeInput);
-
-                            form.submit();
-                          }
-                        </script>
                       </div>
-                    </form>
-                    <script>
-                      function removeItem(event) {
-                        event.preventDefault();
-                        const itemId = event.currentTarget.id;
-                        const form = document.createElement('form');
-                        form.method = 'post';
-                        form.action = 'downloadAsset.php';
-                        const input = document.createElement('input');
-                        input.type = 'hidden';
-                        input.name = 'productId';
-                        input.value = itemId;
-                        form.appendChild(input);
-                        document.body.appendChild(form);
-                        form.submit();
-                      }
-                    </script>
+                      <script>
+                        function submitForm(buttonClicked) {
+                          var idvalue = document.getElementById("idvalue").innerText;
+                          var form = document.getElementById("pagination");
+                          form.setAttribute("action", "assetsPag.php");
+                          form.setAttribute("method", "post");
+                          var input = document.createElement("input");
+                          input.setAttribute("type", "hidden");
+                          input.setAttribute("name", "idvalue");
+                          input.setAttribute("value", idvalue);
+                          form.appendChild(input);
+                          var typeInput = document.createElement("input");
+                          typeInput.setAttribute("type", "hidden");
+                          typeInput.setAttribute("name", "type");
+                          typeInput.setAttribute("value", buttonClicked);
+                          form.appendChild(typeInput);
+
+                          form.submit();
+                        }
+                      </script>
                   </div>
+                  </form>
+                  <script>
+                    function removeItem(event) {
+                      event.preventDefault();
+                      const itemId = event.currentTarget.id;
+                      const form = document.createElement('form');
+                      form.method = 'post';
+                      form.action = 'downloadAsset.php';
+                      const input = document.createElement('input');
+                      input.type = 'hidden';
+                      input.name = 'productId';
+                      input.value = itemId;
+                      form.appendChild(input);
+                      document.body.appendChild(form);
+                      form.submit();
+                    }
+                  </script>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <?php
-      include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";
-      ?>
+    </div>
+    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";
+    ?>
 </body>
 
 </html>
