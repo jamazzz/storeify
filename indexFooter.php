@@ -3,8 +3,34 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5 mr-auto" style="margin-top: -20px;">
-        <h4>About Storeify</h4>
-        <p class="text-muted">Storeify is a platform for building e-commerce websites. With Storeify, you can create and customize your online store, showcase products, and manage sales. Whether you're a small business owner or an aspiring entrepreneur, Storeify provides the tools and features to start selling online. Join Storeify today and turn your ideas into successful e-commerce ventures.</p>
+        <div id="map"></div>
+        <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
+        <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+          }
+
+          #map {
+            position: absolute;
+            top: 30px;
+            bottom: 0;
+            width: 70%;
+            height: 70%;
+          }
+        </style>
+        <script>
+          maptilersdk.config.apiKey = 'lD0RziNEBnA3N16AkW8G';
+          const map = new maptilersdk.Map({
+            container: 'map',
+            style: maptilersdk.MapStyle.STREETS,
+            center: [-122.413579, 37.775604],
+            zoom: 16,
+            navigationControl: false,
+            maptilerLogo: false
+          });
+        </script>
       </div>
       <div class="col-sm-2">
         <h4>Legal</h4>

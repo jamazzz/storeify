@@ -17,12 +17,20 @@ if (!$connect) {
 
 $blacklist = array(
 	'invoice.php',
-	'login.php'
+	'login.php',
 );
+
+//  no anim in category
+$url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$path_parts = explode('/', trim($url_path, '/'));
+if (count($path_parts) > 1) {
+	$before_last = $path_parts[count($path_parts) - 2];
+}
+
 
 // Loader
 if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
-	if (!in_array(basename($_SERVER['PHP_SELF']), $blacklist)) {
+	if (!in_array(basename($_SERVER['PHP_SELF']), $blacklist) && $before_last != 'category') {
 		echo ('
 <style>
 #loading {

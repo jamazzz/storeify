@@ -23,7 +23,7 @@
 
 <body>
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/navbarIndex.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/indexNavbar.php';
   ?>
   <section class="py-7 bg-dark section-angle top-right bottom-right">
     <div class="container">

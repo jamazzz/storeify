@@ -108,8 +108,8 @@ class post extends Table {
           $names[] = $data["names"][$data["glyphNameIndex"][$gid]];
         }
 
-        $_SESSION['number']OfGlyphs = count($names);
-        $length += $font->writeUInt16($_SESSION['number']OfGlyphs);
+        $numberOfGlyphs = count($names);
+        $length += $font->writeUInt16($numberOfGlyphs);
 
         foreach($glyphNameIndex as $gni) {
           $length += $font->writeUInt16($gni);

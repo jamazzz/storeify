@@ -42,7 +42,7 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
   <div class="lg:col-span-full">
     <header class="grid gap-md ">
       <div class="flex flex-wrap justify-evenly items-center gap-md">
-        <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
+        <a href="/storeify/home" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
           <img src="<?php echo $row2['logo']; ?>" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
         </a>
       </div>
