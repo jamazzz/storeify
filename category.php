@@ -54,8 +54,8 @@
               ');
 
 
-        $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/products/' . $row['id'];
-        $logo = '/storeify/store/products/' . $row['id'];
+        $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/productsimg/' . $row['id'];
+        $logo = '/storeify/store/productsimg/' . $row['id'];
         if (file_exists($logo_path . '.jpg')) {
           $logo_src = $logo . '.jpg';
         } elseif (file_exists($logo_path . '.png')) {
