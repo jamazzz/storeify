@@ -9,15 +9,52 @@
 
 <body>
   <?php
-  include 'dashp1.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
+  $select = "SELECT * FROM websites WHERE id = " . $_SESSION['currentwebsite'];
+  $result = mysqli_query($connect, $select);
+  $row = mysqli_fetch_assoc($result);
+  $select2 = "SELECT * FROM transactions WHERE store = '" . $row['subdomain'] . "'";
+  $result2 = mysqli_query($connect, $select2);
+  $row2 = mysqli_fetch_assoc($result2);
+  $total = 0;
+  $total2 = 0;
+  $count = 0;
+  $currentMonth = date('F');
+  $currentDate = date('Y-m-d');
+  while ($row2 = mysqli_fetch_assoc($result2)) {
+    $createdDate = strtotime($row2['created_date']);
+    $paymentMonth = date('F', $createdDate);
+    $paymentDate = date('Y-m-d', $createdDate);
+    $count++;
+    if ($paymentMonth == $currentMonth) {
+      $total += $row2['paid_amount'];
+    }
+    if ($paymentDate == $currentDate) {
+      $total2 += $row2['paid_amount'];
+    }
+    $a[] = '<tr data-v-a416eab6="" class="text-muted">
+        <td data-v-a416eab6="" width="50%" class="align-middle">' . $row2['payer_email'] . '</td>
+        <td data-v-a416eab6="" width="30%" class="align-middle">' . $row2['paid_amount'] . '</td>
+      </tr>';
+
+    $monthlySales = array();
+    for ($i = 1; $i <= 12; $i++) {
+      $select3 = "SELECT SUM(paid_amount) AS total_amount FROM transactions WHERE store = '" . $row['subdomain'] . "' AND MONTH(created_date) = $i";
+      $result3 = mysqli_query($connect, $select3);
+      $row3 = mysqli_fetch_assoc($result3);
+      $monthlySales[] = $row3['total_amount'] ?? 0;
+    }
+    $monthlySalesJson = json_encode($monthlySales);
+  }
+
   ?>
   <main role="main" id="main">
     <div class="container-fluid">
       <header class="page-title">
         <div class="row no-gutters align-items-center">
           <div class="col-12 col-md-6">
-            <h1 class="my-0">‎ JZ Works</h1>
-            <small class="text-muted text-uppercase font-weight-bold">FiveM | Starter Plan </small>
+            <h2 class="my-0"><?php echo $row['name'] ?>'s Dashboard</h2>
+            <br>
           </div>
           <div class="col-12 col-md-6 text-md-right mt-3">
           </div>
@@ -36,7 +73,7 @@
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
                   <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
+                    <h1 data-v-a416eab6=""><?php echo ($total2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
                   </div>
                 </div>
               </div>
@@ -48,7 +85,7 @@
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
                   <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">June's Sales</span>
+                    <h1 data-v-a416eab6=""><?php echo ($total); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase"><?php echo date('F') . "'s Sales"; ?></span>
                   </div>
                 </div>
               </div>
@@ -60,7 +97,10 @@
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
                   <div data-v-a416eab6="" class="col-xl-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6="">€0.00</h1> <span data-v-a416eab6="" class="text-uppercase">June's Avg Payment</span>
+                    <?php
+                    $average = $count > 0 ? $total / $count : 0;
+                    ?>
+                    <h1 data-v-a416eab6=""><?php echo number_format($average, 2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">June's Avg Payment</span>
                   </div>
                 </div>
               </div>
@@ -77,7 +117,45 @@
                 </div>
               </div>
               <div data-v-a416eab6="" class="card-body">
-                <canvas id="areaChart" style="height:250px"></canvas>
+                <canvas id="myLineChart" width="400" height="200"></canvas>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+                  const ctx = document.getElementById('myLineChart').getContext('2d');
+                  const data = {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [{
+                      label: 'EUR',
+                      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      data: <?php echo $monthlySalesJson; ?>,
+                      fill: false,
+                    }]
+                  };
+                  const config = {
+                    type: 'line',
+                    data: data,
+                    options: {
+                      responsive: true,
+                      scales: {
+                        x: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Month'
+                          }
+                        },
+                        y: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Value'
+                          }
+                        }
+                      }
+                    }
+                  };
+                  const myLineChart = new Chart(ctx, config);
+                </script>
               </div>
             </div>
           </div>
@@ -88,68 +166,16 @@
                   <div data-v-a416eab6="" class="col-7 d-flex align-items-center">
                     Recent Payments
                   </div>
-                  <div data-v-a416eab6="" class="col-5 text-right"><a data-v-a416eab6="" href="https://creator.tebex.io/payments" class="btn btn-secondary">View More</a></div>
                 </div>
               </div>
               <div data-v-a416eab6="" class="card-body">
                 <div data-v-a416eab6="" class="table-responsive">
                   <table data-v-a416eab6="" class="table border">
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://avatars.discourse-cdn.com/v4/letter/t/8edcca/256.png" class="rounded mr-2" style="max-width: 42px;">
-                        Toshiki0620
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/75387494" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/gwapnasty/256/3818844_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        GwapNasty
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€20.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/74990272" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://avatars.discourse.org/v4/letter/e/7933a0/256.png" class="rounded mr-2" style="max-width: 42px;">
-                        Epsiee2469
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€22.99</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/74438419" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/jamazzz/256/541401_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        jamazzz
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€0.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/74018944" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        Roie_Guy
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        Roie_Guy
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        Roie_Guy
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
-                    </tr>
-                    <tr data-v-a416eab6="" class="text-muted">
-                      <td data-v-a416eab6="" width="50%" class="align-middle"><img data-v-a416eab6="" src="https://forum.cfx.re/user_avatar/forum.cfx.re/roie_guy/256/699541_2.png" class="rounded mr-2" style="max-width: 42px;">
-                        Roie_Guy
-                      </td>
-                      <td data-v-a416eab6="" width="30%" class="align-middle">€35.00</td>
-                      <td data-v-a416eab6="" width="20%" class="align-middle"><a data-v-a416eab6="" href="https://creator.tebex.io/payments/70395595" class="btn btn-link">View</a></td>
-                    </tr>
+                    <?php
+                    for ($i = 0; $i < count($a); $i++) {
+                      echo $a[$i];
+                    }
+                    ?>
                   </table>
                 </div>
               </div>
@@ -160,5 +186,5 @@
     </div>
   </main>
   <?php
-  include 'dashp2.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
   ?>

@@ -9,7 +9,7 @@
 
 <body>
   <?php
-  include '../dashp1.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
   ?>
   <main role="main" id="main" >
     <div class="container-fluid" >
@@ -138,5 +138,5 @@
 
   </main>
   <?php
-  include '../dashp2.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
   ?>

@@ -2,35 +2,14 @@
 <footer class="py-1 divider top-divider pt-5 text-center">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5 mr-auto" style="margin-top: -20px;">
-        <div id="map"></div>
-        <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
-        <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
-        <style>
-          body {
-            margin: 0;
-            padding: 0;
-          }
-
-          #map {
-            position: absolute;
-            top: 30px;
-            bottom: 0;
-            width: 70%;
-            height: 70%;
-          }
-        </style>
-        <script>
-          maptilersdk.config.apiKey = 'lD0RziNEBnA3N16AkW8G';
-          const map = new maptilersdk.Map({
-            container: 'map',
-            style: maptilersdk.MapStyle.STREETS,
-            center: [-122.413579, 37.775604],
-            zoom: 16,
-            navigationControl: false,
-            maptilerLogo: false
-          });
-        </script>
+      <div class="col-sm-5 mr-auto" style="margin-top: -20px; text-align: left;">
+        <h4>Contacts</h4>
+        <ul class="list-unstyled">
+          <li>Email: support@storeify.com</li>
+          <li>Phone: 1-800-123-4567</li>
+          <li>Address: 123 Main St, City, State</li>
+          <li>Social Media: @storeify</li>
+        </ul>
       </div>
       <div class="col-sm-2">
         <h4>Legal</h4>

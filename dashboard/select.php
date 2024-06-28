@@ -106,7 +106,7 @@ for ($i = 0; $i < $total; $i++) {
     $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "' AND deleted = 0";
     $result2 = mysqli_query($connect, $projectsinfo);
     while ($row2 = mysqli_fetch_assoc($result2)) {
-        $projectspack = "SELECT * FROM websites WHERE id = '" . $row2['package_id'] . "' AND deleted = 0";
+        $projectspack = "SELECT * FROM websites WHERE id = '" . $row2['id'] . "' AND deleted = 0";
         $result3 = mysqli_query($connect, $projectspack);
         $row3 = mysqli_fetch_assoc($result3);
         echo '
@@ -121,7 +121,6 @@ for ($i = 0; $i < $total; $i++) {
                 </div>
             </div>
             <div class="card-body">
-                <p class="mb-2">' . $row3['name'] . '</p>
                 <p class="mb-0"><a value="' . $row['websiteid'] . '" onclick="submitForm(this)" target="_blank">View webstore</a></p>
                 <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Logged in</a>
                 ';

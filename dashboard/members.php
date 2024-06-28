@@ -9,7 +9,7 @@
 
 <body>
   <?php
-  include 'dashp1.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
   ?>
   <!-- Modal starts -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,7 +77,7 @@
     ';
   ?>
   <?php
-  include 'dashp2.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
   ?>
 </body>
 

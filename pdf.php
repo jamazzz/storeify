@@ -686,7 +686,7 @@ $dompdf->render();
 
 $dompdf->stream('generated_pdf.pdf', ['Attachment' => false]);
 
-$format = $_SESSION['id'] . "_" . $_SESSION['create_time'] . '.pdf';
+$format = $_SESSION['subdomain'] . "_" . $_SESSION['id'] . "_" . $_SESSION['create_time'] . '.pdf';
 $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
 $filePath = $directory . $format;
 
