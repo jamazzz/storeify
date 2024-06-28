@@ -43,17 +43,12 @@
       $getproducts = "SELECT * FROM products WHERE category_id = '" . $_SESSION['number'] . "'AND deleted = 0";
       $result = mysqli_query($connect, $getproducts);
       $count = mysqli_num_rows($result);
-      $k = 0;
-
       while ($row = mysqli_fetch_assoc($result)) {
-        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $row['id'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
         $result2 = mysqli_query($connect, $exists);
-        $k++;
         echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
-              <a href="/package/5882374" class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
+              <a class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
               ');
-
-
         $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/productsimg/' . $row['id'];
         $logo = '/storeify/store/productsimg/' . $row['id'];
         if (file_exists($logo_path . '.jpg')) {
@@ -72,14 +67,14 @@
               <div class="flex justify-between py-sm">
               </div>
               ');
-        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $k . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
+        $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $row['id'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
         $result2 = mysqli_query($connect, $exists);
         if (mysqli_num_rows($result2) > 0) {
           echo '
                 <form action="/storeify/addCart.php" method="post" class="w-full">
                 <button type="submit" class="btn-danger block w-full text-center group relative spinner-toggle">
                   <i class="fa-solid fa-cart-shopping mr-sm"></i> Retirar
-                  <input type="hidden" name="remove" value="' . $k . '">
+                  <input type="hidden" name="remove" value="' . $row['id'] . '">
                   <input type="hidden" name="url" value="' . $_SERVER['REQUEST_URI'] . '">
                 </button>
                 </form>   
@@ -89,7 +84,7 @@
                 <form action="/storeify/addCart.php" method="post" class="w-full">       
                    <button type="submit" class="btn-primary block w-full text-center group relative spinner-toggle" name="add">
                    <i class="fa-solid fa-cart-shopping mr-sm"></i> Comprar
-                   <input type="hidden" name="add" value="' . $k . '">
+                   <input type="hidden" name="add" value="' . $row['id'] . '">
                    <input type="hidden" name="url" value="' . $_SERVER['REQUEST_URI'] . '">
                    </button>
                 </form>

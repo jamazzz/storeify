@@ -105,8 +105,6 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
                   }
                 }
               }
-              ?>
-              <?php
               if (!isset($_SESSION['clientid'])) {
                 $_SESSION['clientid'] = -1;
               }
@@ -168,15 +166,35 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
                 <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container" style="display: block; transform: translateX(0px)">
                   <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
                     <div class="flex justify-between p-grid border-b border-background items-center gap-grid">
-                      <a href="http://localhost/storeify/loginClient" class="flex items-center gap-md h-12 group pr-lg">
-                        <div class="text-left">
-                          <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged out</small>
-                          <small class="text-success hidden group-hover:block">Sign in</small>
-                          <h3 class="leading-none type-header block">
-                            Guest
-                          </h3>
-                        </div>
-                      </a>
+                      <?php
+                      if (!isset($_SESSION['clientid'])) {
+                        $_SESSION['clientid'] = -1;
+                      }
+
+
+                      if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
+                        echo ('
+              <li class="flex justify-end items-center gap-md h-12 group pr-lg">
+                <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
+                  <div class="text-left justify-end">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
+                    <small class="text-success hidden group-hover:block justify-end">Sign in</small>
+                    <h3 class="leading-none type-header block justify-end">Guest</h3>
+                  </div>
+                </a>
+                ');
+                      } else {
+                        echo ('
+                <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg">
+                  <div class="text-left">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
+                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
+                  </div>
+                </a>
+                ');
+                      }
+                      ?>
                       <div class="flex gap-md">
                         <button class="btn-icon-neutral bg-background group sidebar-close" onclick="toggleBasket()">
                           <i class="fa-solid fa-xmark transition opacity-50 group-hover:opacity-100"></i>
@@ -204,10 +222,21 @@ if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1)
                         } else {
                           foreach ($rows as $row) {
                             $_SESSION['subtotal'] = $_SESSION['subtotal'] + $row['price'];
+                            $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/productsimg/' . $row['id'];
+                            $logo = '/storeify/store/productsimg/' . $row['id'];
+                            if (file_exists($logo_path . '.jpg')) {
+                              $logo_src = $logo . '.jpg';
+                            } elseif (file_exists($logo_path . '.png')) {
+                              $logo_src = $logo . '.png';
+                            } elseif (file_exists($logo_path . '.gif')) {
+                              $logo_src = $logo . '.gif';
+                            } else {
+                              $logo_src = '/storeify/assets/images/logo.png';
+                            }
                             echo (' 
                           <div class="grid grid-cols-[5rem_1fr] bg-background gap-sm" style="border-radius: 10px;">
                             <div class="rounded bg-background h-[5rem] flex justify-center items-center">
-                              <img src="//dunb17ur4ymx4.cloudfront.net/packages/images/c2f74d4741f3da09d0caa8867fd98790541d3e16.png" class="inline-block max-h-[5rem]" style="margin-top:50px; margin-left: 50px;">
+                              <img src="' . $logo_src . '" class="inline-block max-h-[5rem]" style="margin-top:50px; margin-left: 50px;">
                             </div>
                             <div>
                               <br>
