@@ -16,6 +16,7 @@
   $select2 = "SELECT * FROM transactions WHERE store = '" . $row['subdomain'] . "'";
   $result2 = mysqli_query($connect, $select2);
   $row2 = mysqli_fetch_assoc($result2);
+  $_SESSION['websitename'] = $row['name'];
   $total = 0;
   $total2 = 0;
   $count = 0;

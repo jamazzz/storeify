@@ -541,21 +541,14 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
+                <a class="dropdown-item preview-item" href="/storeify/index.php">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-logout text-danger"></i>
                     </div>
                   </div>
-                  <div class="preview-item-content">
-                    <form action="/storeify/index.php" id="logoutform">
-                      <p class="preview-subject mb-1" onclick="submitForm()">Log out</p>
-                      <script>
-                        function submitForm() {
-                          document.getElementById("logoutform").submit();
-                        }
-                      </script>
-                    </form>
+                  <div class="preview-item-content" href="/storeify/index.php">
+                      <p class="preview-subject mb-1" href="/storeify/index.php">Log out</p>
                   </div>
                 </a>
               </div>

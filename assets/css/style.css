@@ -1,4 +1,9 @@
 /*! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com*/
+:root {
+  --dark: rgba(28, 28, 37, 1);
+  --light: rgba(36, 36, 45, 1);
+}
+
 *,
 :after,
 :before {
@@ -251,14 +256,14 @@ video {
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   box-shadow: inset 0 0 0 2px rgba(36, 36, 45, 1);
   --tw-bg-opacity: 1;
-  background-color: rgba(28, 28, 37, var(--tw-bg-opacity));
+  background-color: var(--dark);
 }
 
 body {
@@ -320,7 +325,7 @@ select {
   min-width: 0;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
   padding: 0.6000000000000001rem calc(0.6000000000000001rem * 1.5);
   --tw-text-opacity: 1;
   color: rgba(157, 163, 171, var(--tw-text-opacity));
@@ -791,7 +796,7 @@ select::placeholder {
   --tw-translate-y: 75%;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
   padding: 0.85rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -816,9 +821,7 @@ select::placeholder {
 
 .group:hover .tooltip,
 .tooltip {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .tooltip {
@@ -836,12 +839,10 @@ select::placeholder {
   --tw-translate-x: -50%;
   --tw-translate-y: -50%;
   --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   border-radius: 4px;
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
   --tw-content: "";
   content: var(--tw-content);
 }
@@ -862,7 +863,7 @@ select::placeholder {
   position: absolute;
   z-index: 10;
   border-radius: 0.5rem;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
   font-family: "Syne", sans-serif;
   font-weight: 700;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
@@ -874,9 +875,7 @@ select::placeholder {
   display: grid;
   max-width: 250px;
   --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.35rem;
   border-width: 0px;
@@ -917,7 +916,7 @@ select::placeholder {
 .dropdown-selector li a:hover,
 .dropdown-selector li:hover:not(:has(a)) {
   --tw-bg-opacity: 1;
-  background-color: rgba(28, 28, 37, var(--tw-bg-opacity));
+  background-color: var(--dark);
   color: rgba(246, 247, 247, var(--tw-text-opacity));
   --tw-text-opacity: 1;
 }
@@ -935,16 +934,8 @@ select::placeholder {
   --tw-text-opacity: 1;
   color: rgba(246, 247, 247, var(--tw-text-opacity));
   --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .sidebar,
@@ -959,9 +950,7 @@ select::placeholder {
   min-width: 90vw;
   max-width: 90vw;
   --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
     -webkit-backdrop-filter;
@@ -997,16 +986,8 @@ select::placeholder {
   --tw-text-opacity: 1;
   color: rgba(246, 247, 247, var(--tw-text-opacity));
   --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .modal,
@@ -1020,9 +1001,7 @@ select::placeholder {
   min-width: 100%;
   max-width: 100%;
   --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding: 0.85rem;
 }
 
@@ -1050,7 +1029,7 @@ select::placeholder {
 .alert {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgba(28, 28, 37, var(--tw-bg-opacity));
+  background-color: var(--dark);
   padding: 1rem 1.5rem;
   --tw-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
@@ -1651,9 +1630,7 @@ select::placeholder {
 
 .-translate-x-1\/2,
 .-translate-y-1\/2 {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-y-1\/2 {
@@ -1666,9 +1643,7 @@ select::placeholder {
 
 .translate-x-1\/2,
 .translate-x-full {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-x-full {
@@ -1681,9 +1656,7 @@ select::placeholder {
 
 .translate-y-1,
 .translate-y-\[calc\(-100\%_-_\.5rem\)\] {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-y-\[calc\(-100\%_-_\.5rem\)\] {
@@ -1691,9 +1664,7 @@ select::placeholder {
 }
 
 .transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-not-allowed {
@@ -1937,12 +1908,12 @@ select::placeholder {
 
 .bg-background {
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
 }
 
 .bg-background-accent {
   --tw-bg-opacity: 1;
-  background-color: rgba(28, 28, 37, var(--tw-bg-opacity));
+  background-color: var(--dark);
 }
 
 .bg-danger {
@@ -2249,16 +2220,8 @@ select::placeholder {
 
 .backdrop-blur-sm {
   --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
@@ -2427,9 +2390,7 @@ select::placeholder {
 .after\:-translate-x-1\/2:after,
 .after\:translate-y-btn-sm:after {
   content: var(--tw-content);
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .after\:translate-y-btn-sm:after {
@@ -2455,12 +2416,12 @@ select::placeholder {
 
 .hover\:bg-background:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
 }
 
 .hover\:bg-background-accent:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(28, 28, 37, var(--tw-bg-opacity));
+  background-color: var(--dark);
 }
 
 .hover\:bg-primary-accent:hover {
@@ -2511,9 +2472,7 @@ select::placeholder {
 
 .group:hover .group-hover\:translate-x-1,
 .group:hover .group-hover\:translate-x-2 {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:translate-x-2 {
@@ -2561,7 +2520,7 @@ select::placeholder {
 
 .data-\[dropdown\=open\]\:bg-background[data-dropdown="open"] {
   --tw-bg-opacity: 1;
-  background-color: rgba(36, 36, 45, var(--tw-bg-opacity));
+  background-color: var(--light);
 }
 
 .data-\[dropdown\=open\]\:bg-primary-accent[data-dropdown="open"] {
@@ -2571,9 +2530,7 @@ select::placeholder {
 
 .group[data-dropdown="open"] .group-data-\[dropdown\=open\]\:rotate-180 {
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (min-width: 768px) {
@@ -2682,9 +2639,7 @@ select::placeholder {
 
   .lg\:-translate-x-full,
   .lg\:translate-y-2 {
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .lg\:translate-y-2 {

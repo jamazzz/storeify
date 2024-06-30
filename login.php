@@ -36,7 +36,11 @@ if ($resultadopass) {
     $row = mysqli_fetch_assoc($resultadopass);
     $_SESSION['clientUsername'] = $row['username'];
     if ($row && password_verify($password, $row['password'])) {
-        header("Location: /storeify/home.php");
+        if (strtok($_SERVER['HTTP_HOST'], '.') != "localhost") {
+            header("Location: /storeify/home.php");
+        } else {
+            header("Location: http://localhost/storeify/assets.php");
+        }
         exit();
     } else {
         $_SESSION["errormsg"] = "Dados de acesso incorretos";

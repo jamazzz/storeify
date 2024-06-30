@@ -8,6 +8,16 @@ if (preg_match('/\/category\/([0-9]+)$/', $_SERVER['REQUEST_URI'], $matches)) {
 $select = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
 $result = mysqli_query($connect, $select);
 $row = mysqli_fetch_assoc($result);
+
+echo ('
+<style>
+:root {
+  --dark: ' . $row['dark_color'] . ';
+  --light: ' . $row['light_color'] . ';
+  }
+</style>
+');
+
 if (!mysqli_num_rows($result) == 1 || $_SERVER['HTTP_HOST'] == "localhost") {
   header('Location: /storeify/404.php');
   exit();
@@ -20,10 +30,10 @@ if ($_SERVER['HTTP_HOST'] == "localhost") {
 
 $select2 = "SELECT categories.id,logo FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'";
 $result2 = mysqli_query($connect, $select2);
-if (!mysqli_num_rows($result2) > 0) {
-  header('Location: /storeify/404.php');
-  exit();
-}
+// if (!mysqli_num_rows($result2) > 0) {
+//   header('Location: /storeify/404.php');
+//   exit();
+// }
 $found = false;
 while ($row2 = mysqli_fetch_assoc($result2)) {
   $found = true;
@@ -33,17 +43,17 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     break;
   }
 }
-if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1) {
-  header('Location: /storeify/404.php');
-  exit();
-}
+// if (!$found && substr_count($_SERVER['REQUEST_URI'], '/storeify/checkout') != 1) {
+//   header('Location: /storeify/404.php');
+//   exit();
+// }
 ?>
 <div class="container mx-auto p-sm">
   <div class="lg:col-span-full">
     <header class="grid gap-md ">
       <div class="flex flex-wrap justify-evenly items-center gap-md">
         <a href="/storeify/home" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
-          <img src="<?php echo $row2['logo']; ?>" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
+          <img src="<?php echo isset($row2['logo']) ? $row2['logo'] : '/storeify/assets/images/logo.png'; ?>" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
         </a>
       </div>
     </header>

@@ -71,7 +71,7 @@
           $payerFullName = $_SESSION['payerGivenName'] . ' ' . $_SESSION['payerSurname'];
           $currentdatetime = date('Y-m-d H:i:s');
           if (!isset($_SESSION['inserted']) || $_SESSION['id'] !== $_SESSION['inserted']) {
-            $transaction = "INSERT INTO transactions (payer_id, payer_name, payer_email, payer_country, merchant_id, merchant_email, transaction_id, paid_amount, currency_type, payment_source, created_date,store,user) 
+            $transaction = "INSERT INTO transactions (payer_id, payer_name, payer_email, payer_country, merchant_id, merchant_email, transaction_id, paid_amount, currency_type, payment_source, created_date,store,user,state) 
           VALUES (
               '$_SESSION[payerId]', 
               '$payerFullName', 
@@ -85,7 +85,8 @@
               '$_SESSION[payerId]', 
               '$currentdatetime',
               '$_SESSION[subdomain]',
-              '$_SESSION[clientid]'
+              '$_SESSION[clientid]',
+              1
           )";
             $selectQuery = "SELECT product_id FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
             $result = mysqli_query($connect, $selectQuery);

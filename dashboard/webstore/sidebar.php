@@ -11,14 +11,15 @@
   <?php
   include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
   ?>
-  <main role="main" id="main" >
-    <div class="container-fluid" >
+  <main role="main" id="main">
+    <div class="container-fluid">
 
 
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" >
-            <h1 class="my-0" >Sidebar</h1>
+          <div class="col-12 col-md-6">
+            <h1 class="my-0">Sidebar</h1>
+            <br>
           </div>
         </div>
       </header>
@@ -26,7 +27,7 @@
 
 
       <div class="card">
-        <div class="card-header" >
+        <div class="card-header">
           Modules
         </div>
         <div class="card-body">
@@ -93,7 +94,7 @@
           </table>
         </div>
       </div>
-
+      <br>
     </div>
   </main>
   <?php

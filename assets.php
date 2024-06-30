@@ -113,13 +113,14 @@
                     if ($totalrow == 0) {
                       echo ('<div class="bg-background rounded">
                         <div class="flex flex-wrap justify-between  gap-md items-center p-sm pr-lg">
-                            <div class="grid grid-cols-[4rem_1fr] items-center gap-md">
-                                <div class="rounded-sm bg-background-accent h-[4rem] flex justify-center items-center">
-                                    <img src="/storeify/assets/images/logo.png" class="inline-block max-h-[5rem] mx-auto">
-                                </div>
-                                <div>
-                                    <h2 class="type-header">No assets</h2>
-                                </div>
+                                <div class="text-center">
+                                    <div class="text-center" style="margin: 10px;">
+                                      <div class="text-center">
+                                        <div class="text-center" style="margin: 10px;">
+                                          <h2 class="type-header">No assets</h2>
+                                        </div>
+                                      </div>
+                                    </div>
                             </div>                          
                         </div>
                     </div>');
@@ -145,25 +146,28 @@
                       }
                     }
                     ?>
-
-                    <form id="pagination" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                      <div style="text-align: center;">
-                        <div class="flex justify-center">
-                          <?php if ($_SESSION['tabel_page'] / 5 + 1 == 1) : ?>
-                            <a id="returnbtn" disabled class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;">&lt;</a>
-                          <?php else : ?>
-                            <a id="returnbtnfull" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('returnbtnfull')">&lt;&lt;</a>
-                            <a id="returnbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('returnbtn')">&lt;</a>
-                          <?php endif; ?>
-                          <a id="idvalue" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;"><?php echo ceil($_SESSION['tabel_page'] / 5 + 1) ?></a>
-                          <?php if ($count - 5 <= $_SESSION['tabel_page']) : ?>
-                            <a id="nextbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" disabled>&gt;</a>
-                          <?php else : ?>
-                            <a id="nextbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('nextbtn')">&gt;</a>
-                            <a id="nextbtnfull" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('nextbtnfull')">&gt;&gt;</a>
-                          <?php endif; ?>
+                    <?php
+                    if (!$totalrow == 0) { ?>
+                      <form id="pagination" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <div style="text-align: center;">
+                          <div class="flex justify-center">
+                            <?php if ($_SESSION['tabel_page'] / 5 + 1 == 1) : ?>
+                              <a id="returnbtn" disabled class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;">&lt;</a>
+                            <?php else : ?>
+                              <a id="returnbtnfull" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('returnbtnfull')">&lt;&lt;</a>
+                              <a id="returnbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('returnbtn')">&lt;</a>
+                            <?php endif; ?>
+                            <a id="idvalue" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;"><?php echo ceil($_SESSION['tabel_page'] / 5 + 1) ?></a>
+                            <?php if ($count - 5 <= $_SESSION['tabel_page']) : ?>
+                              <a id="nextbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" disabled>&gt;</a>
+                            <?php else : ?>
+                              <a id="nextbtn" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('nextbtn')">&gt;</a>
+                              <a id="nextbtnfull" class="btn-primary block text-center group relative spinner-toggle text-center content-center" style="height: 40px; width: 40px; margin-right: 10px;" onclick="submitForm('nextbtnfull')">&gt;&gt;</a>
+                            <?php endif; ?>
+                          </div>
                         </div>
-                      </div>
+                      <?php }
+                      ?>
                       <script>
                         function submitForm(buttonClicked) {
                           var idvalue = document.getElementById("idvalue").innerText;

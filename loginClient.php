@@ -36,6 +36,18 @@
   <?php
   include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
+  $select = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
+  $result = mysqli_query($connect, $select);
+  $row = mysqli_fetch_assoc($result);
+
+  echo ('
+<style>
+:root {
+  --dark: ' . $row['dark_color'] . ';
+  --light: ' . $row['light_color'] . ';
+  }
+</style>
+');
   ?>
   <div class="container mx-auto p-sm" style="width: 450px; height: 900px;">
     <div class="lg:col-span-full">
@@ -67,7 +79,7 @@
                       </button>
                     </div>
                   </form>
-                    <button onclick="window.location.href='/storeify/registerClient.php'" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
+                  <button onclick="window.location.href='/storeify/registerClient.php'" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
                 </div>
                 <!-- End Widget Area-->
 
