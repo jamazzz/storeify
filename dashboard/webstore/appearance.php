@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
+  <!-- Toast UI Editor Dark Theme CSS -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/theme/toastui-editor-dark.min.css">
 </head>
 
 <body>
@@ -30,11 +34,12 @@
       $result = mysqli_query($connect, $select);
       $row = mysqli_fetch_assoc($result);
       ?>
+
       <div class="card row-mt">
         <div class="card-body row d-flex w-100 align-self-center">
           <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
             <div class="row align-self-center h-100">
-              <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"><img src="<?php echo $row['logo']; ?>" alt="Favicon" class="w-75" style="max-width: 100px; border-radius: 50px;"></div>
+              <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"><img src="<?php echo isset($row['logo']) ? $row['logo'] : '/storeify/assets/images/logo.png'; ?>" alt="Favicon" class="w-75" style="max-width: 100px; border-radius: 50px;"></div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center my-3 my-lg-0">
                 <h4>Logo</h4>
                 <p class="m-0">Provide a logo that will be displayed on your webstore.</p>
@@ -156,6 +161,75 @@
         </div>
       </div>
       <br>
+
+      <div class="card row-mt">
+        <div class="card-body row d-flex w-100 align-self-center">
+          <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
+            <div class="row align-self-center h-100">
+              <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
+                <i class="fa-solid  fa-signature" style="transform: scale(3);"></i>
+              </div>
+              <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
+                <h4>Name</h4>
+                <p class="m-0">Customize the Name of your webstore.</p>
+              </div>
+            </div>
+          </div>
+          <div class="action col-12 col-xl-4 col-lg-4 align-self-center text-right row-mt-mobile mt-3 mt-xl-0">
+            <div class="row no-gutters">
+              <form action="/storeify/changeName.php" method="POST" id="myForm2">
+                <input type="text" name="name" id="name" class="form-control" style="max-width: 480px;" value="<?php echo $row['name']; ?>">
+              </form>
+
+              <script>
+                document.getElementById('name').addEventListener('keypress', function(event) {
+                  if (event.key === 'Enter') {
+                    event.preventDefault();
+                    document.getElementById('myForm2').submit();
+                  }
+                });
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="card row-mt">
+        <div class="card-body row d-flex w-100 align-self-center">
+          <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
+            <div class="row align-self-center h-100">
+              <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
+                <i class="fa-solid  fa-server" style="transform: scale(3);"></i>
+              </div>
+              <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
+                <h4>Domain</h4>
+                <p class="m-0">Customize the domain of your webstore.</p>
+              </div>
+            </div>
+          </div>
+          <div class="action col-12 col-xl-4 col-lg-4 align-self-center text-right row-mt-mobile mt-3 mt-xl-0">
+            <div class="row no-gutters">
+              <form action="/storeify/changeSubdomain.php" method="POST" id="myForm">
+                <input type="text" name="subdomain" id="subdomain" class="form-control" style="max-width: 480px;" value="<?php echo str_replace(' ', '', $row['subdomain']); ?>">
+              </form>
+
+              <script>
+                document.getElementById('subdomain').addEventListener('keypress', function(event) {
+                  if (event.key === 'Enter') {
+                    event.preventDefault();
+                    document.getElementById('myForm').submit();
+                  }
+                });
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
       <div class="card row-mt">
         <br>
         <div class="card-body row d-flex w-100 align-self-center">
@@ -322,104 +396,48 @@
 
       <br>
 
-      <div class="card box-configuration row-mt">
+      <div class="card row-mt">
         <div class="card-body row d-flex w-100 align-self-center">
           <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
             <div class="row align-self-center h-100">
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
-                <i class="fa-solid fa-eye" style="transform: scale(3);"></i>
               </div>
-              <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-md-3">
-                <h4>Visibility</h4>
-                <p class="m-0">Prevent your store from being accessible by the public.</p>
-              </div>
-            </div>
-          </div>
-          <div class="action col-12 col-xl-4 col-lg-4 align-self-center text-center row-mt-mobile account-branding-update">
-            <div class="row align-items-center d-flex flex-column" style="position: absolute; right: 300px;">
-              <div class="double" style="margin-right: -100px">
-                <input type="checkbox" name="disabled" style="text-align: right; position: absolute; right: 55px; bottom: -5px;">
+              <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
+                <h4 style="margin-left: -1050px;">Home Page</h4>
+                <br>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br>
-      <div class="modal" id="disabledStoreAllowedIpModal" tabindex="-1" role="dialog" aria-labelledby="disabledStoreAllowedIpModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Visibility</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+          <div class="action col-12 col-xl-4 col-lg-4 align-self-center text-right row-mt-mobile mt-3 mt-xl-0">
+            <div class="row no-gutters">
             </div>
-            <form method="post" action="https://creator.tebex.io/appearance/disable">
-              <input type="hidden" name="_token" value="e9uf8jMUsnhNZ5bXwmQ2dJ8t2WyHE1kQ5YOpqYLo">
-              <div class="modal-body">
-                <div class="card mb-3">
-                  <div class="card-body p-3">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-12 col-md-10">Prevent my webstore from being accessible by the public</div>
-                      <div class="col-12 col-md-2 text-center">
-                        <label class="switch d-flex align-self-center mb-0 mt-3 mt-md-0 float-md-right">
+          </div>
+          <br>
+          <div id="editor"></div>
 
-                          <span class="slider"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group mt-3 mb-0">
-                  <label>Allowed IP Addresses</label>
-                  <input type="text" name="disable_override" class="form-control" placeholder="127.0.0.1,8.8.8.8" value="">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Update</button>
-              </div>
-            </form>
-          </div>
+
+          <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+          <script>
+            const Editor = toastui.Editor;
+            const editor = new Editor({
+              el: document.querySelector('#editor'),
+              height: '400px',
+              initialEditType: 'markdown',
+              previewStyle: 'vertical',
+              theme: 'dark',
+            });
+
+            const createButton = document.querySelector('.btn-primary');
+            createButton.addEventListener('click', function() {
+              const content = editor.getMarkdown();
+              console.log(content);
+            });
+          </script>
+          <a class="btn btn-primary text-center align-self-center" style="max-width: 1500px; margin-left:14px;">Save </a>
         </div>
       </div>
       <br>
-      <div class="card box-configuration row-mt account-update">
-        <div class="card-body row d-flex w-100 align-self-center">
-          <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
-            <div class="row align-self-center h-100">
-              <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
-                <i class="fa-solid fa-user" style="transform: scale(3);"></i>
-              </div>
-              <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-md-3">
-                <h4>Allow Guests To View Packages</h4>
-                <p class="m-0">Allow customers to view packages without logging into your webstore.</p>
-              </div>
-            </div>
-          </div>
-          <div class="action col-12 col-xl-4 col-lg-4 align-self-center text-right row-mt-mobile">
-            <label class="switch">
-              <style>
-                .double {
-                  zoom: 2;
-                  transform: scale(2);
-                  -ms-transform: scale(2);
-                  -webkit-transform: scale(2);
-                  -o-transform: scale(2);
-                  -moz-transform: scale(2);
-                  transform-origin: 0 0;
-                  -ms-transform-origin: 0 0;
-                  -webkit-transform-origin: 0 0;
-                  -o-transform-origin: 0 0;
-                  -moz-transform-origin: 0 0;
-                }
-              </style>
-              <div class="double" style="margin-right: -100px">
-                <input type="checkbox" name="disabled" style="text-align: right; position: absolute; right: 55px; bottom: -5px;" checked>
-                <span class="slider"></span>
-            </label>
-          </div>
-        </div>
-      </div>
+
 
     </div>
   </main>

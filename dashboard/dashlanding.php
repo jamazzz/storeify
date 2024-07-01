@@ -74,7 +74,7 @@
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
                   <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6=""><?php echo ($total2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
+                    <h1 data-v-a416eab6=""><?php echo ($total2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Vendas de Hoje</span>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,28 @@
                 <div data-v-a416eab6="" class="row d-flex align-items-center">
                   <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
                   <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6=""><?php echo ($total); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase"><?php echo date('F') . "'s Sales"; ?></span>
+                    <?php
+                    $month = date('F');
+                    $months = [
+                      'January' => 'Janeiro',
+                      'February' => 'Fevereiro',
+                      'March' => 'Março',
+                      'April' => 'Abril',
+                      'May' => 'Maio',
+                      'June' => 'Junho',
+                      'July' => 'Julho',
+                      'August' => 'Agosto',
+                      'September' => 'Setembro',
+                      'October' => 'Outubro',
+                      'November' => 'Novembro',
+                      'December' => 'Dezembro'
+                    ];
+
+                    if (array_key_exists($month, $months)) {
+                      $month = $months[$month];
+                    }
+                    ?>
+                    <h1 data-v-a416eab6=""><?php echo ($total); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase"><?php echo "Vendas de " . $month; ?></span>
                   </div>
                 </div>
               </div>
@@ -101,7 +122,7 @@
                     <?php
                     $average = $count > 0 ? $total / $count : 0;
                     ?>
-                    <h1 data-v-a416eab6=""><?php echo number_format($average, 2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">June's Avg Payment</span>
+                    <h1 data-v-a416eab6=""><?php echo number_format($average, 2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Pagamento médio de <?php echo $month ?></span>
                   </div>
                 </div>
               </div>
@@ -114,7 +135,7 @@
             <div data-v-a416eab6="" class="card h-100">
               <div data-v-a416eab6="" class="card-header" style="height: 51px;">
                 <div data-v-a416eab6="" class="row">
-                  <div data-v-a416eab6="" class="col-6 d-flex align-items-center">Sales Overview</div>
+                    <div data-v-a416eab6="" class="col-6 d-flex align-items-center">Visão Geral de Vendas</div>
                 </div>
               </div>
               <div data-v-a416eab6="" class="card-body">
@@ -165,7 +186,7 @@
               <div data-v-a416eab6="" class="card-header">
                 <div data-v-a416eab6="" class="row">
                   <div data-v-a416eab6="" class="col-7 d-flex align-items-center">
-                    Recent Payments
+                    Pagamentos Recentes
                   </div>
                 </div>
               </div>

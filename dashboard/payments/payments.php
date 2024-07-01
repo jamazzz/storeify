@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -17,7 +19,7 @@
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
-            <h1 class="my-0">Payments</h1>
+            <h1 class="my-0">Pagamentos</h1>
             <br>
           </div>
         </div>
@@ -34,11 +36,11 @@
               <table class="table table-responsive-sm table-striped table-responsive-md">
                 <thead class="thead-light">
                   <tr>
-                    <th>Customer</th>
-                    <th>Amount</th>
-                    <th>Received</th>
-                    <th></th>
-                    <th>&nbsp;</th>
+                    <th>Cliente</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Estado</th>
+                    <th class="text-end">Mais Informações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -60,28 +62,31 @@
                       ');
                     if ($row2['state'] == 1) {
                       echo ('
-                      <td class="text-center">
-                        <span class="badge badge-success" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="This payment has been completed successfully">Complete</span>
+                      <td >
+                        <span class="badge badge-success" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="Este pagamento foi concluído com sucesso">Completo</span>
                       </td>
                       ');
                     } elseif ($row2['state'] == 0) {
                       echo ('
-                      <td class="text-center">
-                        <span class="badge badge-warning" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="This payment is pending">Pending</span>
+                      <td >
+                        <span class="badge badge-warning" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="Este pagamento está pendente">Pendente</span>
                       </td>
                       ');
                     } else {
                       echo ('
-                      <td class="text-center">
-                        <span class="badge badge-danger" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="This payment has failed">Failed</span>
+                      <td>
+                        <span class="badge badge-danger" style="width: 75px;" data-toggle="tooltip" title="" data-original-title="Este pagamento falhou">Falhou</span>
                       </td>
                       ');
                     }
                     $file = $row2['store'] . "_" . $row2['transaction_id'] . "_" . date('d-m-Y', strtotime($row2['created_date'])) . '.pdf';
                     echo ('
-                      <td class="text-right">
-                        <a class="btn btn-default" href="/storeify/store/invoices/"' . $file . '" target="_blank">View</a>
-                      </td>
+                        <td class="text-end">
+                          <form action="/storeify/dashboard/payments/payments-info.php" method="POST">
+                            <input type="hidden" name="payment_id" value="' . $row2['id'] . '">
+                            <button type="submit" class="btn btn-default"><i class="fa-solid fa-magnifying-glass"></i></button>
+                          </form>
+                        </td>
                     </tr>
                     ');
                   }

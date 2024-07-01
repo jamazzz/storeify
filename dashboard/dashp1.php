@@ -30,7 +30,7 @@
   <div class="container-scroller">
     <?php
     include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
-    
+
 
     $pinfoquery = "SELECT * FROM users  WHERE id = '" . $_SESSION['userid'] . "'";
     $resultadou = mysqli_query($connect, $pinfoquery);
@@ -98,19 +98,12 @@
         </li>
         <!-- Clients -->
         <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#customers" aria-expanded="false" aria-controls="customers">
+          <a class="nav-link" href="/storeify/dashboard/customers.php">
             <span class="menu-icon">
               <i class="mdi mdi-table-large"></i>
             </span>
             <span class="menu-title">Clientes</span>
-            <i class="menu-arrow"></i>
           </a>
-          <div class="collapse" id="customers">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/customers/lookup.php">Pesquisar</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/customers/bans.php">Proibições</a></li>
-            </ul>
-          </div>
         </li>
         <!-- Webstore -->
         <li class="nav-item menu-items">
@@ -124,7 +117,6 @@
           <div class="collapse" id="webstore">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/appearance.php">Aparência</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/sidebar.php">Sidebar</a></li>
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/pages.php">Páginas</a></li>
             </ul>
           </div>
@@ -548,7 +540,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content" href="/storeify/index.php">
-                      <p class="preview-subject mb-1" href="/storeify/index.php">Log out</p>
+                    <p class="preview-subject mb-1" href="/storeify/index.php">Log out</p>
                   </div>
                 </a>
               </div>
