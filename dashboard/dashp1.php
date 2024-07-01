@@ -447,12 +447,17 @@
       <!-- partial:partials/_navbar.php -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="dashlanding.php"><img src="/storeify/assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="dashlanding.php"><img src="/storeify/assets/images/logo.png" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
-              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="/storeify/home.php">View Website</a>
+              <?php
+              $select = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
+              $result = mysqli_query($connect, $select);
+              $row = mysqli_fetch_assoc($result);
+              ?>
+              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">View Website</a>
             </li>
             <li class="nav-item dropdown border-left">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
