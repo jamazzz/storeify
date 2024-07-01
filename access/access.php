@@ -44,22 +44,22 @@
           <nav>
             <ul>
               <li><a href="/storeify/index.php"><i class="ri-arrow-left-line"></i></a></li>
-              <li>Don´t have an account ? <a class="t-signin">Sign Up</a></li>
+              <li>Não tem uma conta? <a class="t-signin">Registe-se</a></li>
             </ul>
           </nav>
           <div class="heading">
-            <h2>Sign In</h2>
-            <p>We secure your data privacy encrypted.</p>
+            <h2>Iniciar sessão</h2>
+            <p>Protegemos a privacidade dos seus dados com encriptação.</p>
           </div>
           <form action="login.php" method="post">
             <p>
               <i class="ri-mail-line"></i>
-              <input type="text" id="emailoruser" name="emailoruser" placeholder="Email Adress or Username" required autocomplete="off" />
+              <input type="text" id="emailoruser" name="emailoruser" placeholder="Endereço de Email ou Nome de Utilizador" required autocomplete="off" />
             </p>
             <p>
               <i class="ri-lock-line"></i>
               <i id="toggleIcon2" class="ri-eye-off-line icon" onclick="toggleIcon2()"></i>
-              <input id="password" name="password" type="password" placeholder="Password" required autocomplete="off" />
+              <input id="password" name="password" type="password" placeholder="Palavra-passe" required autocomplete="off" />
             </p>
             <script>
               function toggleIcon2() {
@@ -78,7 +78,7 @@
             </script>
             <nav>
               <ul>
-                <a href="forgot.php" class="t-signin" style="color: var(--primary); text-decoration: hidden; font-size: 14px;">Forgot Password ?</a>
+                <a href="forgot.php" class="t-signin" style="color: var(--primary); text-decoration: hidden; font-size: 14px;">Esqueceu-se da palavra-passe?</a>
               </ul>
             </nav>
 
@@ -97,10 +97,10 @@
             </p>
             <div class="actions">
               <label>
-                <input type="submit" value="Sign In" />
+                <input type="submit" value="Iniciar Sessão" />
                 <i class="ri-arrow-right-line"></i>
               </label>
-              <p>Or</p>
+              <p>Ou</p>
           </form>
           <p class="socials">
             <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->
@@ -116,28 +116,28 @@
         <nav>
           <ul>
             <li><a href="/storeify/index.php"><i class="ri-arrow-left-line"></i></a></li>
-            <li>Alredy member ? <a class="t-signup">Sign In</a></li>
+            <li>Já é membro? <a class="t-signup">Iniciar sessão</a></li>
           </ul>
         </nav>
         <div class="heading">
-          <h2>Sign Up</h2>
-          <p>We secure your data privacy encrypted.</p>
+          <h2>Registe-se</h2>
+          <p>Protegemos a privacidade dos seus dados com encriptação.</p>
         </div>
         <form action="register.php" method="post">
           <div class="container2" style="display: flex; flex-wrap: nowrap;">
             <i class="ri-user-3-line" style="padding-right:10px; color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" id="fname" name="fname" placeholder="First Name" required autocomplete="off" style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="fname" name="fname" placeholder="Primeiro Nome" required autocomplete="off" style="margin-right: 10px; font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
             <i class="ri-user-3-line" style="padding-right:10px; margin-left: 10px;color: #a4b0be; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;"></i>
-            <input type="text" id="lname" name="lname" placeholder="Last Name" required autocomplete="off" style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
+            <input type="text" id="lname" name="lname" placeholder="Apelido" required autocomplete="off" style="font-family: inherit; flex: 1; outline: 0; line-height: 40px; border-width: 0 0 2px; border-style: solid; border-color: #e6e6ed;" />
           </div>
           <p>
             <i class="ri-mail-line"></i>
-            <input type="email" name="email" id="email" placeholder="Email Adress" required autocomplete="off" />
+            <input type="email" name="email" id="email" placeholder="Endereço de Email" required autocomplete="off" />
           </p>
           <p>
             <i class="ri-lock-line"></i>
             <i id="toggleIcon" class="ri-eye-off-line icon" onclick="toggleIcon()"></i>
-            <input id="password2" name="password2" type="password" placeholder="Password" required autocomplete="off" />
+            <input id="password2" name="password2" type="password" placeholder="Palavra-passe" required autocomplete="off" />
           </p>
           <script>
             function toggleIcon() {
@@ -156,14 +156,14 @@
           </script>
           <p>
             <i class="ri-lock-line"></i>
-            <input id="password3" type="password" name="password3" placeholder="Password" required autocomplete="off" />
+            <input id="password3" type="password" name="password3" placeholder="Confirme a Palavra-passe" required autocomplete="off" />
           </p>
           <div class="actions">
             <label>
-              <input type="submit" value="Sign Up" />
+              <input type="submit" value="Registar" />
               <i class="ri-arrow-right-line"></i>
             </label>
-            <p>Or</p>
+            <p>Ou</p>
         </form>
         <p class="socials">
           <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->

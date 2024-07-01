@@ -128,7 +128,7 @@
                       label: 'EUR',
                       backgroundColor: 'rgba(255, 99, 132, 0.2)',
                       borderColor: 'rgba(255, 99, 132, 1)',
-                      data: <?php echo $monthlySalesJson; ?>,
+                      data: <?php echo empty($monthlySalesJson) ? '[]' : $monthlySalesJson; ?>,
                       fill: false,
                     }]
                   };
@@ -142,14 +142,14 @@
                           display: true,
                           title: {
                             display: true,
-                            text: 'Month'
+                            text: 'Mês'
                           }
                         },
                         y: {
                           display: true,
                           title: {
                             display: true,
-                            text: 'Value'
+                            text: 'Valor'
                           }
                         }
                       }
@@ -173,8 +173,12 @@
                 <div data-v-a416eab6="" class="table-responsive">
                   <table data-v-a416eab6="" class="table border">
                     <?php
-                    for ($i = 0; $i < count($a); $i++) {
-                      echo $a[$i];
+                    if (empty($a)) {
+                      echo "Ainda não há vendas";
+                    } else {
+                      for ($i = 0; $i < count($a); $i++) {
+                        echo $a[$i];
+                      }
                     }
                     ?>
                   </table>

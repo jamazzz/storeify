@@ -23,44 +23,9 @@
 
 <body>
     <?php
-    session_start();
-    session_unset();
-    session_destroy();
-    ?>
-    <!--navigation-->
-    <section class="smart-scroll">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <a class="navbar-brand heading-black" href="index.php">
-                    <img src="/storeify/assets/images/logo.png" alt="" style="height: 141px; width: 100px; margin-top: -15px;">
-                    Storeify
-                </a>
-                <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-th"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#features">
-                                <i class="fas fa-star" style="margin-right: 5px;"></i> Features
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#faq">
-                                <i class="fas fa-question-circle" style="margin-right: 5px;"></i> FAQ
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll d-flex flex-row align-items-center" href="access/access.php">
-                                <i class="fas fa-user" style="margin-right: 5px;"></i> Log in
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
+    include $_SERVER['DOCUMENT_ROOT'] . '/storeify/indexNavbar.php';
 
+    ?>
     <!--hero header-->
     <section class="py-7 py-md-0 bg-hero" id="home">
         <div class="container">
@@ -85,7 +50,7 @@
         <section id="features">
             <br>
             <br>
-            <h2 class="card-title pt-3">Features</h2>
+            <h2 class="card-title pt-3">Funcionalidades</h2>
             <br>
     </div>
     <div class="row mt-5">
@@ -97,8 +62,8 @@
                             <span data-feather="edit-3" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Easy Customization</h5>
-                    <p class="text-muted">Customize your website easily with our intuitive interface. No coding skills required.</p>
+                    <h5>Personalização Fácil</h5>
+                    <p class="text-muted">Personalize o seu website facilmente com a nossa interface intuitiva. Não são necessárias habilidades de programação.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-success">
@@ -106,8 +71,8 @@
                             <span data-feather="monitor" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Responsive Design</h5>
-                    <p class="text-muted">Ensure your website looks great on all devices, from desktop to mobile.</p>
+                    <h5>Design Responsivo</h5>
+                    <p class="text-muted">Certifique-se de que o seu website fica ótimo em todos os dispositivos, desde o desktop até ao mobile.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-danger">
@@ -115,8 +80,8 @@
                             <span data-feather="layout" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Beautiful Templates</h5>
-                    <p class="text-muted">Choose from a wide range of stunning templates to make your website visually appealing.</p>
+                    <h5>Templates</h5>
+                    <p class="text-muted">Nossos templates são de alta qualidade e oferecem uma ótima base para criar um site incrível.</p>
                 </div>
                 <div class="col-md-6 box">
                     <div class="icon-box box-info">
@@ -124,8 +89,8 @@
                             <span data-feather="globe" width="35" height="35"></span>
                         </div>
                     </div>
-                    <h5>Global Reach</h5>
-                    <p class="text-muted">Expand your business globally with our built-in internationalization features.</p>
+                    <h5>Alcance Global</h5>
+                    <p class="text-muted">Expanda o seu negócio globalmente com as nossas funcionalidades de internacionalização integradas.</p>
                 </div>
             </div>
         </div>
@@ -142,36 +107,36 @@
             <section id="faq">
                 <div class="row">
                     <div class="col-md-6 mx-auto divider top-divider mx-auto pt-5 text-center">
-                        <h2>Frequently asked questions</h2>
-                        <p class="text-muted lead">Answers to most common questions.</p>
+                        <h2>Perguntas frequentes</h2>
+                        <p class="text-muted lead">Respostas para as perguntas mais comuns.</p>
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-10 mx-auto">
                         <div class="row">
                             <div class="col-md-6 mb-5">
-                                <h6>Can I try it for free?</h6>
-                                <p class="text-muted">No, we do not offer a free trial at the moment. Unfortunately, we also do not provide refunds for our paid plans. We apologize for any inconvenience this may cause.</p>
+                                <h6>Posso experimentar gratuitamente?</h6>
+                                <p class="text-muted">Não, atualmente não oferecemos um período de teste gratuito. Infelizmente, também não fornecemos reembolsos para nossos planos pagos. Pedimos desculpas por qualquer inconveniente que isso possa causar.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>Do you have hidden fees?</h6>
-                                <p class="text-muted">No, we do not have any hidden fees. Our pricing is transparent and straightforward. The only fee we charge is a 5% transaction fee on all transactions.</p>
+                                <h6>Existem taxas ocultas?</h6>
+                                <p class="text-muted">Não, não temos quaisquer taxas ocultas. A nossa política de preços é transparente e direta. A única taxa que cobramos é uma taxa de transação de 5% em todas as transações.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>What are the payment methods you accept?</h6>
-                                <p class="text-muted">We accept credit card and PayPal as payment methods.</p>
+                                <h6>Quais são os métodos de pagamento que aceitam?</h6>
+                                <p class="text-muted">Aceitamos cartão de crédito e PayPal como métodos de pagamento.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>How often do you release updates?</h6>
-                                <p class="text-muted">We release updates regularly to ensure that our product is up-to-date and meets the needs of our users.</p>
+                                <h6>Com que frequência lançam atualizações?</h6>
+                                <p class="text-muted">Lançamos atualizações regularmente para garantir que nosso produto esteja atualizado e atenda às necessidades de nossos usuários.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>What is your refund policy?</h6>
-                                <p class="text-muted">Our refund policy for subscriptions is that there are no refunds. However, for customer websites, they have the option to request a refund if there is no specific policy in place. If the refund request is valid, we will process it accordingly.</p>
+                                <h6>Qual é a nossa política de reembolso?</h6>
+                                <p class="text-muted">A nossa política de reembolso para subscrições é que não há reembolsos. No entanto, para websites de clientes, eles têm a opção de solicitar um reembolso se não houver uma política específica em vigor. Se o pedido de reembolso for válido, iremos processá-lo de acordo.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>Can I cancel my subscription?</h6>
-                                <p class="text-muted">Yes, you can cancel your subscription at any time. Simply go to your account settings and follow the instructions to cancel.</p>
+                                <h6>Posso cancelar a minha subscrição?</h6>
+                                <p class="text-muted">Sim, pode cancelar a sua subscrição a qualquer momento. Basta ir às configurações da sua conta e seguir as instruções para cancelar.</p>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,7 @@ session_destroy();
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link page-scroll" href="/storeify/index#features">
-              <i class="fas fa-star" style="margin-right: 5px;"></i> Features
+              <i class="fas fa-star" style="margin-right: 5px;"></i> Funcionalidades
             </a>
           </li>
           <li class="nav-item">
@@ -28,7 +28,7 @@ session_destroy();
           </li>
           <li class="nav-item">
             <a class="nav-link page-scroll d-flex flex-row align-items-center" href="access/access.php">
-              <i class="fas fa-user" style="margin-right: 5px;"></i> Log in
+                <i class="fas fa-user" style="margin-right: 5px;"></i> Iniciar sessão
             </a>
           </li>
         </ul>

@@ -530,7 +530,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item" href="select.php">
+                <a class="dropdown-item preview-item" href="/storeify/dashboard/select.php">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-folder-account text-warning"></i>

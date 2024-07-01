@@ -3,31 +3,34 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-5 mr-auto" style="margin-top: -20px; text-align: left;">
-        <h4>Contacts</h4>
+        <h4>Contactos</h4>
         <ul class="list-unstyled">
-          <li>Email: support@storeify.com</li>
-          <li>Phone: 1-800-123-4567</li>
-          <li>Address: 123 Main St, City, State</li>
-          <li>Social Media: @storeify</li>
+          <li>Email: suporte@storeify.com</li>
+          <li>Telefone: 1-800-123-4567</li>
+          <li>Endereço: Rua Principal, Cidade, Estado</li>
+          <li>Redes Sociais: @storeify</li>
+        </ul>
         </ul>
       </div>
       <div class="col-sm-2">
         <h4>Legal</h4>
         <ul class="list-unstyled">
-          <li><a href="/storeify/privacy">Privacy</a></li>
-          <li><a href="/storeify/terms">Terms</a></li>
-          <li><a href="/storeify/refund">Refund policy</a></li>
+          <li><a href="/storeify/privacy">Privacidade</a></li>
+          <li><a href="/storeify/terms">Termos</a></li>
+          <li><a href="/storeify/refund">Política de Reembolso</a></li>
         </ul>
       </div>
       <div class="col-sm-2">
-        <h4>Help</h4>
+        <h4>Ajuda</h4>
         <ul class="list-unstyled">
           <li><a href="/storeify/index#faq">FAQ</a></li>
-          <li><a href="/storeify/contacts">Contacts</a></li>
-          <li><a href="/storeify/support">Support</a></li>
+          <li><a href="/storeify/contacts">Contactos</a></li>
+          <li><a href="/storeify/suporte">Suporte</a></li>
         </ul>
       </div>
+      </ul>
     </div>
+  </div>
   </div>
 </footer>
 <!--scroll to top-->

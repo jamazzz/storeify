@@ -19,8 +19,7 @@
     <header class="page-title">
       <div class="row no-gutters align-items-center">
         <div class="col-12">
-          <h1 class="my-0 mb-2">Your Project</h1>
-          <span>Tell us a few details about your business, so we can create your project</span>
+          <h1 class="my-0 mb-2">O seu Projeto</h1>
         </div>
       </div>
     </header>
@@ -33,8 +32,8 @@
               <div class="row">
                 <div class="col-lg-6 col-12">
                   <div class="form-group mb-0">
-                    <label for="project_name">What would you like to name your project?</label>
-                    <input id="project_name" type="text" class="form-control input-lg" name="project_name" autocomplete="off" placeholder="Enter the name of your new project" value="" maxlength="50">
+                    <label for="project_name">Como gostaria de nomear o seu projeto?</label>
+                    <input id="project_name" type="text" class="form-control input-lg" name="project_name" autocomplete="off" placeholder="Insira o nome do seu novo projeto" value="" maxlength="50">
                   </div>
                 </div>
               </div>
@@ -45,7 +44,7 @@
                       <input type="checkbox" class="form-check-inline" id="gdpr-clause" value="1" name="gdpr_clause" required="">
 
                       <span>
-                        I have read and accepted the <a href="pages/samples/error-404.html">Acceptable Use Policy</a>, <a href="pages/samples/error-404.html">Privacy Policy</a> &amp; <a href="pages/samples/error-404.html">EU Standard Contractual Clauses.</a>
+                        Li e aceito os <a href="/storeify/terms.php">Termos de Serviço</a>, a <a href="/storeify/privacy.php">Política de Privacidade</a> e as <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021D0915&">Cláusulas Contratuais Padrão da UE.</a>
                       </span>
                     </label>
                   </div>
@@ -56,8 +55,8 @@
               <div class="row mx-0 align-items-center">
                 <div class="col-md-6 text-center text-md-left"></div>
                 <div class="col-md-6 text-center text-md-right mt-4 mt-md-0">
-                  <a href="pages/samples/error-404.html" class="btn btn-quad">Back</a>
-                  <button type="submit" class="btn btn-primary">Continue</button>
+                  <a href="/storeify/404.php" class="btn btn-quad">Voltar</a>
+                  <button type="submit" class="btn btn-primary">Continuar</button>
                 </div>
               </div>
             </div>

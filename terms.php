@@ -30,36 +30,36 @@
       <section id="terms"></section>
       <div class="row">
         <div class="col-md-6 mx-auto divider mx-auto pt-5 text-center">
-          <h2>Terms of Use</h2>
-          <p class="text-muted lead">Please read these terms carefully before using our website.</p>
+          <h2>Termos de Uso</h2>
+          <p class="text-muted lead">Por favor, leia atentamente estes termos antes de usar nosso site.</p>
         </div>
       </div>
       <div class="row mt-5">
         <div class="col-md-10 mx-auto">
           <div class="row">
             <div class="col-md-6 mb-5">
-              <h6>Acceptance of Terms</h6>
-              <p class="text-muted">By accessing and using our website, you agree to be bound by these Terms of Use. If you do not agree with any of these terms, please do not use our website.</p>
+              <h6>Aceitação dos Termos</h6>
+              <p class="text-muted">Ao acessar e usar nosso site, você concorda em cumprir estes Termos de Uso. Se você não concorda com algum destes termos, por favor, não use nosso site.</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h6>Intellectual Property</h6>
-              <p class="text-muted">All content on this website, including text, graphics, logos, images, and software, is the property of our company and protected by intellectual property laws. You may not use, reproduce, distribute, or modify any content without our prior written consent.</p>
+              <h6>Propriedade Intelectual</h6>
+              <p class="text-muted">Todo o conteúdo deste site, incluindo texto, gráficos, logotipos, imagens e software, é propriedade da nossa empresa e protegido por leis de propriedade intelectual. Você não pode usar, reproduzir, distribuir ou modificar qualquer conteúdo sem nosso consentimento prévio por escrito.</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h6>Disclaimer</h6>
-              <p class="text-muted">The information provided on this website is for general informational purposes only. We make no representations or warranties of any kind, express or implied, about the accuracy, reliability, or availability of the information contained on the website.</p>
+              <h6>Isenção de Responsabilidade</h6>
+              <p class="text-muted">As informações fornecidas neste site são apenas para fins informativos gerais. Não fazemos representações ou garantias de qualquer tipo, expressas ou implícitas, sobre a precisão, confiabilidade ou disponibilidade das informações contidas no site.</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h6>Limitation of Liability</h6>
-              <p class="text-muted">In no event shall we be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of our website or the content contained therein.</p>
+              <h6>Limitação de Responsabilidade</h6>
+              <p class="text-muted">Em nenhuma circunstância seremos responsáveis por quaisquer danos diretos, indiretos, incidentais, especiais ou consequenciais decorrentes do uso de nosso site ou do conteúdo nele contido.</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h6>Links to Third-Party Websites</h6>
-              <p class="text-muted">Our website may contain links to third-party websites that are not owned or controlled by us. We have no control over the content, privacy policies, or practices of any third-party websites and are not responsible for them.</p>
+              <h6>Links para Sites de Terceiros</h6>
+              <p class="text-muted">Nosso site pode conter links para sites de terceiros que não são de propriedade ou controlados por nós. Não temos controle sobre o conteúdo, políticas de privacidade ou práticas de quaisquer sites de terceiros e não somos responsáveis por eles.</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h6>Changes to Terms</h6>
-              <p class="text-muted">We reserve the right to modify or replace these Terms of Use at any time without prior notice. By continuing to use our website after any revisions, you agree to be bound by the updated terms.</p>
+              <h6>Alterações nos Termos</h6>
+              <p class="text-muted">Reservamos o direito de modificar ou substituir estes Termos de Uso a qualquer momento, sem aviso prévio. Ao continuar a usar nosso site após quaisquer revisões, você concorda em cumprir os termos atualizados.</p>
             </div>
           </div>
         </div>

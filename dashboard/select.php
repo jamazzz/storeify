@@ -18,7 +18,7 @@
         <header class="page-title">
             <div class="row no-gutters">
                 <div class="col-12 col-md-6 my-2">
-                    <h1>Your Projects</h1>
+                    <h1>Os Seus Projetos</h1>
                 </div>
             </div>
         </header>
@@ -38,16 +38,16 @@
             <div class="card h-100" style="border: 1px solid #d9d9d9 ;">
                 <div class="card-header">
                     <div class="float-left">
-                        <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Delete Project
+                        <i class="fa-solid fa-ban" style="padding-top: 17px;"></i> ‎ Apagar Projeto
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="mb-0">Are you sure you want to delete?</p>
+                    <p class="mb-0">Tem a certeza que deseja apagar?</p>
                     <div style="margin-top: 2rem; position: relative; left: 550px;">
                         <form action="delete.php" method="post">
                             <input type="text" name="id" value="" style="display: none;">
-                            <button onclick="toggleVisibility(this)" type="button" class="btn text">No</button>
-                            <button type="submit" class="btn btn-danger text-primary">Yes</button>
+                            <button onclick="toggleVisibility(this)" type="button" class="btn text">Não</button>
+                            <button type="submit" class="btn btn-danger text-primary">Sim</button>
                         </form>
                         <form id="send" action="sendinfo.php" method="post">
                             <input type="text" name="id2" value="" style="display: none;">
@@ -121,12 +121,12 @@ for ($i = 0; $i < $total; $i++) {
                 </div>
             </div>
             <div class="card-body">
-                <p class="mb-0"><a value="' . $row['websiteid'] . '" onclick="submitForm(this)" target="_blank">View webstore</a></p>
-                <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Logged in</a>
+                <p class="mb-0"><a value="' . $row['websiteid'] . '" onclick="submitForm(this)" target="_blank">Ver dashboard da loja</a></p>
+                <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Sessão iniciada</a>
                 ';
         if ($row2['owner'] == $_SESSION['userid']) {
             echo '
-                <a href="pages/samples/error-404.php" class="btn text-secondary mt-4">Transfer</a>';
+                <a href="pages/samples/error-404.php" class="btn text-secondary mt-4">Transferir</a>';
         }
         echo '
             </div>
@@ -142,7 +142,7 @@ echo ' <div class="col-11 col-md-11 col-lg-11 col-xl-11 mb-5">
                 <div class="card-body text-center d-flex align-items-center">
                     <div class="mx-auto">
                         <i class="fa-solid fa-circle-plus" style="font-size: 30px;"></i>
-                        <h3>Create webstore</h3>
+                        <h3>Criar loja online</h3>
                         <p class="mb-2">‎</p>
                     </div>
                 </div>

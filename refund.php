@@ -31,40 +31,40 @@
       <section id="refund"></section>
       <div class="row">
         <div class="col-md-6 mx-auto divider mx-auto pt-5 text-center">
-          <h2>Refund Policy</h2>
-          <p class="text-muted lead">Information about our refund policy.</p>
+          <h2>Política de Reembolso</h2>
+          <p class="text-muted lead">Informações sobre a nossa política de reembolso.</p>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-md-10 mx-auto">
-          <div class="row">
-            <div class="col-md-6 mb-5">
-              <h6>Can I get a refund?</h6>
-              <p class="text-muted">Unfortunately, we do not offer refunds for our paid plans. We apologize for any inconvenience this may cause.</p>
-            </div>
-            <div class="col-md-6 mb-5">
-              <h6>What is your refund policy?</h6>
-              <p class="text-muted">Our refund policy for subscriptions is that there are no refunds. However, for customer websites, they have the option to request a refund if there is no specific policy in place. If the refund request is valid, we will process it accordingly.</p>
-            </div>
-            <div class="col-md-6 mb-5">
-              <h6>How can I request a refund?</h6>
-              <p class="text-muted">To request a refund for a customer website, please contact our support team and provide the necessary details. We will review your request and process it accordingly.</p>
-            </div>
-            <div class="col-md-6 mb-5">
-              <h6>What are the conditions for a refund?</h6>
-              <p class="text-muted">The conditions for a refund may vary depending on the specific policy in place for the customer website. Please refer to the refund policy provided for your website or contact our support team for more information.</p>
-            </div>
-            <div class="col-md-6 mb-5">
-              <h6>Can I cancel my subscription?</h6>
-              <p class="text-muted">Yes, you can cancel your subscription at any time. Simply go to your account settings and follow the instructions to cancel.</p>
-            </div>
-            <div class="col-md-6 mb-5">
-              <h6>Do you have any hidden fees?</h6>
-              <p class="text-muted">No, we do not have any hidden fees. Our pricing is transparent and straightforward.</p>
-            </div>
+      <div class="row mt-5"></div>
+      <div class="col-md-10 mx-auto">
+        <div class="row">
+          <div class="col-md-6 mb-5">
+            <h6>Posso obter um reembolso?</h6>
+            <p class="text-muted">Infelizmente, não oferecemos reembolsos para os nossos planos pagos. Pedimos desculpa por qualquer inconveniente causado.</p>
+          </div>
+          <div class="col-md-6 mb-5">
+            <h6>Qual é a nossa política de reembolso?</h6>
+            <p class="text-muted">A nossa política de reembolso para subscrições é que não há reembolsos. No entanto, para websites de clientes, eles têm a opção de solicitar um reembolso se não houver uma política específica em vigor. Se o pedido de reembolso for válido, iremos processá-lo de acordo.</p>
+          </div>
+          <div class="col-md-6 mb-5">
+            <h6>Como posso solicitar um reembolso?</h6>
+            <p class="text-muted">Para solicitar um reembolso para um website de cliente, entre em contato com a nossa equipa de suporte e forneça os detalhes necessários. Iremos analisar o seu pedido e processá-lo de acordo.</p>
+          </div>
+          <div class="col-md-6 mb-5">
+            <h6>Quais são as condições para um reembolso?</h6>
+            <p class="text-muted">As condições para um reembolso podem variar dependendo da política específica em vigor para o website do cliente. Consulte a política de reembolso fornecida para o seu website ou entre em contato com a nossa equipa de suporte para obter mais informações.</p>
+          </div>
+          <div class="col-md-6 mb-5">
+            <h6>Posso cancelar a minha subscrição?</h6>
+            <p class="text-muted">Sim, pode cancelar a sua subscrição a qualquer momento. Basta ir às configurações da sua conta e seguir as instruções para cancelar.</p>
+          </div>
+          <div class="col-md-6 mb-5">
+            <h6>Têm alguma taxa oculta?</h6>
+            <p class="text-muted">Não, não temos nenhuma taxa oculta. A nossa tabela de preços é transparente e direta.</p>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 

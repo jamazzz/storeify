@@ -31,8 +31,8 @@
       <section id="contacts"></section>
       <div class="row">
         <div class="col-md-6 mx-auto divider mx-auto pt-5 text-center">
-          <h2>Contact Information</h2>
-          <p class="text-muted lead">Get in touch with us.</p>
+          <h2>Informações de Contato</h2>
+          <p class="text-muted lead">Entre em contato conosco.</p>
         </div>
       </div>
       <div class="row mt-5">
@@ -43,15 +43,15 @@
               <p class="text-muted">storeify@gmail.com</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Phone Number</h5>
+              <h5>Número de Telefone</h5>
               <p class="text-muted">+1 123-456-7890</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Address</h5>
-              <p class="text-muted">123 Main Street, City, State, Country</p>
+              <h5>Endereço</h5>
+              <p class="text-muted">Rua Principal, Cidade, Estado, País</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Social Media</h5>
+              <h5>Redes Sociais</h5>
               <ul class="list-unstyled">
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Twitter</a></li>
@@ -59,28 +59,31 @@
               </ul>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Customer Support</h5>
-              <p class="text-muted">support@storeify.com</p>
+              <h5>Suporte ao Cliente</h5>
+              <p class="text-muted">suporte@storeify.com</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Sales Inquiries</h5>
-              <p class="text-muted">sales@storeify.com</p>
+              <h5>Consultas de Vendas</h5>
+              <p class="text-muted">vendas@storeify.com</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Office Hours</h5>
-              <p class="text-muted">Monday - Friday: 9 AM - 6 PM</p>
+              <h5>Horário de Funcionamento</h5>
+              <p class="text-muted">Segunda - Sexta: 9h - 18h</p>
             </div>
             <div class="col-md-6 mb-5">
-              <h5>Frequently Asked Questions</h5>
-              <p class="text-muted">Visit our <a href="#">FAQ page</a> for answers to common questions.</p>
+              <h5>Perguntas Frequentes</h5>
+              <p class="text-muted">Visite nossa <a href="#">página de FAQ</a> para respostas a perguntas comuns.</p>
             </div>
             <div class="col-md-12 mb-5">
-              <h5>Company Description</h5>
-              <p class="text-muted">Storeify is a leading e-commerce platform providing customers with a wide range of products at competitive prices. Our mission is to deliver an exceptional online shopping experience by offering high-quality products, excellent customer service, and innovative solutions. Whether you're looking for the latest electronics, fashion trends, or home essentials, Storeify has something for everyone. Contact us today to learn more about our offerings and how we can help meet your needs.</p>
+              <h5>Descrição da Empresa</h5>
+              <p class="text-muted">Storeify é uma plataforma de comércio eletrônico líder que oferece aos clientes uma ampla variedade de produtos a preços competitivos. Nossa missão é oferecer uma experiência excepcional de compras online, oferecendo produtos de alta qualidade, excelente atendimento ao cliente e soluções inovadoras. Seja procurando os últimos eletrônicos, tendências da moda ou itens essenciais para casa, a Storeify tem algo para todos. Entre em contato conosco hoje mesmo para saber mais sobre nossas ofertas e como podemos ajudar a atender às suas necessidades.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
+    </div>
     </div>
   </section>
 

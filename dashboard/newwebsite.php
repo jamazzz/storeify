@@ -3,11 +3,21 @@ include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 
 
 $urlweb = str_replace(' ', '-', $_POST['project_name']);
-$newweb = "INSERT INTO websites (name, subdomain, owner) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "')";
+$newweb = "INSERT INTO websites (name, subdomain, owner, logo) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "', '/storeify/assets/images/" . $urlweb . ".png')";
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
 $_SESSION['currentwebsite'] = $websiteId;
-mkdir($_SERVER['DOCUMENT_ROOT'] . "/storeify/store/" . $urlweb, 0777, true);
+mkdir($_SERVER['DOCUMENT_ROOT'] . "/storeify/store/[websites]/" . $urlweb, 0777, true);
+
+$logo = $_SERVER['DOCUMENT_ROOT'] . "/storeify/assets/images/logo.png";
+$destination = $_SERVER['DOCUMENT_ROOT'] . "/storeify/store/logos/";
+
+if (file_exists($logo)) {
+  copy($logo, $destination . "logo.png");
+  $newFileName = $destination . $urlweb . ".png";
+  rename($destination . "logo.png", $newFileName);
+}
+
 
 $websiteExists = "SELECT COUNT(*) as count FROM websites WHERE name = '" . $_POST['project_name'] . "'";
 $result = mysqli_query($connect, $websiteExists);
@@ -27,6 +37,6 @@ if ($count != 0) {
   }
 } else {
   mysqli_close($connect);
-  header('Location: /storeify/dashboard/pages/samples/error-404.html');
+  header('Location: /storeify/dashboard//storeify/404.php');
   exit();
 }

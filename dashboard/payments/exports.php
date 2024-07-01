@@ -16,17 +16,33 @@
 
       <header class="page-title">
         <br>
-        <h1 class="my-0">Exports <span style="float: right;"><a href="/storeify/exportAll.php" class="btn btn-primary">Download All</a></span></h1>
+        <?php
+        $websiteName = $_SESSION['websitename'];
+        $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
+        $files = scandir($directory);
+        $files = array_diff($files, array('.', '..'));
+        //  check if there is any file that has the website name as a prefix
+        $hasExports = false;
+        foreach ($files as $file) {
+          $fileName = pathinfo($file, PATHINFO_FILENAME);
+          $filePrefix = explode('_', $fileName)[0];
+          if ($filePrefix === $websiteName) {
+            $hasExports = true;
+            break;
+          }
+        }
+        if ($hasExports) {
+          echo '<h1 class="my-0">Exports <span style="float: right;"><a href="/storeify/exportAll.php" class="btn btn-primary">Download All</a></span></h1>';
+        } else {
+          echo '<h1 class="my-0">Exports</h1>';
+        }
+        ?>
         <br>
       </header>
 
 
 
       <?php
-      $websiteName = $_SESSION['websitename'];
-      $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
-      $files = scandir($directory);
-      $files = array_diff($files, array('.', '..'));
 
       if (count($files) > 0) {
         foreach ($files as $file) {
