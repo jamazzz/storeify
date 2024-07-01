@@ -77,9 +77,10 @@
                       </td>
                       ');
                     }
+                    $file = $row2['store'] . "_" . $row2['transaction_id'] . "_" . date('d-m-Y', strtotime($row2['created_date'])) . '.pdf';
                     echo ('
                       <td class="text-right">
-                        <a href="https://creator.tebex.io/payments/75387494" class="btn btn-default">View</a>
+                        <a class="btn btn-default" href="/storeify/store/invoices/"' . $file . '" target="_blank">View</a>
                       </td>
                     </tr>
                     ');

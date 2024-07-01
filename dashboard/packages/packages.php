@@ -31,16 +31,54 @@
         </div>
       </header>
 
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
+      <div class="row row-mb">
+        <div class="col-12 col-md-12">
+          <div class="card h-35" style="background-color: #262a35">
+            <div class="card-body" style="max-height: 50px;">
+              <h6 style="margin-top: -10px">Category 1</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 1</h4>
                 </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 2</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 3</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
                 </div>
               </div>
             </div>
@@ -48,99 +86,122 @@
         </div>
       </div>
       <br>
+      <br>
+      <div class="row row-mb">
+        <div class="col-12 col-md-12">
+          <div class="card h-35" style="background-color: #262a35">
+            <div class="card-body" style="max-height: 50px;">
+              <h6 style="margin-top: -10px">Category 2</h6>
+            </div>
+          </div>
+        </div>
 
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 4</h4>
                 </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 5</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 6</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <br>
 
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
+      <br>
+      <br>
+      <div class="row row-mb">
+        <div class="col-12 col-md-12">
+          <div class="card h-35" style="background-color: #262a35">
+            <div class="card-body" style="max-height: 50px;">
+              <h6 style="margin-top: -10px">Category 3</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 7</h4>
                 </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 8</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-11 col-md-11 mt-4" style="margin-left: 133px;">
+          <div class="card h-55 ">
+            <div class="card-body" style="max-height: 60px;">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 col-5 text-start d-lg-none d-xl-block ">
+                  <h4 style="margin-top: -10px">Product 9</h4>
+                </div>
+                <div class="col-xl-8 col-5 text-end text-lg-left my-3 my-xl-0 md-auto align-items-center">
+                  <h4 style="margin-top: -10px">View</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <br>
-
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
-                </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
-                </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div data-v-a416eab6="" class="row row-mb">
-        <div data-v-a416eab6="" class="col-12 col-md-12 value-container">
-          <div data-v-a416eab6="" class="card h-100">
-            <div data-v-a416eab6="" class="card-body">
-              <div data-v-a416eab6="" class="row d-flex align-items-center">
-                <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block">
-                  <h1 data-v-a416eab6="">asda €</h1>
-                </div>
-                <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                  <h1 data-v-a416eab6="">asda €</h1> <span data-v-a416eab6="" class="text-uppercase">Today's Sales</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
 
 
-    </div>
+
+
   </main>
   <?php
   include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
