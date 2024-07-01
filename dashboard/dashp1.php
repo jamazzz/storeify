@@ -453,9 +453,15 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
               <?php
-              $select = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
-              $result = mysqli_query($connect, $select);
-              $row = mysqli_fetch_assoc($result);
+              if (!isset($currentwebsite)) {
+                $currentwebsite = -1;
+              }
+              if ($_SESSION['currentwebsite'] != $currentwebsite) {
+                $currentwebsite = $_SESSION['currentwebsite'];
+                $select = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
+                $result = mysqli_query($connect, $select);
+                $row = mysqli_fetch_assoc($result);
+              }
               ?>
               <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">View Website</a>
             </li>
