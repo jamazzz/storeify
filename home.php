@@ -42,7 +42,7 @@
 
 
     <div>
-      <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
+      <div class="bg-background-accent p-lg border-b border-background rounded flex items-center gap-grid justify-center text-center">
         <div>
           <h2 class="type-subtitle text-sm text-primary">Welcome to</h2>
           <h1 class="type-header">storeify</h1>
@@ -52,26 +52,12 @@
           </small>
         </div>
       </div>
+      <br>
       <?php
-      //   echo('
-      //   <div class="markdown bg-background-accent rounded-b p-lg">
-      //     <p style="text-align:center;"><strong><span style="font-size:18px;color:rgb(44,130,201);font-family:Verdana, Geneva, sans-serif;">About Us</span></strong></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">We are a community with more than <strong>8000</strong> members on our discord and our commitment is to bring the best scripts to your servers!</span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You are free to choose any script to improve your server</span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">You will find scripts for ESX &amp; QBCore frameworks</span></span></p>
-      //     <p style="text-align:center;"><br></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">FiveM Escrow System</span></strong></span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts are encrypted and protected by the FiveM Escrow System</span></span></p>
-      //     <p style="text-align:center;"><br></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Updates</span></strong></span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;">All our scripts receive daily updates</span></span></p>
-      //     <p style="text-align:center;"><br></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:18px;"><strong><span style="color:rgb(44,130,201);">Useful Links</span></strong></span><span style="color:rgb(44,130,201);"><span style="font-size:14px;"><br></span></span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://discord.gg/marcinhu">Discord</a></span></span></p>
-      //     <p style="text-align:center;"><span style="font-family:Verdana, Geneva, sans-serif;"><span style="font-size:14px;"><a href="https://youtube.com/c/marcinhu">Youtube</a></span></span></p>
-      //     <p style="text-align:center;"><a href="https://storeify.gitbook.io/docs/" target="_blank" rel="noreferrer noopener"><span style="font-family:Verdana, Geneva, sans-serif;font-size:14px;">Documentation</span></a></p>
-      //   </div>
-      // </div>');
+      echo ('
+         <div class="markdown bg-background-accent rounded p-lg">
+         '.$row['home_info_html'].'
+       </div>');
       ?>
 
 

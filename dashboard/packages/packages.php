@@ -19,7 +19,7 @@
         <div class="row no-gutters">
           <div class="col-12">
             <h1 class="my-0 d-flex justify-content-between">
-              Exports
+              Packages
               <div class="ml-auto">
                 <a href="/storeify/dashboard/packages/createCategory.php" class="btn btn-primary" style="margin-right: 20px;">Create Category</a>
                 <a href="/storeify/dashboard/packages/createPackage.php" class="btn btn-primary">Create Package</a>
@@ -47,15 +47,15 @@
         $result2 = mysqli_query($connect, $products);
         while ($row2 = mysqli_fetch_assoc($result2)) {
           echo '
-                            <div class="card">
-                              <div class="card-body">' . $row2['name'] . '</div>
-                            </div>';
+                                        <div class="card">
+                                          <div class="card-body">' . $row2['name'] . '<span style="float: right;">View</span></div>
+                                        </div>';
         }
         echo '
-                          </div>
-                        </div>
-                      </div>
-              ';
+                                      </div>
+                                    </div>
+                                  </div>
+                          ';
       }
       ?>
 

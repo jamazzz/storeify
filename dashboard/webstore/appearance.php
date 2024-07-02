@@ -402,8 +402,8 @@
             <div class="row align-self-center h-100">
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
               </div>
-              <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                <h4 style="margin-left: -1050px;">Home Page</h4>
+              <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
+                <h4 style="margin-left: -820px;">Home Page [Tailwind CSS / Markdown]</h4>
                 <br>
               </div>
             </div>
@@ -414,29 +414,52 @@
           </div>
           <br>
           <div id="editor"></div>
-
-
-          <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-          <script>
-            const Editor = toastui.Editor;
-            const editor = new Editor({
-              el: document.querySelector('#editor'),
-              height: '400px',
-              initialEditType: 'markdown',
-              previewStyle: 'vertical',
-              theme: 'dark',
-            });
-
-            const createButton = document.querySelector('.btn-primary');
-            createButton.addEventListener('click', function() {
-              const content = editor.getMarkdown();
-              console.log(content);
-            });
-          </script>
-          <a class="btn btn-primary text-center align-self-center" style="max-width: 1500px; margin-left:14px;">Save </a>
+          <a id="btn" class="btn btn-primary text-center align-self-center" style="max-width: 1500px; margin-left:14px;">Save</a>
         </div>
       </div>
       <br>
+
+      <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/turndown/dist/turndown.min.js"></script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const Editor = toastui.Editor;
+          const editor = new Editor({
+            el: document.querySelector('#editor'),
+            height: '400px',
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            theme: 'dark',
+            initialValue: '<?php echo empty($row['home_info_md']) ? "" : $row['home_info_md']; ?>'
+          });
+
+          const createButton = document.getElementById('btn');
+          createButton.addEventListener('click', function() {
+            const content = {
+              md: editor.getMarkdown(),
+              html: editor.getHTML()
+            };
+            fetch('/storeify/updateHome.php', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  content: content
+                })
+              })
+              .then(response => response.text())
+              .then(result => {
+                console.log('Success:', result);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+          });
+        });
+      </script>
+
 
 
     </div>

@@ -87,15 +87,6 @@
             <span class="menu-title">Pacotes</span>
           </a>
         </li>
-        <!-- Statistics -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/statistics.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-speedometer"></i>
-            </span>
-            <span class="menu-title">Estatísticas</span>
-          </a>
-        </li>
         <!-- Clients -->
         <li class="nav-item menu-items">
           <a class="nav-link" href="/storeify/dashboard/customers.php">
@@ -461,6 +452,7 @@
                 $select = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
                 $result = mysqli_query($connect, $select);
                 $row = mysqli_fetch_assoc($result);
+                $_SESSION['subdomain'] = $row['subdomain'];
               }
               ?>
               <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">View Website</a>
