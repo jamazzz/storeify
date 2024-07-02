@@ -16,9 +16,7 @@ $file_name = $_FILES['zip']['name'];
 $file_tmp_name = $_FILES['zip']['tmp_name'];
 $upload_dir_files = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/websites/' . $_SESSION['websitename'] . '/';
 if (!is_dir($upload_dir_files)) {
-  if (!mkdir($upload_dir_files, 0777, true)) {
-    die('Failed to create folders...');
-  }
+  mkdir($upload_dir_files, 0777, true);
 }
 move_uploaded_file($file_tmp_name, $upload_dir_files . $file_name);
 $file_path = htmlspecialchars($upload_dir_files . $file_name);
@@ -29,7 +27,7 @@ $result = mysqli_query($connect, $order_query);
 $row = mysqli_fetch_assoc($result);
 $order = isset($row['max_order']) ? $row['max_order'] + 1 : 1;
 
-$sql = "INSERT INTO products (name, price, category_id, description, path, `order`) VALUES ('$name', '$price', '$category', '$description', '$file_path', $order)";
+$sql = "INSERT INTO products (name, price, category_id, path,description, `order`) VALUES ('$name', '$price', '$category', '$file_path', $order,$description)";
 $result = mysqli_query($connect, $sql);
 $id = mysqli_insert_id($connect);
 
