@@ -431,7 +431,8 @@
             initialEditType: 'markdown',
             previewStyle: 'vertical',
             theme: 'dark',
-            initialValue: '<?php echo empty($row['home_info_md']) ? "" : $row['home_info_md']; ?>'
+            initialValue: '<?php echo empty($_SESSION['mdpack']) ? "" : $_SESSION['mdpack']; ?>',
+            hideModeSwitch: true
           });
 
           const createButton = document.getElementById('btn');
@@ -440,7 +441,7 @@
               md: editor.getMarkdown(),
               html: editor.getHTML()
             };
-            fetch('/storeify/updateHome.php', {
+            fetch('/storeify/saveInfo.php', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
