@@ -162,6 +162,17 @@
               <div class="row no-gutters">
                 <div id="drop-area" class="drop-area">
                   <input type="file" id="thumbnail" name="thumbnail">
+                  <script>
+                    function success() {
+                      var drop = document.getElementById('drop-area');
+                      drop.style.color = 'rgb(0, 255, 0)';
+                      drop.style.borderColor = 'rgb(0, 255, 0)';
+                      edit.classList.remove('fa-download');
+                      edit.classList.add('fa-check');
+                    }
+
+                    document.getElementById('thumbnail').addEventListener('change', success);
+                  </script>
                   <br>
                   <div class="text-center">
                     <label for="thumbnail"><i id="edit" class="fa-solid fa-download opacity-100 transition group-hover:opacity-100"></i></label>
@@ -188,9 +199,20 @@
               <div class="row no-gutters">
                 <div id="drop-area2" class="drop-area">
                   <input type="file" id="zip" name="zip">
+                  <script>
+                    function success2() {
+                      var drop = document.getElementById('drop-area2');
+                      drop.style.color = 'rgb(0, 255, 0)';
+                      drop.style.borderColor = 'rgb(0, 255, 0)';
+                      edit2.classList.remove('fa-download');
+                      edit2.classList.add('fa-check');
+                    }
+
+                    document.getElementById('zip').addEventListener('change', success2);
+                  </script>
                   <br>
                   <div class="text-center">
-                    <label for="zip"><i id="edit" class="fa-solid fa-download opacity-100 transition group-hover:opacity-100"></i></label>
+                    <label for="zip"><i id="edit2" class="fa-solid fa-download opacity-100 transition group-hover:opacity-100"></i></label>
                   </div>
                 </div>
               </div>
