@@ -7,7 +7,7 @@ $newweb = "INSERT INTO websites (name, subdomain, owner, logo) VALUES ('" . $_PO
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
 $_SESSION['currentwebsite'] = $websiteId;
-mkdir($_SERVER['DOCUMENT_ROOT'] . "/storeify/store/[websites]/" . $urlweb, 0777, true);
+mkdir($_SERVER['DOCUMENT_ROOT'] . "/storeify/store/websites/" . $urlweb, 0777, true);
 
 $logo = $_SERVER['DOCUMENT_ROOT'] . "/storeify/assets/images/logo.png";
 $destination = $_SERVER['DOCUMENT_ROOT'] . "/storeify/store/logos/";

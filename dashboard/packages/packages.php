@@ -21,7 +21,7 @@
             <h1 class="my-0 d-flex justify-content-between">
               Packages
               <div class="ml-auto">
-                <a href="/storeify/dashboard/packages/createCategory.php" class="btn btn-primary" style="margin-right: 20px;">Create Category</a>
+                <a class="btn btn-primary" style="margin-right: 20px;" data-bs-toggle="modal" data-bs-target="#createCategory">Create Category</a>
                 <a href="/storeify/dashboard/packages/createPackage.php" class="btn btn-primary">Create Package</a>
               </div>
             </h1>
@@ -29,6 +29,31 @@
         </div>
         <br>
       </header>
+      <!-- Modal starts -->
+      <div class="modal fade" id="createCategory" tabindex="-1" role="dialog" aria-labelledby="createCategoryLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createCategoryLabel">Criar Categoria</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="createCategory.php" method="post">
+              <div class="modal-body">
+                <h6>Nome</h6>
+                <input type="text" id="categoryName" name="categoryName" class="form-control" placeholder="Nome da categoria">
+              </div>
+              <div class="modal-footer">
+                <input type="text" id="currentpage" name="currentpage" class="invisible" value="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Ends -->
       <?php
       $categories = "SELECT * FROM categories WHERE website_id = '" . $_SESSION['currentwebsite'] . "' ORDER BY `order` ASC";
       $result = mysqli_query($connect, $categories);
