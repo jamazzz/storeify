@@ -61,13 +61,14 @@
                 <tbody>
                   <?php
                   $select = "SELECT * FROM websites WHERE id = " . $_SESSION['currentwebsite'];
+                  $subdomain = $_SESSION['subdomain'];
                   $result = mysqli_query($connect, $select);
                   $row = mysqli_fetch_assoc($result);
                   $filter = $_POST['search'] ?? $filter ?? '';
                   $select2 = "SELECT * FROM transactions 
-                                    WHERE store = '" . $_SESSION['subdomain'] . "' 
-                                    AND (payer_email LIKE '%$filter%' 
-                                    OR transaction_id LIKE '%$filter%')";
+                  WHERE store = '$subdomain' 
+                  AND (payer_email LIKE '%$filter%' 
+                  OR transaction_id LIKE '%$filter%')";
                   $result2 = mysqli_query($connect, $select2);
                   $row2 = mysqli_fetch_assoc($result2);
                   while ($row2 = mysqli_fetch_assoc($result2)) {

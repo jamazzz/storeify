@@ -17,12 +17,13 @@
       <header class="page-title">
         <br>
         <?php
-        $websiteName = $_SESSION['websitename'];
+        $subdomain = $_SESSION['subdomain'];
+        echo $subdomain;
         $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
         $files = scandir($directory);
         $files = array_diff($files, array('.', '..'));
 
-        $search = isset($_POST['search']) && $_POST['search'] != "" ? htmlspecialchars($_POST['search']) : $websiteName;
+        $search = isset($_POST['search']) && $_POST['search'] != "" ? htmlspecialchars($_POST['search']) : $subdomain;
         $hasExports = false;
         foreach ($files as $file) {
           $fileName = pathinfo($file, PATHINFO_FILENAME);
@@ -39,7 +40,7 @@
                         <input type="text" class="form-control" placeholder="Search..." name="search" style="width: 500px;">
                         <i class="fa-solid fa-magnifying-glass" id="searchIcon" style="cursor: pointer; margin-left: 8px;"></i>
                     </div>
-                    <a href="/storeify/exportAll.php" class="btn btn-primary">Transferir todas</a>
+                    <a href="/storeify/exportAll.php" class="btn btn-primary">Transferir todos</a>
                   </div>
                 </form>
                 <script>

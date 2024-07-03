@@ -53,7 +53,7 @@
                   border: 2px dashed #ccc;
                   border-radius: 20px;
                   width: 480px;
-                  font-family: sans-serif;
+                  font-family: sans-poppins;
                 }
 
                 #drop-area.highlight {
@@ -441,7 +441,7 @@
               md: editor.getMarkdown(),
               html: editor.getHTML()
             };
-            fetch('/storeify/saveInfo.php', {
+            fetch('/storeify/updateHome.php', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'

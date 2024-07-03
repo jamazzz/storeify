@@ -3,7 +3,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 
 
 $urlweb = str_replace(' ', '-', $_POST['project_name']);
-$newweb = "INSERT INTO websites (name, subdomain, owner, logo) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "', '/storeify/store/logos/" . $urlweb . ".png')";
+$newweb = "INSERT INTO websites (name, subdomain, owner, logo,dark_color,light_color) VALUES ('" . $_POST['project_name'] . "', '" . $urlweb . "', '" . $_SESSION['userid'] . "', '/storeify/store/logos/" . $urlweb . ".png','#1C1C25','#24242D')";
 $resultadoweb = mysqli_query($connect, $newweb);
 $websiteId = mysqli_insert_id($connect);
 $_SESSION['currentwebsite'] = $websiteId;

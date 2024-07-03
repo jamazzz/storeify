@@ -88,15 +88,6 @@
             <span class="menu-title">Pacotes</span>
           </a>
         </li>
-        <!-- Clients -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/customers.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-table-large"></i>
-            </span>
-            <span class="menu-title">Clientes</span>
-          </a>
-        </li>
         <!-- Webstore -->
         <li class="nav-item menu-items">
           <a class="nav-link" href="/storeify/dashboard/webstore/appearance.php">

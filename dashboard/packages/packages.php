@@ -19,10 +19,10 @@
         <div class="row no-gutters">
           <div class="col-12">
             <h1 class="my-0 d-flex justify-content-between">
-              Packages
+              Produtos
               <div class="ml-auto">
-                <a class="btn btn-primary" style="margin-right: 20px;" data-bs-toggle="modal" data-bs-target="#createCategory">Create Category</a>
-                <a href="/storeify/dashboard/packages/createPackage.php" class="btn btn-primary">Create Package</a>
+                <a class="btn btn-primary" style="margin-right: 20px;" data-bs-toggle="modal" data-bs-target="#createCategory">Adicionar Categoria</a>
+                <a href="/storeify/dashboard/packages/createPackage.php" class="btn btn-primary">Adicionar Produto</a>
               </div>
             </h1>
           </div>

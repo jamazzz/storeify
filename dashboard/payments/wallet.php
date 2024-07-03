@@ -33,19 +33,19 @@
       <section class="card-deck">
         <div class="card card-stats"><!---->
           <div class="card-body"><!----><!---->
-            <?php echo '<h3 class="text-white">' . $row['total_sales'] . '€</h3><span>Saldo Total</span>'; ?>
+            <?php echo '<h3 class="text-white">' . ($row['total_sales'] ?? 0). '€</h3><span>Saldo Total</span>'; ?>
           </div><!---->
         </div>
         <br>
         <div class="card card-stats"><!---->
           <div class="card-body"><!----><!---->
-            <?php echo '<h3 class="text-white">' . $row2['total_sales'] . '€</h3><span>Em espera</span>'; ?>
+            <?php echo '<h3 class="text-white">' . ($row2['total_sales'] ?? 0)  . '€</h3><span>Em espera</span>'; ?>
           </div><!---->
         </div>
         <br>
         <div class="card card-stats"><!---->
           <div class="card-body"><!----><!---->
-            <?php echo '<h3 class="text-white">' . ($row['total_sales'] - $row2['total_sales']) . '€</h3><span>Disponivel</span>'; ?>
+            <?php echo '<h3 class="text-white">' . (($row['total_sales'] - $row2['total_sales']) ?? 0) . '€</h3><span>Disponivel</span>'; ?>
           </div><!---->
         </div>
       </section>

@@ -49,7 +49,7 @@
     }
 
     form * {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', sans-poppins;
       color: #ffffff;
       letter-spacing: 0.5px;
       outline: none;

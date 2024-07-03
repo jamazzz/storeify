@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
 
   <script async="" src="https://www.clarity.ms/tag/fxlepb8eap"></script>
   <script async="" src="https://www.clarity.ms/tag/kzn5ty5tcx"></script>
@@ -40,7 +40,7 @@
   <div class="grid gap-grid">
     <div class="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-grid max">
       <?php
-      $getproducts = "SELECT * FROM products WHERE category_id = '" . $_SESSION['number'] . "'AND deleted = 0";
+      $getproducts = "SELECT * FROM products WHERE category_id = '" . $_SESSION['number'] . "' AND deleted = 0 ORDER BY `order` ASC";
       $result = mysqli_query($connect, $getproducts);
       $count = mysqli_num_rows($result);
       while ($row = mysqli_fetch_assoc($result)) {

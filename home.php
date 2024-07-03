@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
 
   <script async="" src="https://www.clarity.ms/tag/fxlepb8eap"></script>
   <script async="" src="https://www.clarity.ms/tag/kzn5ty5tcx"></script>
@@ -37,6 +37,9 @@
   include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
   include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeSection.php";
   $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
+  $select = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
+  $result = mysqli_query($connect, $select);
+  $row = mysqli_fetch_assoc($result);
   ?>
   <div>
 
@@ -45,19 +48,22 @@
       <div class="bg-background-accent p-lg border-b border-background rounded flex items-center gap-grid justify-center text-center">
         <div>
           <h2 class="type-subtitle text-sm text-primary">Welcome to</h2>
-          <h1 class="type-header">storeify</h1>
-          <small class="type-subtitle text-sm text-foreground-accent text-opacity-50">
-            <i class="fa-solid fa-house mr-xs"></i>Home
-
-          </small>
+          <h1 class="type-header"><?php echo $row['name'] ?></h1>
         </div>
       </div>
       <br>
       <?php
-      echo ('
+      if ($row['home_info_html'] == "" || !isset($row['home_info_html'])) {
+        echo ('<div class="markdown bg-background-accent rounded p-lg">');
+        echo ('<h1 class="type-header block mb-lg text-center">Welcome to ' . $row['name'] . '</h1>');
+        echo ('<p class="type-paragraph text-foreground-accent text-center">This is the home page of your website. You can edit this page by going to the dashboard and clicking on the "Edit Home Page" button.</p>');
+        echo ('</div>');
+      } else {
+        echo ('
          <div class="markdown bg-background-accent rounded p-lg">
-         ' . empty($row['home_info_html']) ? '' : $row['home_info_html'] . '
+         ' . $row['home_info_html'] . '
        </div>');
+      }
       ?>
 
 
@@ -100,45 +106,6 @@
       </section> -->
     </div>
   </div>
-  </div>
-  <div class="grid gap-grid">
-    <div class="hidden lg:block">
-
-
-      <div class="flex items-center justify-between ">
-        <a href="/login" class="flex items-center gap-md h-12 group pr-lg">
-
-        </a>
-        <div class="flex gap-md">
-          <div class="relative group">
-            <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="basket">
-              <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
-                <div class="bg-background-accent grid grid-rows-[auto_1fr] h-full lg:min-w-[540px]">
-                  <div class="flex justify-between p-grid border-b border-background items-center gap-grid">
-                    <div class="flex gap-md">
-                      <button class="btn-icon-neutral bg-background group sidebar-close"><i class="fa-solid fa-xmark transition opacity-50 group-hover:opacity-100"></i></button>
-                    </div>
-                  </div>
-                  <div class="grid grid-rows-[auto_1fr_auto] overflow-y-auto">
-                    <div>
-                      <div class="p-grid grid gap-grid">
-                      </div>
-                    </div>
-                    <div class="p-grid border-t border-t-background">
-                      <div class="flex justify-between items-center mb-md">
-                        <h2 class="type-header text-opacity-50 text-foreground-accent">Order total</h2>
-                        <h2 class="type-header">0 EUR</h2>
-                      </div>
-                      <a href="/checkout/basket" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <?php
   include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";

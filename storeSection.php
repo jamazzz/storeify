@@ -64,7 +64,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
           <nav class="p-sm bg-background-accent rounded">
             <ul class="grid gap-sm lg:flex lg:justify-center">
               <?php
-              $selectcat = "SELECT categories.name,categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'";
+              $selectcat = "SELECT categories.name,categories.id FROM categories INNER JOIN websites ON categories.website_id = websites.id WHERE websites.subdomain = '" . $_SESSION['subdomain'] . "'ORDER BY `order` ASC";
               $resultcat = mysqli_query($connect, $selectcat);
               if (substr_count($_SERVER['REQUEST_URI'], '/storeify/home') != 1) {
                 echo ('

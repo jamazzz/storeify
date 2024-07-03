@@ -197,7 +197,7 @@
                     if (empty($a)) {
                       echo "Ainda não há vendas";
                     } else {
-                      for ($i = 0; $i < 10; $i++) {
+                      for ($i = 0; $i < min(10, count($a)); $i++) {
                         echo $a[$i];
                       }
                     }
