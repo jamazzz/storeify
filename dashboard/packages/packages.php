@@ -71,7 +71,7 @@
         while ($row2 = mysqli_fetch_assoc($result2)) {
           echo '
             <div class="card">
-                <div class="card-body">' . $row2['name'] . '<span style="float: right;"></span></div>
+                <div class="card-body" id="' . $row2['id'] . '">' . $row2['name'] . '<span style="float: right;"></span></div>
             </div>';
         }
         echo '
@@ -110,36 +110,47 @@
               animation: 150,
               onEnd: function(evt) {
                 var item = evt.item;
-                var originCategory = evt.from.id;
-                var destinationCategory = evt.to.id;
+                var originCategory = evt.from.getAttribute('id').replace('category', '');
+                var destinationCategory = evt.to.getAttribute('id').replace('category', '');
                 var productsInOrigin = Array.from(evt.from.getElementsByClassName('card-body')).map(function(product) {
-                  return product.innerText.trim();
+                  return product.getAttribute('id');
                 });
                 var productsInDestination = Array.from(evt.to.getElementsByClassName('card-body')).map(function(product) {
-                  return product.innerText.trim();
+                  return product.getAttribute('id');
                 });
-
-                console.log('Moved from:', originCategory, 'to', destinationCategory);
+                var productsnewCategory = Array.from(evt.to.getElementsByClassName('card-body')).map(function(product) {
+                  return product.getAttribute('id');
+                });
+                console.log('Origin category:', originCategory);
+                console.log('Destination category:', destinationCategory);
                 console.log('Products in origin category:', productsInOrigin);
                 console.log('Products in destination category:', productsInDestination);
 
                 var formData = new FormData();
                 formData.append('originCategory', originCategory);
                 formData.append('destinationCategory', destinationCategory);
-                formData.append('productsInOrigin', JSON.stringify(productsInOrigin));
-                formData.append('productsInDestination', JSON.stringify(productsInDestination));
+                formData.append('products', productsInOrigin);
+                formData.append('productsnewCategory', productsnewCategory);
+                var form = document.createElement('form');
+                form.style.display = 'none';
+                form.method = 'POST';
+                form.action = '/storeify/updateOrder.php';
 
-                fetch('/storeify/updateOrder.php', {
-                  method: 'POST',
-                  body: formData
-                }).then(function(response) {
-                  return response.json();
-                }).then(function(data) {
-                  console.log(data);
-                });
+
+                for (var pair of formData.entries()) {
+                  var input = document.createElement('input');
+                  input.type = 'hidden';
+                  input.name = pair[0];
+                  input.value = pair[1];
+                  form.appendChild(input);
+                }
+
+                document.body.appendChild(form);
+                form.submit();
               }
             });
           });
+
 
           new Sortable(document.getElementById('categories'), {
             animation: 150,
@@ -149,19 +160,36 @@
                 return category.innerText.trim();
               });
               console.log('Categories:', categories);
+              const formData = new FormData();
+              formData.append('categories', categories);
+              var form = document.createElement('form');
+              form.style.display = 'none';
+              form.method = 'POST';
+              form.action = '/storeify/updateOrder.php';
 
-              var formData = new FormData();
-              formData.append('categories', JSON.stringify(categories));
-              fetch('/storeify/updateOrder.php', {
-                method: 'POST',
-                body: formData
-              }).then(function(response) {
-                return response.json();
-              }).then(function(data) {
-                console.log(data);
-              });
+              for (var pair of formData.entries()) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = pair[0];
+                input.value = pair[1];
+                form.appendChild(input);
+              }
+
+              document.body.appendChild(form);
+              form.submit();
             }
           });
+
+          window.onload = function() {
+            var scrollPosition = localStorage.getItem('scrollPosition');
+            if (scrollPosition) {
+              window.scrollTo(0, scrollPosition);
+            }
+          };
+
+          window.onbeforeunload = function() {
+            localStorage.setItem('scrollPosition', window.pageYOffset);
+          };
         });
       </script>
   </main>
