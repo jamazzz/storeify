@@ -56,16 +56,16 @@
       <?php
       echo ('
          <div class="markdown bg-background-accent rounded p-lg">
-         '.empty($row['home_info_html']) ? '' : $row['home_info_html'].'
+         ' . empty($row['home_info_html']) ? '' : $row['home_info_html'] . '
        </div>');
       ?>
 
 
-      <section class="bg-background-accent rounded p-lg mt-grid">
+      <!-- <section class="bg-background-accent rounded p-lg mt-grid">
         <h1 class="type-header block mb-lg text-center">Testimonials</h1>
         <div class="mb-lg flex items-center gap-md justify-center">
           <div>
-            <!-- Stars -->
+            <!-- Stars
             <div>
               <i class="fa-solid fa-star fa-fw text-primary"></i>
               <i class="fa-solid fa-star fa-fw text-primary"></i>
@@ -73,12 +73,12 @@
               <i class="fa-solid fa-star fa-fw text-primary"></i>
               <i class="fa-solid fa-star fa-fw text-primary"></i>
             </div>
-            <!-- Stars -->
+
             <p class="text-foreground-accent">From 6 reviews</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-grid">
-          <!--  -->
+
           <div class="bg-background rounded p-lg grid flex-[1_1_300px] grid-rows-[auto_1fr]">
             <div class="flex items-center">
               <h3 class="type-header block leading-none">hzrdd.</h3>
@@ -92,12 +92,12 @@
                 <i class="fa-solid fa-star fa-fw text-primary"></i>
                 <i class="fa-solid fa-star fa-fw text-primary"></i>
               </div>
-              <p class="type-paragraph text-foreground-accent">M-Blackmarket &amp; M-Drugs, very high quality scripts and when I had a issue with something the staff team was quick to help me fix the problem and get everything working again. Highly recommend</p>
+              <p class="type-paragraph text-foreground-accent">M-Blackmarket &amp; sadand when I had a issue with something the staff team was quick to help me fix the problem and get everything working again. Highly recommend</p>
             </div>
           </div>
-          <!--  -->
+
         </div>
-      </section>
+      </section> -->
     </div>
   </div>
   </div>
@@ -140,52 +140,6 @@
       </div>
     </div>
   </div>
-  <!-- End Widget Area-->
-  <div class="container mx-auto p-sm">
-    <footer>
-      <div class="flex gap-md mb-md flex-wrap">
-        <!-- Socials -->
-        <div class="bg-background-accent rounded flex gap-md flex-grow justify-start items-center p-sm">
-          <h3 class="type-header font-bold text-sm ">Copyright © storeify <span id="copyright-year">2024</span>. All Rights Reserved.</h3>
-          <a href="https://www.facebook.com/marcinhuScripts" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-facebook opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://github.com/marcinhuu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-github opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://www.instagram.com/marcinhu.scripts/" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-instagram opacity-50 transition group-hover:opacity-100"></i></a>
-
-          <a href="https://youtube.com/c/marcinhu" class="btn-icon-neutral bg-background group flex-grow md:flex-grow-0"><i class="fa-brands fa-youtube opacity-50 transition group-hover:opacity-100"></i></a>
-        </div>
-      </div>
-    </footer>
-  </div>
-  </div>
-  </div>
-
-  <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden modal modal-backdrop" role="remote">
-    <div class="absolute xl:max-w-[1200px] xl:min-w-[960px] min-w-full max-w-full -translate-x-1/2 lg:top-[10vh] left-1/2 p-sm hidden modal-container">
-    </div>
-  </div>
-
-  <div class="fixed top-0 bottom-0 left-0 right-0 h-[100vh] w-[100vw] bg-[rgba(0,0,0,.3)] z-50 backdrop-blur-sm text-foreground hidden overflow-y-auto overflow-x-hidden sidebar sidebar-backdrop" role="remote">
-    <div class="absolute lg:max-w-[1024px] lg:min-w-[350px] min-w-[90vw] max-w-[90vw] right-0 h-[100vh] hidden translate-x-full transition sidebar-container">
-    </div>
-  </div>
-
-  <div class="notification">
-
-  </div>
-
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/templates/209/js/bootstrap.min.js"></script>
-  <script src="/templates/209/js/skin.min.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="/templates/209/js/site.js"></script>
-  <script src="https://fragmentor.io/api/files/lsdjkb3e.js" crossorigin=""></script>
-  <div id="waiting-overlay" style="display: none;">
-    <i class="fa fa-cog fa-spin fa-3x"></i>
-  </div>
-  </div>
-</body>
-
-</html>
+  <?php
+  include $_SERVER['DOCUMENT_ROOT'] . "/storeify/storeFooter.php";
+  ?>

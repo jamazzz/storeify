@@ -60,7 +60,7 @@
         } else {
           $logo_src = '/storeify/assets/images/logo.png';
         }
-        echo '<img src="' . $logo_src . '" alt="" class="inline-block max-h-52 mx-auto">';
+        echo '<a href="/storeify/product/' . $row['id'] . '"class="inline-block mx-auto"><img src="' . $logo_src . '" alt="" class="max-h-52"></a>';
 
         echo ('</a>
               <h2 class="type-header  border-t  border-background-accent  p-sm text-center">' . $row['name'] . ' - ' . $row['price'] . ' EUR</h2>
