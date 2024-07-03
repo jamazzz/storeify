@@ -15,11 +15,41 @@
   ?>
   <main role="main" id="main">
     <div class="container-fluid">
+      <style>
+        .search-container {
+          display: flex;
+          align-items: center;
+        }
 
+        .form-control {
+          flex: 1;
+        }
+
+        .fa-magnifying-glass {
+          margin-left: 10px;
+          /* Adjust the spacing between the input and the icon as needed */
+        }
+      </style>
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
-            <h1 class="my-0">Pagamentos</h1>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="searchForm">
+              <div class="search-container">
+                <input type="text" class="form-control" placeholder="Search..." name="search" style="max-width: 500px;">
+                <i class="fa-solid fa-magnifying-glass" id="searchIcon" style="cursor: pointer;"></i>
+              </div>
+            </form>
+
+            <script>
+              document.getElementById('searchIcon').addEventListener('click', function() {
+                document.getElementById('searchForm').submit();
+              });
+            </script>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $search = htmlspecialchars($_POST['search']);
+            }
+            ?>
             <br>
           </div>
         </div>
@@ -48,7 +78,11 @@
                   $select = "SELECT * FROM websites WHERE id = " . $_SESSION['currentwebsite'];
                   $result = mysqli_query($connect, $select);
                   $row = mysqli_fetch_assoc($result);
-                  $select2 = "SELECT * FROM transactions WHERE store = '" . $row['subdomain'] . "'";
+                  $filter = $_POST['search'] ?? $filter ?? '';
+                  $select2 = "SELECT * FROM transactions 
+                                    WHERE store = '" . $_SESSION['subdomain'] . "' 
+                                    AND (payer_email LIKE '%$filter%' 
+                                    OR transaction_id LIKE '%$filter%')";
                   $result2 = mysqli_query($connect, $select2);
                   $row2 = mysqli_fetch_assoc($result2);
                   while ($row2 = mysqli_fetch_assoc($result2)) {

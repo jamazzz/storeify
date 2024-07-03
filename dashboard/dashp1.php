@@ -44,7 +44,7 @@
     <!-- partial:partials/_sidebar.php -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="dashlanding.php" style="color: white; font-weight: bold; text-decoration: none;">Storeify</a>
+        <a class="sidebar-brand brand-logo" href="/storeify/dashboard/dashlanding.php" style="color: white; font-weight: bold; text-decoration: none;">Storeify</a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
@@ -113,7 +113,7 @@
       <!-- partial:partials/_navbar.php -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="dashlanding.php"><img src="/storeify/assets/images/logo.png" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="/storeify/dashboard/dashlanding.php"><img src="/storeify/assets/images/logo.png" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <ul class="navbar-nav navbar-nav-right">
