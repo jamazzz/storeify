@@ -33,7 +33,7 @@
         <div class="col-xxl-12">
           <div class="card">
             <div class="card-header">
-              Details
+              Detalhes
             </div>
             <div class="card-body">
               <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-striped">
@@ -89,7 +89,7 @@
                       <div class="float-left">
                         <?php
                         if ($row['state'] == '1') {
-                          echo '<span class="badge badge-success">Completo</span>';
+                          echo '<span class="badge badge-success" style="max-height:28px; width:80px;">Completo</span>';
                           $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
                           $files = scandir($directory);
                           $files = array_diff($files, array('.', '..'));
@@ -105,7 +105,7 @@
                           if ($hasInvoice) {
                             echo '<tr>
                                         <td>Invoice</td>
-                                        <td><a class="btn btn-primary" href="/storeify/store/invoices/' . $file . '">Abrir</a></td>
+                                        <td><a style="max-height:28px; width:80px;" class="btn btn-primary" href="/storeify/store/invoices/' . $file . '">Abrir</a></td>
                                       </tr>';
                           } else {
                             echo '<tr>
@@ -114,9 +114,9 @@
                                       </tr>';
                           }
                         } else if ($row['state'] == '0') {
-                          echo '<span class="badge badge-warning">Pendente</span>';
+                          echo '<span class="badge badge-warning" style="max-height:28px; width:80px;">Pendente</span>';
                         } else {
-                          echo '<span class="badge badge-danger">Falhou</span>';
+                          echo '<span class="badge badge-danger" style="max-height:28px; width:80px;">Falhou</span>';
                         }
                         ?>
                       </div>
@@ -128,7 +128,8 @@
               </table>
             </div>
           </div>
-
+          <br>
+          <a href="/storeify/dashboard/payments/payments.php" class="btn btn-primary">Voltar</a>
 
 
         </div>

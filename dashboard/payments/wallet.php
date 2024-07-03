@@ -61,13 +61,9 @@
                   <col span="3">
                 </colgroup>
                 <thead class="thead-light">
+
                   <tr>
-                    <th class=""></th>
-                    <th class="">Referência</th>
-                    <th class="">Data</th>
-                    <th class="">Valor</th>
-                    <th class="">Taxa</th>
-                    <th class="">Total</th>
+                    <td colspan="8" class="text-center">Nenhum levantamento encontrado</td>
                   </tr>
                 </thead>
                 <tbody>

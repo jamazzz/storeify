@@ -15,21 +15,6 @@
   ?>
   <main role="main" id="main">
     <div class="container-fluid">
-      <style>
-        .search-container {
-          display: flex;
-          align-items: center;
-        }
-
-        .form-control {
-          flex: 1;
-        }
-
-        .fa-magnifying-glass {
-          margin-left: 10px;
-          /* Adjust the spacing between the input and the icon as needed */
-        }
-      </style>
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">

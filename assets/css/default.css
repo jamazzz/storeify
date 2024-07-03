@@ -48,6 +48,20 @@
   box-sizing: border-box;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  flex: 1;
+}
+
+.fa-magnifying-glass {
+  margin-left: 10px;
+  /* Adjust the spacing between the input and the icon as needed */
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
