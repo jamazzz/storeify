@@ -13,6 +13,7 @@
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/storeify/assets/vendors/jvectormap/jquery-jvectormap.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/storeify/assets/vendors/flag-icon-css/css/flag-icons.min.css">
   <link rel="stylesheet" href="/storeify/assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="/storeify/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
@@ -111,15 +112,6 @@
               <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/pages.php">Páginas</a></li>
             </ul>
           </div>
-        </li>
-        <!-- Members -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/members.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-speedometer"></i>
-            </span>
-            <span class="menu-title">Members</span>
-          </a>
         </li>
         <!--
         <li class="nav-item nav-category">
@@ -455,61 +447,16 @@
                 $_SESSION['subdomain'] = $row['subdomain'];
               }
               ?>
-              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">View Website</a>
+              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">Visitar Loja</a>
             </li>
-            <li class="nav-item dropdown border-left">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                <i class="mdi mdi-bell"></i>
-                <span class="count bg-danger"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-calendar text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Event today</p>
-                    <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-shape-plus text-danger"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Settings</p>
-                    <p class="text-muted ellipsis mb-0"> Update dashboard </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-link-variant text-warning"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Launch Admin</p>
-                    <p class="text-muted ellipsis mb-0"> New admin wow! </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <p class="p-3 mb-0 text-center">See all notifications</p>
-              </div>
-            </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                 <div class="navbar-profile">
                   <!-- <img class="img-xs rounded-circle" src="storeify/assets/images/faces/face15.jpg" alt=""> -->
+                  <i class="fa-solid fa-user"></i>
                   <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $pinfo['username']; ?></p>
-                  <!-- <p class="mb-0 d-none d-sm-block navbar-profile-name" style="text-align:end;"><?php echo $pinfo['username'] . "<br>" . $winfo['name']; ?></p> -->
+                  <!-- <p class="mb-0 d-none d-sm-block navbar-profile-name" style="text-align:end;"><?php echo $pinfo['username'] . "<br>" . $winfo['name']; ?> </p> -->
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </a>

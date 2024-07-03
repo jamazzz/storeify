@@ -32,9 +32,9 @@
           }
         }
         if ($hasExports) {
-          echo '<h1 class="my-0">Exports <span style="float: right;"><a href="/storeify/exportAll.php" class="btn btn-primary">Download All</a></span></h1>';
+          echo '<h1 class="my-0">Faturas <span style="float: right;"><a href="/storeify/exportAll.php" class="btn btn-primary">Transferir todas</a></span></h1>';
         } else {
-          echo '<h1 class="my-0">Exports</h1>';
+          echo '<h1 class="my-0">Faturas</h1>';
         }
         ?>
         <br>
@@ -57,27 +57,18 @@
                           <div class="card-body">
                               <div class="row">
                                   <div class="col-12 col-md-6">
-                                      <h5 class="card-title">Transaction ID:  ' . explode('_', $fileName)[1] . '</h5>
-                                      <p class="card-text">Transaction Date: ' . $fileCreationDate . '</p>
-                                      <p class="card-text">File Size: ' . $fileSize . ' bytes</p>
+                                        <h5 class="card-title">ID da transação:  ' . explode('_', $fileName)[1] . '</h5>
+                                        <p class="card-text">Data da transação: ' . $fileCreationDate . '</p>
+                                        <p class="card-text">Tamanho do arquivo: ' . $fileSize . ' bytes</p>
                                   </div>
                                   <div class="col-12 col-md-6 text-md-right content-align-center text-end"><br>
-                                      <a href="' . $fileDownloadLink . '" class="btn btn-primary">Download</a>
+                                      <a href="' . $fileDownloadLink . '" class="btn btn-primary">Transferir</a>
                                   </div>
                               </div>
                           </div>
                       </div><br>';
           }
         }
-      } else {
-        echo '<div class="card">
-                  <div class="card-body">
-                      <div class="empty-content-container">
-                          <i class="fal fa-download"></i>
-                          <p>Exports which you have requested to be generated will be available to download here.</p>
-                      </div>
-                  </div>
-                </div>';
       }
       ?>
 

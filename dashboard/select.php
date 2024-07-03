@@ -122,11 +122,10 @@ for ($i = 0; $i < $total; $i++) {
             </div>
             <div class="card-body">
                 <p class="mb-0"><a value="' . $row['websiteid'] . '" onclick="submitForm(this)" target="_blank">Ver dashboard da loja</a></p>
-                <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Sessão iniciada</a>
                 ';
         if ($row2['owner'] == $_SESSION['userid']) {
             echo '
-                <a href="pages/samples/error-404.php" class="btn text-secondary mt-4">Transferir</a>';
+                <a href="#" class="btn text-primary disabled btn-outline-primary mt-4">Transferir</a>';
         }
         echo '
             </div>

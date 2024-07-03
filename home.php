@@ -56,7 +56,7 @@
       <?php
       echo ('
          <div class="markdown bg-background-accent rounded p-lg">
-         '.$row['home_info_html'].'
+         '.empty($row['home_info_html']) ? '' : $row['home_info_html'].'
        </div>');
       ?>
 

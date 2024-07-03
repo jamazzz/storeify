@@ -21,22 +21,31 @@
             <br>
           </div>
       </header><!---->
+      <?php
+      $tsales = "SELECT SUM(paid_amount) AS total_sales FROM transactions WHERE store = '" . $_SESSION['subdomain'] . "'";
+      $result = mysqli_query($connect, $tsales);
+      $row = mysqli_fetch_assoc($result);
+      // less than 3 days go to settle
+      $tsales = "SELECT SUM(paid_amount) AS total_sales FROM transactions WHERE store = '" . $_SESSION['subdomain'] . "' AND created_date < DATE_SUB(NOW(), INTERVAL 3 DAY)";
+      $result = mysqli_query($connect, $tsales);
+      $row2 = mysqli_fetch_assoc($result);
+      ?>
       <section class="card-deck">
         <div class="card card-stats"><!---->
-          <div class="card-body"><!----><i class="fa-solid fa-wallet"></i><!---->
-            <h3 class="text-white">€0.00</h3><span>Total Balance</span>
+          <div class="card-body"><!----><!---->
+            <?php echo '<h3 class="text-white">' . $row['total_sales'] . '€</h3><span>Saldo Total</span>'; ?>
           </div><!---->
         </div>
         <br>
         <div class="card card-stats"><!---->
-          <div class="card-body"><!----><i class="fa-solid fa-landmark"></i><!---->
-            <h3 class="text-white">€0.00</h3><span> Settling
+          <div class="card-body"><!----><!---->
+            <?php echo '<h3 class="text-white">' . $row2['total_sales'] . '€</h3><span>Em espera</span>'; ?>
           </div><!---->
         </div>
         <br>
         <div class="card card-stats"><!---->
-          <div class="card-body"><!----><i class="fa-solid fa-coins"></i><!---->
-            <h3 class="text-white">€0.00</h3><span> Withdrawable <!----></span>
+          <div class="card-body"><!----><!---->
+            <?php echo '<h3 class="text-white">' . ($row['total_sales'] - $row2['total_sales']) . '€</h3><span>Disponivel</span>'; ?>
           </div><!---->
         </div>
       </section>
@@ -54,38 +63,15 @@
                 <thead class="thead-light">
                   <tr>
                     <th class=""></th>
-                    <th class="">Reference</th>
-                    <th class="">Date</th>
-                    <th class="">Description</th>
-                    <th class="">Amount</th>
-                    <th class="">Sales Tax</th>
-                    <th class="">Gateway Fee</th>
-                    <th class="">Platform Fee</th>
+                    <th class="">Referência</th>
+                    <th class="">Data</th>
+                    <th class="">Valor</th>
+                    <th class="">Taxa</th>
                     <th class="">Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php
-                  $select = "SELECT * FROM transactions WHERE store = '" . $_SESSION['subdomain'] . "' ORDER BY id DESC";
-                  $result = mysqli_query($connect, $select);
-                  while ($row = mysqli_fetch_array($result)) {
-                    echo ('
-                  <tr class="text-nowrap">
-                    <td class=""><span></span><svg class="svg-inline--fa fa-store" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="store" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                        <path class="" fill="currentColor" d="M520.6 120.9l0 0c18.7 29.6 .3 66.6-29.2 70.6c-2.6 .3-5.2 .5-7.9 .5c-16.5 0-31.2-7.2-41.5-18.5c-6.1-6.7-14.7-10.5-23.7-10.5s-17.6 3.8-23.7 10.5c-10.2 11.2-24.8 18.4-41.4 18.4c-16.5 0-31.3-7.2-41.4-18.4c-6.1-6.7-14.7-10.5-23.7-10.5s-17.7 3.8-23.7 10.5C254 184.8 239.3 192 222.7 192c-16.5 0-31.3-7.2-41.4-18.4c-6.1-6.7-14.7-10.5-23.7-10.5s-17.7 3.8-23.7 10.5C123.6 184.8 109 192 92.4 192c-2.6 0-5.2-.2-7.9-.5c-29.3-4-47.7-41-29.1-70.6l0 0L111.6 32H464.4l56.2 88.9zM483.4 224c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4L490.3 13.1C485.2 5 476.1 0 466.4 0H109.6C99.9 0 90.8 5 85.7 13.1L28.3 103.8c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1 .8 12.1 .8c19.6 0 37.5-6.4 52-17c4.8-3.5 9.2-7.6 13.2-11.9c4 4.4 8.4 8.4 13.2 11.9c14.5 10.6 32.4 17 52 17c19.6 0 37.5-6.4 52-17c4.8-3.5 9.2-7.6 13.2-12c4 4.4 8.4 8.4 13.2 11.9c14.5 10.6 32.4 17 52 17c19.8 0 37.8-6.5 52.3-17.3c4.7-3.5 9-7.4 12.9-11.7c3.9 4.3 8.3 8.3 13 11.8c14.5 10.7 32.5 17.2 52.2 17.2zM80 256c-8.8 0-16 7.2-16 16v80 16 16 64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384 368 352 272c0-8.8-7.2-16-16-16s-16 7.2-16 16v80H96V272c0-8.8-7.2-16-16-16zM96 384H480v64c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V384z"></path>
-                      </svg></td>
-                    <td class=""><span>tbx-12514924a60329-6f64e0</span></td>
-                    <td class="">2024-05-29 16:45</td>
-                    <td class="">Purchase</td>
-                    <td class="">€35.00</td>
-                    <td class="">€0.00</td>
-                    <td class="">€1.24</td>
-                    <td class="">€5.25</td>
-                    <td class=""><!----><strong>€28.51</strong></td>
-                  </tr>
-                  ');
-                  }
-                  ?>
+
                 </tbody>
               </table>
             </div>

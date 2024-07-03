@@ -33,9 +33,9 @@
     if ($paymentDate == $currentDate) {
       $total2 += $row2['paid_amount'];
     }
-    $a[] = '<tr data-v-a416eab6="" class="text-muted">
-        <td data-v-a416eab6="" width="50%" class="align-middle">' . $row2['payer_email'] . '</td>
-        <td data-v-a416eab6="" width="30%" class="align-middle">' . $row2['paid_amount'] . '</td>
+    $a[] = '<tr  class="text-muted">
+        <td  width="50%" class="align-middle">' . $row2['payer_email'] . '</td>
+        <td  width="30%" class="align-middle">' . $row2['paid_amount'] . '</td>
       </tr>';
 
     $monthlySales = array();
@@ -66,26 +66,26 @@
 
 
 
-      <div data-v-a416eab6="">
-        <div data-v-a416eab6="" class="row row-mb">
-          <div data-v-a416eab6="" class="col-12 col-md-4 value-container">
-            <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-body">
-                <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
-                  <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
-                    <h1 data-v-a416eab6=""><?php echo ($total2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Vendas de Hoje</span>
+      <div>
+        <div class="row row-mb">
+          <div class="col-12 col-md-4 value-container">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
+                  <div class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
+                    <h1><?php echo ($total2); ?> €</h1> <span class="text-uppercase">Vendas de Hoje</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div data-v-a416eab6="" class="col-12 col-md-4 row-mt-mobile value-container">
-            <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-body">
-                <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
-                  <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
+          <div class="col-12 col-md-4 row-mt-mobile value-container">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-4 col-12 text-center d-lg-none d-xl-block"></div>
+                  <div class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
                     <?php
                     $month = date('F');
                     $months = [
@@ -107,22 +107,22 @@
                       $month = $months[$month];
                     }
                     ?>
-                    <h1 data-v-a416eab6=""><?php echo ($total); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase"><?php echo "Vendas de " . $month; ?></span>
+                    <h1><?php echo ($total); ?> €</h1> <span class="text-uppercase text-center"><?php echo "Vendas de " . $month; ?></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div data-v-a416eab6="" class="col-12 col-md-4 row-mt-mobile value-container">
-            <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-body">
-                <div data-v-a416eab6="" class="row d-flex align-items-center">
-                  <div data-v-a416eab6="" class="col-xl-4 col-12 text-center d-lg-none d-xl-block"></div>
-                  <div data-v-a416eab6="" class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
+          <div class="col-12 col-md-4 row-mt-mobile value-container">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="row d-flex align-items-center">
+                  <div class="col-xl-4 col-12 text-center d-lg-none d-xl-block"></div>
+                  <div class="col-xl-8 col-12 text-center text-lg-left my-3 my-xl-0">
                     <?php
                     $average = $count > 0 ? $total / $count : 0;
                     ?>
-                    <h1 data-v-a416eab6=""><?php echo number_format($average, 2); ?> €</h1> <span data-v-a416eab6="" class="text-uppercase">Pagamento médio de <?php echo $month ?></span>
+                    <h1><?php echo number_format($average, 2); ?> €</h1> <span class="text-uppercase">Pagamento médio de <?php echo $month ?></span>
                   </div>
                 </div>
               </div>
@@ -130,15 +130,15 @@
           </div>
         </div>
         <br>
-        <div data-v-a416eab6="" class="row">
-          <div data-v-a416eab6="" class="col-12 col-xxl-8">
-            <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-header" style="height: 51px;">
-                <div data-v-a416eab6="" class="row">
-                    <div data-v-a416eab6="" class="col-6 d-flex align-items-center">Visão Geral de Vendas</div>
+        <div class="row">
+          <div class="col-12 col-xxl-8">
+            <div class="card h-100">
+              <div class="card-header" style="height: 51px;">
+                <div class="row">
+                  <div class="col-6 d-flex align-items-center">Visão Geral de Vendas</div>
                 </div>
               </div>
-              <div data-v-a416eab6="" class="card-body">
+              <div class="card-body">
                 <canvas id="myLineChart" width="400" height="200"></canvas>
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <script>
@@ -181,18 +181,18 @@
               </div>
             </div>
           </div>
-          <div data-v-a416eab6="" class="col-12 col-xxl-4 mt-4 mt-xxl-0">
-            <div data-v-a416eab6="" class="card h-100">
-              <div data-v-a416eab6="" class="card-header">
-                <div data-v-a416eab6="" class="row">
-                  <div data-v-a416eab6="" class="col-7 d-flex align-items-center">
+          <div class="col-12 col-xxl-4 mt-4 mt-xxl-0">
+            <div class="card h-100">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-7 d-flex align-items-center">
                     Pagamentos Recentes
                   </div>
                 </div>
               </div>
-              <div data-v-a416eab6="" class="card-body">
-                <div data-v-a416eab6="" class="table-responsive">
-                  <table data-v-a416eab6="" class="table border">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table border">
                     <?php
                     if (empty($a)) {
                       echo "Ainda não há vendas";

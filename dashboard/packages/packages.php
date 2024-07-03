@@ -45,7 +45,6 @@
                 <input type="text" id="categoryName" name="categoryName" class="form-control" placeholder="Nome da categoria">
               </div>
               <div class="modal-footer">
-                <input type="text" id="currentpage" name="currentpage" class="invisible" value="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <button type="submit" class="btn btn-success">Submit</button>
                 <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
               </div>
@@ -58,31 +57,31 @@
       $categories = "SELECT * FROM categories WHERE website_id = '" . $_SESSION['currentwebsite'] . "' ORDER BY `order` ASC";
       $result = mysqli_query($connect, $categories);
 
+      echo '<div id="categories" class="row row-mb">';
       while ($row = mysqli_fetch_assoc($result)) {
-        echo '      
-                <div class="container2">
-                    <div id="categories" class="row row-mb">
-                      <div class="col-12 col-md-12 category-container">
-                        <div class="card h-35" style="background-color: rgba(28, 28, 37,0.8)">
-                          <div class="card-body category-header">
-                            <h6>' . $row['name'] . '</h6>
-                          </div>
-                          <div id="category1" class="category mt-4 product-list" style="margin:25px;">';
+        echo '
+        <div class="col-12 col-md-12 category-container">
+            <div class="card h-35" style="background-color: rgba(28, 28, 37,0.8)">
+                <div class="card-body category-header">
+                    <h6>' . $row['name'] . '</h6>
+                </div>
+                <div id="category' . $row['id'] . '" class="category mt-4 product-list" style="margin:25px;">';
         $products = "SELECT * FROM products WHERE category_id = '" . $row['id'] . "' ORDER BY `order` ASC";
         $result2 = mysqli_query($connect, $products);
         while ($row2 = mysqli_fetch_assoc($result2)) {
           echo '
-                                        <div class="card">
-                                          <div class="card-body">' . $row2['name'] . '<span style="float: right;">View</span></div>
-                                        </div>';
+            <div class="card">
+                <div class="card-body">' . $row2['name'] . '<span style="float: right;"></span></div>
+            </div>';
         }
         echo '
-                                      </div>
-                                    </div>
-                                  </div>
-                          ';
+                </div>
+            </div>
+        </div>';
       }
+      echo '</div>';
       ?>
+
 
       <style>
         .card {
@@ -114,15 +113,30 @@
                 var originCategory = evt.from.id;
                 var destinationCategory = evt.to.id;
                 var productsInOrigin = Array.from(evt.from.getElementsByClassName('card-body')).map(function(product) {
-                  return product.innerText;
+                  return product.innerText.trim();
                 });
                 var productsInDestination = Array.from(evt.to.getElementsByClassName('card-body')).map(function(product) {
-                  return product.innerText;
+                  return product.innerText.trim();
                 });
 
                 console.log('Moved from:', originCategory, 'to', destinationCategory);
                 console.log('Products in origin category:', productsInOrigin);
                 console.log('Products in destination category:', productsInDestination);
+
+                var formData = new FormData();
+                formData.append('originCategory', originCategory);
+                formData.append('destinationCategory', destinationCategory);
+                formData.append('productsInOrigin', JSON.stringify(productsInOrigin));
+                formData.append('productsInDestination', JSON.stringify(productsInDestination));
+
+                fetch('/storeify/updateOrder.php', {
+                  method: 'POST',
+                  body: formData
+                }).then(function(response) {
+                  return response.json();
+                }).then(function(data) {
+                  console.log(data);
+                });
               }
             });
           });
@@ -132,9 +146,20 @@
             handle: '.card-body.category-header',
             onEnd: function(evt) {
               var categories = Array.from(document.querySelectorAll('.category-container h6')).map(function(category) {
-                return category.innerText;
+                return category.innerText.trim();
               });
               console.log('Categories:', categories);
+
+              var formData = new FormData();
+              formData.append('categories', JSON.stringify(categories));
+              fetch('/storeify/updateOrder.php', {
+                method: 'POST',
+                body: formData
+              }).then(function(response) {
+                return response.json();
+              }).then(function(data) {
+                console.log(data);
+              });
             }
           });
         });
