@@ -9,119 +9,129 @@
 
 <body>
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
-  ?>
-  <main role="main" id="main" >
-    <div class="container-fluid" >
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
+
+  // Check database connection
+  if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+  ?>
+
+  <main role="main" id="main">
+    <div class="container-fluid">
       <header class="page-title">
         <div class="row no-gutters">
-          <div class="col-12 col-md-6" >
-            <h1 class="my-0" >Bans</h1>
+          <div class="col-12 col-md-6">
+            <h1 class="my-0">Clientes</h1>
           </div>
-          <div class="col-12 col-md-6 text-left text-md-right" >
+          <div class="col-12 col-md-6 text-left text-md-right">
           </div>
         </div>
       </header>
+      <br>
+      <?php
+      // Prepare statements
+      $selectcid = $connect->prepare("SELECT id FROM categories WHERE website_id = ?");
+      $selectpid = $connect->prepare("SELECT id FROM products WHERE category_id IN (?)");
+      $select = $connect->prepare("SELECT DISTINCT user_id FROM owned_products WHERE product_id IN (?)");
 
-      <div class="card" >
-        <div class="card-body" >
-          <div class="row" >
-            <div class="col-12 col-xl-2 text-center text-xl-left align-self-center">
-              <div class="card m-0 mt-2" id="filter-card" style="display: none;">
-                <form method="get" action="https://creator.tebex.io/bans">
-                  <div class="card-body">
-                    <div class="card card-header form-group search-form-fields">
-                      <div class="search-attribute">
-                        <div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" name="attribute">
-                            <option value="username" data-query=".text">
-                              Username
-                            </option>
-                            <option value="uuid" data-query=".text">
-                              ID
-                            </option>
-                            <option value="ip" data-query=".text">
-                              IP Address
-                            </option>
-                          </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Username">
-                            <div class="filter-option">
-                              <div class="filter-option-inner">
-                                <div class="filter-option-inner-inner">Username</div>
-                              </div>
-                            </div>
-                          </button>
-                          <div class="dropdown-menu ">
-                            <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1">
-                              <ul class="dropdown-menu inner show" role="presentation"></ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="search-query mt-3">
-                        <div class="text">
-                          <input type="text" class="form-control" name="query" placeholder="Enter your search query" value="" required="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-12 text-center text-md-right row-mt-mobile">
-                        <div class="search-submit">
-                          <a href="https://creator.tebex.io/bans" class="btn btn-light mr-2">Clear</a>
-                          <input type="submit" class="btn btn-primary" value="Apply Filters">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="col-12 col-xl-10 align-self-center text-center text-xl-right my-3 my-xl-0" >
-              <span class="result-count"><strong>1</strong> results</span>
-            </div>
-          </div>
+      $selectcid->bind_param("i", $_SESSION['currentwebsite']);
+      $selectcid->execute();
+      $resultcid = $selectcid->get_result();
+      $categoryIds = [];
+      while ($row = $resultcid->fetch_assoc()) {
+        $categoryIds[] = $row['id'];
+      }
+      $selectcid->close();
+
+      $userIds = [];
+      if (!empty($categoryIds)) {
+        $categoryIdsString = implode(',', $categoryIds);
+        $selectpid->bind_param("s", $categoryIdsString);
+        $selectpid->execute();
+        $resultpid = $selectpid->get_result();
+        $productIds = [];
+        while ($row = $resultpid->fetch_assoc()) {
+          $productIds[] = $row['id'];
+        }
+        $selectpid->close();
+
+        if (!empty($productIds)) {
+          $productIdsString = implode(',', $productIds);
+          $select->bind_param("s", $productIdsString);
+          $select->execute();
+          $result = $select->get_result();
+          while ($row = $result->fetch_assoc()) {
+            $userIds[] = $row['user_id'];
+          }
+          $select->close();
+        }
+      }
+
+      $clients = [];
+      if (!empty($userIds)) {
+        $userinfo = $connect->prepare("SELECT * FROM clients WHERE id IN (" . implode(',', array_fill(0, count($userIds), '?')) . ")");
+        $userinfo->bind_param(str_repeat('i', count($userIds)), ...$userIds);
+        $userinfo->execute();
+        $result = $userinfo->get_result();
+        while ($row = $result->fetch_assoc()) {
+          $clients[] = $row;
+        }
+        $userinfo->close();
+      }
+
+      foreach ($clients as &$client) {
+        $ownedProducts = $connect->prepare("SELECT COUNT(DISTINCT product_id) FROM owned_products WHERE user_id = ?");
+        $ownedProducts->bind_param("i", $client['id']);
+        $ownedProducts->execute();
+        $result = $ownedProducts->get_result();
+        $productCount = $result->fetch_row()[0];
+        $ownedProducts->close();
+        $client['productCount'] = $productCount;
+      }
+      unset($client);
+      ?>
+      <div class="card">
+        <div class="card-body">
           <div class="row row-mt">
             <div class="col-md-12">
               <table class="table table-striped table-responsive-sm table-responsive-md">
                 <thead class="thead-light">
                   <tr>
-                    <th>Customer</th>
-                    <th>IP</th>
-                    <th>Date</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Produtos Adquiridos</th>
                     <th width="15%">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <img src="https://avatars.discourse.org/v4/letter/j/7933a0/256.png" style="max-width:30px;" class="rounded mr-2"> Jamaz
-                    </td>
-                    <td>
-                      97.55.44.222 </td>
-                    <td>Jun 09, 2024 16:21</td>
-                    <td class="text-right">
-                      <a href="#" class="btn text-primary" data-toggle="modal" data-target="#ban-reason-modal" data-username="Jamaz" data-reason="ban">View reason</a>
-                      <a href="https://creator.tebex.io/bans/93287/delete" class="btn text-danger">Unban</a>
-                    </td>
-                  </tr>
+                  <?php
+                  if (!empty($clients)) {
+                    foreach ($clients as $client) {
+                      echo ('
+                      <tr>
+                      <td>' . htmlspecialchars($client['username']) . '</td>
+                      <td>' . htmlspecialchars($client['email']) . '</td>
+                      <td>' . htmlspecialchars($productCount) . '</td>
+                    </tr>
+                      ');
+                    }
+                  } else {
+                    echo '<tr><td colspan="4">No results found.</td></tr>';
+                  }
+                  ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="card-footer">
-          <div class="row">
-            <div class="col-xl-4 align-self-center row-mt-mobile text-center text-xl-left">
-            </div>
-            <div class="col-xl-8 align-self-center row-mt-mobile text-center text-xl-right">
-              <span class="result-count"><strong>1</strong> results</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-
 
     <div class="modal" id="ban-reason-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -135,8 +145,10 @@
       </div>
     </div>
 
-
   </main>
   <?php
   include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
   ?>
+</body>
+
+</html>

@@ -90,6 +90,29 @@
                         <?php
                         if ($row['state'] == '1') {
                           echo '<span class="badge badge-success">Completo</span>';
+                          $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
+                          $files = scandir($directory);
+                          $files = array_diff($files, array('.', '..'));
+                          $hasInvoice = false;
+                          foreach ($files as $file) {
+                            $fileName = pathinfo($file, PATHINFO_FILENAME);
+                            $filePrefix = explode('_', $fileName)[1];
+                            if ($filePrefix === $row['transaction_id']) {
+                              $hasInvoice = true;
+                              break;
+                            }
+                          }
+                          if ($hasInvoice) {
+                            echo '<tr>
+                                        <td>Invoice</td>
+                                        <td><a class="btn btn-primary" href="/storeify/store/invoices/' . $file . '">Abrir</a></td>
+                                      </tr>';
+                          } else {
+                            echo '<tr>
+                                        <td>Invoice</td>
+                                        <td>Not available</td>
+                                      </tr>';
+                          }
                         } else if ($row['state'] == '0') {
                           echo '<span class="badge badge-warning">Pendente</span>';
                         } else {

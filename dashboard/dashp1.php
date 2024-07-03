@@ -51,7 +51,7 @@
       </div>
       <ul class="nav">
         <li class="nav-item nav-category">
-          <span class="nav-link">Navigation</span>
+          <span class="nav-link">Navegação</span>
         </li>
         <!-- Dashboard -->
         <li class="nav-item menu-items">
@@ -66,7 +66,7 @@
         <li class="nav-item menu-items">
           <a class="nav-link" data-bs-toggle="collapse" href="#payments" aria-expanded="false" aria-controls="payments">
             <span class="menu-icon">
-              <i class="mdi mdi-table-large"></i>
+              <i class="mdi mdi-cash"></i>
             </span>
             <span class="menu-title">Pagamentos</span>
             <i class="menu-arrow"></i>
@@ -83,7 +83,7 @@
         <li class="nav-item menu-items">
           <a class="nav-link" href="/storeify/dashboard/packages/packages.php">
             <span class="menu-icon">
-              <i class="mdi mdi-speedometer"></i>
+              <i class="mdi mdi-package"></i>
             </span>
             <span class="menu-title">Pacotes</span>
           </a>
@@ -99,330 +99,13 @@
         </li>
         <!-- Webstore -->
         <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#webstore" aria-expanded="false" aria-controls="webstore">
+          <a class="nav-link" href="/storeify/dashboard/webstore/appearance.php">
             <span class="menu-icon">
-              <i class="mdi mdi-table-large"></i>
+              <i class="mdi mdi-web"></i>
             </span>
-            <span class="menu-title">Webstore</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="webstore">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/appearance.php">Aparência</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/webstore/pages.php">Páginas</a></li>
-            </ul>
-          </div>
-        </li>
-        <!--
-        <li class="nav-item nav-category">
-          <span class="nav-link">Debug</span>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/widgets/widgets.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-texture"></i>
-            </span>
-            <span class="menu-title">Widgets</span>
+            <span class="menu-title">Website</span>
           </a>
         </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
-            <span class="menu-icon">
-              <i class="mdi mdi-crosshairs-gps"></i>
-            </span>
-            <span class="menu-title">Sidebar Layouts</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="sidebar-layouts">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/compact-menu.php">Compact menu</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/sidebar-collapsed.php">Icon menu</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/sidebar-hidden.php">Sidebar Hidden</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/sidebar-hidden-overlay.php">Sidebar Overlay</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/layout/sidebar-fixed.php">Sidebar Fixed</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <span class="menu-icon">
-              <i class="mdi mdi-laptop"></i>
-            </span>
-            <span class="menu-title">Basic UI Elements</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.php">Accordions</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.php">Buttons</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.php">Badges</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.php">Breadcrumbs</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.php">Dropdowns</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.php">Modals</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/progress.php">Progress bar</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/pagination.php">Pagination</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tabs.php">Tabs</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.php">Typography</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
-            <span class="menu-icon">
-              <i class="mdi mdi-shape-plus"></i>
-            </span>
-            <span class="menu-title">Advanced Elements</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-advanced">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/dragula.php">Dragula</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/clipboard.php">Clipboard</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/context-menu.php">Context menu</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/slider.php">Slider</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/loaders.php">Loaders</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/colcade.php">Colcade</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/carousel.php">Carousel</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/tooltips.php">Tooltips</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-            <span class="menu-icon">
-              <i class="mdi mdi-playlist-play"></i>
-            </span>
-            <span class="menu-title">Form Elements</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="form-elements">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/basic_elements.php">Basic Form</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/advanced_elements.php">Advanced Form</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/validation.php">Validation</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/wizard.php">Wizard</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-            <span class="menu-icon">
-              <i class="mdi mdi-table-large"></i>
-            </span>
-            <span class="menu-title">Tables</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="tables">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/tables/basic-table.php">Basic table</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/tables/data-table.php">Data table</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/tables/js-grid.php">Js-grid</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/tables/sortable-table.php">Sortable table</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#editors" aria-expanded="false" aria-controls="editors">
-            <span class="menu-icon">
-              <i class="mdi mdi-format-text"></i>
-            </span>
-            <span class="menu-title">Editors</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="editors">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/text_editor.php">Text editors</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/forms/code_editor.php">Code Editor</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <span class="menu-icon">
-              <i class="mdi mdi-chart-bar"></i>
-            </span>
-            <span class="menu-title">Charts</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="charts">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/chartjs.php">ChartJs</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/morris.php">Morris</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/flot-chart.php">Flot</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/google-charts.php">Google charts</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/sparkline.php">Sparkline js</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/c3.php">C3 charts</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/chartist.php">Chartists</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/charts/justGage.php">JustGage</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
-            <span class="menu-icon">
-              <i class="mdi mdi-map-marker-radius"></i>
-            </span>
-            <span class="menu-title">Maps</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="maps">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/maps/google-maps.php">Google Maps</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/maps/mapael.php">Mapeal</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/maps/vector-map.php">Vector map</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/ui-features/notifications.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-bell-ring"></i>
-            </span>
-            <span class="menu-title">Notifications</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-            <span class="menu-icon">
-              <i class="mdi mdi-contacts"></i>
-            </span>
-            <span class="menu-title">Icons</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="icons">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/icons/flag-icons.php">Flag icons</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/icons/mdi.php">Mdi icons</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/icons/font-awesome.php">Font Awesome</a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/icons/simple-line-icon.php">Simple line icons</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/icons/themify.php">Themify icons</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">More</span>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/ui-features/popups.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-forum"></i>
-            </span>
-            <span class="menu-title">Popups</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-            <span class="menu-icon">
-              <i class="mdi mdi-security"></i>
-            </span>
-            <span class="menu-title">User Pages</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="auth">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/login.php"> Login </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/login-2.php"> Login 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/register.php"> Register </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/register-2.php"> Register 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/lock-screen.php"> Lockscreen </a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-            <span class="menu-icon">
-              <i class="mdi mdi-earth"></i>
-            </span>
-            <span class="menu-title">General Pages</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="general-pages">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/blank-page.php"> Blank Page </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/profile.php"> Profile </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/portfolio.php"> Portfolio </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/faq.php"> FAQ </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/faq-2.php"> FAQ 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/search-results.php"> Search Results </a> </li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/news-grid.php"> News grid </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/timeline.php"> Timeline </a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-            <span class="menu-icon">
-              <i class="mdi mdi-lock"></i>
-            </span>
-            <span class="menu-title">Error pages</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="error">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/error-404.php"> 404 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/error-500.php"> 500 </a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-bs-toggle="collapse" href="#e-commerce" aria-expanded="false" aria-controls="e-commerce">
-            <span class="menu-icon">
-              <i class="mdi mdi-medical-bag"></i>
-            </span>
-            <span class="menu-title">E-commerce</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="e-commerce">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/invoice.php"> Invoice </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/pricing-table.php"> Pricing Table </a></li>
-              <li class="nav-item"> <a class="nav-link" href="./pages/samples/orders.php"> Orders </a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/apps/calendar.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-calendar-today"></i>
-            </span>
-            <span class="menu-title">Calendar</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/apps/todo.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-bulletin-board"></i>
-            </span>
-            <span class="menu-title">Todo list</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/apps/email.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-email"></i>
-            </span>
-            <span class="menu-title">E-mail</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="./pages/apps/gallery.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-image-filter-center-focus-weak"></i>
-            </span>
-            <span class="menu-title">Gallery</span>
-          </a>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="../../docs/documentation.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-file-document"></i>
-            </span>
-            <span class="menu-title">Documentation</span>
-          </a>
-        </li>
-        -->
       </ul>
     </nav>
     <!-- partial -->
@@ -468,7 +151,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Settings</p>
+                    <p class="preview-subject mb-1">Definições</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -479,7 +162,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Projects</p>
+                    <p class="preview-subject mb-1">Projetos</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -490,7 +173,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content" href="/storeify/index.php">
-                    <p class="preview-subject mb-1" href="/storeify/index.php">Log out</p>
+                    <p class="preview-subject mb-1" href="/storeify/index.php">Terminar Sessão</p>
                   </div>
                 </a>
               </div>
@@ -506,7 +189,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
               <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -524,8 +207,8 @@
               </div>
               <div class="modal-footer">
                 <input type="text" id="currentpage" name="currentpage" class="invisible" value="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <button type="submit" class="btn btn-success">Submit</button>
-                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success">Submeter</button>
+                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
               </div>
             </form>
           </div>
