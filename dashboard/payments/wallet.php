@@ -25,7 +25,6 @@
       $tsales = "SELECT SUM(paid_amount) AS total_sales FROM transactions WHERE store = '" . $_SESSION['subdomain'] . "'";
       $result = mysqli_query($connect, $tsales);
       $row = mysqli_fetch_assoc($result);
-      // less than 3 days go to settle
       $tsales = "SELECT SUM(paid_amount) AS total_sales FROM transactions WHERE store = '" . $_SESSION['subdomain'] . "' AND created_date < DATE_SUB(NOW(), INTERVAL 3 DAY)";
       $result = mysqli_query($connect, $tsales);
       $row2 = mysqli_fetch_assoc($result);

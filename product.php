@@ -78,8 +78,6 @@
           $base_url_path = '/storeify/store/productsimg/';
           $number = $_SESSION['number'];
           $default_image = '/storeify/assets/images/logo.png';
-
-          // Define the server-side path to check for file existence
           $server_path = $_SERVER['DOCUMENT_ROOT'] . $base_url_path . $number;
 
           if (file_exists($server_path . '.jpg')) {

@@ -103,7 +103,6 @@
               <p>Ou</p>
           </form>
           <p class="socials">
-            <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->
             <button id="buttonDiv" type="button" style="margin-top: 10px;"></button>
           </p>
         </div>
@@ -166,7 +165,6 @@
             <p>Ou</p>
         </form>
         <p class="socials">
-          <!-- <button type="button"><i class="ri-facebook-line"></i></button> -->
           <button id="buttonDiv2" name="buttonDiv2" type="button" style="margin-top: 20px;"></button>
         </p>
       </div>
@@ -192,16 +190,7 @@
     echo 'sessionStorage.setItem("signupOrSignin", "signup");';
     echo '</script>';
   }
-  // if (isset($_SESSION['oldfname']) || isset($_SESSION['oldlname']) || isset($_SESSION['oldemail'])) {
-  //   echo '<script>';
-  //   echo 'document.addEventListener("DOMContentLoaded", function() {';
-  //   echo 'document.getElementById("fname").value = "' . $_SESSION['oldfname'] . '";';
-  //   echo 'document.getElementById("lname").value = "' . $_SESSION['oldlname'] . '";';
-  //   echo 'document.getElementById("email").value = "' . $_SESSION['oldemail'] . '";';
-  //   echo '});';
-  //   echo '</script>';
-  //   echo ($_SESSION['oldemail']);
-  // }
+
   ?>
 
   <script>

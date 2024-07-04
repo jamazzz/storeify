@@ -24,5 +24,3 @@ header('Content-Type: application/zip');
 header('Content-Disposition: attachment; filename="' . $zipFileName . '"');
 header('Content-Length: ' . filesize($zipFilePath));
 readfile($zipFilePath);
-
-// header('Location: /storeify/dashboard/payments/exports.php');

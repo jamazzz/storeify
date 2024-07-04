@@ -65,45 +65,6 @@
        </div>');
       }
       ?>
-
-
-      <!-- <section class="bg-background-accent rounded p-lg mt-grid">
-        <h1 class="type-header block mb-lg text-center">Testimonials</h1>
-        <div class="mb-lg flex items-center gap-md justify-center">
-          <div>
-            <!-- Stars
-            <div>
-              <i class="fa-solid fa-star fa-fw text-primary"></i>
-              <i class="fa-solid fa-star fa-fw text-primary"></i>
-              <i class="fa-solid fa-star fa-fw text-primary"></i>
-              <i class="fa-solid fa-star fa-fw text-primary"></i>
-              <i class="fa-solid fa-star fa-fw text-primary"></i>
-            </div>
-
-            <p class="text-foreground-accent">From 6 reviews</p>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-grid">
-
-          <div class="bg-background rounded p-lg grid flex-[1_1_300px] grid-rows-[auto_1fr]">
-            <div class="flex items-center">
-              <h3 class="type-header block leading-none">hzrdd.</h3>
-              <br>
-            </div>
-            <div>
-              <div class="mb-md">
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-                <i class="fa-solid fa-star fa-fw text-primary"></i>
-              </div>
-              <p class="type-paragraph text-foreground-accent">M-Blackmarket &amp; sadand when I had a issue with something the staff team was quick to help me fix the problem and get everything working again. Highly recommend</p>
-            </div>
-          </div>
-
-        </div>
-      </section> -->
     </div>
   </div>
   </div>
