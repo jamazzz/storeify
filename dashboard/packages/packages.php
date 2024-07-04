@@ -121,10 +121,6 @@
                 var productsnewCategory = Array.from(evt.to.getElementsByClassName('card-body')).map(function(product) {
                   return product.getAttribute('id');
                 });
-                console.log('Origin category:', originCategory);
-                console.log('Destination category:', destinationCategory);
-                console.log('Products in origin category:', productsInOrigin);
-                console.log('Products in destination category:', productsInDestination);
 
                 var formData = new FormData();
                 formData.append('originCategory', originCategory);
@@ -159,7 +155,6 @@
               var categories = Array.from(document.querySelectorAll('.category-container h6')).map(function(category) {
                 return category.innerText.trim();
               });
-              console.log('Categories:', categories);
               const formData = new FormData();
               formData.append('categories', categories);
               var form = document.createElement('form');
