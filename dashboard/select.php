@@ -17,7 +17,7 @@
 
         <header class="page-title">
             <div class="row no-gutters">
-                <div class="col-12 col-md-6 my-2">
+                <div class="col-12 col-md-6 my-3">
                     <h1>Os Seus Projetos</h1>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <form action="delete.php" method="post">
                             <input type="text" name="id" value="" style="display: none;">
                             <button onclick="toggleVisibility(this)" type="button" class="btn text">Não</button>
-                            <button type="submit" class="btn btn-danger text-primary">Sim</button>
+                            <button type="submit" class="btn btn-danger ">Sim</button>
                         </form>
                         <form id="send" action="sendinfo.php" method="post">
                             <input type="text" name="id2" value="" style="display: none;">
@@ -100,7 +100,7 @@ if ($total == 0) {
     header('Location: /storeify/dashboard/new.php');
     exit();
 }
-echo '<div class="row2" style="margin-left: 35px;">';
+echo '<br><div class="row2" style="margin-left: 100px;">';
 for ($i = 0; $i < $total; $i++) {
     $row = mysqli_fetch_assoc($result);
     $projectsinfo = "SELECT * FROM websites WHERE id = '" . $row['websiteid'] . "' AND deleted = 0";

@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
 :root {
-  --primary: #5352ed;
-  --white-color: #ffffff;
-  --light-color: #e6e6ed;
-  --grey-color: #a4b0be;
+  --primary: #0066CC;
+  --white-color: #24242D;
+  --light-color: #2f3542;
+  --grey-color: #2f3542;
   --dark-color: #2f3542;
 
-  --darkprimary: #5352ed;
-  --darkwhite-color: #ffffff;
-  --darklight-color: #e6e6ed;
-  --darkgrey-color: #a4b0be;
+  --darkprimary: #0066CC;
+  --darkwhite-color: #24242D;
+  --darklight-color: #2f3542;
+  --darkgrey-color: #2f3542;
   --darkdark-color: #2f3542;
 }
 
@@ -23,6 +23,7 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  color: #fff;
 }
 
 a {
@@ -36,22 +37,31 @@ input {
   -webkit-tap-highlight-color: transparent;
 }
 
+input {
+  background-color: var(--white-color);
+  color: #fff;
+}
+
 ul {
   list-style: none;
+  color: #fff;
 }
 
 h1,
 h2 {
   font-weight: 600;
   line-height: normal;
+  color: #fff;
 }
 
 h1 {
   font-size: 2.5em;
+  color: #fff;
 }
 
 h2 {
   font-size: 2em;
+  color: #fff;
 }
 
 body {
@@ -59,14 +69,14 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  color: var(--dark-color);
+  color: #fff;
   background-color: var(--white-color);
   overflow: hidden;
 }
 
 input::placeholder {
   font-family: "Poppins";
-  color: var(--grey-color);
+  color: #fff;
 }
 
 .container2 {
@@ -86,7 +96,7 @@ input::placeholder {
 
 .theform {
   position: relative;
-  background-color: var(--white-color);
+  color: #fff;
   display: flex;
   flex-direction: column;
 }
@@ -141,7 +151,7 @@ nav ul li:last-child a:hover {
 
 .heading p,
 form.actions p {
-  color: var(--grey-color);
+  color: #fff;
   font-size: 14px;
 }
 
@@ -201,7 +211,7 @@ form .actions label {
 form .actions label input {
   width: 100%;
   background-color: var(--primary);
-  color: var(--white-color);
+  color: #fff;
   font-weight: 600;
   border: 0;
   border-radius: 25px;
@@ -287,21 +297,21 @@ form .socials button:hover {
   width: 350px;
   height: 500px;
   border-radius: 30px;
-  scale: 1.5;
+  scale: 2.1;
 }
 
 .play .card.one {
-  background-color: #6675ff;
+  background-color: #0055a6;
   transform: rotate(290deg) translate3d(20%, 35%, 0) skewY(-20deg);
 }
 
 .play .card.two {
-  background-color: #5599ff;
+  background-color: #005db3;
   transform: rotate(318deg) translate3d(60%, 8%, 0) scale(1.1);
 }
 
 .play .card.three {
-  background-color: #5191f2;
+  background-color: #0060bf;
   transform: rotate(335deg) translate3d(100%, -20%, 0);
 }
 
@@ -311,9 +321,12 @@ form .socials button:hover {
 }
 
 .play .card.five {
-  background-color: #191147;
+  background-color: #005599;
   transform: rotate(283deg) translate3d(-150%, 50%, 0);
 }
+
+
+
 
 /* anim */
 
