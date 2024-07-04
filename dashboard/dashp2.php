@@ -14,7 +14,7 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="/storeify/assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="/storeify/assets/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
 <script src="/storeify/assets/vendors/chart.js/chart.umd.js"></script>

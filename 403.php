@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Storeify</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="/storeify/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/storeify/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/storeify/assets/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/storeify/assets/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
@@ -42,7 +42,7 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="/storeify/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/storeify/assets/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
