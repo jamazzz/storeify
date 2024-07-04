@@ -47,7 +47,7 @@
         $exists = "SELECT * FROM checkout WHERE user_id = '" . $_SESSION['clientid'] . "' AND product_id = '" . $row['id'] . "' AND subdomain = '" . $_SESSION['subdomain'] . "'";
         $result2 = mysqli_query($connect, $exists);
         echo ('<div class="bg-background-accent rounded p-lg grid grid-rows-[1fr_auto_auto]" style="max-height: 29rem;">
-              <a class="bg-background grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
+                <a class="grid grid-rows-[1fr_auto] rounded-sm text-center items-center overflow-hidden">
               ');
         $logo_path = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/productsimg/' . $row['id'];
         $logo = '/storeify/store/productsimg/' . $row['id'];
