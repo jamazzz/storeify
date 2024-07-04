@@ -17,14 +17,7 @@
 <script src="/storeify/assets/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
-<script src="/storeify/assets/vendors/chart.js/chart.umd.js"></script>
-<script src="/storeify/assets/vendors/progressbar.js/progressbar.min.js"></script>
-<script src="/storeify/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-<script src="/storeify/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="/storeify/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
 <script src="/storeify/assets/js/jquery.cookie.js" type="text/javascript"></script>
-<script src="/storeify/assets/vendors/datatables.net/jquery.dataTables.js"></script>
-<script src="/storeify/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 <!-- End plugin js for this page -->
 <!-- inject:js -->
 <script src="/storeify/assets/js/off-canvas.js"></script>
@@ -34,9 +27,7 @@
 <script src="/storeify/assets/js/todolist.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script src="/storeify/assets/js/proBanner.js"></script>
 <script src="/storeify/assets/js/dashboard.js"></script>
-<script src="/storeify/assets/js/data-table.js"></script>
 <script src="/storeify/assets/js/chart.js"></script>
 <!-- End custom js for this page -->
 </body>

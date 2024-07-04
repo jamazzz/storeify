@@ -8,15 +8,10 @@
   <title>Storeify</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="/storeify/assets/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="/storeify/assets/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/storeify/assets/vendors/jvectormap/jquery-jvectormap.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/storeify/assets/vendors/flag-icon-css/css/flag-icons.min.css">
-  <link rel="stylesheet" href="/storeify/assets/vendors/owl-carousel-2/owl.carousel.min.css">
-  <link rel="stylesheet" href="/storeify/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
