@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Storeify</title>
+    <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
     <meta name="description" content="Storeify" />
 
     <!--Inter UI font-->

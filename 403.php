@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Storeify</title>
+    <title>Storeify | 403</title>
+    <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
     <!-- plugins:css -->
     <link rel="stylesheet" href="/storeify/assets/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/storeify/assets/css/vendor.bundle.base.css">

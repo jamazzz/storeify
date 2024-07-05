@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
-  <title>storeify | Welcome</title>
+  <title>Storeify | Produto</title>
+  <link rel="shortcut icon" href="/storeify/assets/images/logo.png" />
   <meta name="title" content="storeify | Welcome">
   <meta name="description" content="">
   <meta name="theme-color" content="">
