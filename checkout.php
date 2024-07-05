@@ -94,7 +94,7 @@
                                     </div>
                                     <div>
                                         <h2 class="type-header">' . $row['name'] . '</h2>
-                                        <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm">' . $row['price'] . ' EUR</h3>
+                                        <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm">' . $row['price'] . ' €</h3>
                                     </div>
                                 </div>
                                 <div class="flex gap-sm">
@@ -102,7 +102,7 @@
                                       <i class="fa-solid fa-trash-can opacity-50 transition group-hover:opacity-100"></i>
                                     </a>  
                                 </div>
-                                <h3 class="type-header text-right">' . round($row['price'] * 1.23, 2) . ' EUR</h3>
+                                <h3 class="type-header text-right">' . round($row['price'] * 1.23, 2) . ' €</h3>
                             </div>
                         </div>
                         ');
@@ -172,7 +172,7 @@
               </div>
               <div class="flex flex-wrap justify-between mt-md mb-lg">
                 <h3 class="text-paragraph font-bold text-foreground">Total</h3>
-                <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['total'] . ' EUR</p>'); ?>
+                <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['total'] . ' €</p>'); ?>
               </div>
               <br>
               <?php require_once 'config.php';  ?>

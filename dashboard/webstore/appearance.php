@@ -42,7 +42,7 @@
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"><img src="<?php echo isset($row['logo']) ? $row['logo'] : '/storeify/assets/images/logo.png'; ?>" alt="Favicon" class="w-75" style="max-width: 100px; border-radius: 50px;"></div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center my-3 my-lg-0">
                 <h4>Logo</h4>
-                <p class="m-0">Provide a logo that will be displayed on your webstore.</p>
+                <p class="m-0">Forneça um logotipo que será exibido em sua loja virtual.</p>
               </div>
             </div>
           </div>
@@ -157,6 +157,18 @@
 
 
             </div>
+            <br>
+            <?php
+            if (isset($_SESSION['logoUpdate']) and $_SESSION['logoUpdate'] === true) {
+              echo '<h6 class="text-success text-center">Logo atualizado com sucesso!</h6>';
+              unset($_SESSION['logoUpdate']);
+            } else if (isset($_SESSION['logoUpdate']) && $_SESSION['logoUpdate'] != true) {
+              echo '<h6 class="text-danger text-center">Erro ao atualizar o logo!</h6>';
+              unset($_SESSION['logoUpdate']);
+            }
+
+
+            ?>
           </div>
         </div>
       </div>
@@ -170,8 +182,8 @@
                 <i class="fa-solid  fa-signature" style="transform: scale(3);"></i>
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                <h4>Name</h4>
-                <p class="m-0">Customize the Name of your webstore.</p>
+                <h4>Nome</h4>
+                <p class="m-0">Personalize o nome da sua loja virtual.</p>
               </div>
             </div>
           </div>
@@ -191,6 +203,16 @@
               </script>
 
             </div>
+            <br>
+            <?php
+            if (isset($_SESSION['nameUpdate']) and $_SESSION['nameUpdate'] == true) {
+              echo '<h6 class="text-success text-center">Nome atualizado com sucesso!</h6>';
+              unset($_SESSION['nameUpdate']);
+            } else if (isset($_SESSION['nameUpdate']) && $_SESSION['nameUpdate'] != true) {
+              echo '<h6 class="text-danger text-center">Erro ao atualizar o nome!</h6>';
+              unset($_SESSION['nameUpdate']);
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -204,8 +226,8 @@
                 <i class="fa-solid  fa-server" style="transform: scale(3);"></i>
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                <h4>Domain</h4>
-                <p class="m-0">Customize the domain of your webstore.</p>
+                <h4>Domínio</h4>
+                <p class="m-0">Personalize o domínio da sua loja virtual.</p>
               </div>
             </div>
           </div>
@@ -225,6 +247,16 @@
               </script>
 
             </div>
+            <br>
+            <?php
+            if (isset($_SESSION['subdomainUpdate']) and $_SESSION['subdomainUpdate'] == true) {
+              echo '<h6 class="text-success text-center">Domínio atualizado com sucesso!</h6>';
+              unset($_SESSION['subdomainUpdate']);
+            } else if (isset($_SESSION['subdomainUpdate']) && $_SESSION['subdomainUpdate'] != true) {
+              echo '<h6 class="text-danger text-center">Erro ao atualizar o domínio!</h6>';
+              unset($_SESSION['subdomainUpdate']);
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -239,8 +271,8 @@
                 <i class="fa-solid fa-object-group" style="transform: scale(3);"></i>
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                <h4>Template</h4>
-                <p class="m-0">Customise the layout of your webstore using our selection of templates or create your own.</p>
+                <h4>Modelo</h4>
+                <p class="m-0">Personalize o layout da sua loja virtual usando nossa seleção de modelos ou crie o seu próprio.</p>
               </div>
             </div>
           </div>
@@ -269,9 +301,8 @@
                 ?>
               </div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-
-                <h4>Theme</h4>
-                <p class="m-0">Customise your template's colour scheme via pre-built themes or create your own.</p>
+                <h4>Tema</h4>
+                <p class="m-0">Personalize o esquema de cores do seu modelo através de temas pré-definidos ou crie o seu próprio.</p>
               </div>
             </div>
           </div>
@@ -403,7 +434,7 @@
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center">
               </div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                <h4 style="margin-left: -820px;">Home Page [Tailwind CSS / Markdown]</h4>
+                <h4 style="margin-left: -750px;">Descrição Home Page [Tailwind CSS / Markdown]</h4>
                 <br>
               </div>
             </div>
@@ -414,7 +445,7 @@
           </div>
           <br>
           <div id="editor"></div>
-          <a id="btn" class="btn btn-primary text-center align-self-center" style="max-width: 1500px; margin-left:14px;">Save</a>
+          <a id="btn" class="btn btn-primary text-center align-self-center" style="max-width: 1500px; margin-left:14px;">Guardar</a>
         </div>
       </div>
       <br>
@@ -451,8 +482,7 @@
                 })
               })
               .then(response => response.text())
-              .then(result => {
-              })
+              .then(result => {})
               .catch(error => {
                 console.error('Error:', error);
               });
@@ -461,7 +491,16 @@
       </script>
 
 
-
+      <br>
+      <?php
+      if (isset($_SESSION['homeUpdate']) and $_SESSION['homeUpdate'] == true) {
+        echo '<h6 class="text-success text-center">Descrição atualizada com sucesso!</h6>';
+        unset($_SESSION['homeUpdate']);
+      } else if (isset($_SESSION['homeUpdate']) && $_SESSION['homeUpdate'] != true) {
+        echo '<h6 class="text-danger text-center">Erro ao atualizar a descrição!</h6>';
+        unset($_SESSION['homeUpdate']);
+      }
+      ?>
     </div>
   </main>
   <?php

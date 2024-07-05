@@ -74,9 +74,30 @@
               <h5>Perguntas Frequentes</h5>
               <p class="text-muted">Visite nossa <a href="/storeify/index.php#faq">página de FAQ</a> para respostas a perguntas comuns.</p>
             </div>
-            <div class="col-md-12 mb-5">
-              <h5>Descrição da Empresa</h5>
-              <p class="text-muted">Storeify é uma plataforma de comércio eletrônico líder que oferece aos clientes uma ampla variedade de produtos a preços competitivos. Nossa missão é oferecer uma experiência excepcional de compras online, oferecendo produtos de alta qualidade, excelente atendimento ao cliente e soluções inovadoras. Seja procurando os últimos eletrônicos, tendências da moda ou itens essenciais para casa, a Storeify tem algo para todos. Entre em contato conosco hoje mesmo para saber mais sobre nossas ofertas e como podemos ajudar a atender às suas necessidades.</p>
+            <div style="width:900px;">
+              <h5>Localização</h5>
+              <div id="map"></div>
+              <style>
+                #map {
+                  width: 900px;
+                  height: 300px;
+                }
+              </style>
+              <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
+              <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
+              <script>
+                maptilersdk.config.apiKey = 'lD0RziNEBnA3N16AkW8G';
+                const map = new maptilersdk.Map({
+                  container: 'map',
+                  center: [-122.4138, 37.7758],
+                  zoom: 16,
+                });
+              </script>
+              <style>
+                maplibregl-control-container {
+                  display: none;
+                }
+              </style>
             </div>
           </div>
         </div>

@@ -250,7 +250,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                               <br>
                               <h2 class="type-header" style="margin-top:10px; margin-left: 30px;">' . $row['name'] . '</h2>
                               <div class="flex gap-md mb-sm">
-                              <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm mb-sm" style="margin-top:9; margin-left: 26px;">' . round($row['price'] * 1.23, 2) . ' EUR </h3>
+                              <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm mb-sm" style="margin-top:9; margin-left: 26px;">' . round($row['price'] * 1.23, 2) . ' € </h3>
                                 <div style="margin-left: 200px;"></div>
                                 <form action="/storeify/addCart.php" method="post" class="w-full">
                                   <button type="submit" class="text-center">
@@ -277,7 +277,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                             Total
                           </h2>
                           <h2 class="type-header"><?php echo ($_SESSION['total'] ?? 0);
-                                                  echo (' EUR') ?></h2>
+                                                  echo (' €') ?></h2>
                         </div>
                         <a href="/storeify/checkout.php" class="btn-primary w-full spinner-toggle"><i class="fa-solid fa-cart-shopping mr-sm"></i>Checkout</a>
                       </div>

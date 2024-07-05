@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/storeify/essencial.php';
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (isset($data['content'])) {
-  $mdContent = mysqli_real_escape_string($connect, $data['content']['md']); 
+  $mdContent = mysqli_real_escape_string($connect, $data['content']['md']);
   $htmlContent = mysqli_real_escape_string($connect, $data['content']['html']);
   $websiteId = mysqli_real_escape_string($connect, $_SESSION['currentwebsite']);
   $_SESSION['mdpack'] = $mdContent;
@@ -12,10 +12,10 @@ if (isset($data['content'])) {
   $websiteResult = mysqli_query($connect, $updateQuery);
 
   if ($websiteResult) {
-    echo "Update successful";
+    $_SESSION['homeUpdate'] = true;
   } else {
-    echo "Update failed";
+    $_SESSION['homeUpdate'] = false;
   }
 } else {
-  echo "Invalid request";
+  $_SESSION['homeUpdate'] = false;
 }

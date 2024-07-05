@@ -146,7 +146,7 @@
                   const data = {
                     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                     datasets: [{
-                      label: 'EUR',
+                      label: '€',
                       backgroundColor: 'rgba(255, 99, 132, 0.2)',
                       borderColor: 'rgba(255, 99, 132, 1)',
                       data: <?php echo empty($monthlySalesJson) ? '[]' : $monthlySalesJson; ?>,
