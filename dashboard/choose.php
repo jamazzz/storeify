@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="/favicon.png">
-  <title>Project Type</title>
+  <title>storeify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="/css/app.css?id=a9978fd18e4bebcdba4d">
   <link rel="stylesheet" href="assets/css/select.css">

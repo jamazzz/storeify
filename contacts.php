@@ -44,18 +44,18 @@
             </div>
             <div class="col-md-6 mb-5">
               <h5>Número de Telefone</h5>
-              <p class="text-muted">+1 123-456-7890</p>
+              <p class="text-muted">+351 932 101 234</p>
             </div>
             <div class="col-md-6 mb-5">
               <h5>Endereço</h5>
-              <p class="text-muted">Rua Principal, Cidade, Estado, País</p>
+              <p class="text-muted">149 9th St, San Francisco, CA 94103, Estados Unidos</p>
             </div>
             <div class="col-md-6 mb-5">
               <h5>Redes Sociais</h5>
               <ul class="list-unstyled">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.x.com">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
               </ul>
             </div>
             <div class="col-md-6 mb-5">
@@ -72,7 +72,7 @@
             </div>
             <div class="col-md-6 mb-5">
               <h5>Perguntas Frequentes</h5>
-              <p class="text-muted">Visite nossa <a href="#">página de FAQ</a> para respostas a perguntas comuns.</p>
+              <p class="text-muted">Visite nossa <a href="/storeify/index.php#faq">página de FAQ</a> para respostas a perguntas comuns.</p>
             </div>
             <div class="col-md-12 mb-5">
               <h5>Descrição da Empresa</h5>

@@ -145,7 +145,7 @@
                 <input type="number" name="input6" oninput="connectInputs('square6', 'square7')" onkeydown="handleBackspace('square6', 'square5', event)" />
               </div>
               <div class="square2" id="square7">
-                <input type="number" name="input7" onkeydown="handleBackspace('square7', 'square6', event)" style="color: transparent" />
+                <input type="number" name="input7" onkeydown="handleBackspace('square7', 'square6', event)" style="display: none;" />
               </div>
               </p>
               <div class="actions">
@@ -190,7 +190,6 @@
               <form class="form2" action="verify.php" method="post">
                 <p>
                   <i class="ri-lock-line"></i>
-                  <i style="left: 29%;" id="toggleIcon2" class="ri-eye-off-line icon" onclick="toggleIcon2()"></i>
                   <input id="password" name="password" type="password" placeholder="Password" required autocomplete="off" style="font-size:13.3px;font-family: 'Poppins';text-align:left;border-radius:0%; width: 400px;" />
                 </p>
                 <script>
@@ -210,6 +209,7 @@
                 </script>
                 <p>
                   <i class="ri-lock-line"></i>
+                  <i style="left: 29%;" id="toggleIcon2" class="ri-eye-off-line icon" onclick="toggleIcon2()"></i>
                   <input id="password2" name="password2" type="password" placeholder="Password" required autocomplete="off" style="font-size:13.3px;font-family: 'Poppins';text-align:left;border-radius:0%; width: 400px;" />
                 </p>
                 <div class="actions">

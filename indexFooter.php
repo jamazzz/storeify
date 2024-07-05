@@ -6,8 +6,8 @@
         <h4>Contactos</h4>
         <ul class="list-unstyled">
           <li>Email: suporte@storeify.com</li>
-          <li>Telefone: 1-800-123-4567</li>
-          <li>Endereço: Rua Principal, Cidade, Estado</li>
+          <li>Telefone: +351 932 101 234</li>
+          <li>Endereço: 149 9th St, San Francisco, CA 94103, Estados Unidos</li>
           <li>Redes Sociais: @storeify</li>
         </ul>
         </ul>
@@ -25,7 +25,7 @@
         <ul class="list-unstyled">
           <li><a href="/storeify/index#faq">FAQ</a></li>
           <li><a href="/storeify/contacts">Contactos</a></li>
-          <li><a href="/storeify/suporte">Suporte</a></li>
+          <li><a href="/storeify/contacts">Suporte</a></li>
         </ul>
       </div>
       </ul>

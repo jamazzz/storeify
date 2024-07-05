@@ -17,6 +17,8 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: var(--white-color);
+  color: #fff;
 }
 
 *,
@@ -169,6 +171,8 @@ form p input {
   border-width: 0 0 2px;
   border-style: solid;
   border-color: var(--light-color);
+  background-color: var(--white-color);
+  color: #fff;
 }
 
 form p:not(.socials) i {
