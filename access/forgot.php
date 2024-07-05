@@ -82,8 +82,8 @@
               </ul>
             </nav>
             <div class="heading">
-              <h2>Account Recovery</h2>
-              <p>We secure your data privacy encrypted.</p>
+              <h2>Recuperação de Palavra-passe</h2>
+              <p>Insira o seu email no campo abaixo</p>
             </div>
             <form class="form2" action="forgotcode.php" method="post">
               <p>
@@ -92,7 +92,7 @@
               </p>
               <div class="actions">
                 <label>
-                  <input type="submit" value="Sign In">
+                  <input type="submit" value="Submeter">
                   <i class="ri-arrow-right-line"></i>
                 </label>
               </div>
@@ -121,8 +121,8 @@
               </ul>
             </nav>
             <div class="heading">
-              <h2>Account Recovery</h2>
-              <p>We secure your data privacy encrypted.</p>
+              <h2>Recuperação de Palavra-passe</h2>
+              <p>Insira o código que foi enviado para o seu email no campo abaixo</p>
             </div>
             <form class="form1" action="verify.php" method="post">
               <p>
@@ -150,7 +150,7 @@
               </p>
               <div class="actions">
                 <label>
-                  <input type="submit" value="Sign In">
+                  <input type="submit" value="Submeter">
                   <i class="ri-arrow-right-line"></i>
                 </label>
               </div>
@@ -159,7 +159,7 @@
               <div class="actions">
                 <label>
                   <input type="text" id="recoveremail2" name="recoveremail2" style="display: none;">
-                  <input type="submit" value="Resend">
+                  <input type="submit" value="Reenviar">
                   <i class="ri-arrow-right-line"></i>
                 </label>
               </div>
@@ -184,8 +184,8 @@
                 </ul>
               </nav>
               <div class="heading">
-                <h2>Account Recovery</h2>
-                <p>We secure your data privacy encrypted.</p>
+                <h2>Recuperação de Palavra-passe</h2>
+                <p>Escolha uma nova senha e confirme-a no segundo campo</p>
               </div>
               <form class="form2" action="verify.php" method="post">
                 <p>
@@ -214,7 +214,7 @@
                 </p>
                 <div class="actions">
                   <label>
-                    <input type="submit" value="Sign In">
+                    <input type="submit" value="Submeter">
                     <i class="ri-arrow-right-line"></i>
                   </label>
                 </div>

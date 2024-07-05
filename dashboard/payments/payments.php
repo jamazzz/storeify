@@ -20,7 +20,7 @@
           <div class="col-12 col-md-6">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="searchForm">
               <div class="search-container">
-                <input type="text" class="form-control" placeholder="Search..." name="search" style="max-width: 500px;">
+                <input type="text" class="form-control" placeholder="Procurar..." name="search" style="max-width: 500px;">
                 <i class="fa-solid fa-magnifying-glass" id="searchIcon" style="cursor: pointer;"></i>
               </div>
             </form>

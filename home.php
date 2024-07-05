@@ -47,7 +47,7 @@
     <div>
       <div class="bg-background-accent p-lg border-b border-background rounded flex items-center gap-grid justify-center text-center">
         <div>
-          <h2 class="type-subtitle text-sm text-primary">Welcome to</h2>
+          <h2 class="type-subtitle text-sm text-primary">Bem-vindo ao</h2>
           <h1 class="type-header"><?php echo $row['name'] ?></h1>
         </div>
       </div>
@@ -55,7 +55,7 @@
       <?php
       if ($row['home_info_html'] == "" || !isset($row['home_info_html'])) {
         echo ('<div class="markdown bg-background-accent rounded p-lg">');
-        echo ('<h1 class="type-header block mb-lg text-center">Welcome to ' . $row['name'] . '</h1>');
+        echo ('<h1 class="type-header block mb-lg text-center">Bem-vindo ao ' . $row['name'] . '</h1>');
         echo ('<p class="type-paragraph text-foreground-accent text-center">This is the home page of your website. You can edit this page by going to the dashboard and clicking on the "Edit Home Page" button.</p>');
         echo ('</div>');
       } else {

@@ -39,11 +39,11 @@
               <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-striped">
                 <tbody>
                   <tr>
-                    <td>Transaction ID</td>
+                    <td>ID da Transação</td>
                     <td><?php echo $row['transaction_id']; ?></td>
                   </tr>
                   <tr>
-                    <td>Payment Method</td>
+                    <td>Método de Pagamento</td>
                     <td>
                       <div class="float-left">
                         PayPal
@@ -51,7 +51,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Amount</td>
+                    <td>Quantidade</td>
                     <td class="d-flex align-items-center">
                       <div>
                         <?php echo $row['paid_amount']; ?>€ </div>
@@ -60,7 +60,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Customer</td>
+                    <td>Cliente</td>
                     <td>
                       <div class="d-flex align-items-center">
                         <div>
@@ -84,7 +84,7 @@
                     <td><?php echo $row['created_date']; ?></td>
                   </tr>
                   <tr>
-                    <td>Status</td>
+                    <td>Estado</td>
                     <td>
                       <div class="float-left">
                         <?php
@@ -104,12 +104,12 @@
                           }
                           if ($hasInvoice) {
                             echo '<tr>
-                                        <td>Invoice</td>
+                                        <td>Fatura</td>
                                         <td><a style="max-height:28px; width:80px;" class="btn btn-primary" href="/storeify/store/invoices/' . $file . '">Abrir</a></td>
                                       </tr>';
                           } else {
                             echo '<tr>
-                                        <td>Invoice</td>
+                                        <td>Fatura</td>
                                         <td>Not available</td>
                                       </tr>';
                           }

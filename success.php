@@ -52,6 +52,8 @@
 
           <!-- Start Section Area-->
           <?php
+          use PHPMailer\PHPMailer\PHPMailer;
+          use PHPMailer\PHPMailer\Exception;
           include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
           $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
           $_SESSION['json'] = $_POST['json'];
@@ -106,6 +108,45 @@
             $_SESSION['inserted'] = $_SESSION['id'];
           }
 
+          require 'C:/wamp64/www/storeify/PHPMailer/src/Exception.php';
+          require 'C:/wamp64/www/storeify/PHPMailer/src/PHPMailer.php';
+          require 'C:/wamp64/www/storeify/PHPMailer/src/SMTP.php';
+          $mail = new PHPMailer;
+
+          $selectEmail = "SELECT email FROM clients WHERE id = '" . $_SESSION['clientid'] . "'";
+          $emailResult = mysqli_query($connect, $selectEmail);
+          $row = mysqli_fetch_assoc($emailResult);
+          $email = $row['email'];
+
+          $selectStore = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
+          $storeResult = mysqli_query($connect, $selectStore);
+          $row2 = mysqli_fetch_assoc($storeResult);
+
+
+          try {
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'duarte.acn@gmail.com';
+            $mail->Password   = 'dhojvgdcnxwrbqco';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port       = 465;
+
+            $mail->setFrom('duarte.acn@gmail.com');
+            $mail->addAddress($email);
+            $mail->isHTML(true);
+            $mail->Subject = $_SESSION['id'] . " - Compra ";
+            $mail->Body = "<html>
+    <body>
+      <h2>Obrigado por comprar nosso produto!</h2>
+      <p>Você pode resgatá-lo <a href='http://localhost/storeify/assets.php'>aqui</a>.</p>
+    </body>
+    </html>";
+
+            $mail->send();
+          } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+          }
           ?>
           <!-- End Section Area-->
           <div>

@@ -45,8 +45,8 @@
                 <input type="text" id="categoryName" name="categoryName" class="form-control" placeholder="Nome da categoria">
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Submit</button>
-                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success">Submeter</button>
+                <button type="cancel" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
               </div>
             </form>
           </div>

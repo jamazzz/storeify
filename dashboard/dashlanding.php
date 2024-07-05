@@ -144,7 +144,7 @@
                 <script>
                   const ctx = document.getElementById('myLineChart').getContext('2d');
                   const data = {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                     datasets: [{
                       label: 'EUR',
                       backgroundColor: 'rgba(255, 99, 132, 0.2)',

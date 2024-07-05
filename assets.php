@@ -43,7 +43,7 @@
     <div class="lg:col-span-full">
       <header class="grid gap-md ">
         <div class="flex flex-wrap justify-evenly items-center gap-md">
-          <a href="/" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
+          <a href="/storeify" class="max-h-64 block mx-auto order-3 col-span-2 w-full lg:w-auto lg:order-2 lg:mx-0">
             <img src="/storeify/assets/images/logo.png" alt="" class="max-h-64 max-w-full lg:max-w-[350px] block mx-auto">
           </a>
         </div>
@@ -56,7 +56,7 @@
             <div>
               <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                 <div>
-                  <h1 class="type-header">Your Assets</h1>
+                  <h1 class="type-header">Produtos</h1>
                 </div>
                 <?php
                 if (!isset($_SESSION['clientid'])) {
@@ -69,18 +69,18 @@
               <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
-                    <small class="text-success hidden group-hover:block justify-end">Sign in</small>
-                    <h3 class="leading-none type-header block justify-end">Guest</h3>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Sessão terminada</small>
+                    <small class="text-success hidden group-hover:block justify-end">Iniciar sessão</small>
+                    <h3 class="leading-none type-header block justify-end">Utilizador</h3>
                   </div>
                 </a>
                 ');
                 } else {
                   echo ('
                 <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg  ml-auto">
-                  <div class="text-left">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
-                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <div class="text-left">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Sessão iniciada</small>
+                    <small class="text-danger hidden group-hover:block">Terminar sessão</small>
                     <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
                   </div>
                 </a>
@@ -117,7 +117,7 @@
                                     <div class="text-center" style="margin: 10px;">
                                       <div class="text-center">
                                         <div class="text-center" style="margin: 10px;">
-                                          <h2 class="type-header">No assets</h2>
+                                          <h2 class="type-header">Sem produtos</h2>
                                         </div>
                                       </div>
                                     </div>

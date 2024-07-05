@@ -45,7 +45,7 @@
       <div>
         <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
           <div>
-            <h1 class="type-header">Your cart</h1>
+            <h1 class="type-header">O teu carrinho</h1>
           </div>
           <?php
           $emptycart = 0;
@@ -109,13 +109,13 @@
               }
               if (!isset($_SESSION['clientid']) || $_SESSION['clientid'] == -1) {
                 echo ('<div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
-                            <h3 class="type-header" href="/storeify/clientLogin.php" >Please login to continue</h3>
+                            <h3 class="type-header" href="/storeify/clientLogin.php" >Por favor faça login para continuar</h3>
                         </div>');
               } else {
                 if ($emptycart == 1) {
                   echo ('
                             <div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
-                              <h3 class="type-header">Your cart is empty</h3>
+                              <h3 class="type-header">O teu carrinho está vazio</h3>
                             </div>
                         ');
                 }
@@ -157,7 +157,7 @@
         <div>
           <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
             <div>
-              <h1 class="type-header">Summary</h1>
+              <h1 class="type-header">Resumo</h1>
             </div>
           </div>
           <div class=" bg-background-accent rounded-b p-lg">
@@ -167,7 +167,7 @@
                 <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['subtotal'] . '</p>'); ?>
               </div>
               <div class="flex flex-wrap justify-between">
-                <h4 class="type-paragraph text-foreground">Sales Tax</h4>
+                <h4 class="type-paragraph text-foreground">Taxas de Venda</h4>
                 <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $_SESSION['taxes'] . '</p>'); ?>
               </div>
               <div class="flex flex-wrap justify-between mt-md mb-lg">
@@ -249,11 +249,6 @@
                 }
               }
             </script>
-            <br>
-            <form method="post" action="/checkout/coupons/add" class="flex gap-md">
-              <input type="text" name="coupon" placeholder="Coupon Code" class="">
-              <button type="submit" class="btn-icon-primary spinner-toggle"><i class="fa-solid fa-circle-plus"></i></button>
-            </form>
           </div>
 
         </div>
@@ -262,12 +257,12 @@
           echo ('<div>
                   <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                     <div>
-                      <h1 class="type-header">Summary</h1>
+                      <h1 class="type-header">Resumo</h1>
                     </div>
                   </div>
                   <div class=" bg-background-accent rounded-b p-lg">
                             <div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
-                              <h3 class="type-header" href="/storeify/clientLogin.php" >Please login to continue</h3>
+                                <h3 class="type-header" href="/storeify/clientLogin.php" >Por favor faça login para continuar</h3>
                             </div>
                 </div>
                   ');
@@ -276,12 +271,12 @@
                   <div>
                   <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                     <div>
-                      <h1 class="type-header">Summary</h1>
+                      <h1 class="type-header">Resumo</h1>
                     </div>
                   </div>
                   <div class=" bg-background-accent rounded-b p-lg">
                             <div class="flex flex-wrap justify-center text-center gap-md items-center p-sm pr-lg">
-                              <h3 class="type-header">Your cart is empty</h3>
+                              <h3 class="type-header">O teu carrinho está vazio</h3>
                             </div>
 
                 </div>

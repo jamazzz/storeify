@@ -123,18 +123,18 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
               <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
-                    <small class="text-success hidden group-hover:block justify-end">Sign in</small>
-                    <h3 class="leading-none type-header block justify-end">Guest</h3>
-                  </div>
-                </a>
-                ');
-              } else {
-                echo ('
-                <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg  ml-auto">
-                  <div class="text-left">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
-                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Sessão terminada</small>
+                    <small class="text-success hidden group-hover:block justify-end">Iniciar sessão</small>
+                    <h3 class="leading-none type-header block justify-end">Utilizador</h3>
+                    </div>
+                  </a>
+                  ');
+                  } else {
+                  echo ('
+                  <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg  ml-auto">
+                    <div class="text-left">
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Sessão iniciada</small>
+                    <small class="text-danger hidden group-hover:block">Terminar sessão</small>
                     <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
                   </div>
                 </a>
@@ -185,9 +185,9 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
               <li class="flex justify-end items-center gap-md h-12 group pr-lg">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Logged out</small>
-                    <small class="text-success hidden group-hover:block justify-end">Sign in</small>
-                    <h3 class="leading-none type-header block justify-end">Guest</h3>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Sessão terminada</small>
+                    <small class="text-success hidden group-hover:block justify-end">Iniciar sessão</small>
+                    <h3 class="leading-none type-header block justify-end">Utilizador</h3>
                   </div>
                 </a>
                 ');
@@ -195,8 +195,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                         echo ('
                 <a href="/storeify/logout" class="flex items-center gap-md h-12 group pr-lg">
                   <div class="text-left">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Logged in</small>
-                    <small class="text-danger hidden group-hover:block">Sign out</small>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden">Sessão iniciada</small>
+                    <small class="text-danger hidden group-hover:block">Terminar sessão</small>
                     <h3 class="leading-none type-header block">' . $_SESSION['clientUsername'] . '</h3>
                   </div>
                 </a>
@@ -250,7 +250,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                               <br>
                               <h2 class="type-header" style="margin-top:10px; margin-left: 30px;">' . $row['name'] . '</h2>
                               <div class="flex gap-md mb-sm">
-                              <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm mb-sm" style="margin-top:9; margin-left: 26px;">' . round($row['price'] * 1.23, 2) . 'EUR</h3>
+                              <h3 class="font-subtitle text-foreground-accent text-opacity-50 text-sm mb-sm" style="margin-top:9; margin-left: 26px;">' . round($row['price'] * 1.23, 2) . ' EUR </h3>
                                 <div style="margin-left: 200px;"></div>
                                 <form action="/storeify/addCart.php" method="post" class="w-full">
                                   <button type="submit" class="text-center">
@@ -274,7 +274,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                       <div class="p-grid border-t border-t-background">
                         <div class="flex justify-between items-center mb-md">
                           <h2 class="type-header text-opacity-50 text-foreground-accent">
-                            Order total
+                            Total
                           </h2>
                           <h2 class="type-header"><?php echo ($_SESSION['total'] ?? 0);
                                                   echo (' EUR') ?></h2>

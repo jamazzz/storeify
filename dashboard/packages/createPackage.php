@@ -21,7 +21,7 @@
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
-            <h1 class="my-0">Criar categoria</h1>
+            <h1 class="my-0">Criar Produto</h1>
             <br>
           </div>
         </div>
@@ -42,8 +42,8 @@
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"></div>
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -1100px;">Name</h4>
-                  <p style="margin-left: -900px;">Customize the Name of your webstore.</p>
+                  <h4 style="margin-left: -970px;">Nome do produto</h4>
+                    <p style="margin-left: -900px;">Escolha um nome para o produto.</p>
                 </div>
               </div>
             </div>
@@ -62,8 +62,8 @@
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"></div>
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -1100px;">Price</h4>
-                  <p style="margin-left: -900px;">Customize the Name of your webstore.</p>
+                  <h4 style="margin-left: -1070px;">Preço</h4>
+                  <p style="margin-left: -900px;">Escolha um preço para o produto.</p>
                 </div>
               </div>
             </div>
@@ -82,8 +82,8 @@
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"></div>
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -1100px;">Category</h4>
-                  <p style="margin-left: -900px;">Customize the Name of your webstore.</p>
+                  <h4 style="margin-left: -1050px;">Categoria</h4>
+                  <p style="margin-left: -880px;">Escolha uma categoria para o produto.</p>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"></div>
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -1050px;">Description</h4>
+                  <h4 style="margin-left: -1060px;">Descrição</h4>
                   <br>
                 </div>
               </div>
@@ -153,8 +153,8 @@
             <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -720px;">Thumbnail</h4>
-                  <p style="margin-left: -630px;">Upload your thumbnail here</p>
+                  <h4 style="margin-left: -610px;">Thumbnail do Produto</h4>
+                    <p style="margin-left: -530px;">Carregue a sua imagem de destaque aqui.</p>
                 </div>
               </div>
             </div>
@@ -190,8 +190,8 @@
             <div class="description col-12 col-xl-8 col-lg-8 text-center text-lg-left">
               <div class="row align-self-center h-100">
                 <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
-                  <h4 style="margin-left: -720px;">File</h4>
-                  <p style="margin-left: -630px;">Upload your file here</p>
+                    <h4 style="margin-left: -740px;">Ficheiro</h4>
+                    <p style="margin-left: -630px;">Carregue o seu ficheiro aqui</p>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@
         <br>
 
         <div class="text-right">
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-primary">Criar Produto</button>
         </div>
       </form>
   </main>

@@ -39,16 +39,13 @@
   $select = "SELECT * FROM websites WHERE subdomain = '" . $_SESSION['subdomain'] . "'";
   $result = mysqli_query($connect, $select);
   $row = mysqli_fetch_assoc($result);
-
-  echo ('
-<style>
-:root {
-  --dark: ' . $row['dark_color'] . ';
-  --light: ' . $row['light_color'] . ';
-  }
-</style>
-');
   ?>
+  <style>
+    :root {
+      --dark: <?php echo empty($row['dark_color']) ? 'rgba(28, 28, 37, 1)' : $row['dark_color']; ?>;
+      --light: <?php echo empty($row['light_color']) ? 'rgba(36, 36, 45, 1)' : $row['light_color']; ?>;
+    }
+  </style>
   <div class="container mx-auto p-sm" style="width: 450px; height: 900px;">
     <div class="lg:col-span-full">
       <header class="grid gap-md ">

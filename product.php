@@ -64,8 +64,6 @@
           </div>
         </div>
         <div class="markdown bg-background-accent rounded-b p-lg" style="margin-left:50px;">
-          <p><span style="color:rgb(255,255,255);"><span style="font-size:14px;"><span style="font-family:Verdana, Geneva, sans-poppins;"><strong>Description:</strong></span></span></span></p>
-          <br>
           <?php echo $row['description']; ?>
         </div>
       </div>

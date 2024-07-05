@@ -18,7 +18,6 @@
         <br>
         <?php
         $subdomain = $_SESSION['subdomain'];
-        echo $subdomain;
         $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
         $files = scandir($directory);
         $files = array_diff($files, array('.', '..'));
@@ -37,7 +36,7 @@
         echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" id="searchForm">
                 <div class="search-container" style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center;">
-                        <input type="text" class="form-control" placeholder="Search..." name="search" style="width: 500px;">
+                        <input type="text" class="form-control" placeholder="Procurar..." name="search" style="width: 500px;">
                         <i class="fa-solid fa-magnifying-glass" id="searchIcon" style="cursor: pointer; margin-left: 8px;"></i>
                     </div>
                     <a href="/storeify/exportAll.php" class="btn btn-primary">Transferir todos</a>
