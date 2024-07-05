@@ -202,7 +202,11 @@
                           },
                         }],
                         "application_context": {
-                          "shipping_preference": "NO_SHIPPING"
+                          "payment_method_preference": "IMMEDIATE_PAYMENT_REQUIRED",
+                          "user_action": "PAY_NOW",
+                          "locale": "pt-PT",
+                          "shipping_preference": "NO_SHIPPING",
+                          "brand_name": "Storeify",
                         },
                       });
                     },
