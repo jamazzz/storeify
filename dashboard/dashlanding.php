@@ -36,7 +36,7 @@
     }
     $a[] = '<tr  class="text-muted">
         <td  width="50%" class="align-middle">' . $row2['payer_email'] . '</td>
-        <td  width="30%" class="align-middle">' . $row2['paid_amount'] . '</td>
+        <td  width="30%" class="align-middle">' . $row2['paid_amount'] . ' €</td>
       </tr>';
 
     $monthlySales = array();

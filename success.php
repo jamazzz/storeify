@@ -154,7 +154,7 @@
               <div>
                 <div class="bg-background-accent p-lg border-b border-background rounded-t flex items-center gap-grid justify-center text-center">
                   <div>
-                    <h1 class="type-header">Sucesso !</h1>
+                    <h1 class="type-header">Sucesso!</h1>
                   </div>
                 </div>
                 <div class=" bg-background-accent rounded-b p-lg">

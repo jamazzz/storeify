@@ -43,7 +43,7 @@
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"><img src="<?php echo isset($row['logo']) ? $row['logo'] : '/storeify/assets/images/logo.png'; ?>" alt="Favicon" class="w-75" style="max-width: 100px; border-radius: 50px;"></div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center my-3 my-lg-0">
                 <h4>Logo</h4>
-                <p class="m-0">Forneça um logotipo que será exibido em sua loja virtual.</p>
+                <p class="m-0">Forneça um logotipo que será exibido em sua loja.</p>
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
                 <h4>Nome</h4>
-                <p class="m-0">Personalize o nome da sua loja virtual.</p>
+                <p class="m-0">Personalize o nome da sua loja.</p>
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
                 <h4>Domínio</h4>
-                <p class="m-0">Personalize o domínio da sua loja virtual.</p>
+                <p class="m-0">Personalize o domínio da sua loja.</p>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
                 <h4>Modelo</h4>
-                <p class="m-0">Personalize o layout da sua loja virtual usando nossa seleção de modelos ou crie o seu próprio.</p>
+                <p class="m-0">Personalize o layout da sua loja usando nossa seleção de modelos ou crie o seu próprio.</p>
               </div>
             </div>
           </div>

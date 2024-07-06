@@ -20,7 +20,7 @@
         <header class="page-title">
             <div class="row no-gutters">
                 <div class="col-12 col-md-6 my-3">
-                    <h1>Os Seus Projetos</h1>
+                    <h1 style="margin-left:50px;">Os Seus Projetos</h1>
                 </div>
             </div>
         </header>

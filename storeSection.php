@@ -123,7 +123,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
               <li class="flex justify-end items-center gap-md h-12 group pr-lg ml-auto">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Sessão terminada</small>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Iniciar sessão</small>
                     <small class="text-success hidden group-hover:block justify-end">Iniciar sessão</small>
                     <h3 class="leading-none type-header block justify-end">Utilizador</h3>
                     </div>
@@ -185,7 +185,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
               <li class="flex justify-end items-center gap-md h-12 group pr-lg">
                 <a href="/storeify/loginClient" class="flex justify-end items-center gap-md h-12 group pr-lg">
                   <div class="text-left justify-end">
-                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Sessão terminada</small>
+                    <small class="text-foreground-accent opacity-50 block group-hover:hidden justify-end">Iniciar sessão</small>
                     <small class="text-success hidden group-hover:block justify-end">Iniciar sessão</small>
                     <h3 class="leading-none type-header block justify-end">Utilizador</h3>
                   </div>

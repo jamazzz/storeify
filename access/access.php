@@ -106,6 +106,17 @@
           <p class="socials">
             <button id="buttonDiv" type="button" style="margin-top: 10px;"></button>
           </p>
+          <?php
+          if (isset($_SESSION["errormsg"])) {
+            echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
+            unset($_SESSION["errormsg"]);
+          ?>
+            <script>
+              countdown();
+            </script>
+          <?php
+          }
+          ?>
         </div>
       </div>
       <!--  -->
@@ -168,18 +179,18 @@
         <p class="socials">
           <button id="buttonDiv2" name="buttonDiv2" type="button" style="margin-top: 20px;"></button>
         </p>
+        <?php
+        if (isset($_SESSION["errormsg2"])) {
+          echo "<br><span id='errormsg2' style='color: red'>" . $_SESSION["errormsg2"] . "</span>";
+          unset($_SESSION["errormsg2"]);
+        ?>
+          <script>
+            countdown();
+          </script>
+        <?php
+        }
+        ?>
       </div>
-      <?php
-      if (isset($_SESSION["errormsg"])) {
-        echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
-        unset($_SESSION["errormsg"]);
-      ?>
-        <script>
-          countdown();
-        </script>
-      <?php
-      }
-      ?>
     </div>
   </div>
   </div>

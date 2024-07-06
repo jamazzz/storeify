@@ -71,23 +71,23 @@ function genUser($connection, $fname, $lname, $email)
 function isValidName($name, $name2, $connection)
 {
     if (!isset($name) && !empty($name)) {
-        $_SESSION["errormsg"] = "Introduza um Nome próprio.";
+        $_SESSION["errormsg2"] = "Introduza um Nome próprio.";
         redirect($connection, $name, $name2);
     }
 
     if (!isset($name2) && !empty($name2)) {
-        $_SESSION["errormsg"] = "Introduza um Apelido.";
+        $_SESSION["errormsg2"] = "Introduza um Apelido.";
         redirect($connection, $name, $name2);
     }
 
     $namePattern = '/^[A-ZÀ-ÖØ-öø-ÿ][a-zA-ZÀ-ÖØ-öø-ÿ]*$/u';
     if (!(preg_match($namePattern, $name) && !preg_match('/\d/', $name) && !preg_match('/\s/', $name))) {
-        $_SESSION["errormsg"] = $name . " é um nome inválido.";
+        $_SESSION["errormsg2"] = $name . " é um nome inválido.";
         redirect($connection, $name, $name2);
     }
 
     if (!(preg_match($namePattern, $name2) && !preg_match('/\d/', $name2) && !preg_match('/\s/', $name2))) {
-        $_SESSION["errormsg"] = $name2 . " é um nome inválido.";
+        $_SESSION["errormsg2"] = $name2 . " é um nome inválido.";
         redirect($connection, $name, $name2);
     }
 
@@ -97,13 +97,13 @@ function isValidName($name, $name2, $connection)
 function isEmailOccupied($email, $connection, $fname, $lname)
 {
     if (!isset($email) && !empty($email)) {
-        $_SESSION["errormsg"] = "Introduza um email.";
+        $_SESSION["errormsg2"] = "Introduza um email.";
         redirect($connection, $fname, $lname);
     }
 
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
-        $_SESSION["errormsg"] = $email . " é um email inválido.";
+        $_SESSION["errormsg2"] = $email . " é um email inválido.";
         redirect($connection, $fname, $lname);
     }
 
@@ -112,7 +112,7 @@ function isEmailOccupied($email, $connection, $fname, $lname)
     $row = mysqli_fetch_assoc($result);
     $count = $row['count'];
     if ($count != 0) {
-        $_SESSION["errormsg"] = $email . " já está registado.";
+        $_SESSION["errormsg2"] = $email . " já está registado.";
         redirect($connection, $fname, $lname);
     }
     return true;
@@ -121,32 +121,32 @@ function isEmailOccupied($email, $connection, $fname, $lname)
 function validatePassword($password2, $password3, $connection, $fname, $lname)
 {
     if (!isset($password2) && !empty($password2) && !isset($password3) && !empty($password3)) {
-        $_SESSION["errormsg"] = "Introduza uma palavra-passe.";
+        $_SESSION["errormsg2"] = "Introduza uma palavra-passe.";
         redirect($connection, $fname, $lname);
     }
 
     if ($password2 !== $password3) {
-        $_SESSION["errormsg"] = "A senha não corresponde.";
+        $_SESSION["errormsg2"] = "A senha não corresponde.";
         redirect($connection, $fname, $lname);
     }
 
     if (strlen($password2) < 6) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 6 caracteres.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 6 caracteres.";
         redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
         redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
         redirect($connection, $fname, $lname);
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 dígito.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 dígito.";
         redirect($connection, $fname, $lname);
     }
 

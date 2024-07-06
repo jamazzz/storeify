@@ -37,13 +37,13 @@ function genUser($connection, $email)
 function isEmailOccupied($email, $connection)
 {
     if (!isset($email) && !empty($email)) {
-        $_SESSION["errormsg"] = "Introduza um email.";
+        $_SESSION["errormsg2"] = "Introduza um email.";
         redirect($connection);
     }
 
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
-        $_SESSION["errormsg"] = $email . " é um email inválido.";
+        $_SESSION["errormsg2"] = $email . " é um email inválido.";
         redirect($connection);
     }
 
@@ -52,7 +52,7 @@ function isEmailOccupied($email, $connection)
     $row = mysqli_fetch_assoc($result);
     $count = $row['count'];
     if ($count != 0) {
-        $_SESSION["errormsg"] = $email . " já está registado.";
+        $_SESSION["errormsg2"] = $email . " já está registado.";
         redirect($connection);
     }
     return true;
@@ -61,32 +61,32 @@ function isEmailOccupied($email, $connection)
 function validatePassword($password2, $password3, $connection)
 {
     if (!isset($password2) && !empty($password2) && !isset($password3) && !empty($password3)) {
-        $_SESSION["errormsg"] = "Introduza uma palavra-passe.";
+        $_SESSION["errormsg2"] = "Introduza uma palavra-passe.";
         redirect($connection);
     }
 
     if ($password2 !== $password3) {
-        $_SESSION["errormsg"] = "A senha não corresponde.";
+        $_SESSION["errormsg2"] = "A senha não corresponde.";
         redirect($connection);
     }
 
     if (strlen($password2) < 6) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 6 caracteres.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 6 caracteres.";
         redirect($connection);
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
         redirect($connection);
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
         redirect($connection);
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
-        $_SESSION["errormsg"] = "A senha precisa de pelo menos 1 dígito.";
+        $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 dígito.";
         redirect($connection);
     }
 

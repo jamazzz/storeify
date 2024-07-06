@@ -35,7 +35,7 @@ if ($email_verified == "1") {
       $row = mysqli_fetch_assoc($result);
 
       if ($row != 0) {
-        $_SESSION["errormsg"] = "O utilizador já existe";
+        $_SESSION["errormsg2"] = "O utilizador já existe";
         header("Location: access.php");
         exit();
       }
@@ -43,6 +43,6 @@ if ($email_verified == "1") {
     header("Location: ../access/gregister.php");
   }
 } else {
-  $_SESSION["errormsg"] = "Email não verificado. Por favor, verifique seu email no Google.<br>Se não conseguir verificar, por favor, use outro email ou faça login de outra forma.";
+  $_SESSION["errormsg2"] = "Email não verificado. Por favor, verifique seu email no Google.<br>Se não conseguir verificar, por favor, use outro email ou faça login de outra forma.";
   header("Location: access.php");
 }
