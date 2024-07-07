@@ -1,7 +1,6 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
 
-// Username
 function genUser($connection, $email)
 {
     $uniqueUsernameFound = false;

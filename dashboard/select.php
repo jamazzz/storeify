@@ -127,8 +127,9 @@
                 hiddenInput.type = 'hidden';
                 hiddenInput.name = 'id';
                 hiddenInput.value = websiteId;
-                var form = document.getElementById('send');
+                var form = document.getElementById('transferForm'); // Add this line to reference the form element
                 form.appendChild(hiddenInput);
+                form.action = "sendinfo.php";
                 form.submit();
             }
         </script>

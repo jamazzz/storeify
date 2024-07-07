@@ -31,7 +31,6 @@ if ($_SESSION["glogin"]) {
     }
 }
 
-// Username
 function genUser($connection, $fname, $lname, $email)
 {
     $uniqueUsernameFound = false;

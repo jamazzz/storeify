@@ -25,7 +25,6 @@
         $search = isset($_POST['search']) ? htmlspecialchars($_POST['search']) : '';
         $hasExports = false;
 
-        // Check if there are any files matching the search term
         if (!empty($search)) {
           foreach ($files as $file) {
             $fileName = pathinfo($file, PATHINFO_FILENAME);
@@ -38,7 +37,6 @@
           $hasExports = count($files) > 0;
         }
 
-        // Display search form and export all button
         echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" id="searchForm">
                 <div class="search-container" style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center;">
@@ -54,7 +52,6 @@
                   });
                 </script>';
         
-        // Show a message if no exports are found
         if (!$hasExports) {
           echo '<br><h3>Não há exportações</h3>';
         } else {
@@ -66,7 +63,6 @@
       </header>
 
       <?php
-      // Display the files that match the search term
       if (count($files) > 0) {
         foreach ($files as $file) {
           $fileName = pathinfo($file, PATHINFO_FILENAME);
@@ -75,7 +71,6 @@
           $fileCreationDate = date('Y-m-d H:i:s', filectime($directory . $file));
           $fileDownloadLink = '/storeify/store/invoices/' . $file;
 
-          // Check if the file matches the search term
           if (empty($search) || strpos($fileName, $search) !== false) {
             echo '<div class="card">
                     <div class="card-body">

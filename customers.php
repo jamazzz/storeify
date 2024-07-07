@@ -12,7 +12,6 @@
 
   include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
 
-  // Check database connection
   if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
   }
@@ -32,7 +31,6 @@
       </header>
       <br>
       <?php
-      // Prepare statements
       $selectcid = $connect->prepare("SELECT id FROM categories WHERE website_id = ?");
       $selectpid = $connect->prepare("SELECT id FROM products WHERE category_id IN (?)");
       $select = $connect->prepare("SELECT DISTINCT user_id FROM owned_products WHERE product_id IN (?)");

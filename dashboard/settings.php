@@ -19,7 +19,6 @@ function redirect($connection)
     exit();
 }
 
-// verify 
 if ($username != $currentusername) {
   $userQuery = "SELECT COUNT(*) AS count FROM users WHERE username = '$username'";
   $result = mysqli_query($connect, $userQuery);
