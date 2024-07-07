@@ -21,7 +21,7 @@ if ($_SESSION["glogin"]) {
         header("Location: ../dashboard/select.php");
         exit();
     } else {
-        $_SESSION["errormsg"] = "User does not exist";
+        $_SESSION["errormsg"] = "Dados de acesso incorretos";
         header("Location: ../access.php");
         redirect($connect);
     }

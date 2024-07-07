@@ -47,7 +47,8 @@ if (!isset($_SESSION['verify'])) {
   if ($codigo == $_SESSION['code']) {
     if (isset($_SESSION["emailfromadmin"])) {
       $_SESSION['currentwebsite'] = -1;
-      header("Location: ../dashboard/dashlanding.php");
+      unset($_SESSION['phase']);
+      header("Location: /storeify/admin/dashboard.php");
       exit();
     }
     $_SESSION['verify'] = true;

@@ -4,13 +4,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/storeify/essencial.php';
 $name = trim($_POST['name']);
 $currentWebsite = $_SESSION['currentwebsite'];
 
-if (empty($name) || preg_match('/\s/', $name)) {
-  $_SESSION['nameUpdate'] = false;
-  $_SESSION['nameError'] = "Name cannot be empty or contain spaces.";
-  header('Location: /storeify/dashboard/webstore/appearance.php');
-  exit();
-}
-
 $checkQuery = "SELECT id FROM websites WHERE name = '$name' LIMIT 1";
 $checkResult = mysqli_query($connect, $checkQuery);
 

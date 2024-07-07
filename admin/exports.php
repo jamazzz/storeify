@@ -10,7 +10,7 @@
 
 <body>
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp1.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/admin/dashp1.php';
   ?>
   <main role="main" id="main">
     <div class="container-fluid">
@@ -18,27 +18,27 @@
       <header class="page-title">
         <br>
         <?php
-        $subdomain = $_SESSION['subdomain'];
         $directory = $_SERVER['DOCUMENT_ROOT'] . '/storeify/store/invoices/';
         $files = scandir($directory);
         $files = array_diff($files, array('.', '..'));
 
-        $search = isset($_POST['search']) && $_POST['search'] != "" ? htmlspecialchars($_POST['search']) : $subdomain;
+        $search = isset($_POST['search']) ? htmlspecialchars($_POST['search']) : '';
         $hasExports = false;
-        foreach ($files as $file) {
-          $fileName = pathinfo($file, PATHINFO_FILENAME);
-          if ($search == $subdomain) {
-          $filePrefix = explode('_', $fileName)[0];
+
+        // Check if there are any files matching the search term
+        if (!empty($search)) {
+          foreach ($files as $file) {
+            $fileName = pathinfo($file, PATHINFO_FILENAME);
+            if (strpos($fileName, $search) !== false) {
+              $hasExports = true;
+              break;
+            }
           }
-          else {
-            $filePrefix = explode('_', $fileName)[1];
-          }
-          if ($filePrefix === $search) {
-            $hasExports = true;
-            break;
-          }
+        } else {
+          $hasExports = count($files) > 0;
         }
 
+        // Display search form and export all button
         echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" id="searchForm">
                 <div class="search-container" style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="display: flex; align-items: center;">
@@ -53,6 +53,8 @@
                     document.getElementById("searchForm").submit();
                   });
                 </script>';
+        
+        // Show a message if no exports are found
         if (!$hasExports) {
           echo '<br><h3>Não há exportações</h3>';
         } else {
@@ -64,6 +66,7 @@
       </header>
 
       <?php
+      // Display the files that match the search term
       if (count($files) > 0) {
         foreach ($files as $file) {
           $fileName = pathinfo($file, PATHINFO_FILENAME);
@@ -71,14 +74,9 @@
           $fileSize = filesize($directory . $file);
           $fileCreationDate = date('Y-m-d H:i:s', filectime($directory . $file));
           $fileDownloadLink = '/storeify/store/invoices/' . $file;
-          if ($search == $subdomain) {
-            $filePrefix = explode('_', $fileName)[0];
-          }
-          else {
-            $filePrefix = explode('_', $fileName)[1];
-          }
 
-          if ($filePrefix === $search) {
+          // Check if the file matches the search term
+          if (empty($search) || strpos($fileName, $search) !== false) {
             echo '<div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -101,7 +99,7 @@
     </div>
   </main>
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/dashboard/dashp2.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/storeify/admin/dashp2.php';
   ?>
 </body>
 

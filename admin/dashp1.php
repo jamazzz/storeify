@@ -52,7 +52,7 @@
         </li>
         <!-- Dashboard -->
         <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/dashlanding.php">
+          <a class="nav-link" href="/storeify/admin/dashboard.php">
             <span class="menu-icon">
               <i class="mdi mdi-speedometer"></i>
             </span>
@@ -60,6 +60,33 @@
           </a>
         </li>
         <!-- Payments -->
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="/storeify/admin/stores.php">
+            <span class="menu-icon">
+              <i class="mdi mdi-package"></i>
+            </span>
+            <span class="menu-title">Lojas</span>
+          </a>
+        </li>
+        <!-- Packages -->
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="/storeify/admin/members.php">
+            <span class="menu-icon">
+              <i class="mdi mdi-package"></i>
+            </span>
+            <span class="menu-title">Membros</span>
+          </a>
+        </li>
+        <!-- Webstore -->
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="/storeify/admin/products.php">
+            <span class="menu-icon">
+              <i class="mdi mdi-web"></i>
+            </span>
+            <span class="menu-title">Produtos</span>
+          </a>
+        </li>
+        <!-- Webstore -->
         <li class="nav-item menu-items">
           <a class="nav-link" data-bs-toggle="collapse" href="#payments" aria-expanded="false" aria-controls="payments">
             <span class="menu-icon">
@@ -70,29 +97,10 @@
           </a>
           <div class="collapse" id="payments">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/payments.php">Pagamentos</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/wallet.php">Carteira</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/storeify/dashboard/payments/exports.php">Registos</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/storeify/admin/payments.php">Pagamentos</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/storeify/admin/exports.php">Registos</a></li>
             </ul>
           </div>
-        </li>
-        <!-- Packages -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/packages/packages.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-package"></i>
-            </span>
-            <span class="menu-title">Pacotes</span>
-          </a>
-        </li>
-        <!-- Webstore -->
-        <li class="nav-item menu-items">
-          <a class="nav-link" href="/storeify/dashboard/webstore/appearance.php">
-            <span class="menu-icon">
-              <i class="mdi mdi-web"></i>
-            </span>
-            <span class="menu-title">Website</span>
-          </a>
         </li>
       </ul>
     </nav>
@@ -106,19 +114,7 @@
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-none d-lg-block">
-              <?php
-              if (!isset($currentwebsite)) {
-                $currentwebsite = -1;
-              }
-              if ($_SESSION['currentwebsite'] != $currentwebsite) {
-                $currentwebsite = $_SESSION['currentwebsite'];
-                $select = "SELECT * FROM websites WHERE id = '" . $_SESSION['currentwebsite'] . "'";
-                $result = mysqli_query($connect, $select);
-                $row = mysqli_fetch_assoc($result);
-                $_SESSION['subdomain'] = $row['subdomain'];
-              }
-              ?>
-              <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="http://<?php echo $row['subdomain']; ?>.localhost/storeify/home">Visitar Loja</a>
+
             </li>
 
             <li class="nav-item dropdown">
@@ -127,32 +123,10 @@
                   <!-- <img class="img-xs rounded-circle" src="storeify/assets/images/faces/face15.jpg" alt=""> -->
                   <i class="fa-solid fa-user"></i>
                   <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $pinfo['username']; ?></p>
-                  <!-- <p class="mb-0 d-none d-sm-block navbar-profile-name" style="text-align:end;"><?php echo $pinfo['username'] . "<br>" . $winfo['name']; ?> </p> -->
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                <a class="dropdown-item preview-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-shape-plus text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Definições</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item" href="/storeify/dashboard/select.php">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-folder-account text-warning"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Projetos</p>
-                  </div>
-                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item" href="/storeify/index.php">
                   <div class="preview-thumbnail">

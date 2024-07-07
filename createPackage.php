@@ -9,9 +9,6 @@ $description = htmlspecialchars($_POST['description']);
 if (empty($name)) {
   $_SESSION['productNameError'] = "O nome do produto não pode estar vazio.";
 }
-if (preg_match('/\s/', $name)) {
-  $_SESSION['productNameError'] = "O nome do produto não pode conter espaços.";
-}
 
 if (empty($description)) {
   $_SESSION['productDescriptionError'] = "A descrição do produto não pode estar vazia.";

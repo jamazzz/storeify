@@ -3,7 +3,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "teste";
+$dbname = "storeify";
 
 // Create connection
 $connect = mysqli_connect($servername, $username, $password, $dbname);
@@ -26,11 +26,16 @@ $path_parts = explode('/', trim($url_path, '/'));
 if (count($path_parts) > 1) {
 	$before_last = $path_parts[count($path_parts) - 2];
 }
+$before_last2 = '';
+// no anim in storeify/admin
+if (substr_count($_SERVER['REQUEST_URI'], '/storeify/admin') == 1) {
+	$before_last2 = 'admin';
+}
 
 
 // Loader
 if (substr_count($_SERVER['REQUEST_URI'], '/storeify/dashboard') != 1) {
-	if (!in_array(basename($_SERVER['PHP_SELF']), $blacklist) && $before_last != 'category') {
+	if (!in_array(basename($_SERVER['PHP_SELF']), $blacklist) && $before_last != 'category' && $before_last2 != 'admin') {
 		echo ('
 <style>
 #loading {

@@ -22,7 +22,7 @@
       <header class="page-title">
         <div class="row no-gutters">
           <div class="col-12 col-md-6">
-            <h1 class="my-0">Appearance</h1>
+            <h1 class="my-0">Aparência</h1>
             <br>
           </div>
         </div>
@@ -43,7 +43,7 @@
               <div class="col-12 col-xl-2 col-lg-3 align-self-center text-center"><img src="<?php echo isset($row['logo']) ? $row['logo'] : '/storeify/assets/images/logo.png'; ?>" alt="Favicon" class="w-75" style="max-width: 100px; border-radius: 50px;"></div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center my-3 my-lg-0">
                 <h4>Logo</h4>
-                <p class="m-0">Forneça um logotipo que será exibido em sua loja.</p>
+                <p class="m-0">Forneça um logotipo que será exibido na sua loja.</p>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@
               </div>
               <div class=" col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
                 <h4>Modelo</h4>
-                <p class="m-0">Personalize o layout da sua loja usando nossa seleção de modelos ou crie o seu próprio.</p>
+                <p class="m-0">Personalize o layout da sua loja.</p>
               </div>
             </div>
           </div>
@@ -303,7 +303,7 @@
               </div>
               <div class="col-12 col-xl-10 col-lg-9 align-self-center row-mt-mobile my-3 my-lg-0">
                 <h4>Tema</h4>
-                <p class="m-0">Personalize o esquema de cores do seu modelo através de temas pré-definidos ou crie o seu próprio.</p>
+                <p class="m-0">Personalize o esquema de cores da sua loja.</p>
               </div>
             </div>
           </div>

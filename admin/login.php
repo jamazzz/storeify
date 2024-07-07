@@ -173,20 +173,22 @@
     <form action="adminlogin.php" method="post">
     <h3>Login</h3>
     <br><br>
-    <input type="text" autocomplete="off" placeholder="Username" id="eoru" name="eoru" class="newinput">
+    <input type="text" autocomplete="off" placeholder="Email" id="eoru" name="eoru" class="newinput">
     <br>
-    <input type="password" autocomplete="off" placeholder="Password" id="pass" name="pass" class="newinput">
+    <input type="password" autocomplete="off" placeholder="Palavra-passe" id="pass" name="pass" class="newinput">
     <br>    ');
     if (isset($_SESSION['errormsg'])) {
       echo ('<h5 style="color: red; text-align: left;">' . $_SESSION['errormsg'] . '</h5>');
+      echo ('<script>setTimeout(function() { document.querySelector("h5").style.display = "none"; }, 3000);</script>');
+      unset($_SESSION['errormsg']);
     }
-    echo ('<button type="submit">Log In</button>
+    echo ('<button type="submit">Iniciar Sessão</button>
   </form>');
   } elseif ($_SESSION['phase'] == 2) {
     echo ('
     <form class="form1" action="../access/verify.php" method="post">
     <p>
-    <h3>Enter the OTP sent to your email</h3>
+    <h3>Insira o OTP enviado para o seu e-mail</h3>
     <br><br>
     <br>
     <div class="square squareinput" id="square1">
@@ -213,11 +215,11 @@
     </p>
     <div class="actions">
       <label>
-        <input class="newinput" type="submit" value="Sign In">
+        <input class="newinput" type="submit" value="Entrar">
         <i class="ri-arrow-right-line"></i>
-      </label>
-      <br>
-      <h5 style="color: white; text-align: center;">Didn\'t receive the code? <a href="/storeify/access/forgotcode.php">Resend</a></h5>
+            </label>
+            <br>
+            <h5 style="color: white; text-align: center;">Não recebeu o código? <a href="/storeify/access/forgotcode.php">Reenviar</a></h5>
     </div> 
   </form>
     ');

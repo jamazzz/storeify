@@ -33,8 +33,8 @@
             <div class="row vh-md-100">
                 <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto">
                     <div class="text-left">
-                        <h1 class="heading-black text-capitalize">Crie rapidamente sua loja com Storeify</h1>
-                        <p class="lead py-3">Storeify é uma plataforma para construir lojas de comércio online</p>
+                        <h1 class="heading-black text-capitalize">Cria rapidamente a tua loja com Storeify</h1>
+                        <p class="lead py-3">Storeify é a tua plataforma para construir lojas de comércio online</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-2 col-12 mx-auto my-auto">

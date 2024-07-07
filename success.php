@@ -55,6 +55,10 @@
           use PHPMailer\PHPMailer\PHPMailer;
           use PHPMailer\PHPMailer\Exception;
           include($_SERVER['DOCUMENT_ROOT'] . "/storeify/essencial.php");
+          if (!isset($_POST['json']) || empty($_POST['json'])) {
+            header('Location: /storeify/checkout.php');
+            exit();
+          }
           $_SESSION['subdomain'] = strtok($_SERVER['HTTP_HOST'], '.');
           $_SESSION['json'] = $_POST['json'];
           $data = json_decode($_SESSION['json'], true);

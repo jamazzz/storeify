@@ -85,6 +85,12 @@
                     </div>
                   </form>
                   <button onclick="window.location.href='/storeify/loginClient.php'" class="btn-primary block w-full group relative text-left">Entrar na conta</button>
+                  <?php
+                  if (isset($_SESSION["errormsg2"])) {
+                    echo "<br><span id='errormsg2' style='color: red'>" . $_SESSION["errormsg2"] . "</span>";
+                    unset($_SESSION["errormsg2"]);
+                  }
+                  ?>
                 </div>
                 <!-- End Widget Area-->
 

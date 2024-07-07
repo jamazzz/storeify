@@ -6,9 +6,9 @@
 
 - Página para fazer o Login.
 
-### 1.2 **Registro**
+### 1.2 **Registo**
 
-- Página para fazer o Registro.
+- Página para fazer o Registo.
 
 ## **2. [ SubMenu ] Sobre**
 
@@ -87,7 +87,7 @@
 
 ## **3. Suporte**
 
-- Lista de Tickets com de estado atual da situação (Aguardando Resposta, Em Espera, Resolvido) e sistema de registros.
+- Lista de Tickets com de estado atual da situação (Aguardando Resposta, Em Espera, Resolvido) e sistema de registos.
 
 # Criação de conta
 

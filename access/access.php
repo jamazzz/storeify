@@ -50,7 +50,6 @@
           </nav>
           <div class="heading">
             <h2>Iniciar sessão</h2>
-            <p>Protegemos a privacidade dos seus dados com encriptação.</p>
           </div>
           <form action="login.php" method="post">
             <p>
@@ -132,7 +131,6 @@
         </nav>
         <div class="heading">
           <h2>Registe-se</h2>
-          <p>Protegemos a privacidade dos seus dados com encriptação.</p>
         </div>
         <form action="register.php" method="post">
           <div class="container2" style="display: flex; flex-wrap: nowrap;">

@@ -68,7 +68,7 @@
             echo 'Error executing checkout query: ' . mysqli_error($connect);
           }
           if ($emptycart != 1) {
-            echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $totalrow . ' item </small>');
+            echo ('<small class="px-btn py-btn-sm rounded-btn bg-background type-subtitle text-foreground-accent text-opacity-50"> ' . $totalrow . ' item(s) </small>');
           }
           ?>
         </div>
@@ -165,11 +165,11 @@
             <div>
               <div class="flex flex-wrap justify-between">
                 <h4 class="type-paragraph text-foreground">Subtotal</h4>
-                <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['subtotal'] . '</p>'); ?>
+                <?php echo ('<p class="text-foreground-accent text-opacity-50">' . $_SESSION['subtotal'] . ' €</p>'); ?>
               </div>
               <div class="flex flex-wrap justify-between">
                 <h4 class="type-paragraph text-foreground">Taxas de Venda</h4>
-                <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $_SESSION['taxes'] . '</p>'); ?>
+                <?php echo ('<p class="text-foreground-accent text-opacity-50">+ ' . $_SESSION['taxes'] . ' €</p>'); ?>
               </div>
               <div class="flex flex-wrap justify-between mt-md mb-lg">
                 <h3 class="text-paragraph font-bold text-foreground">Total</h3>

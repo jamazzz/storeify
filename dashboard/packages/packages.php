@@ -63,8 +63,9 @@
         echo '
         <div class="col-12 col-md-12 category-container">
             <div class="card h-35" style="background-color: rgba(28, 28, 37,0.8)">
-                <div class="card-body category-header">
-                    <h6>' . $row['name'] . '</h6>
+                <div class="card-body category-header d-flex justify-content-between">
+                  <h6 style="margin: 0;">' . $row['name'] . '</h6>
+                  <i class="fa-solid fa-times opacity-100 transition group-hover:opacity-100" onclick="deleteCategoryForm(' . $row['id'] . ')"></i>
                 </div>
                 <div id="category' . $row['id'] . '" class="category mt-4 product-list" style="margin:25px;">';
         $products = "SELECT * FROM products WHERE category_id = '" . $row['id'] . "' ORDER BY `order` ASC";
@@ -72,7 +73,9 @@
         while ($row2 = mysqli_fetch_assoc($result2)) {
           echo '
             <div class="card">
-                <div class="card-body" id="' . $row2['id'] . '">' . $row2['name'] . '<span style="float: right;"></span></div>
+                <div style="display: flex; align-items: center;" class="card-body category-header d-flex justify-content-between" id="' . $row2['id'] . '">' . $row2['name'] . '<span style="float: right;" ></span>
+                                  <i class="fa-solid fa-times opacity-100 transition group-hover:opacity-100" onclick="deleteProductForm(' . $row2['id'] . ')"></i>
+                </div>
             </div>';
         }
         echo '
@@ -82,7 +85,35 @@
       }
       echo '</div>';
       ?>
+      <script>
+        function deleteProductForm(id) {
+          var form = document.createElement('form');
+          form.style.display = 'none';
+          form.method = 'POST';
+          form.action = '/storeify/deleteProduct.php';
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'id';
+          input.value = id;
+          form.appendChild(input);
+          document.body.appendChild(form);
+          form.submit();
+        }
 
+        function deleteCategoryForm(id) {
+          var form = document.createElement('form');
+          form.style.display = 'none';
+          form.method = 'POST';
+          form.action = '/storeify/deleteCategory.php';
+          var input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'id';
+          input.value = id;
+          form.appendChild(input);
+          document.body.appendChild(form);
+          form.submit();
+        }
+      </script>
 
       <style>
         .card {

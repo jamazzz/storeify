@@ -38,13 +38,13 @@ function isEmailOccupied($email, $connection)
 {
     if (!isset($email) && !empty($email)) {
         $_SESSION["errormsg2"] = "Introduza um email.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     $filteredEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($filteredEmail === false) {
         $_SESSION["errormsg2"] = $email . " é um email inválido.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     $emailocupado = "SELECT COUNT(*) AS count FROM clients WHERE email = '" . $email . "'";
@@ -53,7 +53,7 @@ function isEmailOccupied($email, $connection)
     $count = $row['count'];
     if ($count != 0) {
         $_SESSION["errormsg2"] = $email . " já está registado.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
     return true;
 }
@@ -62,32 +62,32 @@ function validatePassword($password2, $password3, $connection)
 {
     if (!isset($password2) && !empty($password2) && !isset($password3) && !empty($password3)) {
         $_SESSION["errormsg2"] = "Introduza uma palavra-passe.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     if ($password2 !== $password3) {
         $_SESSION["errormsg2"] = "A senha não corresponde.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     if (strlen($password2) < 6) {
         $_SESSION["errormsg2"] = "A senha precisa de pelo menos 6 caracteres.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     if (!preg_match('/[a-z]/', $password2)) {
         $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere minúsculo.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     if (!preg_match('/[A-Z]/', $password2)) {
         $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 caractere maiúsculo.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     if (!preg_match('/[0-9]/', $password2)) {
         $_SESSION["errormsg2"] = "A senha precisa de pelo menos 1 dígito.";
-        redirect($connection);
+        header("Location: registerClient.php");
     }
 
     return true;
@@ -106,7 +106,7 @@ if (
 
     if ($resultado) {
         $_SESSION['register'] = true;
-        header("Location: loginClient.php");
+        header("Location: registerClient.php");
         exit();
     } else {
         echo "Error: " . mysqli_error($conexao);

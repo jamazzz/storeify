@@ -16,20 +16,20 @@
 
 
 -- A despejar estrutura da base de dados para teste
-CREATE DATABASE IF NOT EXISTS `teste` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `teste`;
+CREATE DATABASE IF NOT EXISTS `storeify` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `storeify`;
 
 -- A despejar estrutura para tabela teste.categories
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `order` int DEFAULT NULL,
   `website_id` int DEFAULT NULL,
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `website_id` (`website_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
@@ -40,22 +40,22 @@ CREATE TABLE IF NOT EXISTS `checkout` (
   `subdomain` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `product_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=145 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=156 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.clients
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `creation_date` datetime NOT NULL,
   `attempts` int NOT NULL DEFAULT '5',
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
@@ -64,12 +64,11 @@ CREATE TABLE IF NOT EXISTS `members` (
   `id` int NOT NULL AUTO_INCREMENT,
   `memberid` int NOT NULL,
   `websiteid` int NOT NULL,
-  `login` tinyint(1) NOT NULL,
   `added_date` datetime NOT NULL,
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
@@ -79,55 +78,55 @@ CREATE TABLE IF NOT EXISTS `owned_products` (
   `user_id` int NOT NULL,
   `product_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.products
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `category_id` int NOT NULL,
-  `description` varchar(4096) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` varchar(4096) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `order` int DEFAULT NULL,
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `section_id` (`category_id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.transactions
 CREATE TABLE IF NOT EXISTS `transactions` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `payer_id` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `payer_name` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `payer_email` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `payer_country` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `merchant_id` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `merchant_email` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `payer_id` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `payer_name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `payer_email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `payer_country` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `merchant_id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `merchant_email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `transaction_id` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `paid_amount` float(10,2) NOT NULL,
   `currency_type` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `payment_source` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `payment_source` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_date` datetime NOT NULL,
-  `store` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `store` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `user` int DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `permission_level` int NOT NULL,
   `creation_date` datetime NOT NULL,
   `attempts` int NOT NULL DEFAULT '5',
@@ -135,33 +134,33 @@ CREATE TABLE IF NOT EXISTS `users` (
   `deleted_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `permission_level` (`permission_level`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.users_ids
 CREATE TABLE IF NOT EXISTS `users_ids` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `nif` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `postal_code` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nif` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `postal_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `birth_date` datetime DEFAULT NULL,
   `gender` tinyint(1) DEFAULT NULL,
-  `nationality` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `nationality` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `user_id` int NOT NULL,
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 
 -- A despejar estrutura para tabela teste.websites
 CREATE TABLE IF NOT EXISTS `websites` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `subdomain` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `owner` int NOT NULL,
   `logo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -170,9 +169,9 @@ CREATE TABLE IF NOT EXISTS `websites` (
   `deleted` tinyint(1) DEFAULT '0',
   `deleted_date` datetime DEFAULT NULL,
   `dark_color` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `light_color` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `light_color` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportação de dados não seleccionada.
 

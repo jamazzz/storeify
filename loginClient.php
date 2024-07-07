@@ -78,6 +78,12 @@
                     </div>
                   </form>
                   <button onclick="window.location.href='/storeify/registerClient.php'" class="btn-primary block w-full group relative text-left">Criar uma conta</button>
+                  <?php
+                  if (isset($_SESSION["errormsg"])) {
+                    echo "<br><span id='errormsg' style='color: red'>" . $_SESSION["errormsg"] . "</span>";
+                    unset($_SESSION["errormsg"]);
+                  }
+                  ?>
                 </div>
                 <!-- End Widget Area-->
 
