@@ -53,7 +53,7 @@ if (($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoverem
   }
 } else {
   $_SESSION['remaining_time'] = 60 - ($_SESSION['currentTime'] - @$_SESSION['lastSentTimes'][$_SESSION['recoveremail']]);
-  $_SESSION["errormsg"] = "Please wait for " . $_SESSION['remaining_time'] . " seconds before trying again.";
+  $_SESSION["errormsg"] = "Por favor, aguarde " . $_SESSION['remaining_time'] . " segundos antes de tentar novamente.";
 }
 
 if (isset($_SESSION['emailfromadmin'])) {
